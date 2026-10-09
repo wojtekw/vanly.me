@@ -1,0 +1,21 @@
+Potwierdź adres e-mail
+
+Cześć {{first_name}},
+
+Potwierdź, że ten adres e-mail należy do Ciebie. Dzięki temu będziemy mogli przesyłać wiadomości dotyczące Twojego konta i rezerwacji.
+
+Link jest ważny do {{verification_expires_at}} ({{display_timezone}}).
+
+Jeśli nie tworzysz konta w VANLY i nie prosisz o potwierdzenie adresu, zignoruj tę wiadomość.
+
+Potwierdź adres e-mail:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

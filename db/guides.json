@@ -1,0 +1,662 @@
+[
+  {
+    "id": "first",
+    "title": "Pierwszy wyjazd kamperem. Od czego zacząć?",
+    "kind": "guide",
+    "desc": "Pierwsza podróż kamperem zaczyna się zwykle od zdjęcia: otwarte drzwi, jezioro i śniadanie z widokiem. Potem pojawiają się pytania o pojazd, nocleg i obsługę wszystkiego, co znajduje się w środku. Nie musisz rozwiązać ich jednocześnie. Wystarczy kilka decyzji podjętych we właściwej kolejności, żeby wybrać samochód i trasę, które pasują do Waszego sposobu odpoczywania.",
+    "body": [
+      [
+        "Najpierw ustal, jak chcecie spędzać dni",
+        "Porozmawiajcie o zwykłym dniu na wyjeździe. Czy rano chcecie od razu ruszać, czy zostać nad wodą? Gotować na pokładzie, czy jeść w miasteczkach? Codziennie zmieniać miejsce, czy urządzić bazę na kilka nocy? Odpowiedzi mówią o potrzebnym pojeździe więcej niż lista atrakcji do odwiedzenia.\n\nPrzy pierwszym wynajmie proponujemy jeden region i niewiele przeprowadzek. To propozycja organizacji podróży, a nie obowiązkowa reguła. Kilka spokojnych dni pozwala poznać własne upodobania: sprawdzić, czy lubicie rozkładane łóżko, jak często korzystacie z prysznica i ile miejsca potrzebujecie na rzeczy. Kolejny wyjazd zaplanujecie już na podstawie doświadczenia."
+      ],
+      [
+        "Dopasuj pojazd do całej ekipy",
+        "Sprawdź osobno miejsca dopuszczone do jazdy i miejsca do spania. Przy podróży z dzieckiem potrzebna jest również zgodność konkretnego fotelika z konkretnym siedzeniem. Następnie obejrzyj układ wnętrza w dwóch wersjach: dziennej i nocnej. Stolik może zamieniać się w łóżko, a dostęp do szafy po rozłożeniu spania wyglądać inaczej niż na zdjęciu oferty.\n\nZapisz trzy wymagania, bez których wyjazd będzie niewygodny. Mogą to być stałe łóżko, toaleta i przestrzeń na wózek. Pozostałe wyposażenie traktuj jako dodatki. Taka krótka lista ułatwia porównanie pojazdów bez wielogodzinnego oglądania coraz większych i droższych modeli."
+      ],
+      [
+        "Zarezerwuj czas także na odbiór",
+        "Data w kalendarzu nie mówi jeszcze, ile czasu zostaje na podróż. Sprawdź dokładną godzinę wydania samochodu, długość instruktażu i godzinę jego zwrotu. Odbiór w piątek po południu oznacza inny plan niż odbiór rano. Uwzględnij też dojazd do wypożyczalni i miejsce pozostawienia własnego auta.\n\nNie planuj na pierwszy wieczór dalekiego przejazdu zakończonego przyjazdem po zamknięciu recepcji. Lepiej dotrzeć na pobliski kemping za dnia, znaleźć parcelę i spokojnie przećwiczyć ustawienie pojazdu. Jeżeli mimo wszystko wybieracie dalszy cel, potwierdźcie procedurę późnego przyjazdu i zapiszcie miejsce awaryjnego postoju."
+      ],
+      [
+        "Policz wyjazd jako całość",
+        "Do ceny wynajmu dodaj koszty przejazdu, noclegów, wybranego wyposażenia i opłat na trasie. Osobno zapisz kaucję oraz sposób jej zabezpieczenia. Nawet jeśli podlega zwrotowi, w czasie podróży może ograniczyć środki dostępne na rachunku lub karcie.\n\nNie zakładaj, że kuchnia w samochodzie oznacza komplet garnków, a łóżko obejmuje pościel. Poproś o listę wyposażenia w cenie. Przy dodatkowych opłatach sprawdź, czy dotyczą całego wynajmu, doby, osoby czy sztuki. W podróży we dwoje różnica bywa mało widoczna; przy rodzinie i dłuższym pobycie robi się znacznie bardziej odczuwalna."
+      ],
+      [
+        "Pierwszą noc zaplanuj dokładniej niż resztę",
+        "Na początek wybierz miejsce, w którym wiesz, jak dojechać, gdzie zaparkować i z jakich udogodnień możesz skorzystać. Potwierdź dostęp do sanitariatów, prądu i punktu obsługi kamperów, jeśli ich potrzebujesz. Sama ikona na mapie nie zastępuje informacji od gospodarza obiektu.\n\nPrzygotuj prosty posiłek na pierwszy wieczór. Zostaw pod ręką kurtki, latarkę, wodę do picia i rzeczy do spania. Dzięki temu nie trzeba zaczynać pobytu od przekładania całego bagażu. Nazajutrz można już spokojnie zdecydować, czy zostać dłużej, czy ruszyć do następnego miejsca."
+      ],
+      [
+        "Wyjedź dopiero po zrozumiałym instruktażu",
+        "Podczas odbioru poproś o pokazanie panelu sterowania, ogrzewania, instalacji wody, zasilania i toalety. Samodzielnie wykonaj podstawowe czynności pod nadzorem osoby wydającej pojazd. Instruktaż powinien dotyczyć dokładnie wynajmowanego modelu; przydatny zakres takiego przekazania opisuje również [ADAC w poradniku pierwszego wyjazdu](https://www.adac.de/reise-freizeit/ratgeber/reisetipps/erster-wohnmobil-urlaub/).\n\nZapisz kontakt do wypożyczalni i assistance także poza aplikacją. Przed ruszeniem obejdź pojazd i sprawdź zamknięcia oraz schowanie wyposażenia zewnętrznego. Po tak przygotowanym starcie nie potrzebujesz rozpisanego co do minuty urlopu. Wiesz już, gdzie śpisz, czym jedziesz i kogo zapytać, kiedy coś będzie niejasne.\n\n**Przed rezerwacją ustalcie:** liczbę podróżnych, trzy wymagania wobec wnętrza, realne godziny odbioru i zwrotu, pełny budżet oraz miejsce pierwszego noclegu."
+      ]
+    ],
+    "asset": "guides/01-pierwszy-wyjazd.webp"
+  },
+  {
+    "id": "kamper-campervan-przyczepa",
+    "title": "Kamper, campervan czy przyczepa? Wybierz pod swój sposób podróżowania",
+    "kind": "guide",
+    "desc": "Na zdjęciach wszystkie obiecują podobny poranek: otwierasz drzwi i jesteś blisko natury. Różnice wychodzą później, kiedy trzeba pojechać po zakupy, rozłożyć łóżko albo przejechać przez niewielkie miasteczko. Wybór między campervanem, większym kamperem i przyczepą warto więc zacząć od planu dnia. Najlepszy pojazd to ten, którego codzienna obsługa pasuje do Waszego wyjazdu.",
+    "body": [
+      [
+        "Trzy nazwy, wiele różnych wnętrz",
+        "Campervan jest kamperem z zabudową opartą zazwyczaj na nadwoziu vana. W ofertach słowo „kamper” często oznacza większy pojazd z osobną zabudową mieszkalną. Przyczepa potrzebuje samochodu, który ją ciągnie, ale po odłączeniu może zostać na kempingu. Te nazwy pomagają uporządkować poszukiwania, lecz nie zastępują wymiarów i planu wnętrza.\n\nW każdej grupie znajdziesz różne układy łóżek, łazienek i siedzeń. Kompaktowy pojazd może mieć stałe spanie, a większy wymagać wieczornej przebudowy części dziennej. Porównuj konkretne modele. Nie przypisuj wygody, pojemności ani łatwości prowadzenia wyłącznie etykiecie w ogłoszeniu."
+      ],
+      [
+        "Campervan: kiedy ważne są częste zmiany miejsca",
+        "Campervana warto obejrzeć, jeśli chcecie często ruszać dalej i dobrze czujecie się w niewielkiej przestrzeni. Zwróć uwagę na szerokość przejścia, możliwość stania, dostęp do bagażu i sposób korzystania z łóżka. Przy podnoszonym dachu zapytaj również o jego obsługę oraz ograniczenia wskazane przez producenta i wypożyczalnię.\n\nMniejsze nadwozie nie daje automatycznie dostępu do każdego parkingu. Znaczenie mają rzeczywista wysokość i długość pojazdu, również z wyposażeniem na dachu lub bagażnikiem. Przed rezerwacją wyobraź sobie deszczowy wieczór: obie osoby są w środku, kurtki schną, a jedna chce gotować. Czy taki układ nadal Wam odpowiada?"
+      ],
+      [
+        "Większy kamper: przyjrzyj się przestrzeni",
+        "Większą zabudowę warto porównać, gdy potrzebujecie oddzielnych stref spania, wygodniejszej łazienki lub więcej miejsca podczas postoju. Sprawdź, czy wszystkie osoby mogą jednocześnie usiąść przy stole i czy rozłożenie łóżka nie blokuje wyjścia. Przy rodzinie istotne są też dostęp do schowków i możliwość wyciszenia części wnętrza.\n\nPrzestrzeń ma swój odpowiednik na zewnątrz. Zmierz lub potwierdź gabaryty i uwzględnij je przy wyborze miejsc postojowych. Jeśli codziennie chcecie odwiedzać centrum innego miasta, zaplanujcie parking oraz dojazd komunikacją lub rowerami. Widok wygodnego salonu nie pokazuje całej organizacji takiego dnia."
+      ],
+      [
+        "Przyczepa: gdy lubicie mieć bazę",
+        "Przyczepa może dobrze pasować do pobytu przez kilka nocy w jednym miejscu. Po prawidłowym odłączeniu i ustawieniu na parceli samochód pozostaje do dyspozycji. Można pojechać nim na zakupy lub wycieczkę, bez każdorazowego przygotowywania części mieszkalnej do drogi. To istotna różnica w sposobie korzystania z całego zestawu.\n\nZanim wybierzesz przyczepę, sprawdź uprawnienia kierowcy i techniczne możliwości samochodu. Potrzebna jest również praktyka manewrowania, prawidłowego łączenia zestawu i jego przygotowania do jazdy. Jeśli dopiero się tego uczysz, przewidź więcej czasu na odbiór i wybierz łatwy dojazd do pierwszego kempingu. Kwestie uprawnień porządkuje [Ministerstwo Infrastruktury](https://www.gov.pl/web/infrastruktura/kategorie-prawa-jazdy)."
+      ],
+      [
+        "Porównaj ten sam wyjazd, nie same stawki",
+        "Zestaw oferty dla tych samych dat i tej samej liczby osób. Przy przyczepie uwzględnij samochód holujący, jego przygotowanie i dojazd. Przy kamperze sprawdź koszty parkowania oraz transportu podczas zwiedzania. We wszystkich wariantach policz noclegi, wyposażenie, opłaty na trasie i warunki sprzątania przy zwrocie.\n\nNie przyjmuj, że jedna kategoria zawsze okaże się tańsza. Znaczenie mają sezon, model, trasa i sposób wypoczynku. Przy tygodniu na jednym kempingu wydatki układają się inaczej niż podczas codziennych przejazdów. Porównanie ma sens dopiero wtedy, gdy wszystkie oferty odpowiadają na ten sam plan podróży."
+      ],
+      [
+        "Zrób próbę zwykłego dnia",
+        "Załóżmy, że planujecie cztery noce nad jeziorem i krótkie wycieczki po okolicy. Sprawdźcie przyczepę jako bazę, ale też kampera z możliwością pozostawienia go na parceli i korzystania z rowerów. Jeśli zamiast tego każdą noc chcecie spędzać gdzie indziej, przyjrzyjcie się temu, ile czynności wymaga poranne ruszenie w każdym wariancie.\n\nPrzy oględzinach przejdźcie przez trzy scenariusze: śniadanie, deszczowe popołudnie i przygotowanie do snu. Otwórzcie szafki, usiądźcie przy stole, sprawdźcie łóżka. Łatwiej podjąć decyzję po takiej próbie niż na podstawie liczby gadżetów na liście wyposażenia.\n\n**Zapisz przed wyborem:** jak często zmieniacie nocleg, ile czasu spędzacie we wnętrzu, czym zwiedzacie okolicę i kto będzie prowadzić pojazd lub zestaw."
+      ]
+    ],
+    "asset": "guides/02-kamper-campervan-przyczepa.webp"
+  },
+  {
+    "id": "uklad-kampera",
+    "title": "Miejsca do jazdy to nie wszystko. Jak sprawdzić układ kampera?",
+    "kind": "guide",
+    "desc": "W ofercie widnieją cztery miejsca, na zdjęciu widać duże łóżko i elegancki stolik. Czy to wystarczy dla czteroosobowej rodziny? Dopiero plan wnętrza i kilka dodatkowych pytań pokażą, jak będzie wyglądać codzienność. Oglądaj kampera tak, jak mieszkanie na czas wyjazdu: sprawdź, gdzie usiądziesz, gdzie położysz rzeczy i co trzeba przestawić, zanim wszyscy pójdą spać.",
+    "body": [
+      [
+        "Zacznij od miejsc do jazdy",
+        "Liczbę miejsc dopuszczonych do przewozu osób sprawdź w dokumentach i potwierdź z wypożyczalnią. Nie wyciągaj jej z liczby poduszek przy stole. Część siedzisk służy wyłącznie do korzystania podczas postoju. Warto poprosić o zdjęcia miejsc przeznaczonych do podróży, z widocznymi pasami i zagłówkami.\n\nJeżeli jedzie dziecko, ustal możliwość zamontowania konkretnego fotelika. Samo zapewnienie, że kamper jest „rodzinny”, nie odpowiada na pytanie o mocowania, typ pasa i zgodność z instrukcją fotelika. O ograniczeniach takich siedzeń pisze [ADAC w materiale o fotelikach w kamperach](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/kindersitze/kindersitzberater/kindersitz-bus-wohnmobil/). Zgodność najlepiej sprawdzić przed odbiorem, a nie po zapakowaniu całej rodziny."
+      ],
+      [
+        "Poproś o plan na dzień i na noc",
+        "Układ dzienny pokazuje miejsce do jedzenia i poruszania się. Nocny ujawnia, co znika po rozłożeniu spania. Sprawdź, czy trzeba opuścić łóżko nad stolikiem, przestawić poduszki albo przenieść bagaż. Dopytaj również, gdzie przechowuje się pościel i elementy potrzebne do przebudowy.\n\nNie ma nic złego w rozkładanym łóżku, jeśli akceptujecie taki rytuał. Kłopot pojawia się wtedy, gdy jedna osoba chce już spać, a druga potrzebuje stolika do kolacji. Przy krótkim wyjeździe różnica może być niewielka; przy dwóch tygodniach codzienna reorganizacja staje się ważną częścią użytkowania pojazdu."
+      ],
+      [
+        "Wymiary łóżka są ważniejsze niż jego nazwa",
+        "Zapytaj o długość, szerokość w najwęższym miejscu i sposób wejścia. Określenie „podwójne” nie mówi, czy dwie dorosłe osoby będą miały dość miejsca. Przy łóżku poprzecznym lub umieszczonym wysoko sprawdź, czy odpowiada Wam dostęp i wysokość przestrzeni nad materacem.\n\nJeżeli możesz obejrzeć pojazd wcześniej, usiądź i połóż się na łóżku za zgodą wypożyczalni. Sprawdź też nocną drogę do toalety. Czy trzeba przechodzić nad drugą osobą? Czy drabinka zostaje w przejściu? To drobiazgi na zdjęciu, ale konkretne doświadczenia o drugiej w nocy."
+      ],
+      [
+        "Przejdź przez kuchnię i łazienkę",
+        "Otwórz lodówkę, a potem spróbuj przejść obok. Zobacz, ile blatu zostaje po przygotowaniu zlewu i kuchenki do pracy. Zapytaj, gdzie mieści się garnek, deska do krojenia i zapas jedzenia. Jeżeli chcecie głównie jeść na zewnątrz, niewielki aneks może wystarczyć. Przy codziennym gotowaniu warto poświęcić mu więcej uwagi.\n\nW łazience sprawdź sposób korzystania z prysznica i miejsce na mokre rzeczy. Niektóre rozwiązania wymagają przestawienia elementów lub osuszenia części wnętrza po kąpieli. Poproś o demonstrację. Zdjęcie zamkniętych drzwi z etykietą „łazienka” niewiele mówi o tym, jak wygodnie korzystać z niej podczas podróży."
+      ],
+      [
+        "Znajdź miejsce na prawdziwy bagaż",
+        "Zrób listę większych rzeczy: wózek, krzesła, sprzęt sportowy, buty i torby. Zapytaj nie tylko o pojemność schowka, lecz także o wielkość jego otworu oraz dopuszczalne obciążenie. Przedmiot może mieścić się na planie, ale nie przejść przez drzwiczki. Bagażnik rowerowy również ma własne ograniczenia.\n\nSprawdź zapas ładowności dla konkretnego pojazdu i wyposażenia. Pasażerowie, woda oraz bagaże zajmują część dostępnego limitu. Duży garaż nie oznacza, że można wypełnić go dowolnie ciężkimi rzeczami. Przy wątpliwościach poproś wypożyczalnię o wyjaśnienie danych i sposób kontroli masy przed wyjazdem."
+      ],
+      [
+        "Przeprowadź test deszczowego popołudnia",
+        "Wyobraź sobie wszystkich podróżnych we wnętrzu przez kilka godzin. Jedna osoba czyta, druga przygotowuje posiłek, a dzieci chcą rozłożyć grę. Czy da się przejść do toalety i sięgnąć po kurtkę? Taki scenariusz szybko pokazuje, które elementy wyposażenia faktycznie poprawią wygodę Waszej ekipy.\n\nNa końcu ustal jedną rzecz, z której możecie zrezygnować, i jedną, której nie chcecie poświęcać. Być może ważniejsze od osobnego prysznica okaże się stałe łóżko. Albo odwrotnie. Dobry układ nie wygrywa liczbą funkcji, tylko tym, że te potrzebne są dostępne wtedy, kiedy chcecie z nich korzystać.\n\n**Do sprawdzenia podczas oględzin:** miejsca do jazdy, zgodność fotelików, układ nocny, wymiary łóżek, dostęp do szafek i ładowność po zabraniu wyposażenia."
+      ]
+    ],
+    "asset": "guides/03-uklad-kampera.webp"
+  },
+  {
+    "id": "samochod-i-przyczepa",
+    "title": "Czy Twój samochód pasuje do wybranej przyczepy?",
+    "kind": "guide",
+    "desc": "Hak z tyłu samochodu to początek sprawdzania, nie potwierdzenie, że możesz podpiąć każdą przyczepę z oferty. O zgodności zestawu decydują dokumenty, ograniczenia techniczne i uprawnienia kierowcy. Zbierz te informacje przed rezerwacją. Rozmowa z wypożyczalnią będzie wtedy dotyczyć konkretnego auta i przyczepy, a nie przypuszczenia, że „ten silnik powinien sobie poradzić”.",
+    "body": [
+      [
+        "Przygotuj dokumenty obu pojazdów",
+        "Potrzebujesz danych własnego samochodu oraz wybranej przyczepy. W dowodzie rejestracyjnym auta sprawdź dopuszczalną masę całkowitą pojazdu, dopuszczalną masę całkowitą zespołu oraz maksymalne masy przyczepy z hamulcem i bez hamulca. Standardowo odpowiadają im pola F.2, F.3, O.1 i O.2. Oznaczenia dokumentu opisuje [urzędowy wzór dowodu rejestracyjnego](https://www.dziennikustaw.gov.pl/D2022000098901.pdf).\n\nZapisz wartości wraz z nazwami pól, zamiast przesyłać komuś samą liczbę kilogramów. Dopytaj wypożyczalnię o dokumenty i wyposażenie przyczepy. Jeżeli wpis jest nieczytelny, brakuje danych albo informacje się różnią, wyjaśnij to z diagnostą lub producentem przed zawarciem umowy. Parametry podobnej wersji samochodu z internetu mogą nie odpowiadać Twojemu egzemplarzowi."
+      ],
+      [
+        "Rozdziel limit w dokumentach od faktycznego załadunku",
+        "Dopuszczalna masa całkowita, czyli DMC, oznacza limit pojazdu z obciążeniem. Rzeczywista masa mówi o tym, ile pojazd waży w danej chwili. Nie są to pojęcia zamienne. Przy sprawdzaniu kategorii prawa jazdy istotne są odpowiednie DMC; podczas przygotowania pojazdów trzeba również respektować rzeczywiste obciążenia i wszystkie ograniczenia techniczne.\n\nNie sprowadzaj doboru przyczepy do jednego odejmowania albo internetowego przelicznika. Nawet poprawny wynik jednej kontroli nie rozstrzyga pozostałych. Potrzebne jest łączne sprawdzenie dokumentów samochodu, przyczepy, haka, obciążeń oraz kierowcy. Wypożyczalni przedstaw cały zestaw danych i poproś o wskazanie ewentualnych ograniczeń."
+      ],
+      [
+        "Zweryfikuj prawo jazdy osobno",
+        "Samochód może technicznie pasować do przyczepy, a kierowca nadal potrzebować innych uprawnień. Kategoria B, B z kodem 96 i B+E obejmują różne konfiguracje. Progi dotyczące zestawów oraz przyczep lekkich znajdziesz w [wyjaśnieniu Policji w Tarnowie](https://tarnow.policja.gov.pl/kt/ruch-drogowy/piatkowy-przepis/2259%2CPiatkowy-przepis-drogowy-Jaka-przyczepa-z-kategoria-B-prawa-jazdy.html).\n\nPrzykładowo auto o DMC 2200 kg i przyczepa o DMC 1500 kg tworzą sumę 3700 kg. Przy przyczepie innej niż lekka samo B nie wystarcza; z punktu widzenia kategorii potrzebne jest odpowiednie rozszerzenie, np. kod 96. To przykład obliczenia uprawnień, nie potwierdzenie, że konkretny samochód może ciągnąć taką przyczepę."
+      ],
+      [
+        "Sprawdź połączenie i wyposażenie",
+        "Potwierdź dopuszczenie haka, wymagany nacisk pionowy, złącze elektryczne i zgodność z zaczepem przyczepy. Nie zakładaj, że przejściówka zapewni wszystkie potrzebne funkcje. Poproś o sprawdzenie działania oświetlenia oraz wyjaśnienie obsługi hamulca, linki zabezpieczającej, stabilizatora i kółka podporowego, jeśli należą do wyposażenia danego modelu.\n\nNie ucz się procedury wyłącznie z ogólnego filmu. Przy odbiorze wykonaj podłączenie i odłączenie pod nadzorem osoby wydającej przyczepę. Instrukcja konkretnego zaczepu i samochodu ma większe znaczenie niż to, jak robił to znajomy przy innym zestawie. Zapytaj też o dodatkowe lusterka i prawidłową widoczność do tyłu."
+      ],
+      [
+        "Zostaw miejsce na ludzi i bagaże",
+        "Rodzina, rowery, żywność i zapas wody wpływają na obciążenie. Zapisz, które rzeczy pojadą w aucie, a które w przyczepie, i sprawdź instrukcję ich rozmieszczenia oraz mocowania. Osobne ograniczenia mogą dotyczyć osi, schowków i zamontowanych bagażników. Nie oceniaj prawidłowego załadunku jedynie po tym, czy szafki dają się zamknąć.\n\nJeśli zestaw znajduje się blisko dopuszczalnych wartości, uzgodnij ważenie w konfiguracji przygotowanej do podróży. Nie licz na to, że nieznana masa wyposażenia „zmieści się w zapasie”. Ustalenie tego wcześniej pozwala zmienić listę bagażu lub pojazd, zanim na miejscu odbioru zostanie mało czasu na decyzję."
+      ],
+      [
+        "Zaplanuj pierwsze manewry",
+        "Przy pierwszym wyjeździe wybierz parcelę z łatwym wjazdem i zaplanuj przyjazd za dnia. Poproś o spokojną próbę cofania w bezpiecznym, dozwolonym miejscu. Uzgodnij z osobą pomagającą jasny sygnał zatrzymania i nie kontynuuj manewru, kiedy tracisz ją z oczu.\n\n**Przed wpłatą za wynajem przygotuj:** dane obu dowodów rejestracyjnych, kategorię prawa jazdy każdego kierowcy, parametry haka oraz listę cięższego wyposażenia. Dopiero zgodność wszystkich tych elementów daje podstawę do wyboru przyczepy."
+      ]
+    ],
+    "asset": "guides/04-samochod-i-przyczepa.webp"
+  },
+  {
+    "id": "koszt-wyjazdu",
+    "title": "Ile kosztuje wyjazd kamperem? Policz więcej niż wynajem",
+    "kind": "guide",
+    "desc": "Cena za dobę pomaga znaleźć oferty w swoim budżecie. Nie odpowiada jednak na pytanie, ile pieniędzy potrzebujesz na cały wyjazd. Do wynajmu dochodzą przejazdy, noclegi i wybrane dodatki, a osobno trzeba przygotować środki na kaucję. Najwygodniej policzyć podróż w kilku grupach wydatków. Wtedy łatwo zobaczyć, co zmienia skrócenie trasy, inny termin albo dodatkowy dzień na kempingu.",
+    "body": [
+      [
+        "Zacznij od ceny za dokładny termin",
+        "Wpisz daty, godziny odbioru i zwrotu oraz liczbę podróżnych. Poproś o cenę całego wynajmu z obowiązkowymi opłatami. Zwróć uwagę na sposób naliczania czasu: siedem nocy w podróży nie musi oznaczać siedmiu płatnych dób według zasad konkretnej firmy. Znaczenie mogą mieć także minimalny okres wynajmu i terminy sezonowe.\n\nW tym samym miejscu zapisz opłatę przygotowawczą, sprzątanie, dodatkowego kierowcę i wyposażenie, które na pewno wybierzesz. Jeżeli nie wiadomo, czy dana pozycja jest obowiązkowa, wyjaśnij to przed porównaniem ofert. Niska stawka początkowa nie jest oszczędnością, jeśli końcowa konfiguracja kosztuje więcej niż konkurencyjna propozycja."
+      ],
+      [
+        "Paliwo policz na podstawie trasy",
+        "Podstawowy wzór jest prosty: liczba kilometrów podzielona przez sto, pomnożona przez zakładane zużycie paliwa i cenę litra. Wstaw dane odpowiednie dla pojazdu oraz aktualne ceny na swojej trasie. O orientacyjne spalanie zapytaj wypożyczalnię, pamiętając, że obciążenie, teren i sposób jazdy mogą zmienić wynik.\n\nDo przejazdu pomiędzy głównymi punktami dodaj dojazdy na kempingi, zakupy i lokalne wycieczki. Jeśli plan obejmuje przyczepę, użyj założenia dotyczącego samochodu z przyczepą, a nie jego spalania podczas codziennych dojazdów. Warto policzyć dwa warianty trasy: podstawowy i dłuższy, jeśli zechcecie zmienić plany."
+      ],
+      [
+        "Nocleg może składać się z kilku pozycji",
+        "Sprawdź, czy cena kempingu obejmuje parcelę, osoby, prąd i opłaty miejscowe. Dodatkowo mogą być naliczane wybrane udogodnienia lub pobyt psa. Korzystaj z cennika dla właściwego sezonu i wieku dzieci. Porównanie samej ceny parceli bywa mylące, kiedy jeden obiekt uwzględnia już dwie osoby, a drugi dolicza je osobno.\n\nPodobnie sprawdzaj opłaty za parkingi, promy, tunele i drogi. Kategorie taryfowe mogą zależeć od parametrów pojazdu. W Polsce od 21 września 2026 r. auta o DMC do 3,5 t z przyczepą nie wymagają rozliczania w e-TOLL. To zmiana dotycząca tego systemu, a nie zniesienie wszystkich opłat na każdej trasie. Potwierdza ją [komunikat e-TOLL](https://etoll.gov.pl/artykuly/zniesienie-oplaty-elektronicznej-w-systemie-e-toll-za-przejazdy-pojazdow-lekkich-wraz-z-przyczepa/)."
+      ],
+      [
+        "Przykładowy budżet pokaże mechanizm",
+        "Poniższe liczby są wyłącznie przykładem obliczenia, nie cennikiem Vanly ani opisem przeciętnych kosztów na rynku. Załóżmy, że wycena obejmuje siedem płatnych dób po 500 zł, czyli 3500 zł. Dodajemy 250 zł za przygotowanie i 150 zł za wybrane wyposażenie. Wynajem z dodatkami wynosi wtedy 3900 zł.\n\nPrzy trasie 800 km, założonym zużyciu 11 l/100 km i przykładowej cenie 7 zł/l paliwo kosztuje 616 zł. Sześć noclegów po 150 zł daje 900 zł, a założone opłaty na trasie kolejne 200 zł. Suma wynosi 5616 zł, przed jedzeniem, atrakcjami i rezerwą. Każdą z tych wartości zastąp własną wyceną."
+      ],
+      [
+        "Kaucję zapisz obok kosztów",
+        "Kaucja nie jest tym samym co cena podróży, ale trzeba uwzględnić ją w dostępnych środkach. Ustal jej wysokość, sposób pobrania lub blokady i wymagania dotyczące karty. Sprawdź także warunki oraz termin rozliczenia. Nie zakładaj, że środki będą dostępne natychmiast po przekazaniu kluczyków.\n\nJeśli wykupujesz dodatkową ochronę, porównaj koszt i rzeczywisty zakres. Zwróć uwagę na udział własny oraz wyłączenia. Niektóre rozwiązania opierają się na późniejszym zwrocie kosztów przez ubezpieczyciela, więc nie muszą usuwać wymogu kaucji. Tę różnicę wyjaśnia [Europejskie Centrum Konsumenckie](https://konsument.gov.pl/wypozyczanie-samochodu-prawa-konsumenta/)."
+      ],
+      [
+        "Oszczędności szukaj w swoim planie",
+        "Najpierw sprawdź, czego faktycznie nie potrzebujesz: dodatkowego bagażnika, codziennej zmiany kempingu czy dalekiego objazdu. Porównaj też terminy, o ile masz elastyczny urlop. Zmianę oceniaj razem z kosztami dojazdu i dostępnością miejsc, nie wyłącznie przez niższą cenę jednej doby.\n\nZostaw własną rezerwę na zmianę planów. Jej wielkość zależy od długości i charakteru podróży. Dobrze policzony budżet nie musi przewidzieć każdego paragonu. Powinien dawać odpowiedź, ile zapłacisz przed wyjazdem, ile wydasz po drodze i jaka kwota pozostanie czasowo niedostępna."
+      ]
+    ],
+    "asset": "guides/05-koszt-wyjazdu.webp"
+  },
+  {
+    "id": "porownanie-ofert",
+    "title": "Jak porównać oferty wynajmu kampera?",
+    "kind": "guide",
+    "desc": "Dwie oferty pokazują podobny pojazd, tę samą liczbę miejsc i zbliżoną cenę za dobę. Dopiero w szczegółach okazuje się, że jedna obejmuje wyposażenie, a druga ma inne godziny zwrotu i limit kilometrów. Żeby porównanie było użyteczne, najpierw przygotuj wspólny scenariusz wyjazdu. Później sprawdzaj oferty według tych samych kryteriów, zamiast oceniać każdą na innych zasadach.",
+    "body": [
+      [
+        "Ustal warunki porównania",
+        "Zapisz dokładny termin, liczbę osób, miejsce odbioru i planowany dystans. Dodaj wymagania, takie jak podróż z psem, wyjazd za granicę lub potrzebny fotelik. Bez tych informacji wyceny mogą dotyczyć zupełnie innych wariantów. Oferta odpowiednia na weekend w Polsce nie musi odpowiadać dwutygodniowej podróży przez kilka krajów.\n\nRozdziel wymagania niezbędne i mile widziane. Jeśli potrzebujesz czterech miejsc dopuszczonych do jazdy, nie zastąpi ich przestronny salon. Jeżeli planujesz odebrać pojazd wieczorem, możliwość wydania o tej godzinie jest ważniejsza niż dodatkowy telewizor. Najpierw odrzuć oferty, które nie spełniają podstawowego scenariusza."
+      ],
+      [
+        "Porównuj cenę całej konfiguracji",
+        "Poproś o łączną kwotę z obowiązkowymi opłatami i wybranym wyposażeniem. Sprawdź jednostki cen dodatków: krzesło może kosztować za sztukę, pościel za komplet, a inny element za dobę. Ustal, czy cena widoczna dla konsumenta obejmuje podatki oraz wszystkie wymagane składniki wynajmu.\n\nKaucję zapisz w oddzielnej kolumnie. Tak samo zaznacz płatności, które pojawią się dopiero przy określonym zdarzeniu, np. przekroczeniu uzgodnionego limitu kilometrów lub opóźnionym zwrocie. Dzięki temu nie pomylisz przewidywanego kosztu podróży z kwotą zabezpieczenia i potencjalnymi dopłatami."
+      ],
+      [
+        "Obejrzyj wyposażenie, którego będziesz używać",
+        "Porównanie listy funkcji to dopiero początek. Lodówka może mieć różną wielkość, łóżko wymagać rozkładania, a prysznic dzielić przestrzeń z toaletą. Obejrzyj zdjęcia konkretnego pojazdu i zapytaj o plan wnętrza. Upewnij się, czy firma gwarantuje wskazany egzemplarz, czy rezerwujesz określoną kategorię z możliwością podstawienia innego auta.\n\nPrzy rzeczach, które zabierasz ze sobą, sprawdź kompatybilność. Dotyczy to fotelików, rowerów, bagażników i sprzętu wymagającego zasilania. Deklaracja „można zabrać rowery” nie odpowiada jeszcze na pytanie o liczbę, masę i sposób mocowania. Wątpliwości zapisuj tak, żeby móc wrócić do odpowiedzi przed odbiorem."
+      ],
+      [
+        "Przeczytaj zasady kilometrów i podróży",
+        "Ustal, czy limit dotyczy całego wynajmu, każdej doby czy innego okresu. Zapytaj o stawkę za przekroczenie i sposób odczytu przebiegu. Porównaj limit z własną trasą wraz z lokalnymi przejazdami. Pozornie duży zapas może stopnieć po dodaniu dojazdu do miejsca wypoczynku i drogi powrotnej.\n\nPotwierdź kraje, do których można pojechać, warunki przewozu zwierząt i wymagania wobec kierowców. Przeczytaj zasady korzystania z dróg nieutwardzonych oraz wyposażenia zewnętrznego. Jeśli zapis umowy jest niejasny, poproś o wyjaśnienie. Sama obecność podobnej trasy na zdjęciu reklamowym nie stanowi zgody na jej przejazd."
+      ],
+      [
+        "Sprawdź, co dzieje się po rezerwacji",
+        "Porównaj harmonogram wpłat, warunki zmiany terminu i zasady anulowania. Nie utożsamiaj możliwości wysłania prośby o zmianę z gwarancją jej przyjęcia. Sprawdź także, kto jest stroną umowy najmu, komu zgłasza się usterkę oraz jak wygląda obsługa poza godzinami pracy. Wskazówki dotyczące czytania warunków wynajmu zebrało [Europejskie Centrum Konsumenckie](https://konsument.gov.pl/wypozyczanie-samochodu-prawa-konsumenta/).\n\nPrzeczytaj zakres pomocy w razie unieruchomienia kampera. Interesuje Cię nie tylko holowanie, ale również podróż pozostałych osób, nocleg i dalsze postępowanie. Odpowiedzi powinny wynikać z dokumentów właściwych dla wybranego wynajmu. Nie dopowiadaj zakresu usługi na podstawie samej nazwy pakietu."
+      ],
+      [
+        "Oceń także organizację odbioru i zwrotu",
+        "Zapisz adres, godziny i przewidywany czas przekazania. Dowiedz się, czy możesz wcześniej obejrzeć pojazd, gdzie zostawić samochód oraz jakie przygotowanie jest wymagane przy zwrocie. Dwie godziny dodatkowego dojazdu w każdą stronę mają znaczenie przy krótkim wyjeździe, nawet jeśli nie pojawiają się w cenniku.\n\nOstatecznie wybierz dwie lub trzy oferty i porównaj je w jednym zestawieniu. W każdym wierszu wpisz: spełnione, niespełnione albo do wyjaśnienia. Puste pole nie oznacza automatycznie korzystnego warunku. Zanim zarezerwujesz, wyjaśnij właśnie te luki, które mogłyby zmienić wybór.\n\n**Twoja lista porównawcza:** pełna cena, osobna kaucja, układ wnętrza, wyposażenie, kilometry, kierowcy, kraje podróży, zmiany rezerwacji oraz odbiór i zwrot."
+      ]
+    ],
+    "asset": "guides/06-porownanie-ofert.webp"
+  },
+  {
+    "id": "kaucja-i-ubezpieczenie",
+    "title": "Kaucja i ubezpieczenie. O co zapytać przed wynajmem?",
+    "kind": "guide",
+    "desc": "„Ubezpieczenie w cenie” brzmi uspokajająco, ale nie wyjaśnia jeszcze, kto i w jakiej sytuacji pokryje koszt szkody. Podobnie kaucja nie mówi sama z siebie, ile może wynosić odpowiedzialność najemcy. Przed rezerwacją rozdziel te pojęcia i przeczytaj dokumenty właściwe dla wybranej oferty. Najbardziej przydatne są konkretne odpowiedzi dotyczące samochodu, sposobu jego używania i osób, które będą prowadzić.",
+    "body": [
+      [
+        "Kaucja zabezpiecza rozliczenie",
+        "Zapytaj o wysokość kaucji, sposób jej zabezpieczenia i moment, w którym musisz udostępnić środki. Firma może przewidywać określony rodzaj karty, blokadę lub inny uzgodniony sposób wpłaty. Potwierdź wymagania wobec właściciela karty i dostępnego limitu. Nie odkładaj tej rozmowy do chwili wydawania kluczyków.\n\nPrzeczytaj, jakie należności mogą być rozliczane z kaucji i na podstawie jakich dokumentów. Sprawdź też termin rozliczenia oraz różnicę między zwolnieniem blokady przez firmę a ponowną dostępnością środków w banku. Wysokości kaucji nie traktuj automatycznie jako maksymalnej odpowiedzialności za wszystkie możliwe zdarzenia; tę określają właściwe postanowienia umowy i przepisy."
+      ],
+      [
+        "Udział własny to inne pytanie",
+        "W dokumentach ochrony sprawdź, jaka część objętej nią szkody może pozostać do pokrycia przez najemcę. Ustal, czy wskazana kwota dotyczy jednego zdarzenia, kilku szkód czy całego okresu najmu. Zapytaj również, czy poszczególne rodzaje uszkodzeń mają różne zasady. Odpowiedź „jest pełne ubezpieczenie” nie zastępuje tych informacji.\n\nDla uporządkowania rozmowy możesz poprosić o przejście przez przykład: podczas manewrowania uszkadzasz element nadwozia. Kto przyjmuje zgłoszenie, jakie dokumenty są potrzebne, kto najpierw płaci i jak wyznacza się Twój udział? Nie chodzi o wymuszenie uniwersalnej wyceny szkody, tylko o zrozumienie procedury zapisanej w warunkach."
+      ],
+      [
+        "Sprawdź, jak działa dodatkowa ochrona",
+        "Produkt kupowany u pośrednika lub osobnego ubezpieczyciela może polegać na zwrocie określonych kosztów już pobranych przez wypożyczalnię. Z kolei oferta samej wypożyczalni może ograniczać udział własny według własnych warunków. Te mechanizmy nie są tożsame. Wyjaśnia je [Europejskie Centrum Konsumenckie](https://konsument.gov.pl/wypozyczanie-samochodu-prawa-konsumenta/).\n\nDlatego przed dokupieniem ochrony zapytaj, czy zmienia ona wysokość kaucji i sposób rozliczenia z firmą. Potwierdź, czy produkt obejmuje kampery lub przyczepy danego typu, a nie jedynie określoną kategorię samochodów. Zachowaj dokument polisy lub potwierdzenie ochrony razem z warunkami, które obowiązywały w chwili zakupu."
+      ],
+      [
+        "Czytaj zakres i wyłączenia",
+        "Przyjrzyj się elementom szczególnie istotnym w kamperze: dachowi, podwoziu, szybom, oponom, wnętrzu i wyposażeniu zewnętrznemu. Nie zakładaj ani tego, że wszystkie są objęte ochroną, ani że zawsze są wyłączone. Sprawdź dokładny zapis. Zapytaj też o szkody podczas używania markizy, bagażnika czy podnoszonego dachu.\n\nPorównaj warunki ochrony z własnym planem. Czy obejmują wszystkie kraje? Czy wymagają zgłoszenia dodatkowego kierowcy? Jak traktują kluczyki, zatankowanie niewłaściwego paliwa lub naruszenie zasad użytkowania? Jeśli dokument posługuje się niezrozumiałym terminem, poproś o objaśnienie odnoszące się do konkretnego punktu, zamiast przyjmować skrótowe zapewnienie."
+      ],
+      [
+        "Assistance nie oznacza każdego rodzaju pomocy",
+        "Dowiedz się, jak zamawia się pomoc i kto zatwierdza naprawę lub holowanie. Sprawdź limity dotyczące masy i gabarytów pojazdu, obszar terytorialny oraz sytuację pasażerów. Awaria części mieszkalnej może być obsługiwana inaczej niż awaria silnika. Warto to ustalić, zanim problem wystąpi wieczorem na kempingu.\n\nZapytaj o procedurę po godzinach pracy wypożyczalni. Zapisz numery, numer umowy lub polisy i sposób identyfikacji pojazdu. Nie zakładaj, że samochód zastępczy będzie kamperem o podobnym układzie albo że pomoc obejmuje automatycznie każdy koszt przerwanej podróży. Szukaj odpowiedzi w zakresie konkretnej usługi."
+      ],
+      [
+        "Dokumentacja zaczyna się przy odbiorze",
+        "Obejrzyj samochód razem z przedstawicielem firmy i porównaj jego stan z protokołem. Dopisz widoczne uszkodzenia, braki wyposażenia oraz niedziałające elementy. Zrób zdjęcia pokazujące zarówno detal, jak i jego położenie na pojeździe. Zachowaj kopię uzgodnionych dokumentów, żeby móc wrócić do nich podczas wyjazdu i zwrotu.\n\nJeżeli dojdzie do szkody, przestrzegaj terminów i procedury zgłoszenia z umowy oraz polisy. Przy rozliczeniu poproś o wskazanie podstawy i dokumentów obciążenia. Rzeczowy opis zdarzenia i komplet materiałów są bardziej użyteczne niż próba ustalenia wszystkiego z pamięci już po zakończeniu wynajmu.\n\n**Przed rezerwacją znajdź odpowiedź na pięć pytań:** ile środków zabezpieczasz, jaki jest udział własny, czego ochrona nie obejmuje, kto organizuje pomoc i jak wygląda udokumentowanie rozliczenia."
+      ]
+    ],
+    "asset": "guides/07-kaucja-i-ubezpieczenie.webp"
+  },
+  {
+    "id": "prawo-jazdy",
+    "title": "Jakie prawo jazdy na kampera lub przyczepę?",
+    "kind": "guide",
+    "desc": "Nie każdy kamper wymaga dodatkowej kategorii, ale nie każdy mieści się też w zwykłym B. Przy przyczepie znaczenie ma połączenie dwóch pojazdów. Odpowiedzi szukaj w dokumentach konkretnego egzemplarza, a nie w jego nazwie lub wielkości na zdjęciu. Poniżej porządkujemy podstawowe konfiguracje dla polskiego prawa jazdy. Stan informacji: 23 września 2026 r.",
+    "body": [
+      [
+        "Najpierw odczytaj DMC",
+        "Dopuszczalna masa całkowita to limit masy pojazdu wraz z osobami i ładunkiem. Znajdziesz ją w polu F.2 dowodu rejestracyjnego. To inna wartość niż masa własna albo aktualny wynik ważenia. Przy ustalaniu opisanych niżej uprawnień posługuj się DMC właściwych pojazdów.\n\nPoproś wypożyczalnię o tę wartość jeszcze przed wpłatą. Jeśli planujecie zmieniać się za kierownicą, sprawdź dokumenty każdej osoby. Warunki firmy, takie jak wymagany wiek lub staż posiadania prawa jazdy, są kolejnym, osobnym punktem. Samo posiadanie właściwej kategorii nie przesądza, że spełniasz wszystkie warunki danego wynajmu."
+      ],
+      [
+        "Kamper bez przyczepy",
+        "Dla typowego samochodu kempingowego o DMC nieprzekraczającej 3500 kg podstawą jest kategoria B. Kamper powyżej tego progu wymaga sprawdzenia odpowiednich uprawnień: C1 obejmuje pojazdy o DMC ponad 3,5 t do 7,5 t, a C pojazdy ponad 3,5 t, z wyłączeniem autobusów. Zakresy kategorii opisuje [Ministerstwo Infrastruktury](https://www.gov.pl/web/infrastruktura/kategorie-prawa-jazdy).\n\nNie wyciągaj wniosku z samej długości nadwozia. Dwa podobne kampery mogą mieć inne DMC. Nie opieraj też rezerwacji na zapowiedzi przyszłej zmiany przepisów lub wyjątkowym uprawnieniu dotyczącym innego rodzaju pojazdu. W nietypowej konfiguracji potwierdź aktualną podstawę prawną dla konkretnego samochodu i kierowcy."
+      ],
+      [
+        "Samochód z przyczepą: znaczenie ma rodzaj zestawu",
+        "Podstawowe konfiguracje kategorii B dotyczą samochodu o DMC do 3500 kg. Przyczepa lekka ma DMC do 750 kg włącznie. W takim zestawie samo B może wystarczyć nawet wtedy, gdy suma DMC przekroczy 3500 kg. Przy przyczepie innej niż lekka zwykłe B obejmuje zestaw, którego suma DMC nie przekracza 3500 kg.\n\nGdy przyczepa ma DMC ponad 750 kg, a suma DMC przekracza 3500 kg, lecz nie przekracza 4250 kg, odpowiednim uprawnieniem jest B z kodem 96. B+E obejmuje samochód z kategorii B wraz z przyczepą o DMC do 3500 kg. Te rozróżnienia przedstawia [Policja w Tarnowie](https://tarnow.policja.gov.pl/kt/ruch-drogowy/piatkowy-przepis/2259%2CPiatkowy-przepis-drogowy-Jaka-przyczepa-z-kategoria-B-prawa-jazdy.html). Kod 96 musi być uzyskany i wpisany do prawa jazdy; sama znajomość zasad nie rozszerza kategorii."
+      ],
+      [
+        "Trzy przykłady do samodzielnego przeliczenia",
+        "Auto o DMC 2200 kg i przyczepa o DMC 1200 kg dają 3400 kg. Z punktu widzenia opisanych kategorii wystarcza B. Jeśli przy tym samym aucie przyczepa ma DMC 1500 kg, suma wynosi 3700 kg i samo B już nie wystarcza; odpowiedni zakres ma B z kodem 96 lub B+E.\n\nTrzeci przykład: auto o DMC 3500 kg z przyczepą lekką o DMC 750 kg daje 4250 kg. W tej konfiguracji kategoria B obejmuje zestaw z przyczepą lekką. Właśnie dlatego reguła „powyżej 3,5 t zawsze potrzebujesz B+E” jest zbyt dużym uproszczeniem. Każdy przykład dotyczy wyłącznie uprawnień, a nie technicznej zgodności pojazdów."
+      ],
+      [
+        "Prawo jazdy nie zwiększa możliwości samochodu",
+        "Nawet B+E nie pozwala przekroczyć ograniczeń zapisanych dla auta, przyczepy czy haka. Oddzielnie trzeba sprawdzić dopuszczalne masy, obciążenia osi, nacisk na hak i pozostałe warunki producentów. Nie próbuj dopasować niezgodnego technicznie zestawu samą zmianą kategorii kierowcy.\n\nW drugą stronę również łatwo o błąd: ograniczenie ilości bagażu nie zmienia DMC wpisanej w dowodzie i nie naprawia brakujących uprawnień opartych na tej wartości. W razie wątpliwości pokaż komplet dokumentów osobie uprawnionej do ich oceny. Nie wystarczy zapewnienie, że auto „jeździło już z większą przyczepą”."
+      ],
+      [
+        "Przed wyjazdem sprawdź także warunki podróży",
+        "Ustal, czy wszyscy kierowcy są zgłoszeni w umowie i spełniają jej wymagania. Przy podróży zagranicznej sprawdź uznawanie dokumentów, potrzebne oryginały oraz ewentualne dodatkowe wymagania kraju docelowego i tranzytowego. Uprawnienia do kierowania, ograniczenia ruchu i opłaty drogowe to różne kwestie, które trzeba zweryfikować osobno.\n\n**Przed rezerwacją przygotuj:** DMC kampera albo obu pojazdów zestawu, rodzaj przyczepy, prawa jazdy wszystkich kierowców oraz planowane kraje podróży. Dzięki temu pytanie do wypożyczalni będzie miało jednoznaczny punkt wyjścia."
+      ]
+    ],
+    "asset": "guides/08-prawo-jazdy.webp"
+  },
+  {
+    "id": "co-zabrac",
+    "title": "Co zabrać do kampera, a co już jest na pokładzie?",
+    "kind": "guide",
+    "desc": "Najłatwiej spakować za dużo, kiedy nie wiadomo, co czeka w samochodzie. Drugi czajnik, zapas krzeseł i wielka walizka szybko zajmują przestrzeń potrzebną do codziennego życia. Zanim wyjmiesz torby z szafy, poproś wypożyczalnię o listę wyposażenia konkretnego pojazdu. Następnie przygotuj własną listę, uwzględniając liczbę osób, długość wyjazdu i sposób spędzania czasu.",
+    "body": [
+      [
+        "Podziel rzeczy na trzy grupy",
+        "Pierwsza grupa to wyposażenie potwierdzone w cenie wynajmu. Druga obejmuje dodatki, które chcesz zamówić. Trzecia to rzeczy zabierane z domu. Przy każdej pozycji zapisz liczbę sztuk i osobę odpowiedzialną za jej przygotowanie. Dzięki temu stół i krzesła nie pojawią się w bagażu podwójnie, a nikt nie założy, że ktoś inny spakował pościel.\n\nNie polegaj na ogólnych określeniach. „Wyposażona kuchnia” może oznaczać różny zestaw przedmiotów. Zapytaj o garnki, patelnię, nóż, deskę, sztućce i sposób parzenia kawy. Podobnie sprawdź, czy zestaw do spania obejmuje kołdrę, poduszkę, prześcieradło i poszewki. Liczy się konkretna lista, a nie zdjęcie nakrytego stolika."
+      ],
+      [
+        "Wybierz bagaż, który łatwo schować",
+        "Miękkie torby warto porównać z twardymi walizkami, bo po rozpakowaniu zwykle łatwiej znaleźć dla nich miejsce. Zanim jednak kupisz nowe, sprawdź wymiary schowków. Przemyśl, co musi być dostępne codziennie, a po co sięgniesz dopiero na dłuższym postoju. Kurtki i buty do deszczu nie powinny leżeć pod całym zapasem żywności.\n\nUbrania dobierz do prognozy i planowanych aktywności. Przy dłuższym wyjeździe sprawdź możliwość prania na trasie. Osobno przygotuj worek na brudne rzeczy i rozwiązanie do przechowywania mokrych butów. Nie musisz mieć zestawu na każdy możliwy scenariusz, jeśli wiesz, gdzie możesz uzupełnić podstawowe rzeczy po drodze."
+      ],
+      [
+        "Kuchnię zacznij od pierwszych posiłków",
+        "Zaplanuj kolację po odbiorze i śniadanie następnego dnia. Potem dopiero uzupełnij zapasy na dalszą część podróży. Sprawdź wielkość lodówki i dostępność sklepów przy pierwszym noclegu. Przydatne są pojemniki, które po opróżnieniu da się złożyć lub umieścić jeden w drugim, ale nie kupuj ich bez sprawdzenia dostępnego miejsca.\n\nProdukty i naczynia trzeba zabezpieczyć na czas jazdy zgodnie z układem schowków i instrukcją pojazdu. Ciężkie butelki nie powinny czekać luzem na blacie. Podczas odbioru zapytaj, jak blokuje się lodówkę, szuflady i stolik. Przygotowanie kuchni do drogi będzie powtarzać się częściej niż duże pakowanie przed urlopem."
+      ],
+      [
+        "Sprzęt techniczny uzgodnij z wypożyczalnią",
+        "Potwierdź, czy na pokładzie są przewód zasilający, właściwe przyłącza, wąż do świeżej wody i elementy do poziomowania. Nie dokupuj przypadkowych adapterów ani akcesoriów do instalacji gazowej. Odpowiedni zestaw zależy od pojazdu oraz miejsc, w których będzie używany. Poproś o pokazanie przeznaczenia wszystkich przekazywanych elementów.\n\nZ własnych rzeczy przygotuj ładowarki i niewielką latarkę, jeśli nie ma jej w wyposażeniu. Urządzenia wymagające dużej mocy omów przed wyjazdem. Zwykłe gniazdko w kamperze nie oznacza, że każdy sprzęt będzie działał w każdym trybie zasilania. Osobno potwierdź obecność wyposażenia awaryjnego i zapoznaj się z jego rozmieszczeniem."
+      ],
+      [
+        "Miejsce w szafce to nie jedyny limit",
+        "Licz się również z masą zabieranych przedmiotów. Woda, rowery, zapasy i wyposażenie dodatkowe wykorzystują dostępną ładowność. Poproś o informację dotyczącą konkretnego egzemplarza z zamówionymi dodatkami. Przy bagażnikach i schowkach sprawdź ich własne ograniczenia, nie tylko DMC całego samochodu.\n\nZwróć uwagę na mocowanie bagażu. Rzeczy potrzebne podczas przejazdu umieść w przeznaczonych do tego miejscach, dostępnych bez przemieszczania się po części mieszkalnej. Znaczenie zabezpieczenia wyposażenia pokazuje [badanie zderzeniowe kampera przeprowadzone przez ADAC](https://www.adac.de/reise-freizeit/ratgeber/tests/wohnmobil-crashtest/). W razie potrzeby zatrzymaj się, zanim zaczniesz wyjmować coś ze schowka."
+      ],
+      [
+        "Przygotuj mały zestaw na pierwszy wieczór",
+        "Do jednej łatwo dostępnej torby włóż rzeczy do spania, kosmetyki, ręcznik i ubranie na zmianę. Dokumenty, potrzebne leki i telefony trzymaj w znanym wszystkim dorosłym miejscu. Przy dzieciach lub zwierzęciu przygotuj osobny mały zestaw rzeczy, których możecie potrzebować od razu po przyjeździe.\n\nNa koniec usuń z listy przedmioty zabrane tylko dlatego, że „może się przydadzą”, jeśli nie umiesz wskazać ich zastosowania. Zostaw miejsce na wygodne poruszanie się i dostęp do rzeczy. Dobrze spakowany kamper pozwala szybko zacząć odpoczynek i równie sprawnie przygotować się do następnego przejazdu.\n\n**Przed zamknięciem torby sprawdź:** potwierdzony spis wyposażenia, pościel, pierwszy posiłek, ubrania na pogodę, dokumenty, leki, ładowarki i bezpieczne miejsce dla każdego większego przedmiotu."
+      ]
+    ],
+    "asset": "guides/09-co-zabrac.webp"
+  },
+  {
+    "id": "kamperem-z-dziecmi",
+    "title": "Kamperem z dziećmi. Co sprawdzić przed wyborem pojazdu?",
+    "kind": "guide",
+    "desc": "Rodzinny kamper powinien pasować do dwóch różnych sytuacji: podróży w zapiętych pasach i wspólnego życia podczas postoju. Duże łóżko albo dużo schowków rozwiązuje tylko część zadania. Przed rezerwacją przyjrzyj się miejscom do jazdy, możliwości montażu fotelików i temu, jak wygląda wnętrze po rozłożeniu spania. Dopiero później porównuj dodatki, które urozmaicą pobyt.",
+    "body": [
+      [
+        "Zacznij od fotelika i właściwego siedzenia",
+        "Podaj wypożyczalni wiek, wzrost dziecka i model fotelika, z którego chcecie korzystać. Poproś o informacje o siedzeniu, pasach oraz punktach mocowania. Sprawdź zgodność z instrukcją fotelika i samochodu. Sama obecność ISOFIX albo pasa nie rozstrzyga wszystkich wymagań montażowych. Jeżeli to możliwe, umów próbne dopasowanie przed dniem wyjazdu.\n\nNie traktuj łóżka jako miejsca dla dziecka podczas przejazdu. Podróż odbywa się na siedzeniach przeznaczonych do jazdy, z odpowiednim zabezpieczeniem. Problemy montażu fotelików w kamperach omawia [ADAC](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/kindersitze/kindersitzberater/kindersitz-bus-wohnmobil/). Jego wskazówki techniczne pomogą przygotować pytania do wypożyczalni. Wymagania prawne dotyczące przewozu dzieci sprawdź osobno dla Polski i każdego kraju na trasie, ponieważ opisane w niemieckim materiale wyjątki nie obowiązują automatycznie za granicą."
+      ],
+      [
+        "Sprawdź wieczór, kiedy dzieci już śpią",
+        "Obejrzyj układ nocny i ustal, gdzie śpi każda osoba. Czy trzeba przebudować stolik? Czy rodzic może nadal poruszać się po wnętrzu? Czy droga do toalety prowadzi przez miejsce, w którym ktoś leży? Takie pytania są szczególnie ważne, gdy dzieci i dorośli zasypiają o różnych porach.\n\nPrzy łóżkach wysoko umieszczonych sprawdź dopuszczalny sposób użytkowania, ograniczenia wieku lub masy i rozwiązania zabezpieczające przewidziane przez producenta. Nie zastępuj ich własnymi prowizorycznymi pomysłami. Poproś o pokazanie wejścia, barierki i drabinki. Wybierz układ, z którego dziecko może korzystać zgodnie z instrukcją i pod właściwą opieką."
+      ],
+      [
+        "Zaplanuj postoje pod Wasz rytm",
+        "Nie przenoś bez zmian planu podróży, który sprawdzał się w dwie osoby. Zostaw miejsce na odpoczynek, posiłki i zwykłe wyjście z samochodu. Długość odcinków dopasuj do wieku dziecka, jego potrzeb i zaleceń dotyczących używanego fotelika. Zmęczenie kierowcy również jest wystarczającym powodem, żeby skrócić etap.\n\nPrzygotuj dwa warianty dojazdu: planowany kemping i wcześniejszy punkt zakończenia jazdy. Unikaj sytuacji, w której jedyny zarezerwowany nocleg wymusza dalszą podróż mimo zmęczenia. Przestrzeń mieszkalna nie usuwa potrzeby postoju. Jeśli dziecko potrzebuje wyjść z fotelika, najpierw znajdź bezpieczne miejsce do zatrzymania."
+      ],
+      [
+        "Zobacz kemping oczami rodzica",
+        "Sprawdź odległość parceli od sanitariatów, ruch samochodów, dojście do placu zabaw i otoczenie zbiorników wodnych. Basen na zdjęciu nie mówi nic o zasadach korzystania, godzinach ani wymaganej opiece. Zapytaj też, czy teren ma miejsca zacienione i co można robić podczas deszczu.\n\nPrzy pierwszym pobycie wygodna może być jedna baza na kilka nocy. Dzieci poznają otoczenie, a dorośli nie muszą codziennie pakować części mieszkalnej. To propozycja do rozważenia, nie obowiązek. Jeżeli Wasza rodzina lubi ruch, połączcie krótsze przejazdy z dniami bez zmiany noclegu, zamiast układać napięty plan na cały tydzień."
+      ],
+      [
+        "Pakuj na codzienność, nie na każdą ewentualność",
+        "Wybierz kilka znanych rzeczy do snu i zabawy. Sprawdź, gdzie zmieszczą się wózek, nosidło lub rowerek i jak zostaną zamocowane podczas jazdy. Jedzenie, ubranie na zmianę i potrzebne środki higieniczne umieść tak, aby łatwo sięgnąć po nie po zatrzymaniu. Nie blokuj nimi wyjść ani przejścia.\n\nPrzygotuj małe zadanie dla dziecka odpowiednie do wieku: wybór książki, pilnowanie własnej torby lub zaznaczenie odwiedzonego miejsca na mapie. Czynności związane z gazem, zasilaniem, przemieszczaniem samochodu i obsługą techniczną zostaw dorosłym. Wspólne podróżowanie nie wymaga, żeby dziecko uczestniczyło w każdym etapie przygotowania pojazdu."
+      ],
+      [
+        "Ustal proste zasady na postoju",
+        "Po przyjeździe omów, gdzie można się poruszać i jak znaleźć Waszą parcelę. Podczas manewrowania jeden dorosły powinien wiedzieć, gdzie znajdują się dzieci; nie traktuj ich jako pomocników przy cofaniu. Przed każdym ruszeniem sprawdź miejsca pasażerów i schowanie luźnych rzeczy.\n\nPierwszy rodzinny wyjazd nie musi obejmować dalekiej trasy. Dobrym sprawdzianem jest kilka dni z wygodnym noclegiem i niewielką liczbą obowiązków. Po takim pobycie łatwiej ocenić, czy potrzebujecie większego schowka, innego łóżka albo po prostu spokojniejszego tempa."
+      ]
+    ],
+    "asset": "guides/10-kamperem-z-dziecmi.webp"
+  },
+  {
+    "id": "kamperem-z-psem",
+    "title": "Kamperem z psem. Jak przygotować wspólny wyjazd?",
+    "kind": "guide",
+    "desc": "Własne posłanie, znajomy człowiek obok i nowe miejsca do spacerów mogą dobrze pasować do podróży kamperem. Trzeba jednak wcześniej sprawdzić zgodę wypożyczalni, zasady kempingów i warunki przewozu. Plan powinien uwzględniać potrzeby psa przez cały dzień, także wtedy, gdy chcecie zwiedzić muzeum, zjeść w restauracji lub odpocząć podczas upału.",
+    "body": [
+      [
+        "Zgodę na psa potwierdź przed rezerwacją",
+        "Podaj wypożyczalni liczbę zwierząt, wielkość psa i plan podróży. Zapytaj o ograniczenia, dodatkową opłatę, wymagania dotyczące sprzątania oraz zabezpieczenia wnętrza. Zachowaj potwierdzenie uzgodnień. Nie zakładaj, że zgoda jednej firmy obejmuje wszystkie jej pojazdy, a zdjęcie psa w materiałach reklamowych zastępuje warunki konkretnej oferty.\n\nZasady noclegów sprawdź równie dokładnie. Kemping może przyjmować psy, ale mieć ograniczenia dotyczące wybranych stref, plaży albo liczby zwierząt na parceli. Ustal wymagane dokumenty i opłaty. Warto od razu zapytać o spokojne wyjście na spacer poza teren obiektu, szczególnie gdy podróżujesz z psem reagującym na duży ruch."
+      ],
+      [
+        "Przygotuj bezpieczne miejsce na czas jazdy",
+        "Dobierz sposób przewozu do psa i konkretnego pojazdu. Skonsultuj odpowiedni transporter lub system zabezpieczenia i sprawdź, gdzie można go prawidłowo zamocować. Nie improwizuj przy przypadkowej szafce ani przy mocowaniu, którego przeznaczenia nie znasz. Pies nie powinien przeszkadzać kierowcy i przemieszczać się swobodnie po części mieszkalnej podczas jazdy.\n\nPrzed dłuższą podróżą daj mu poznać nowe miejsce na postoju. Zabierz znane posłanie i spokojnie przećwicz wejście oraz wyjście. W drzwiach przygotuj smycz przed otwarciem, szczególnie na parkingu lub stacji. Nowe zapachy i ruch wokół samochodu mogą wywołać inną reakcję niż spokojne wyjście przed własnym domem."
+      ],
+      [
+        "Trasę ułóż z miejscami na przerwy",
+        "Zaplanuj postoje w miejscach, gdzie można bezpiecznie wyjść i napić się wody. Sam duży parking nie gwarantuje odpowiedniego otoczenia. Sprawdź, czy jest dostęp do cienia i spokojnego fragmentu terenu, a nie wyłącznie rozgrzany asfalt przy ruchliwej drodze. Długość etapów dopasuj do potrzeb zwierzęcia i kierowcy.\n\nNie planuj atrakcji, które wymagają pozostawienia psa w nagrzewającym się pojeździe. Uchylone okno nie jest planem opieki. Przy wysokiej temperaturze wybierz wspólną aktywność, podziel zwiedzanie między dorosłych lub zmień godzinę wyjścia. Jeżeli pies źle znosi przejazdy albo ma problemy zdrowotne, omów podróż z weterynarzem wcześniej, bez samodzielnego dobierania środków uspokajających."
+      ],
+      [
+        "Za granicą sprawdź dokumenty dla całej trasy",
+        "Przy standardowej prywatnej podróży z Polski do innego kraju UE podstawą są właściwe oznakowanie zwierzęcia, ważne szczepienie przeciw wściekliźnie i paszport. Szczegóły, wyjątki oraz dodatkowe wymagania wybranych kierunków opisuje [oficjalny serwis Your Europe](https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_pl.htm). Ważność szczepienia i terminy wymaganych czynności potwierdź z upoważnionym weterynarzem.\n\nUwzględnij kraje tranzytowe i powrót do UE, jeżeli wyjeżdżasz poza jej obszar. Nie sprawdzaj tylko kraju ostatniego noclegu. Osobne wymagania mogą dotyczyć promu lub innego przewoźnika. Zacznij te ustalenia odpowiednio wcześnie, ponieważ nie każdą formalność da się załatwić w dniu wyjazdu."
+      ],
+      [
+        "Spakuj rzeczy, z których pies korzysta na co dzień",
+        "Zabierz karmę, miski, wodę na drogę, smycz, zapasową obrożę lub szelki, woreczki i ręcznik. Przydadzą się także znane posłanie i dokumenty. Leki przewoź oraz podawaj według zaleceń weterynarza. Zapisz kontakt do lecznicy w rejonie pierwszego pobytu, zanim będzie potrzebny w pośpiechu.\n\nW kamperze wyznacz psu miejsce, które nie blokuje przejścia i nie utrudnia obsługi urządzeń. Zabezpieczenie tapicerki uzgodnij z wypożyczalnią. Po deszczowym spacerze osusz łapy i odłóż mokre rzeczy w przygotowane miejsce. Łatwiej utrzymać porządek małymi czynnościami niż próbować przywrócić wnętrze do wymaganego stanu tuż przed zwrotem."
+      ],
+      [
+        "Wybierz pobyt odpowiedni dla Was obojga",
+        "Spokojniejsza parcela i krótszy spacer mogą być lepszym wyborem niż najbardziej popularna atrakcja w okolicy. Obserwuj zachowanie psa, apetyt i chęć odpoczynku. Pierwsza podróż jest także sprawdzianem nowego rytmu. Zostaw możliwość skrócenia przejazdu lub pozostania dłużej w miejscu, w którym wszyscy dobrze się czują.\n\n**Przed ruszeniem sprawdź:** zgodę na psa, mocowanie do transportu, noclegi, dokumenty, wodę, plan przerw i opiekę podczas zwiedzania. Wspólny wyjazd działa najlepiej, gdy pies jest uwzględniony w planie od początku."
+      ]
+    ],
+    "asset": "guides/11-kamperem-z-psem.webp"
+  },
+  {
+    "id": "handover",
+    "title": "Odbiór kampera krok po kroku. Co sprawdzić przed ruszeniem?",
+    "kind": "guide",
+    "desc": "Odbiór kampera łączy trzy sprawy: oględziny samochodu, potwierdzenie wyposażenia i naukę obsługi części mieszkalnej. Warto zaplanować go bez pośpiechu. To właśnie wtedy najłatwiej wyjaśnić pytania i zapisać stan pojazdu wspólnie z wypożyczalnią. Kluczyki są jednym z elementów przekazania, a nie sygnałem, że wszystkie ustalenia zostały już zakończone.",
+    "body": [
+      [
+        "Przyjedź z dokumentami i zapasem czasu",
+        "Przed dniem odbioru potwierdź adres, godzinę, wymagane dokumenty oraz sposób zabezpieczenia kaucji. Ustal, czy wszyscy zgłoszeni kierowcy muszą być obecni. Sprawdź też, gdzie można zostawić własny samochód i kiedy zaczyna się instruktaż. Opóźnienie dojazdu zgłoś od razu, zamiast liczyć na to, że wydanie pojazdu automatycznie przesunie się na dowolną godzinę.\n\nPrzygotuj listę pytań z lektury oferty. Jeśli zamawiałeś dodatki, miej przy sobie ich zestawienie. Przed podpisaniem dokumentów porównaj dane pojazdu, termin, cenę oraz uzgodnione warunki. Niejasności łatwiej rozstrzygnąć na miejscu, kiedy obie strony widzą ten sam samochód i ten sam zestaw wyposażenia."
+      ],
+      [
+        "Obejrzyj nadwozie razem z przedstawicielem firmy",
+        "Obejdź pojazd i zwróć uwagę na zderzaki, boki, szyby, lusterka, koła oraz dostępne elementy zabudowy. Nie wspinaj się na dach ani wyposażenie, które nie jest do tego przeznaczone. Jeśli części samochodu nie można bezpiecznie obejrzeć, poproś firmę o odpowiednią dokumentację lub sposób sprawdzenia.\n\nWidoczne rysy, wgniecenia i inne nieprawidłowości wpiszcie do protokołu. Zdjęcia rób zarówno z bliska, jak i z odległości pokazującej położenie uszkodzenia. Wspólne oględziny i dokumentację zdjęciową zaleca [Europejskie Centrum Konsumenckie](https://konsument.gov.pl/wypozyczanie-samochodu-prawa-konsumenta/). Samo ustne „wiemy o tym” warto uzupełnić jednoznacznym zapisem."
+      ],
+      [
+        "Sprawdź kabinę i parametry do jazdy",
+        "Zapisz przebieg, poziom paliwa i inne uzgodnione stany początkowe. Ustaw fotel oraz lusterka. Zapytaj o wysokość, szerokość i długość samochodu w konfiguracji z zamontowanym wyposażeniem. Warto mieć te dane pod ręką do planowania trasy i oceny ograniczeń, zamiast próbować odtwarzać je z pamięci przed wiaduktem.\n\nPoznaj podstawowe funkcje samochodu, miejsce tankowania właściwego paliwa oraz procedury dotyczące innych płynów eksploatacyjnych. Sprawdź rozmieszczenie wyposażenia awaryjnego. W razie niepokojącego komunikatu lub widocznej usterki wyjaśnij sprawę przed wyjazdem. Nie przyjmuj obowiązku samodzielnej naprawy czegoś, czego działania nie rozumiesz."
+      ],
+      [
+        "Poproś o pokazanie codziennej obsługi",
+        "Przejdź po kolei przez zasilanie, wodę, ogrzewanie, lodówkę i toaletę. Dowiedz się, które urządzenia działają na postoju bez przyłącza oraz jak odczytuje się ich stan. Instruktaż powinien dotyczyć konkretnego modelu. Zakres przydatnych elementów przekazania opisuje również [ADAC w poradniku wynajmu kampera](https://www.adac.de/fahrzeugwelt/magazin/reise-freizeit/wohnmobil-mieten-tipps/).\n\nPod nadzorem wykonaj podstawowe czynności samodzielnie. Otwórz i zamknij odpowiednią klapkę, rozłóż łóżko, sprawdź blokady szuflad. Jeśli firma wyraża zgodę, nagraj krótkie instrukcje, skupiając kadr na urządzeniach. W samochodzie powinna być dostępna instrukcja lub wskazane miejsce, gdzie można ją znaleźć również przy ograniczonym zasięgu."
+      ],
+      [
+        "Policz wyposażenie i obejrzyj wnętrze",
+        "Porównaj stan rzeczy z listą: przewody, przyłącza, wąż, krzesła, stół, pościel i zamówione dodatki. Sprawdź ich liczbę oraz widoczne uszkodzenia. Zwróć uwagę na zamknięcia, moskitiery, rolety, materace i elementy łazienki. Ustal, jak będzie oceniane przygotowanie tych samych rzeczy przy zwrocie.\n\nZapytaj o używanie markizy, bagażnika lub podnoszonego dachu, jeśli są zamontowane. Ich obsługa zależy od instrukcji i warunków. Nie zakładaj, że można zostawić rozłożone wyposażenie bez nadzoru albo podczas dowolnej pogody. Jeżeli czegoś nie planujesz używać, nadal dowiedz się, jak potwierdzić bezpieczne zabezpieczenie na czas jazdy."
+      ],
+      [
+        "Zakończ odbiór krótkim podsumowaniem",
+        "Sprawdź, czy masz kopię protokołu, umowę, potrzebne dokumenty i kontakty do wypożyczalni oraz assistance. Ustal sposób zgłaszania usterek i wymagane działania w razie szkody. Potwierdź godzinę oraz miejsce zwrotu, zasady dotyczące paliwa, sprzątania i zbiorników. Zapisz odpowiedzi przy właściwych punktach swojej listy.\n\nPrzed ruszeniem wykonaj ostatnie obejście: schowane elementy zewnętrzne, zamknięte klapy, odłączone przyłącza i zabezpieczony bagaż. Wszyscy pasażerowie zajmują miejsca przeznaczone do jazdy. Jeśli pozostaje pytanie dotyczące podstawowej obsługi, wróć z nim do osoby wydającej pojazd. Kilka minut wyjaśnienia na placu jest częścią dobrze przeprowadzonego odbioru."
+      ]
+    ],
+    "asset": "guides/12-odbior-kampera.webp"
+  },
+  {
+    "id": "woda-prad-toaleta",
+    "title": "Woda, prąd i toaleta w kamperze. Podstawy przed pierwszą nocą",
+    "kind": "guide",
+    "desc": "Po przyjeździe na pierwszy kemping chcesz zrobić herbatę, umyć ręce i włączyć światło. Zanim te czynności staną się zwyczajne, warto poznać instalacje wynajętego kampera. Nie trzeba uczyć się ich budowy. Potrzebujesz wiedzieć, skąd urządzenia czerpią zasilanie, jak sprawdzić stan zasobów i które czynności wykonujesz samodzielnie według instrukcji wypożyczalni.",
+    "body": [
+      [
+        "Poznaj panel, zanim wyjedziesz z placu",
+        "Poproś o pokazanie głównego włącznika części mieszkalnej, wskaźników wody i akumulatora oraz sterowania ogrzewaniem. Zapisz, które funkcje mają osobne przełączniki. Nie zakładaj, że panel w kolejnym wynajmowanym pojeździe działa tak samo jak poprzedni. Ikony i komunikaty mogą wyglądać podobnie, ale odpowiadać innym funkcjom.\n\nPodczas instruktażu wykonaj samodzielnie kilka podstawowych czynności. Włącz oświetlenie, sprawdź odczyty i poproś o wyjaśnienie normalnego zachowania urządzeń. Dowiedz się, gdzie znajdziesz instrukcje i kontakt w przypadku błędu. Zamiast zapamiętywać cały pokaz, przygotuj krótką notatkę z kolejnością działań dla danego samochodu."
+      ],
+      [
+        "Rozdziel świeżą wodę i wodę zużytą",
+        "Ustal, gdzie napełnia się zbiornik świeżej wody i jak rozpoznać właściwy punkt poboru. Używaj przeznaczonego do tego czystego węża lub pojemnika. Nie myl kranu do uzupełniania wody z miejscem płukania kaset sanitarnych. O przydatność wody do picia pytaj zarządcę punktu i wypożyczalnię; na początek możesz mieć osobny zapas wody pitnej.\n\nWoda ze zlewu i prysznica zwykle trafia do zbiornika wody szarej. Dowiedz się, jak sprawdzać jego stan i gdzie przewidziano opróżnianie. Korzystaj z oznaczonego punktu przeznaczonego do tego celu. Nie wypuszczaj wody na parcelę, pobocze ani do przypadkowej kratki. Przy pierwszym serwisie poproś obsługę kempingu o wskazanie właściwego miejsca."
+      ],
+      [
+        "Ustal, co działa bez przyłącza",
+        "W części mieszkalnej mogą występować różne źródła zasilania, w tym akumulator i przyłącze zewnętrzne. Działająca lampka nie dowodzi, że w gniazdku dostępne jest zasilanie odpowiednie dla czajnika lub suszarki. Potwierdź z wypożyczalnią sposób pracy gniazd i urządzeń w każdym trybie, również wtedy, gdy samochód ma przetwornicę.\n\nSprawdź przewidzianą moc i ograniczenia przyłącza na kempingu. Podłączanie wykonuj zgodnie z instrukcją, używając właściwego, sprawnego przewodu i złączy. Nie naprawiaj instalacji prowizorycznie i nie obchodź zabezpieczeń. Jeśli zasilanie przestaje działać, najpierw ustal z obsługą lub wypożyczalnią, co można bezpiecznie sprawdzić w danym modelu."
+      ],
+      [
+        "Toaleta potrzebuje osobnego punktu obsługi",
+        "Jeżeli pojazd ma toaletę kasetową, poproś o pokazanie wyjmowania i wkładania zbiornika oraz odczytu jego napełnienia. Kasetę opróżnia się w wyznaczonym punkcie odbioru nieczystości. Takie przeznaczenie opisuje również [producent toalet Thetford](https://www.thetford.com/int/inspiration/top-10-questions-about-the-cassette-toilet/). Punkt do wody szarej nie musi być tym samym miejscem.\n\nDobór środków i ich dawkowanie oprzyj na instrukcji konkretnej toalety, etykiecie produktu i wymaganiach punktu odbioru. Nie mieszaj przypadkowych preparatów. Zapytaj, co przekazuje wypożyczalnia i czego oczekuje przy zwrocie. Po obsłudze zachowaj higienę, a akcesoria sanitarne przechowuj oddzielnie od rzeczy do świeżej wody i przygotowywania posiłków."
+      ],
+      [
+        "Ogrzewanie i lodówkę poznaj w swoim modelu",
+        "Urządzenia mogą mieć różne tryby pracy i zależności od dostępnego zasilania. Nie stosuj jednej ogólnej instrukcji dla wszystkich samochodów. Zapytaj, co można używać podczas jazdy, co na postoju i jakie warunki muszą być spełnione. Ta sama nazwa funkcji w dwóch kamperach nie gwarantuje identycznej instalacji.\n\nNie zasłaniaj przewidzianych otworów wentylacyjnych i nie wykorzystuj kuchenki do ogrzewania wnętrza. Jeśli czujesz gaz, pojawia się dym lub alarm, przerwij korzystanie z urządzenia, opuść zagrożone miejsce i wezwij odpowiednią pomoc. Obsługę instalacji gazowej i reakcję na jej nieprawidłowości trzeba omówić z wypożyczalnią podczas przekazania pojazdu."
+      ],
+      [
+        "Wprowadź krótki rytuał na postoju",
+        "Po przyjeździe sprawdź wodę, energię i stan zbiorników. Zorientuj się, kiedy działa punkt serwisowy oraz jak się do niego dojeżdża. Nie czekaj z pierwszym pytaniem do chwili, gdy zabraknie zasobów późnym wieczorem. Część czynności wygodniej wykonać przed pełnym urządzeniem parceli.\n\nPrzed ruszeniem przejdź kolejność właściwą dla pojazdu: zakończenie korzystania z przyłączy, schowanie przewodów i akcesoriów, zamknięcie klap oraz zabezpieczenie wnętrza. Po kilku postojach będzie to zwykła część podróży. Najważniejsze, żeby od początku mieć jasny sposób działania, zamiast odgadywać przeznaczenie kolejnych przycisków."
+      ]
+    ],
+    "asset": "guides/13-woda-prad-toaleta.webp"
+  },
+  {
+    "id": "wybor-kempingu",
+    "title": "Jak wybrać kemping na pierwszy wyjazd?",
+    "kind": "guide",
+    "desc": "Zdjęcie parceli nad jeziorem może wystarczyć, żeby zapisać miejsce na liście marzeń. Do pierwszej rezerwacji potrzebujesz jednak kilku dodatkowych informacji: jak dojechać, do której godziny można przyjechać i z czego rzeczywiście skorzystasz na miejscu. Dobry pierwszy kemping powinien odpowiadać potrzebom Waszej ekipy oraz wynajętego pojazdu. Liczba atrakcji w ofercie jest dopiero kolejnym kryterium.",
+    "body": [
+      [
+        "Zacznij od dostępności w swoim terminie",
+        "Sprawdź daty otwarcia obiektu i zasady rezerwacji. Miejsce może działać sezonowo, a część usług być dostępna tylko w wybranych miesiącach. Nie wyciągaj wniosku z samej obecności strony internetowej lub zeszłorocznej opinii. Potwierdzenie dla dokładnych dat jest szczególnie ważne przy wyjeździe poza sezonem.\n\nZapytaj o godzinę zamknięcia recepcji i możliwość późnego wjazdu. Ustal, co zrobić w razie opóźnienia oraz czy poza godzinami pracy dostępny jest kontakt. Jeżeli po odbiorze kampera planujesz dopiero dłuższy przejazd, wybierz taki nocleg, którego zasady przyjazdu faktycznie pasują do planu dnia."
+      ],
+      [
+        "Podaj gabaryty pojazdu, nie tylko jego nazwę",
+        "Przy rezerwacji potwierdź długość samochodu lub zestawu, potrzebną szerokość i ewentualne wyposażenie wystające poza nadwozie. Zapytaj, czy wskazana parcela je pomieści i czy dojazd nie ma istotnych ograniczeń. Zwróć uwagę na szerokość bramy, ostre zakręty, gałęzie i rodzaj nawierzchni.\n\nPrzy przyczepie dopytaj o możliwość manewrowania i miejsce dla samochodu po odłączeniu zestawu. Przy pierwszym wyjeździe warto wybrać parcelę z łatwym dostępem, nawet jeśli znajduje się kilka kroków dalej od jeziora. Po deszczu sprawdź z obsługą stan podłoża. Zdjęcie suchej trawy nie mówi, jak zachowa się ona przy większym obciążeniu."
+      ],
+      [
+        "Porównaj infrastrukturę potrzebną na co dzień",
+        "Zapisz, czy potrzebujesz prądu, sanitariatów, świeżej wody, punktu opróżniania zbiorników lub pralni. Ustal, co jest przy parceli, a co w części wspólnej. Sprawdź odległości, godziny działania i ewentualne dodatkowe opłaty. Ogólna ikona „serwis kamperów” może wymagać doprecyzowania dostępnych czynności.\n\nJeżeli będziecie korzystać z pryszniców na miejscu, obejrzyj ich aktualne zdjęcia i opinie dotyczące czystości. Przy ograniczonej mobilności zapytaj o konkretną trasę dojścia, progi i dostępne wyposażenie. Nie zakładaj, że deklaracja dostępności oznacza odpowiednie warunki dla każdej osoby. Najlepiej opisać gospodarzowi rzeczywiste potrzeby."
+      ],
+      [
+        "Sprawdź, co zawiera cena",
+        "Porównuj koszt całego pobytu dla swojej ekipy. Cennik może rozdzielać parcelę, pojazd, osoby, prąd i inne składniki. Ustal zasady naliczania dzieci, pobytu psa oraz opłat miejscowych, jeśli występują. Dowiedz się również, jak liczona jest doba i kiedy trzeba opuścić miejsce.\n\nPrzeczytaj warunki wpłaty, anulowania i skrócenia pobytu. Jeśli rezerwujesz określony typ parceli, zapytaj, czy jej numer jest gwarantowany, czy przydzielany na miejscu. To może mieć znaczenie, kiedy zależy Ci na cieniu, bliskości sanitariatów lub spokojniejszej części obiektu. Zachowaj potwierdzenie uzgodnionych warunków."
+      ],
+      [
+        "Wybierz otoczenie odpowiadające Waszej ekipie",
+        "Rodzina z małymi dziećmi, para szukająca ciszy i osoba podróżująca z psem mogą inaczej ocenić ten sam obiekt. Zastanów się, jak spędzicie dzień bez ruszania pojazdu. Sprawdź dostęp do spacerów, sklepu lub komunikacji, ale też ruch na drogach wewnętrznych i położenie parceli względem miejsc wieczornych spotkań.\n\nPrzy psie potwierdź zasady dotyczące smyczy i dozwolonych stref. Przy dzieciach sprawdź drogę do placu zabaw lub wody i zaplanuj opiekę. Udogodnienie widoczne na zdjęciu nie oznacza, że będzie dostępne bez ograniczeń, bezpłatnie albo w terminie Waszego pobytu. Lepiej ustalić to przed przyjazdem."
+      ],
+      [
+        "Czytaj opinie przez pryzmat konkretnego pytania",
+        "Zamiast zatrzymywać się na średniej ocenie, szukaj opisów spraw, które mają dla Ciebie znaczenie: ciszy, dojazdu, sanitariatów i działania przyłączy. Zwróć uwagę na daty oraz porę roku. Recenzja pobytu namiotowego nie zawsze odpowie na pytanie o manewrowanie dużym kamperem.\n\nNa pierwszy nocleg wybierz miejsce z jasnymi informacjami i możliwością zadania pytań obsłudze. Przygotuj także alternatywę na wypadek zmiany planów. Nie musi mieć wszystkich tych samych atrakcji; powinna umożliwiać bezpieczny dojazd i pobyt na potwierdzonych zasadach. Mając takie zaplecze, łatwiej korzystać ze swobody, dla której wybierasz podróż kamperem.\n\n**Przed rezerwacją potwierdź:** otwarcie w terminie, godzinę przyjazdu, gabaryty parceli, dojazd, potrzebne udogodnienia, całkowitą cenę i zasady zmiany pobytu."
+      ]
+    ],
+    "asset": "guides/14-wybor-kempingu.webp"
+  },
+  {
+    "id": "parking-czy-kemping",
+    "title": "Parking, miejsce postojowe czy kemping? Jak zaplanować nocleg?",
+    "kind": "guide",
+    "desc": "Punkt na mapie może oznaczać zwykły parking, miejsce dla kamperów albo kemping z pełną obsługą. Każdy z nich może mieć inne zasady i wyposażenie. Zanim wpiszesz lokalizację jako nocleg, ustal, kto zarządza terenem, jakie postoje dopuszcza i czy możesz tam spędzić noc w pojeździe. Sam fakt, że inni już tam stali, nie rozstrzyga aktualnych warunków.",
+    "body": [
+      [
+        "Traktuj nazwę miejsca jako początek sprawdzania",
+        "Kemping zwykle oferuje pobyt według regulaminu obiektu i określony zakres usług. Dedykowane miejsce postojowe dla kamperów może mieć tylko parking oraz podstawowy punkt serwisowy. Zwykły parking bywa przeznaczony do krótkiego pozostawienia pojazdu i nie musi oferować żadnej infrastruktury związanej z podróżą kamperem.\n\nNie zakładaj jednak uniwersalnego wyposażenia na podstawie nazwy. Sprawdź konkretną lokalizację: możliwość nocowania, limit czasu, opłaty, dostęp do wody, toalet i odbioru nieczystości. W opisach aplikacji bywają używane różne określenia. Dla Ciebie ważniejsze jest to, co dopuszcza zarządca i co faktycznie działa w dniu przyjazdu."
+      ],
+      [
+        "Oddziel parkowanie od korzystania z przestrzeni wokół",
+        "Pozostawienie pojazdu w dozwolonym miejscu nie oznacza automatycznej zgody na rozłożenie markizy, ustawienie krzeseł lub korzystanie z grilla. Przed takim urządzeniem postoju sprawdź regulamin i zasady danego terenu. Także możliwość nocowania wewnątrz samochodu warto potwierdzić osobno, zamiast wywodzić ją wyłącznie ze znaku parkingowego.\n\nZnaczenie mają przepisy lokalne, oznakowanie i charakter miejsca. Nie ma jednej praktycznej odpowiedzi obejmującej wszystkie parkingi w Polsce i za granicą. Jeżeli nie znajdujesz jednoznacznej informacji, skontaktuj się z zarządcą lub wybierz obiekt, który wprost przewiduje nocleg kamperów. To rozsądniejsze niż interpretowanie braku zakazu jako pełnej zgody."
+      ],
+      [
+        "W lesie sprawdź także możliwość wjazdu",
+        "Leśna droga widoczna na mapie nie musi być otwarta dla ruchu samochodowego. Lasy Państwowe przypominają, że na drogi leśne można wjeżdżać wtedy, gdy są oznakowane jako dopuszczone do ruchu; opisują to m.in. [materiały Nadleśnictwa Olkusz](https://olkusz.katowice.lasy.gov.pl/program-zanocuj-w-lesie-/-/asset_publisher/x9eK/content/akcja-majowka-25-). Otwartą bramę lub brak szlabanu traktuj jako obserwację, nie zezwolenie.\n\nProgram „Zanocuj w lesie” dotyczy określonych zasad pobytu w wyznaczonych obszarach i nie jest ogólną zgodą na wjazd kamperem. Przed wybraniem takiego punktu sprawdź [zasady programu w Lasach Państwowych](https://www.lasy.gov.pl/pl/turystyka/program-zanocuj-w-lesie/pytania-dotyczace-programu) oraz informacje właściwego nadleśnictwa. Osobno uwzględnij ograniczenia dotyczące parków narodowych, rezerwatów i czasowych zakazów wstępu."
+      ],
+      [
+        "Obejrzyj dojazd, zanim zrobi się ciemno",
+        "Sprawdź szerokość drogi, dopuszczalne gabaryty, nawierzchnię i możliwość zawrócenia. Przy przyczepie ocena powinna dotyczyć całego zestawu. Nie wjeżdżaj w wąski, nieznany odcinek tylko dlatego, że aplikacja wskazuje tam najkrótszy dojazd. Jeśli nie możesz potwierdzić warunków, zatrzymaj się wcześniej w dozwolonym miejscu i wyjaśnij trasę.\n\nNa miejscu oceń otoczenie i podłoże. Zwróć uwagę na pochylenie, ślady zalewania, ruch pojazdów i możliwość wyjazdu po pogorszeniu pogody. Nie zastawiaj przejazdów, bram ani dostępu służb. Nawet dozwolone miejsce może nie odpowiadać potrzebom Waszej ekipy lub konkretnego pojazdu. Możliwość zmiany decyzji jest częścią planowania."
+      ],
+      [
+        "Zasoby i nieczystości zaplanuj osobno",
+        "Przed noclegiem bez infrastruktury sprawdź zasób wody, energii i wolne miejsce w zbiornikach. Czas, przez jaki możecie korzystać z pojazdu bez serwisu, zależy od wyposażenia oraz zużycia. Nie zakładaj uniwersalnej liczby dni. W razie potrzeby odwiedź punkt obsługi jeszcze przed przyjazdem.\n\nNie opróżniaj kasety ani zbiornika wody szarej do przypadkowego odpływu lub na ziemię. Znajdź punkt przeznaczony do konkretnego rodzaju nieczystości i stosuj jego zasady. Sposób korzystania z kasety opisuje [Thetford](https://www.thetford.com/int/bathroom/cassette-toilets/). Śmieci zabierz ze sobą, jeśli nie ma odpowiednich pojemników lub nie możesz z nich korzystać."
+      ],
+      [
+        "Miej zapisany drugi nocleg",
+        "Wybierz alternatywę dostępną w rozsądnej odległości i sprawdź godzinę przyjazdu. Rezerwowe miejsce przydaje się, kiedy parking jest pełny, regulamin się zmienił albo podłoże po deszczu budzi wątpliwości. Nie odkładaj całego poszukiwania do późnego wieczoru, gdy wszyscy są już zmęczeni.\n\n**Przed zatrzymaniem na noc potwierdź:** legalny dojazd, zasady postoju i nocowania, dopuszczone zachowania na zewnątrz, gabaryty, opłatę, dostęp do potrzebnych usług i możliwość spokojnego wyjazdu rano."
+      ]
+    ],
+    "asset": "guides/15-parking-czy-kemping.webp"
+  },
+  {
+    "id": "planowanie-trasy",
+    "title": "Jak zaplanować trasę kamperem i zostawić czas na odpoczynek?",
+    "kind": "guide",
+    "desc": "Na mapie kilka miejsc połączonych linią wygląda jak gotowa podróż. W rzeczywistości pomiędzy nimi mieszczą się odbiór samochodu, zakupy, postoje, przygotowanie noclegu i zwykła ochota, żeby zostać dłużej. Dobra trasa uwzględnia te czynności od początku. Nie musisz rezygnować z ciekawych miejsc. Warto tylko zdecydować, które są celem wyjazdu, a które mogą poczekać na inną okazję.",
+    "body": [
+      [
+        "Wybierz najważniejsze miejsca",
+        "Z całej listy wybierz dwa lub trzy punkty, na których najbardziej Wam zależy. Następnie sprawdź, czy można połączyć je w trasę bez codziennego pośpiechu. Jeżeli jeden z nich wymaga dużego objazdu, policz nie tylko kilometry, ale także dodatkowy dzień podróży, nocleg i koszty przejazdu.\n\nPozostałe atrakcje potraktuj jako możliwości. Zapisz je na mapie, ale nie buduj wokół każdej sztywnego obowiązku. W kamperze szczególnie przyjemny bywa dzień, kiedy nie trzeba nigdzie ruszać. Wybór jednej bazy na kilka nocy może dać więcej czasu na okolicę niż codzienna zmiana miejsca zamieszkania."
+      ],
+      [
+        "Do czasu jazdy dodaj prawdziwy dzień podróży",
+        "Prognoza nawigacji nie obejmuje wszystkich przerw, zakupów ani czasu potrzebnego na rozłożenie postoju. Zapisz osobno porę wyjazdu, przejazd, planowane przerwy i najpóźniejszy przyjazd na nocleg. Przy dzieciach, psie lub pierwszym wynajmie zostaw więcej przestrzeni na czynności, których tempa jeszcze nie znacie.\n\nNie narzucaj sobie jednak jednej uniwersalnej liczby kilometrów na dobę. Sto kilometrów lokalnymi drogami może wymagać innego wysiłku niż dłuższy odcinek prostą trasą. Oceniaj warunki, doświadczenie kierowcy i samopoczucie. Jeśli plan działa tylko przy pominięciu wszystkich przerw, potrzebuje zmiany jeszcze przed wyjazdem."
+      ],
+      [
+        "Dopasuj drogę do gabarytów",
+        "Przed ruszeniem zapisz wysokość, szerokość, długość i właściwe dane masowe pojazdu lub zestawu. Uwzględnij bagażnik oraz zamontowane wyposażenie. W aplikacji, która obsługuje profile kampera, wprowadź prawidłowe wartości. Nadal obserwuj oznakowanie: trasa zaproponowana przez urządzenie nie zastępuje znaków i bieżących ograniczeń.\n\nNajdokładniej obejrzyj ostatni odcinek do kempingu. To tam mogą pojawić się wąskie bramy, ostre zakręty lub droga o nieodpowiedniej nawierzchni. Zapytaj gospodarza o zalecany dojazd dla Waszego pojazdu. Przy promach i tunelach potwierdź warunki przewozu, kategorię taryfową i ewentualne wymagania wobec wyposażenia."
+      ],
+      [
+        "Zostaw lekki początek i spokojny powrót",
+        "Pierwszy dzień obejmuje dojazd do wypożyczalni, formalności, oględziny i instruktaż. Nie wpisuj w plan czasu przejazdu tak, jakbyś ruszał własnym autem spod domu. Krótki etap po odbiorze pozwala sprawdzić ustawienie fotela, sposób pakowania i podstawową obsługę na postoju.\n\nOstatni dzień również potrzebuje zapasu. Zwracany pojazd może wymagać tankowania, opróżnienia zbiorników i uporządkowania wnętrza. Zaplanuj nocleg w odległości pozwalającej dotrzeć do firmy bez nerwowego odliczania minut. Jeżeli termin oddania jest wczesny, część przygotowania wykonaj poprzedniego wieczoru, zgodnie z warunkami wynajmu."
+      ],
+      [
+        "Serwis kampera wpisz w trasę",
+        "Sprawdź, gdzie uzupełnisz świeżą wodę, opróżnisz właściwe zbiorniki i skorzystasz z zasilania, jeśli będzie potrzebne. Połącz to z naturalnym przejazdem między noclegami. Nie zakładaj, że każda stacja paliw lub każdy parking ma odpowiednią infrastrukturę. Potwierdź także dostępność punktu w dniu i godzinie przyjazdu.\n\nZapisz najważniejsze informacje poza samą listą zakładek: adres, współrzędne wjazdu, numer telefonu i zasady obsługi. Pobierz mapę lub notatkę do użycia bez zasięgu. Przy pierwszym wyjeździe takie przygotowanie pozwala poświęcić uwagę samej obsłudze, zamiast jednocześnie szukać instrukcji i miejsca na nocleg."
+      ],
+      [
+        "Przygotuj wariant krótszy",
+        "Załóżmy, że planujesz trzy noclegi w różnych miejscach. Zastanów się, co zmienisz, jeśli po drugim zechcecie zostać dłużej. Którą atrakcję odpuścicie, jakie rezerwacje można zmienić i czy zmieścicie się w warunkach wynajmu? Elastyczność jest realna dopiero wtedy, gdy wiesz, które elementy planu są sztywne.\n\nPrzed każdym kolejnym etapem sprawdź pogodę, warunki dojazdu i dostępność noclegu. Krótsza droga nie zawsze jest właściwym wyborem, a późniejszy wyjazd nie musi oznaczać nieudanego dnia. Trasa ma zostawiać miejsce na odpoczynek, a nie wymagać od wszystkich podróżnych ciągłego nadrabiania harmonogramu.\n\n**Na jednej stronie planu zapisz:** główne cele, noclegi, ograniczenia dojazdu, punkty serwisowe, warunki rezerwacji i wariant skrócenia trasy. Resztę można dopisać po drodze."
+      ]
+    ],
+    "asset": "guides/16-planowanie-trasy.webp"
+  },
+  {
+    "id": "kamperem-za-granice",
+    "title": "Wynajętym kamperem za granicę. Co sprawdzić przed wyjazdem?",
+    "kind": "guide",
+    "desc": "Przy podróży zagranicznej wybór trasy i noclegów to dopiero część przygotowań. Trzeba też potwierdzić zgodę wypożyczalni, dokumenty, zakres ochrony i sposób naliczania opłat. Najwygodniej przejść te sprawy kraj po kraju, uwzględniając tranzyt oraz powrót. Dzięki temu formalności odpowiadają rzeczywistej podróży, a nie tylko miejscu, w którym planujesz spędzić najwięcej czasu.",
+    "body": [
+      [
+        "Zacznij od zgody na całą trasę",
+        "Przed rezerwacją podaj wypożyczalni planowane kraje i zapytaj, czy obejmują je warunki najmu. Ustal także zasady przepraw promowych, wyjazdów poza UE oraz ewentualnych ograniczeń obszarowych. Potwierdzenie zachowaj z dokumentami. Sam brak szlabanu na granicy nie oznacza, że umowa dopuszcza przejazd.\n\nO konieczności wcześniejszego poinformowania firmy o podróży wynajętym samochodem do innych krajów przypomina [serwis Your Europe](https://europa.eu/youreurope/citizens/travel/driving-abroad/car-rental-abroad/index_pl.htm). Jeśli trasa zmieni się już podczas wyjazdu, uzgodnij nowy kierunek przed przekroczeniem granicy. Nie zakładaj, że zgoda dotycząca jednego kraju automatycznie rozszerza się na sąsiednie."
+      ],
+      [
+        "Dokumenty sprawdź dla osób i pojazdu",
+        "Potwierdź dokumenty podróży wszystkich uczestników, także dzieci, oraz ich ważność. Dla każdego kraju sprawdź wymagania wjazdu i pobytu w [informacjach MSZ dla podróżujących](https://www.gov.pl/web/dyplomacja/informacje-dla-podrozujacych). Nie opieraj przygotowań wyłącznie na doświadczeniu znajomego z poprzedniego roku. Zasady mogą zależeć również od obywatelstwa i indywidualnej sytuacji podróżnego.\n\nZ wypożyczalnią ustal komplet dokumentów samochodu, potwierdzenia ubezpieczenia i upoważnienia do użytkowania, jeśli będzie wymagane. Zapytaj, co otrzymasz w oryginale i co warto mieć w kopii. Nie zakładaj, że dokument dostępny wyłącznie w polskiej aplikacji zastąpi dokument wymagany przez zagraniczne służby lub operatora przeprawy."
+      ],
+      [
+        "Sprawdź ochronę także w krajach tranzytowych",
+        "Przeczytaj obszar działania ubezpieczenia i assistance. Ustal, gdzie zgłaszać awarię, kto zamawia holowanie i jaki zakres pomocy dotyczy pasażerów. Zapytaj o ograniczenia wynikające z masy oraz gabarytów kampera. Nie wystarczy sama informacja, że pakiet działa „w Europie”, jeśli dokumenty zawierają dodatkowe warunki.\n\nOsobno zaplanuj ochronę podróżnych i dostęp do pomocy medycznej odpowiedni do kierunku. Ubezpieczenie samochodu nie odpowiada automatycznie na te potrzeby. Jeśli zabierasz psa, sprawdź jego dokumenty i wymagania dla wszystkich państw na trasie, w tym ewentualnego powrotu do UE po pobycie poza jej granicami."
+      ],
+      [
+        "Opłaty dobierz do konkretnego kampera",
+        "Zapisz dane potrzebne operatorom dróg: numer rejestracyjny, właściwą kategorię, masę i inne parametry wymagane w danym systemie. Nie kopiuj kategorii opłat z własnego samochodu osobowego. W zależności od kraju znaczenie mogą mieć odmienne cechy pojazdu, dlatego każdy system sprawdź na stronie jego operatora.\n\nPrzy winiecie elektronicznej skontroluj numer rejestracyjny, kraj rejestracji, termin rozpoczęcia i potwierdzenie ważności. Przy promie podaj gabaryty wraz z wyposażeniem wystającym poza nadwozie. Opłata za autostradę, przeprawę i wjazd do określonej strefy może dotyczyć różnych rzeczy. Nie zakładaj, że jeden zakup obejmuje cały przejazd."
+      ],
+      [
+        "Przepisy drogowe sprawdzaj przed granicą",
+        "Ustal ograniczenia prędkości właściwe dla pojazdu lub zestawu, wymagane wyposażenie i zasady dotyczące warunków zimowych. Sprawdź także strefy ograniczonego wjazdu w miastach, które chcecie odwiedzić. Potwierdź możliwość parkowania odpowiednio wcześniej, żeby nie szukać miejsca dużym samochodem już w ciasnym centrum.\n\nZachowaj zestaw informacji dostępny bez internetu: plan dojazdu, potwierdzenia, ważne kontakty i instrukcje dotyczące opłat. Przed wyjazdem sprawdź też warunki transmisji danych i połączeń na swojej trasie. Szczególnie przy promie lub obszarze poza UE nie wyciągaj wniosków wyłącznie z zasad używania telefonu w Polsce."
+      ],
+      [
+        "Zostaw przestrzeń na zmianę planu",
+        "Wybierz pierwszy nocleg z prostym dojazdem i potwierdzoną godziną przyjazdu. Zapisz alternatywę przed granicą albo wcześniej na trasie, jeśli przejazd się wydłuży. Podróż międzynarodowa nie powinna zależeć od założenia, że wszystkie postoje i odprawy zajmą dokładnie tyle czasu, ile przewiduje plan.\n\nPrzed powrotem ponownie sprawdź trasę, ważność opłat i godziny przepraw. Uwzględnij czas przygotowania samochodu do zwrotu. **Do dokumentów dołącz krótką listę:** zgoda wypożyczalni, kraje ochrony, kontakty alarmowe, wymagane dokumenty, opłaty i ograniczenia ruchu. To praktyczny zestaw, do którego można wrócić w dowolnym momencie podróży."
+      ]
+    ],
+    "asset": "guides/17-kamperem-za-granice.webp"
+  },
+  {
+    "id": "poza-sezonem",
+    "title": "Kamper poza sezonem. Jak przygotować się na chłód i deszcz?",
+    "kind": "guide",
+    "desc": "Jesienny wyjazd może oznaczać puste ścieżki, dłuższe śniadania i wieczór z książką w środku. Jednocześnie bardziej niż latem zależysz od ogrzewania, pogody i dostępności infrastruktury. Przed rezerwacją sprawdź, czy konkretny kamper oraz wybrane noclegi odpowiadają przewidywanym warunkom. Sam wpis „ogrzewanie” w wyposażeniu nie opisuje jeszcze przygotowania pojazdu do chłodnej podróży.",
+    "body": [
+      [
+        "Podaj wypożyczalni warunki planowanego wyjazdu",
+        "Powiedz, gdzie i kiedy chcesz pojechać oraz czy planujesz miejsca z przyłączem elektrycznym. Zapytaj o sposób działania ogrzewania, potrzebne zasoby i ograniczenia użytkowania. Potwierdź przygotowanie instalacji wodnej oraz zalecenia dotyczące spadków temperatury. Nie zakładaj, że wszystkie kampery tej samej wielkości mają podobną izolację i wyposażenie.\n\nPrzy odbiorze poproś o pokazanie sterowania ogrzewaniem i typowych komunikatów. Ustal, co robić, jeśli urządzenie się wyłączy lub zgłosi błąd. Nie traktuj pierwszej zimnej nocy jako momentu na naukę obsługi. Potrzebujesz jasnej instrukcji dla wynajętego modelu i kontaktu do osoby, która zna jego konfigurację."
+      ],
+      [
+        "Potwierdź, co działa na kempingu",
+        "Poza sezonem sprawdź otwarcie obiektu oraz osobno dostępność sanitariatów, wody i punktu serwisowego. Kemping może przyjmować pojazdy przy ograniczonej liczbie usług. Zapytaj o godziny recepcji, możliwość przyjazdu po zmroku i stan dojazdu. Nie opieraj planu na ogólnym opisie z wakacyjnych miesięcy.\n\nJeśli chcesz korzystać z prądu, potwierdź przyłącze i dostępne parametry. Przewidziane zużycie uzgodnij z zasadami obiektu oraz możliwościami samochodu. Nie dokładaj przypadkowego grzejnika tylko dlatego, że ma pasującą wtyczkę. Dodatkowe urządzenia wymagają sprawdzenia z wypożyczalnią, a ich używanie nie zastępuje prawidłowej obsługi instalacji pojazdu."
+      ],
+      [
+        "Mokre rzeczy potrzebują własnego miejsca",
+        "Zabierz ubrania pozwalające dopasować warstwy do pogody, rzeczy na zmianę i obuwie odpowiednie do planowanych spacerów. Przed wyjazdem zastanów się, gdzie odłożysz mokrą kurtkę, buty oraz ręczniki. Jeśli wszystkie trafią na łóżko albo do jednego zamkniętego schowka, wieczór szybko stanie się mniej wygodny.\n\nWietrz wnętrze zgodnie z instrukcją i nie zasłaniaj stałych otworów wentylacyjnych. Nie susz przedmiotów w miejscach, które ograniczają pracę urządzeń lub mogą się nadmiernie nagrzewać. Po powrocie ze spaceru usuń błoto i wodę z wejścia. Niewielka mata oraz przygotowane miejsce na buty mogą być bardziej użyteczne niż kolejny sprzęt elektroniczny."
+      ],
+      [
+        "Mrozu nie rozwiązuj metodą prób i błędów",
+        "Sprawdź, jakie postępowanie zaleca producent i wypożyczalnia dla instalacji wodnej przy ryzyku zamarznięcia. Ogrzewane wnętrze nie mówi samo w sobie, w jakich warunkach pracują wszystkie przewody i zbiorniki. Nie dolewaj przypadkowych płynów i nie próbuj samodzielnie omijać zaworów zabezpieczających.\n\nInstrukcje mogą różnić się między modelami. Przykładowo [Truma opisuje opróżnianie zasobnika Combi przy ryzyku mrozu, gdy pojazd nie jest używany](https://www.truma.com/us/time-winterize-truma-combi/). To zalecenie dla określonego urządzenia i sytuacji, a nie uniwersalna procedura dla każdego kampera podczas wyjazdu. Swój sposób działania ustal przed podróżą, z instrukcją właściwego sprzętu."
+      ],
+      [
+        "Wybierz miejsce, z którego da się wyjechać",
+        "Po deszczu podłoże może stwarzać inne warunki niż podczas przyjazdu. Zapytaj obsługę o właściwą parcelę i dojazd. Unikaj parkowania pod obciążonymi śniegiem gałęziami i sprawdzaj pogodę na kolejne godziny. Potrzebę kontroli otoczenia, wyjazdu z parceli i drożności wlotów oraz wylotów ogrzewania podkreśla [Truma w poradniku na chłodną porę roku](https://www.truma.com/us/tips-for-safe-cold-weather-camping/).\n\nGdy prognoza wykracza poza przygotowanie pojazdu lub Twoje doświadczenie, zmień trasę, miejsce albo termin. Zaplanowana atrakcja nie jest powodem, żeby ignorować pogarszające się warunki. Wybierz alternatywny nocleg z odpowiednią infrastrukturą, zamiast zakładać, że zawsze uda się przeczekać problem tam, gdzie właśnie stoisz."
+      ],
+      [
+        "Daj sobie więcej czasu w ciągu dnia",
+        "Planuj dojazd i obsługę pojazdu tak, żeby możliwie dużo czynności wykonać za dnia. Sprawdź godzinę zachodu słońca dla miejsca pobytu. Zostaw w środku wygodną przestrzeń na jedzenie, czytanie lub grę, bo deszczowe popołudnie może stać się normalną częścią urlopu.\n\nPrzygotuj prosty plan na gorszą pogodę i wystarczające zapasy, uwzględniając dostępność sklepów. **Przed rezerwacją potwierdź:** ogrzewanie, zasady obsługi wody, wyposażenie na pogodę, otwarcie usług na kempingu i bezpieczny dojazd. Wtedy wyjazd poza sezonem może mieć własny spokojniejszy rytm."
+      ]
+    ],
+    "asset": "guides/18-poza-sezonem.webp"
+  },
+  {
+    "id": "awaria-lub-szkoda",
+    "title": "Awaria lub szkoda w wynajętym kamperze. Z kim się kontaktować?",
+    "kind": "guide",
+    "desc": "Nie każde niedziałające urządzenie oznacza koniec podróży, ale nie każdy problem można rozwiązać kolejnym naciśnięciem przycisku. Przy awarii lub szkodzie najpierw oceń bezpieczeństwo ludzi, a potem skontaktuj się z właściwą pomocą. Warto wcześniej ustalić numery telefonów i procedurę z wypożyczalnią. Dzięki temu w stresującej sytuacji nie musisz zaczynać od przeszukiwania całej umowy.",
+    "body": [
+      [
+        "Najpierw bezpieczeństwo, potem dokumenty",
+        "Przy zagrożeniu życia, zdrowia, pożarze lub innym zdarzeniu wymagającym służb korzystaj z numeru alarmowego 112. Jego przeznaczenie opisuje [oficjalny serwis numeru alarmowego](https://www.gov.pl/web/numer-alarmowy-112). Zgłoszenie do wypożyczalni nie zastępuje wezwania służb, kiedy jest ono potrzebne. W zwykłej awarii technicznej bez takiego zagrożenia właściwym kontaktem jest pomoc drogowa lub assistance.\n\nJeśli problem wystąpił podczas jazdy, zatrzymaj się w możliwie bezpieczny sposób, zgodnie z sytuacją i przepisami. Nie stój w niebezpiecznym miejscu po to, żeby zrobić zdjęcia. Na drodze szybkiego ruchu unikaj samodzielnych czynności narażających Cię na kontakt z ruchem i stosuj polecenia operatora lub służb."
+      ],
+      [
+        "Przygotuj lokalizację i krótki opis",
+        "Podaj numer drogi, kierunek jazdy, najbliższy punkt orientacyjny albo współrzędne. Na kempingu przyda się nazwa obiektu i numer parceli. Ustal, czy wszyscy pasażerowie są bezpieczni oraz czy pojazd blokuje przejazd. Informacja „stoimy przy jeziorze” może nie wystarczyć do wysłania odpowiedniej pomocy.\n\nOpisz to, co widzisz: komunikat, odgłos, wyciek lub niedziałającą funkcję. Nie musisz stawiać diagnozy. Powiedz, kiedy pojawił się problem i czy samochód może się przemieszczać. Jeśli sytuacja pozwala, zrób zdjęcie komunikatu. Nie uruchamiaj ponownie urządzenia wielokrotnie, kiedy instrukcja lub sygnały ostrzegawcze wskazują, że trzeba przerwać jego używanie."
+      ],
+      [
+        "Korzystaj z numerów właściwych dla umowy",
+        "Miej zapisane kontakty do wypożyczalni i assistance, numer rezerwacji, numer polisy, jeśli jest potrzebny, oraz dane samochodu. Ustal jeszcze przy odbiorze, kto odpowiada po godzinach pracy. Część problemów z zabudową wymaga innej pomocy niż awaria napędu. Osoba znająca pojazd może wskazać właściwy dalszy krok.\n\nPrzed samodzielnym zamówieniem holowania lub naprawy, o ile bezpieczeństwo na to pozwala, sprawdź wymaganą procedurę i uzyskaj uzgodnienie. Inaczej możesz zamówić usługę nieobjętą ochroną albo nieodpowiednią dla gabarytów kampera. Podaj jego masę, wysokość i długość, jeśli operator ich potrzebuje do dobrania pomocy."
+      ],
+      [
+        "Oddziel awarię od szkody w pojeździe",
+        "Przy uszkodzeniu parkingowym, kolizji lub innym zdarzeniu postępuj zgodnie z przepisami miejsca oraz warunkami najmu i ochrony. Obowiązek wezwania policji lub przygotowania określonej dokumentacji zależy od okoliczności. Nie opieraj decyzji wyłącznie na przekonaniu, że uszkodzenie jest niewielkie.\n\nKiedy jest bezpiecznie, zapisz datę, miejsce i rzeczowy przebieg zdarzenia. Zabezpiecz potrzebne dane uczestników oraz materiały wymagane w procedurze. Rób zdjęcia detalu i szerszego otoczenia, bez narażania kogokolwiek. Nie podpisuj opisu, którego nie rozumiesz lub z którym się nie zgadzasz; poproś o wyjaśnienie i możliwość zapisania własnych uwag."
+      ],
+      [
+        "Uzgodnij, co dzieje się z podróżnymi",
+        "Samo zabranie samochodu nie rozwiązuje kwestii noclegu, bagaży, dzieci czy psa. Zapytaj o przewidziany sposób pomocy pasażerom i zakres kosztów. Ustal, dokąd pojedzie kamper, co można z niego zabrać i kto poinformuje o dalszym postępowaniu. Nie zakładaj automatycznego otrzymania podobnego pojazdu zastępczego.\n\nJeśli trzeba zmienić plan podróży, zbieraj potwierdzenia uzgodnień i rachunki dotyczące wydatków. Sama obecność rachunku nie gwarantuje zwrotu, dlatego warunki warto potwierdzać przed zakupem usługi, gdy sytuacja na to pozwala. Zapisz imię lub identyfikator rozmówcy i numer sprawy, aby ułatwić kolejne kontakty."
+      ],
+      [
+        "Po zdarzeniu domknij zgłoszenie",
+        "Prześlij wymagane materiały w terminie określonym w dokumentach. Ustal, czy zgłoszenie do wypożyczalni jest wystarczające, czy potrzebne jest także odrębne zgłoszenie do ubezpieczyciela. Zapytaj o dalszy kontakt i sposób rozliczenia. Nie czekaj z opisem szkody do zwrotu samochodu, jeśli warunki wymagają wcześniejszego powiadomienia.\n\n**Przed wyjazdem przygotuj kartę pomocy:** numery kontaktowe, dane pojazdu, numer umowy, zakres terytorialny assistance i wskazaną procedurę zgłoszenia. Udostępnij ją pozostałym dorosłym podróżnym. Dobrze przygotowany kontakt nie usuwa każdej trudności, ale pozwala szybciej przejść od problemu do konkretnej decyzji."
+      ]
+    ],
+    "asset": "guides/19-awaria-lub-szkoda.webp"
+  },
+  {
+    "id": "zwrot-kampera",
+    "title": "Zwrot kampera bez pośpiechu. Lista na ostatni dzień podróży",
+    "kind": "guide",
+    "desc": "Ostatni poranek łatwo zaplanować zbyt ambitnie: jeszcze spacer, śniadanie z widokiem i szybki przejazd do wypożyczalni. Tymczasem pojazd może wymagać tankowania, obsługi zbiorników i sprawdzenia wyposażenia. Najwygodniej zacząć przygotowanie do zwrotu dzień wcześniej. Nie chodzi o kończenie urlopu przed czasem, lecz o rozsądne rozłożenie kilku czynności, które i tak trzeba wykonać.",
+    "body": [
+      [
+        "Wróć do warunków ustalonych przy odbiorze",
+        "Sprawdź godzinę i adres zwrotu oraz wymagany stan paliwa, wnętrza i zbiorników. Przeczytaj zakres wykupionego sprzątania. Opłata za tę usługę nie musi oznaczać, że możesz pozostawić dowolny stan samochodu lub zrezygnować z obsługi toalety. Kieruj się warunkami konkretnej umowy, nie wspomnieniem zasad z poprzedniego wynajmu.\n\nUstal, jak wygląda przekazanie poza godzinami pracy, jeżeli taka możliwość została uzgodniona. Zapytaj o miejsce pozostawienia pojazdu, kluczyków oraz dokumentów i sposób potwierdzenia godziny zwrotu. Samo zaparkowanie przed zamkniętym biurem nie powinno być improwizowanym zakończeniem najmu."
+      ],
+      [
+        "Zbiorniki obsłuż tam, gdzie jest infrastruktura",
+        "Zaplanuj odpowiedni punkt przed wyjazdem z ostatniego kempingu. Nie zakładaj, że przy wypożyczalni znajdziesz stanowisko, z którego można skorzystać bez uzgodnienia. Potwierdź, które zbiorniki mają zostać opróżnione lub uzupełnione i w jakim stanie trzeba oddać kasetę sanitarną.\n\nNieczystości oddawaj wyłącznie do przeznaczonego punktu, według jego zasad oraz instrukcji pojazdu. Po obsłudze zabezpiecz klapy, zawory i akcesoria. Nie pozostawiaj ostatniego opróżniania na przypadkowy postój w drodze. W razie awarii punktu serwisowego skontaktuj się z wypożyczalnią i uzgodnij dalsze działanie, zamiast szukać nieodpowiedniego odpływu."
+      ],
+      [
+        "Tankowanie uwzględnij w czasie dojazdu",
+        "Sprawdź, jaki poziom paliwa był zapisany przy odbiorze i jaki jest wymagany przy oddaniu. Zaplanuj odpowiednią stację po drodze, uwzględniając godziny otwarcia i dojazd kamperem. Zachowaj potwierdzenie, jeśli jest potrzebne do rozliczenia. Nie próbuj szacować wymaganej ilości wyłącznie z pamięci albo orientacyjnego zasięgu.\n\nJeśli widzisz, że nie zdążysz na umówioną godzinę, od razu powiadom firmę. Ustal dalsze postępowanie i ewentualne konsekwencje zgodnie z warunkami. Nie traktuj samego wysłania wiadomości jako automatycznej zgody na wydłużenie najmu. Kolejny odbiór pojazdu może być już zaplanowany, a czas na przygotowanie ograniczony."
+      ],
+      [
+        "Sprawdź wnętrze według stałej kolejności",
+        "Zacznij od własnych rzeczy: szafki, lodówka, łazienka, miejsca przy łóżkach i schowki zewnętrzne. Następnie uporządkuj samochód w zakresie wynikającym z umowy. Usuń jedzenie i śmieci, sprawdź suche oraz mokre rzeczy, złóż elementy zgodnie z instrukcją. Nie używaj przypadkowych agresywnych środków do tapicerki lub wyposażenia.\n\nNa końcu zajrzyj do kieszeni foteli, gniazd ładowania i miejsc, gdzie odkładałeś dokumenty. Małe przedmioty najłatwiej przeoczyć właśnie wtedy, gdy duże torby stoją już poza pojazdem. Przy podróży z dziećmi lub psem sprawdź także przestrzeń pod materacem, zabawki oraz akcesoria schowane na czas jazdy."
+      ],
+      [
+        "Policz dodatki razem z listą",
+        "Przygotuj stół, krzesła, przewody, przyłącza, pościel i pozostałe wypożyczone rzeczy. Porównaj liczbę sztuk z protokołem wydania. Jeżeli czegoś brakuje albo element został uszkodzony, zgłoś to rzeczowo. Próba ukrycia problemu nie ułatwia rozliczenia i utrudnia przygotowanie wyposażenia dla kolejnej osoby.\n\nZwróć także instrukcje, dokumenty i wszystkie komplety kluczyków. Ustal sposób usunięcia własnych danych z systemu multimedialnego, jeśli parowałeś telefon lub zapisywałeś kontakty. Nie kasuj przy tym ustawień i danych należących do wypożyczalni. W razie wątpliwości poproś jej przedstawiciela o pomoc."
+      ],
+      [
+        "Zakończ wynajem wspólnym protokołem",
+        "Obejrzyjcie samochód i porównajcie stan z dokumentacją odbioru. Zapiszcie przebieg, poziom paliwa, wyposażenie oraz uwagi dotyczące uszkodzeń. Zrób zdjęcia końcowego stanu w sposób pozwalający rozpoznać pojazd i miejsce. Zachowaj kopię protokołu, a jeżeli nie zgadzasz się z opisem, poproś o wpisanie własnych zastrzeżeń przed potwierdzeniem dokumentu.\n\nUstal termin i sposób rozliczenia kaucji. Potwierdzenie zwrotu pojazdu nie zawsze oznacza natychmiastowe zakończenie wszystkich rozliczeń. Jeśli pojawi się dodatkowe obciążenie, poproś o wskazanie jego podstawy, wyliczenia i dokumentów. **Dobrze zakończony wynajem to komplet:** przekazane kluczyki, zapisany stan pojazdu, zwrócone wyposażenie i jasna informacja, co pozostaje do rozliczenia."
+      ]
+    ],
+    "asset": "guides/20-zwrot-kampera.webp"
+  }
+]

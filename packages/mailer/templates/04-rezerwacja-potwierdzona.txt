@@ -1,0 +1,34 @@
+Rezerwacja jest potwierdzona
+
+Cześć {{first_name}},
+
+{{confirmation_sentence}}
+
+Poniżej znajdziesz najważniejsze informacje o rezerwacji. Podsumowanie rezerwacji dołączamy w załączniku: {{attachment_names}}.
+
+Numer: {{booking_number}}
+Pojazd: {{vehicle_name}}
+Wypożyczalnia: {{rental_company_name}}
+Termin: {{pickup_date}} – {{return_date}}
+Odbiór: {{pickup_location}}
+Cena wyjazdu: {{total_amount}}
+Wybrany plan płatności: {{payment_plan_label}}
+Zapłacono: {{paid_amount}}
+Pozostało do zapłaty: {{balance_amount}}
+Termin dopłaty: {{balance_due_label}}
+Kaucja — osobno: {{deposit_amount}}
+Status kaucji: {{deposit_status_label}}
+
+Kaucja nie wchodzi do ceny wyjazdu. Szczegóły jej wniesienia i zwrotu sprawdź z wypożyczalnią.
+
+Otwórz rezerwację:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

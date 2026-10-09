@@ -1,0 +1,9 @@
+.handover-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border:1px solid var(--line);border-radius:11px;background:var(--paper);margin:22px 0 18px}
+.handover-tabs button{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 10px;border-radius:7px;font-size:13px;font-weight:600;line-height:1.4}
+.handover-tabs button[aria-selected=true]{background:var(--green);color:white}
+.handover-tabs button:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+.handover-stage-description{margin-bottom:20px}
+.handover-form{padding-top:20px;border-top:1px solid var(--line)}
+.handover-tab-panel:focus-visible{outline-offset:5px}
+@media(max-width:600px){.handover-tabs button{font-size:12px;padding:12px 7px;gap:6px}.handover-form .form-grid{grid-template-columns:1fr}.handover-form>.btn{width:100%}}
+@media print{.handover-tab-panel[hidden]{display:block!important}.handover-tab-panel+.handover-tab-panel{margin-top:20px}}

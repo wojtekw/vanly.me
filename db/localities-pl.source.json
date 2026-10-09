@@ -1,0 +1,29 @@
+{
+  "source": "GeoNames",
+  "sourceUrl": "https://download.geonames.org/export/dump/PL.zip",
+  "documentation": "https://download.geonames.org/export/dump/readme.txt",
+  "attribution": "Dane miejscowości: GeoNames.org (CC BY 4.0).",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "generatedAt": "2026-10-07T10:09:49.513Z",
+  "sourceLastModified": null,
+  "sourceSha256": "661dd7e739c27995cec20053101901037d51fdf32235bea662a316b4d35a1ec2",
+  "outputSha256": "59e1c3534b454f1d7482555e07a3a940182404e5a401f1c76ec4bde0b7669af0",
+  "records": 50282,
+  "features": {
+    "ADM3": 2478,
+    "ADM4": 86,
+    "PPL": 43785,
+    "PPLA": 16,
+    "PPLA2": 178,
+    "PPLA3": 1415,
+    "PPLA4": 2,
+    "PPLC": 1,
+    "PPLF": 7,
+    "PPLL": 18,
+    "PPLR": 1,
+    "PPLS": 3,
+    "PPLX": 2292
+  },
+  "changes": "Poland populated settlements and ADM3/ADM4; excludes abandoned/historical/destroyed settlements; Polish administrative labels and Gmina prefix; includes coordinates to disambiguate identical labels. Names longer than the application limit of 80 characters omitted."
+}

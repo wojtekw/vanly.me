@@ -1,0 +1,20 @@
+{
+  "domain": "vanly.me",
+  "observedOn": "2026-09-30",
+  "source": "GoDaddy DNS UI observed by root agent",
+  "completeExport": false,
+  "uiZoneFileExportDownloadCompleted": false,
+  "nameservers": ["ns39.domaincontrol.com", "ns40.domaincontrol.com"],
+  "records": [
+    {"type": "A", "name": "@", "data": "Parked", "ttl": 600, "resolvedIpv4": ["3.33.130.190", "15.197.148.33"], "note": "GoDaddy UI label; IPv4 observed separately through public DNS before delegation"},
+    {"type": "NS", "name": "@", "data": "ns39.domaincontrol.com.", "ttl": 3600},
+    {"type": "NS", "name": "@", "data": "ns40.domaincontrol.com.", "ttl": 3600},
+    {"type": "CNAME", "name": "www", "data": "vanly.me.", "ttl": 3600},
+    {"type": "CNAME", "name": "_domainconnect", "data": "_domainconnect.gd.domaincontrol.com.", "ttl": 3600},
+    {"type": "SOA", "name": "@", "data": null, "primaryNameserver": "ns39.domaincontrol.com.", "note": "GoDaddy default SOA; full value not exported"},
+    {"type": "TXT", "name": "_dmarc", "data": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;", "ttl": 3600}
+  ],
+  "mxRecordsObserved": [],
+  "dnssecDsStatus": "Disabled, confirmed in GoDaddy DNSSEC UI before delegation",
+  "warning": "This observation includes all seven visible records and exact preserved non-web values; it is not a complete machine-readable zone export. The SOA was not fully exported."
+}

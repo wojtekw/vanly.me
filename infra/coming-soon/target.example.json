@@ -1,0 +1,9 @@
+{
+  "accountId": "434793037720",
+  "bucket": "vanly-me-coming-soon-434793037720",
+  "bucketRegion": "eu-central-1",
+  "distributionId": "E1ESNDGM3WTQP4",
+  "subscriptionArn": "REPLACE_WHEN_ACTUAL_SUBSCRIPTION_ARN_IS_AVAILABLE",
+  "hostedZoneId": "Z075191742DMTSFOW6RO",
+  "certificateArn": "arn:aws:acm:us-east-1:434793037720:certificate/0f46224c-64b2-420a-a410-f8681055328e"
+}

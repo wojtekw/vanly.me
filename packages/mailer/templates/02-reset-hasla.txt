@@ -1,0 +1,21 @@
+Ustaw nowe hasło
+
+Cześć {{first_name}},
+
+Otrzymaliśmy prośbę o zmianę hasła do Twojego konta VANLY. Aby ustawić nowe hasło, przejdź do bezpiecznego formularza.
+
+Link jest jednorazowy i ważny przez 30 minut, do {{reset_expires_at}} ({{display_timezone}}).
+
+Jeśli nie prosisz o zmianę hasła, zignoruj tę wiadomość. Samo jej otrzymanie nie zmienia hasła. Nigdy nie podawaj hasła w odpowiedzi na e-mail.
+
+Ustaw nowe hasło:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

@@ -1,0 +1,26 @@
+Sprawdź protokół {{protocol_kind}}
+
+Cześć {{first_name}},
+
+Wypożyczalnia {{rental_company_name}} zapisała protokół {{protocol_kind}} pojazdu {{vehicle_name}}. Otwórz go na swoim koncie i porównaj treść z rzeczywistym stanem pojazdu oraz ustaleniami.
+
+Jeśli wszystko się zgadza, potwierdź treść protokołu w serwisie. Jeśli widzisz rozbieżności, najpierw skontaktuj się z wypożyczalnią lub zgłoś sprawę do VANLY.
+
+Rezerwacja: {{booking_number}}
+Rodzaj protokołu: {{protocol_kind}}
+Data zapisania: {{protocol_created_at}}
+Status: Do sprawdzenia
+
+Treść protokołu i zapisane uwagi są dostępne po zalogowaniu. Otrzymanie tego maila nie oznacza potwierdzenia protokołu.
+
+Sprawdź protokół:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

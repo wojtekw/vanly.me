@@ -1,0 +1,251 @@
+{
+  "observedOn": "2026-09-30",
+  "deploymentMethod": "AWS Console, root agent; CloudFront deployment completed and public HTTPS verified by requests and curl; DNS propagation still in progress for some resolvers",
+  "cloudFormationStackDeployed": false,
+  "maintenanceMode": "AWS Console until actual subscription ARN and authorized SDK profile are available",
+  "analytics": {
+    "status": "Live analytics release: files and G-ID verified, both invalidations Completed, GA4 Realtime receiving page_view; production-browser consent behavior not exercised because Chrome custom-domain SSL alert persists",
+    "accountId": "10875208",
+    "propertyId": "556850726",
+    "propertyName": "VANLY—vanly.me",
+    "streamId": "15890613646",
+    "streamUrl": "https://vanly.me",
+    "measurementId": "G-6P7XHCK7L7",
+    "enhancedMeasurementEnabled": false,
+    "emailRedactionEnabled": true,
+    "connectedSiteTags": 0,
+    "additionalSignalsEnabled": false,
+    "userProvidedDataCollectionEnabled": false,
+    "adPersonalizationEnabledRegions": 0,
+    "adPersonalizationTotalRegions": 307,
+    "adPersonalizationEnabled": false,
+    "userDataRetentionMonths": 2,
+    "eventDataRetentionMonths": 2,
+    "retentionResetOnNewActivityEnabled": false,
+    "settingsSource": "Root agent verified Google Analytics UI in Chrome",
+    "localIndexMetaMeasurementIdConfigured": true,
+    "liveAnalyticsConfigured": true,
+    "liveFilesUploaded": true,
+    "liveMeasurementIdConfirmed": true,
+    "localFilesPendingConsoleUpload": [],
+    "latestConsoleUpload": {
+      "status": "100% success",
+      "bytes": 22245,
+      "files": [
+        {
+          "key": "index.html",
+          "bytes": 4801
+        },
+        {
+          "key": "styles.css",
+          "bytes": 8598
+        },
+        {
+          "key": "analytics.js",
+          "bytes": 8846
+        }
+      ],
+      "cacheControl": "public, max-age=300"
+    },
+    "invalidations": [
+      {
+        "id": "I3U1AASXTMVS9EXGXRYKRQP8QG",
+        "createdAtUtc": "2026-09-30T14:35:23Z",
+        "paths": [
+          "/*"
+        ],
+        "statusAtLastObservation": "Completed",
+        "source": "Root agent verified AWS Console"
+      },
+      {
+        "id": "IB2FN59BNS7N496L3S6HD6Y3OM",
+        "createdAtUtc": "2026-09-30T14:38:58Z",
+        "paths": [
+          "/analytics.js"
+        ],
+        "statusAtLastObservation": "Completed",
+        "completionVerifiedAroundUtc": "2026-09-30 14:40 UTC",
+        "source": "Root agent verified AWS Console"
+      }
+    ],
+    "cloudFrontInvalidationAfterAnalyticsUploadCompleted": true,
+    "publicFileCheck": {
+      "checkedAtUtc": "2026-09-30T14:39:09.759775+00:00",
+      "passed": 9,
+      "checks": 9,
+      "allBodyHashesMatch": true,
+      "measurementIdMatchesOnAllThreeHosts": true,
+      "javaScriptContentTypeObserved": "text/javascript; charset=utf-8",
+      "javaScriptContentTypeExpected": "text/javascript",
+      "javaScriptMimeCorrectionStatus": "Object reuploaded with explicit MIME; corrected bytes and headers verified on all three hosts",
+      "report": ".local/coming-soon/analytics-public-verification.json",
+      "javascriptExecuted": false,
+      "analyticsEventsSent": false
+    },
+    "liveConsentRuntimeVerified": false,
+    "realtimeDataReceivedVerified": true,
+    "staticCloneBrowserQa": "Root agent verified desktop and mobile 390px static clone; custom-domain Chrome still has SSL alert",
+    "note": "Public file/ID/MIME checks and actual Realtime data are verified. The origin of the observed visitor is not attributed. Production-domain browser consent exercise remains unverified; local worker consent tests passed 32/32.",
+    "localConsentWorkerTestsPassed": "32/32",
+    "releaseManifestFileCount": 11,
+    "releaseManifestBytes": 1917203,
+    "releaseManifestSha256": "6c6d106f90a6891ed69638a235847b992bdcf4eaf99fd89f04a012f4e73a08da",
+    "scriptMimeCorrectionUpload": {
+      "status": "100% success",
+      "key": "analytics.js",
+      "bytes": 8846,
+      "contentType": "text/javascript; charset=utf-8",
+      "cacheControl": "public, max-age=300"
+    },
+    "realtimeEvidence": {
+      "source": "Root agent viewed actual GA4 Realtime UI in Chrome for property 556850726",
+      "activeUsers": 1,
+      "events": {
+        "page_view": 1,
+        "first_visit": 1,
+        "session_start": 1
+      },
+      "pageTitle": "VANLY — start 15 października 2026",
+      "visitorIdentityOrOriginAttributed": false,
+      "productionVisitSimulatedByRoot": false,
+      "screenshot": ".local/qa/vanly-ga4-realtime.jpg",
+      "pageViewScreenshot": ".local/qa/vanly-ga4-page-view.jpg"
+    },
+    "screenshots": [
+      ".local/qa/vanly-analytics-upload.jpg",
+      ".local/qa/vanly-analytics-invalidation.jpg",
+      ".local/qa/vanly-ga4-realtime.jpg",
+      ".local/qa/vanly-ga4-page-view.jpg"
+    ]
+  },
+  "accountId": "434793037720",
+  "domain": "vanly.me",
+  "bucket": {
+    "name": "vanly-me-coming-soon-434793037720",
+    "region": "eu-central-1",
+    "versioning": "Enabled",
+    "objectOwnership": "BucketOwnerEnforced",
+    "publicAccessBlock": "all four options enabled",
+    "encryption": "SSE-S3",
+    "uploadedAssetCount": 10,
+    "uploadedAssetBytes": 1904963,
+    "uploadStatus": "AWS Console confirmed 100% successful; HTML, CSS and font MIME types checked",
+    "unsignedRegionalIndexGetStatus": 403,
+    "unsignedRegionalIndexGetResult": "AccessDenied confirmed through requests and curl"
+  },
+  "hostedZone": {
+    "id": "Z075191742DMTSFOW6RO",
+    "name": "vanly.me",
+    "nameservers": [
+      "ns-175.awsdns-21.com",
+      "ns-1836.awsdns-37.co.uk",
+      "ns-830.awsdns-39.net",
+      "ns-1384.awsdns-45.org"
+    ],
+    "preservedNonWebRecords": [
+      "_dmarc TXT TTL3600",
+      "_domainconnect CNAME TTL3600"
+    ]
+  },
+  "godaddyDnssec": "Disabled, confirmed in domain UI",
+  "dnsDelegation": {
+    "status": "saved in GoDaddy and independently confirmed through Google and Cloudflare public DNS-over-HTTPS",
+    "publicNameserversAtLastCheck": [
+      "ns-175.awsdns-21.com",
+      "ns-1836.awsdns-37.co.uk",
+      "ns-830.awsdns-39.net",
+      "ns-1384.awsdns-45.org"
+    ],
+    "route53ApexAndWwwAliasRecords": "Automatic A and AAAA routing approved in AWS Console; Cloudflare public DNS returns CloudFront IPv4 and IPv6 for both names",
+    "propagationCompleteAcrossCheckedResolvers": false,
+    "note": "Both public resolvers confirm Route53 NS and ACM validation CNAMEs. For A/AAAA, Google and the local router still retain some old/negative cache entries; Cloudflare and OS socket resolution return CloudFront addresses."
+  },
+  "cloudFront": {
+    "intendedPlan": "FREE",
+    "aliases": [
+      "vanly.me",
+      "www.vanly.me"
+    ],
+    "originAccess": "OAC",
+    "certificateRegion": "us-east-1",
+    "distributionId": "E1ESNDGM3WTQP4",
+    "distributionDomain": "d3efg33xz921lx.cloudfront.net",
+    "subscriptionArn": null,
+    "subscriptionArnAvailability": "Not displayed in inspected Manage Plan UI; not fabricated. SDK profile lacks resource read permission.",
+    "originAccessControlId": "E3DZ1Y03D546EH",
+    "planConfirmedInManagePlanUi": "Free, 0 USD/month",
+    "hostedZoneAttachedToPlanVerified": true,
+    "attachedHostedZoneId": "Z075191742DMTSFOW6RO",
+    "defaultRootObject": "index.html",
+    "viewerProtocolPolicy": "Redirect HTTP to HTTPS",
+    "statusAtLastObservation": "Deployment completed confirmed on AWS Console reload; Last modified 2026-09-30 14:03:01 UTC replaces Deploying indicator",
+    "deploymentCompletedVerified": true,
+    "lastModifiedUtc": "2026-09-30T14:03:01Z",
+    "deploymentConsoleScreenshot": ".local/qa/aws-coming-soon-deployed.jpg",
+    "publicHttpsBothDomainsStatus": 200,
+    "httpBothDomainsRedirectStatus": 301,
+    "manifestAssetHashChecksPassed": "21/21 (10 assets per custom domain plus CloudFront root)",
+    "browserVerificationStatus": "Public CloudFront hostname passes desktop and mobile 390px layout QA with no browser warnings; custom apex in Chrome still shows ERR_SSL_UNRECOGNIZED_NAME_ALERT. Requests/curl custom domains validate TLS and return correct content.",
+    "browserScreenshots": [
+      ".local/qa/coming-soon-live-desktop.jpg",
+      ".local/qa/coming-soon-live-mobile.jpg"
+    ]
+  },
+  "acm": {
+    "region": "us-east-1",
+    "certificateArn": "arn:aws:acm:us-east-1:434793037720:certificate/0f46224c-64b2-420a-a410-f8681055328e",
+    "statusAtLastObservation": "ISSUED confirmed in AWS Console; both domain validation statuses Success",
+    "status": "ISSUED",
+    "vanlyCertificatesCreated": 1,
+    "validationRecords": [
+      {
+        "type": "CNAME",
+        "name": "_f74a77a881d9fd2552a6b571d3898c1b.vanly.me.",
+        "value": "_4fa77e394a599e2d7dea7a7026944c1b.wzccmgtwzk.acm-validations.aws.",
+        "ttl": 300,
+        "publicDnsVerified": true
+      },
+      {
+        "type": "CNAME",
+        "name": "_f569ac464413a77346235673cd36120a.www.vanly.me.",
+        "value": "_fce72b449f60e246d050616454978a07.wzccmgtwzk.acm-validations.aws.",
+        "ttl": 300,
+        "publicDnsVerified": true
+      }
+    ]
+  },
+  "accountCosts": {
+    "source": "AWS billing dashboard observed by root agent on 2026-09-30",
+    "currency": "USD",
+    "monthToDateSeptember2026": 10.75,
+    "forecastSeptember2026": 11.0,
+    "previousMonthAugust2026": 13.31,
+    "existingBudgetsCount": 2,
+    "budget50Verified": true,
+    "existingBudgets": [
+      {
+        "name": "Account monthly limit 50 USD",
+        "amountUsd": 50,
+        "health": "Healthy",
+        "status": "OK",
+        "monthToDateUsd": 10.75,
+        "forecastUsd": 11.0
+      },
+      {
+        "name": "My Zero-Spend Budget",
+        "amountUsd": 1,
+        "status": "Exceeded"
+      }
+    ],
+    "notificationRecipients": "not inspected",
+    "notificationWarning": "AWS Budgets UI shows Email verification required; subscribers must verify email before receiving notifications",
+    "hardAccountWideSpendingCap": false
+  },
+  "sdkAccess": {
+    "profile": "vectra26-deploy",
+    "identity": "arn:aws:iam::434793037720:user/vectra26-deployer",
+    "identityVerified": true,
+    "s3CloudFrontAcmRoute53ReadAccess": "AccessDenied",
+    "permissionsChanged": false
+  }
+}

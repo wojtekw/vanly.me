@@ -1,0 +1,29 @@
+#!/bin/zsh
+set -euo pipefail
+vanly_root="${0:A:h}"
+vanly_node='/Users/wojtek/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node'
+export PATH="${vanly_node:h}:/Users/wojtek/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/opt/homebrew/bin:/usr/bin:/bin"
+cd "$vanly_root"
+case "${1:-status}" in
+  start|stop|restart|status) exec "$vanly_node" scripts/service.mjs "${1:-status}" "${@:2}" ;;
+  build) NEXT_TELEMETRY_DISABLED=1 /Users/wojtek/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/pnpm build ;;
+  build-frontoffice) NEXT_TELEMETRY_DISABLED=1 /Users/wojtek/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/pnpm --filter @vanly/frontoffice build ;;
+  build-camperfolks) NEXT_TELEMETRY_DISABLED=1 /Users/wojtek/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/pnpm --filter @vanly/camperfolks build ;;
+  build-heyvans) NEXT_TELEMETRY_DISABLED=1 /Users/wojtek/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/pnpm --filter @vanly/heyvans build ;;
+  build-api) NEXT_TELEMETRY_DISABLED=1 /Users/wojtek/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/pnpm --filter @vanly/api build ;;
+  configure-camperfolks-origin) exec "$vanly_node" scripts/configure-camperfolks-origin.mjs "${2:-$vanly_root/.env.local}" ;;
+  configure-heyvans-origin) exec "$vanly_node" scripts/configure-heyvans-origin.mjs "${2:-$vanly_root/.env.local}" ;;
+  test) exec "$vanly_node" --test tests/api.test.mjs tests/bookings-refactor.test.mjs tests/request-id.test.mjs tests/mailer.test.mjs tests/mailer-db.test.mjs tests/mailer-attachments.test.mjs tests/documents.test.mjs tests/notification-reminders.test.mjs tests/frontend-state-ui.test.mjs tests/registration-ui.test.mjs tests/pickup-ui.test.mjs tests/stock-ui.test.mjs tests/camps-ui.test.mjs tests/frontoffice-data.test.mjs tests/article-text.test.mjs tests/email-confirmation-ui.test.mjs ;;
+  test-mailer) exec "$vanly_node" --test tests/mailer.test.mjs tests/mailer-db.test.mjs tests/mailer-attachments.test.mjs tests/documents.test.mjs tests/notification-reminders.test.mjs ;;
+  test-ui) exec "$vanly_node" --test tests/frontend-state-ui.test.mjs tests/registration-ui.test.mjs tests/pickup-ui.test.mjs tests/stock-ui.test.mjs tests/camps-ui.test.mjs tests/frontoffice-data.test.mjs tests/article-text.test.mjs tests/email-confirmation-ui.test.mjs ;;
+  test-seo) exec "$vanly_node" --test tests/seo.test.mjs tests/frontoffice-data.test.mjs ;;
+  test-maps) exec "$vanly_node" --test tests/maps.test.mjs ;;
+  test-camps-ui) exec "$vanly_node" --test tests/camps-ui.test.mjs ;;
+  test-browser) exec "$vanly_node" tests/portal-ui.mjs ;;
+  test-camperfolks-api) exec "$vanly_node" --test tests/camperfolks-auth.test.mjs ;;
+  test-heyvans-api) exec "$vanly_node" --test tests/heyvans-auth.test.mjs ;;
+  test-heyvans-http) exec "$vanly_node" --test tests/heyvans-http.test.mjs ;;
+  migrate) exec "$vanly_node" scripts/migrate.mjs ;;
+  backup) exec "$vanly_node" scripts/backup.mjs ;;
+  *) print 'Użycie: ./vanly start|stop|restart|status [usługi], build|build-camperfolks|build-heyvans|build-api|test|test-mailer|test-ui|test-seo|test-maps|test-camps-ui|test-browser|test-camperfolks-api|test-heyvans-api|test-heyvans-http|migrate|backup'; exit 1 ;;
+esac

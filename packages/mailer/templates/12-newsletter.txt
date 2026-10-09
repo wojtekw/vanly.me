@@ -1,0 +1,23 @@
+Pierwsza podróż zaczyna się od planu
+
+Cześć {{first_name}},
+
+Zanim wybierzesz kampera, zastanów się, z kim jedziesz, gdzie chcesz nocować i ile czasu chcesz spędzać w drodze.
+
+W poradniku znajdziesz wskazówki dotyczące wyboru pojazdu, sprawdzenia wyposażenia i przygotowania listy rzeczy na wyjazd.
+
+Zajrzyj do poradnika, gdy zaczniesz układać swój plan podróży.
+
+Przeczytaj poradnik:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+Otrzymujesz ten newsletter na podstawie zapisanej zgody na komunikację marketingową VANLY.
+Rezygnacja z newslettera: {{unsubscribe_url}}
+Rezygnacja nie wyłącza wiadomości dotyczących konta i rezerwacji.

@@ -1,0 +1,32 @@
+{
+  "observedOn": "2026-09-30",
+  "domain": "vanly.me",
+  "readOnly": true,
+  "nameservers": ["ns-175.awsdns-21.com", "ns-1836.awsdns-37.co.uk", "ns-830.awsdns-39.net", "ns-1384.awsdns-45.org"],
+  "checkedResolvers": ["1.1.1.1", "8.8.8.8", "Google DNS-over-HTTPS", "Cloudflare DNS-over-HTTPS"],
+  "googleDohEndpoint": "https://dns.google/resolve?name=vanly.me&type=NS",
+  "cloudflareDohEndpoint": "https://cloudflare-dns.com/dns-query?name=vanly.me&type=NS",
+  "apexA": null,
+  "previousObservation": {
+    "nameservers": ["ns39.domaincontrol.com", "ns40.domaincontrol.com"],
+    "apexA": ["3.33.130.190", "15.197.148.33"],
+    "note": "Before the confirmed GoDaddy nameserver save"
+  },
+  "directAuthoritativeChecks": "Queries with recursion disabled to .me and Route53 nameservers returned REFUSED from this execution environment; no direct authoritative delegation conclusion drawn.",
+  "acmValidationCname": [
+    {
+      "name": "_f74a77a881d9fd2552a6b571d3898c1b.vanly.me.",
+      "value": "_4fa77e394a599e2d7dea7a7026944c1b.wzccmgtwzk.acm-validations.aws.",
+      "ttl": 300,
+      "verifiedBy": ["Google DNS-over-HTTPS", "Cloudflare DNS-over-HTTPS"]
+    },
+    {
+      "name": "_f569ac464413a77346235673cd36120a.www.vanly.me.",
+      "value": "_fce72b449f60e246d050616454978a07.wzccmgtwzk.acm-validations.aws.",
+      "ttl": 300,
+      "verifiedBy": ["Google DNS-over-HTTPS", "Cloudflare DNS-over-HTTPS"]
+    }
+  ],
+  "acmCheckStatus": "Both exact validation CNAMEs resolve correctly through both public DNS-over-HTTPS providers; root agent separately confirmed ACM ISSUED and Success for both domain validations in AWS Console.",
+  "conclusion": "Route53 delegation and ACM validation DNS are independently confirmed publicly. A published CloudFront site is not yet confirmed."
+}

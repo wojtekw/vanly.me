@@ -1,0 +1,31 @@
+Nowy termin jest zapisany
+
+Cześć {{first_name}},
+
+Wypożyczalnia {{rental_company_name}} zaakceptowała Twoją prośbę o zmianę dat. Od teraz obowiązuje termin wskazany poniżej.
+
+Po zapisaniu zmiany do zapłaty pozostaje {{additional_amount}}. Podsumowanie zaakceptowanej zmiany dołączamy w załączniku: {{attachment_names}}.
+
+Numer: {{booking_number}}
+Pojazd: {{vehicle_name}}
+Poprzedni termin: {{previous_pickup_date}} – {{previous_return_date}}
+Nowy termin: {{pickup_date}} – {{return_date}}
+Nowa cena wyjazdu: {{total_amount}}
+Zapłacono: {{paid_amount}}
+Dopłata po zmianie: {{additional_amount}}
+Termin dopłaty: {{balance_due_label}}
+Kaucja — osobno: {{deposit_amount}}
+
+Kwota dopłaty musi wynikać z aktualnego rozliczenia, łącznie z wcześniejszymi wpłatami. Sprawdź szczegóły przed płatnością.
+
+Przejdź do dopłaty:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

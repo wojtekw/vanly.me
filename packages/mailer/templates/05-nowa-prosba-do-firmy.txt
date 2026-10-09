@@ -1,0 +1,28 @@
+Nowa prośba o rezerwację
+
+Cześć,
+
+Do {{rental_company_name}} trafiła nowa prośba o rezerwację. Otwórz ją w panelu, sprawdź dostępność i szczegóły, a następnie podejmij decyzję.
+
+Podróżujący otrzyma potwierdzenie dopiero po zaakceptowaniu prośby.
+
+Numer: {{booking_number}}
+Pojazd: {{vehicle_name}}
+Termin: {{pickup_date}} – {{return_date}}
+Cena wyjazdu: {{total_amount}}
+Status rezerwacji: Oczekuje na akceptację
+Status wpłaty: {{payment_status_label}}
+
+Dane kontaktowe i prywatną wiadomość klienta sprawdzisz po zalogowaniu do panelu.
+
+Rozpatrz prośbę:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

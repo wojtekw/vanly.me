@@ -1,0 +1,1 @@
+CREATE TABLE media(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),company_id text NOT NULL REFERENCES companies,vehicle_id text REFERENCES vehicles,booking_id uuid REFERENCES bookings,filename text NOT NULL UNIQUE,public boolean NOT NULL DEFAULT false,created_by uuid NOT NULL REFERENCES users,created_at timestamptz NOT NULL DEFAULT now());

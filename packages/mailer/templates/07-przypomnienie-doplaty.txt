@@ -1,0 +1,29 @@
+Czas na pozostałą płatność
+
+Cześć {{first_name}},
+
+Zbliża się termin dopłaty do Twojej rezerwacji. Pozostałą kwotę {{balance_amount}} opłać do {{balance_due_at}} ({{display_timezone}}).
+
+Standardowy termin dopłaty przypada 7 dni przed odbiorem. W tej wiadomości podajemy termin obowiązujący dla Twojej rezerwacji. Płatność wykonasz w serwisie VANLY.
+
+Numer: {{booking_number}}
+Pojazd: {{vehicle_name}}
+Odbiór: {{pickup_date}}
+Cena wyjazdu: {{total_amount}}
+Zapłacono: {{paid_amount}}
+Pozostało do zapłaty: {{balance_amount}}
+Termin: {{balance_due_at}}
+
+Jeżeli wpłata jest właśnie przetwarzana, sprawdź aktualny status w szczegółach rezerwacji. Kaucja jest rozliczana osobno.
+
+Opłać pozostałą kwotę:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

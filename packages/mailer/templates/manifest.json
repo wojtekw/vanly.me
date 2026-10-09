@@ -1,0 +1,451 @@
+{
+  "brand": "VANLY",
+  "language": "pl-PL",
+  "version": "2.0.0",
+  "status": "Propozycja produkcyjna. Szablony nie dowodzą wdrożenia wysyłki ani płatności.",
+  "format": "multipart/alternative: text/plain + text/html",
+  "default_display_timezone": "Europe/Warsaw",
+  "global_required_fields": [
+    "app_url",
+    "action_url",
+    "support_email",
+    "sender_legal_name",
+    "sender_legal_address",
+    "sender_registration_details",
+    "current_year"
+  ],
+  "templates": [
+    {
+      "id": "00-bazowy-transakcyjny",
+      "event": "generic.transactional",
+      "category": "{{message_category}}",
+      "subject": "{{email_subject}}",
+      "preheader": "{{email_preheader}}",
+      "heading": "{{email_heading}}",
+      "cta": "{{cta_label}}",
+      "send_when": "Punkt wyjścia do pozostałych zdarzeń transakcyjnych; nie wysyłać bez uzupełnienia treści i mapowania zdarzenia.",
+      "files": {
+        "html": "00-bazowy-transakcyjny.html",
+        "text_plain": "00-bazowy-transakcyjny.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "cta_label",
+        "current_year",
+        "details_text",
+        "email_heading",
+        "email_preheader",
+        "email_subject",
+        "first_name",
+        "intro_text",
+        "message_category",
+        "next_step_text",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email"
+      ]
+    },
+    {
+      "id": "01-weryfikacja-adresu",
+      "event": "account.email_verification_requested",
+      "category": "TWOJE KONTO",
+      "subject": "VANLY — potwierdź swój adres e-mail",
+      "preheader": "Jedno potwierdzenie, aby korzystać z konta VANLY.",
+      "heading": "Potwierdź adres e-mail",
+      "cta": "Potwierdź adres e-mail",
+      "send_when": "Po utworzeniu konta lub żądaniu ponownego potwierdzenia; proponowany nowy mechanizm, nie opis aktualnie działającej wysyłki.",
+      "files": {
+        "html": "01-weryfikacja-adresu.html",
+        "text_plain": "01-weryfikacja-adresu.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "current_year",
+        "display_timezone",
+        "first_name",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "verification_expires_at"
+      ]
+    },
+    {
+      "id": "02-reset-hasla",
+      "event": "account.password_reset_requested",
+      "category": "BEZPIECZEŃSTWO KONTA",
+      "subject": "VANLY — ustaw nowe hasło",
+      "preheader": "Link do ustawienia nowego hasła jest ważny przez 30 minut.",
+      "heading": "Ustaw nowe hasło",
+      "cta": "Ustaw nowe hasło",
+      "send_when": "Po żądaniu resetu dla istniejącego konta; interfejs żądania nie ujawnia istnienia konta.",
+      "files": {
+        "html": "02-reset-hasla.html",
+        "text_plain": "02-reset-hasla.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "current_year",
+        "display_timezone",
+        "first_name",
+        "reset_expires_at",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email"
+      ]
+    },
+    {
+      "id": "03-prosba-oczekuje",
+      "event": "booking.request_submitted",
+      "category": "TWOJA REZERWACJA",
+      "subject": "VANLY — prośba {{booking_number}} czeka na akceptację",
+      "preheader": "Otrzymaliśmy prośbę o rezerwację. Teraz czekamy na decyzję wypożyczalni.",
+      "heading": "Prośba trafiła do wypożyczalni",
+      "cta": "Sprawdź status prośby",
+      "send_when": "Po zapisaniu prośby w statusie pending; wpłatę prezentować według rzeczywistego rozliczenia.",
+      "files": {
+        "html": "03-prosba-oczekuje.html",
+        "text_plain": "03-prosba-oczekuje.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "booking_number",
+        "current_year",
+        "deposit_amount",
+        "first_name",
+        "paid_amount",
+        "payment_status_label",
+        "pickup_date",
+        "rental_company_name",
+        "return_date",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "total_amount",
+        "vehicle_name"
+      ]
+    },
+    {
+      "id": "04-rezerwacja-potwierdzona",
+      "event": "booking.confirmed",
+      "category": "TWOJA REZERWACJA",
+      "subject": "VANLY — rezerwacja {{booking_number}} potwierdzona",
+      "preheader": "Sprawdź termin, płatności i zapisane warunki swojego wyjazdu.",
+      "heading": "Rezerwacja jest potwierdzona",
+      "cta": "Otwórz rezerwację",
+      "send_when": "Raz po przejściu do confirmed, zarówno dla instant, jak i akceptacji przez firmę.",
+      "required_attachments": [
+        "Podsumowanie potwierdzonej rezerwacji (PDF)"
+      ],
+      "variants": {
+        "confirmation_sentence": {
+          "instant": "Twoja rezerwacja {{vehicle_name}} została potwierdzona automatycznie.",
+          "accepted": "Wypożyczalnia {{rental_company_name}} zaakceptowała Twoją prośbę o rezerwację {{vehicle_name}}."
+        }
+      },
+      "files": {
+        "html": "04-rezerwacja-potwierdzona.html",
+        "text_plain": "04-rezerwacja-potwierdzona.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "attachment_names",
+        "balance_amount",
+        "balance_due_label",
+        "booking_number",
+        "confirmation_sentence",
+        "current_year",
+        "deposit_amount",
+        "deposit_status_label",
+        "first_name",
+        "paid_amount",
+        "payment_plan_label",
+        "pickup_date",
+        "pickup_location",
+        "rental_company_name",
+        "return_date",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "total_amount",
+        "vehicle_name"
+      ],
+      "required_document_kinds": [
+        "summary"
+      ]
+    },
+    {
+      "id": "05-nowa-prosba-do-firmy",
+      "event": "booking.request_received_by_owner",
+      "category": "PANEL WYPOŻYCZALNI",
+      "subject": "VANLY — nowa prośba {{booking_number}} wymaga decyzji",
+      "preheader": "Sprawdź termin i warunki, a następnie zaakceptuj lub odrzuć prośbę.",
+      "heading": "Nowa prośba o rezerwację",
+      "cta": "Rozpatrz prośbę",
+      "send_when": "Dla kont firmy uprawnionych do podejmowania decyzji, po utworzeniu pending; wiadomość nie zawiera danych kierowcy ani treści prywatnej rozmowy.",
+      "files": {
+        "html": "05-nowa-prosba-do-firmy.html",
+        "text_plain": "05-nowa-prosba-do-firmy.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "booking_number",
+        "current_year",
+        "payment_status_label",
+        "pickup_date",
+        "rental_company_name",
+        "return_date",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "total_amount",
+        "vehicle_name"
+      ]
+    },
+    {
+      "id": "06-zmiana-dat-z-doplata",
+      "event": "booking.date_change_accepted_with_balance",
+      "category": "ZMIANA REZERWACJI",
+      "subject": "VANLY — nowy termin rezerwacji {{booking_number}} zaakceptowany",
+      "preheader": "Sprawdź nowy termin, cenę i wymaganą dopłatę.",
+      "heading": "Nowy termin jest zapisany",
+      "cta": "Przejdź do dopłaty",
+      "send_when": "Po skutecznym zapisaniu zaakceptowanej zmiany i dodatniej pozostałej należności; nigdy na samo wysłanie propozycji.",
+      "required_attachments": [
+        "Podsumowanie zaakceptowanej zmiany rezerwacji (PDF)"
+      ],
+      "files": {
+        "html": "06-zmiana-dat-z-doplata.html",
+        "text_plain": "06-zmiana-dat-z-doplata.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "additional_amount",
+        "app_url",
+        "attachment_names",
+        "balance_due_label",
+        "booking_number",
+        "current_year",
+        "deposit_amount",
+        "first_name",
+        "paid_amount",
+        "pickup_date",
+        "previous_pickup_date",
+        "previous_return_date",
+        "rental_company_name",
+        "return_date",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "total_amount",
+        "vehicle_name"
+      ],
+      "required_document_kinds": [
+        "amendment"
+      ]
+    },
+    {
+      "id": "07-przypomnienie-doplaty",
+      "event": "booking.balance_payment_reminder",
+      "category": "PŁATNOŚĆ ZA WYJAZD",
+      "subject": "VANLY — dopłata do rezerwacji {{booking_number}} do {{balance_due_date}}",
+      "preheader": "Pozostało {{balance_amount}} do zapłaty. Sprawdź termin dopłaty.",
+      "heading": "Czas na pozostałą płatność",
+      "cta": "Opłać pozostałą kwotę",
+      "send_when": "Dla aktywnej rezerwacji z dodatnim saldem; przed wysyłką ponownie sprawdzić saldo, status i wcześniejsze przypomnienia. Nie wysyłać po anulowaniu lub opłaceniu.",
+      "files": {
+        "html": "07-przypomnienie-doplaty.html",
+        "text_plain": "07-przypomnienie-doplaty.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "balance_amount",
+        "balance_due_at",
+        "balance_due_date",
+        "booking_number",
+        "current_year",
+        "display_timezone",
+        "first_name",
+        "paid_amount",
+        "pickup_date",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "total_amount",
+        "vehicle_name"
+      ]
+    },
+    {
+      "id": "08-anulowanie-przez-firme",
+      "event": "booking.cancelled_by_owner_refund_pending",
+      "category": "ZMIANA STATUSU REZERWACJI",
+      "subject": "VANLY — rezerwacja {{booking_number}} została anulowana",
+      "preheader": "Wyjazd został anulowany przez wypożyczalnię. Rozliczenie zwrotu jest w toku.",
+      "heading": "Wypożyczalnia anulowała rezerwację",
+      "cta": "Sprawdź rozliczenie",
+      "send_when": "Po anulowaniu przez firmę i faktycznym ustawieniu refund_pending; nie używać dla rezerwacji bez wpłaty.",
+      "safe_defaults": {
+        "refund_review_information": "Kwota i zakres zwrotu zostaną wskazane w rozliczeniu, zgodnie z warunkami tej rezerwacji. Nie jest to potwierdzenie pełnego zwrotu."
+      },
+      "files": {
+        "html": "08-anulowanie-przez-firme.html",
+        "text_plain": "08-anulowanie-przez-firme.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "booking_number",
+        "cancellation_reason",
+        "current_year",
+        "deposit_status_label",
+        "first_name",
+        "paid_amount",
+        "pickup_date",
+        "refund_review_information",
+        "rental_company_name",
+        "return_date",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "vehicle_name"
+      ]
+    },
+    {
+      "id": "09-zwrot-wykonany",
+      "event": "payment.refund_succeeded",
+      "category": "ROZLICZENIE PŁATNOŚCI",
+      "subject": "VANLY — wykonano zwrot {{refund_amount}} dla {{booking_number}}",
+      "preheader": "Zwrot został wykonany. Termin pojawienia się środków zależy od banku lub operatora.",
+      "heading": "Zwrot został wykonany",
+      "cta": "Otwórz rozliczenie zwrotu",
+      "send_when": "Dopiero po zaufanym potwierdzeniu zakończonego zwrotu od operatora, nie po utworzeniu żądania refundu; również dla zwrotu częściowego.",
+      "files": {
+        "html": "09-zwrot-wykonany.html",
+        "text_plain": "09-zwrot-wykonany.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "booking_number",
+        "current_year",
+        "first_name",
+        "refund_amount",
+        "refund_destination_label",
+        "refund_executed_at",
+        "refund_reference",
+        "refund_scope_label",
+        "remaining_settlement_status_label",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email"
+      ]
+    },
+    {
+      "id": "10-protokol-do-sprawdzenia",
+      "event": "rental.protocol_ready_for_review",
+      "category": "ODBIÓR I ZWROT",
+      "subject": "VANLY — protokół {{protocol_kind}} dla {{booking_number}} do sprawdzenia",
+      "preheader": "Sprawdź zapis wypożyczalni i potwierdź go po wyjaśnieniu ewentualnych różnic.",
+      "heading": "Sprawdź protokół {{protocol_kind}}",
+      "cta": "Sprawdź protokół",
+      "send_when": "Po zapisaniu nowej wersji protokołu odbioru lub zwrotu wymagającej potwierdzenia; nie powtarzać dla tego samego numeru wersji.",
+      "variants": {
+        "protocol_kind": [
+          "odbioru",
+          "zwrotu"
+        ]
+      },
+      "files": {
+        "html": "10-protokol-do-sprawdzenia.html",
+        "text_plain": "10-protokol-do-sprawdzenia.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "booking_number",
+        "current_year",
+        "first_name",
+        "protocol_created_at",
+        "protocol_kind",
+        "rental_company_name",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "vehicle_name"
+      ]
+    },
+    {
+      "id": "11-nowa-wiadomosc-prywatna",
+      "event": "conversation.unread_message_notification",
+      "category": "WIADOMOŚCI",
+      "subject": "VANLY — masz nową wiadomość w rozmowie {{conversation_reference}}",
+      "preheader": "Otwórz rozmowę w VANLY, aby przeczytać i odpowiedzieć.",
+      "heading": "Masz nową wiadomość",
+      "cta": "Otwórz rozmowę",
+      "send_when": "Dla odbiorcy z nieprzeczytaną wiadomością, po krótkim oknie agregacji; przed wysyłką sprawdzić, czy rozmowa nadal jest nieprzeczytana. Działa dla podróżującego i firmy.",
+      "files": {
+        "html": "11-nowa-wiadomosc-prywatna.html",
+        "text_plain": "11-nowa-wiadomosc-prywatna.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "conversation_context_label",
+        "conversation_reference",
+        "current_year",
+        "first_name",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email"
+      ]
+    },
+    {
+      "id": "12-newsletter",
+      "event": "marketing.newsletter_campaign",
+      "category": "INSPIRACJE OD VANLY",
+      "marketing": true,
+      "subject": "VANLY — jak zaplanować pierwszy wyjazd kamperem",
+      "preheader": "Kilka pytań, które pomogą Ci przygotować trasę i wybrać pojazd.",
+      "heading": "Pierwsza podróż zaczyna się od planu",
+      "cta": "Przeczytaj poradnik",
+      "send_when": "Wyłącznie dla osoby z aktywną, udokumentowaną zgodą na ten rodzaj marketingu i po sprawdzeniu suppression list; brak zgody nie wpływa na pocztę transakcyjną. Ten przykład wymaga rzeczywiście opublikowanego poradnika o opisanym zakresie.",
+      "recommended_headers": [
+        "List-Unsubscribe: <{{one_click_unsubscribe_url}}>",
+        "List-Unsubscribe-Post: List-Unsubscribe=One-Click"
+      ],
+      "files": {
+        "html": "12-newsletter.html",
+        "text_plain": "12-newsletter.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "current_year",
+        "first_name",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "unsubscribe_url"
+      ]
+    }
+  ]
+}

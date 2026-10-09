@@ -1,0 +1,21 @@
+{{email_heading}}
+
+Cześć {{first_name}},
+
+{{intro_text}}
+
+{{details_text}}
+
+{{next_step_text}}
+
+{{cta_label}}:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

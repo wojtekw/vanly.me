@@ -1,0 +1,23 @@
+/* Keep native dropdown behavior with a consistent, inset chevron. */
+:root select:not([multiple]):is(:not([size]), [size="1"]) {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m3 6 5 5 5-5' fill='none' stroke='%23172f31' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px 16px;
+}
+
+:root select.input.qty:not([multiple]):is(:not([size]), [size="1"]) {
+  padding-right: 32px;
+  background-position: right 10px center;
+}
+
+@media (forced-colors: active) {
+  :root select:not([multiple]):is(:not([size]), [size="1"]) {
+    -webkit-appearance: auto;
+    appearance: auto;
+    background-image: none;
+  }
+}

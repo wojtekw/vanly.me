@@ -1,0 +1,13 @@
+.git
+.idea
+.env*
+.local
+node_modules
+**/node_modules
+**/.next
+**/dist
+output
+outputs
+tmp
+*.log
+**/.DS_Store

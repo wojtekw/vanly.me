@@ -1,0 +1,35 @@
+{
+  "name": "vanly",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "test:billing": "node --test tests/launch-billing.test.mjs",
+    "build": "pnpm --filter @vanly/api build && pnpm --filter @vanly/frontoffice build && pnpm --filter @vanly/owner build && pnpm --filter @vanly/admin build && pnpm --filter @vanly/camperfolks build && pnpm --filter @vanly/heyvans build",
+    "db:migrate": "node scripts/migrate.mjs",
+    "db:seed": "node scripts/seed.mjs",
+    "db:demo-market": "node scripts/generate-marketplace-fixture.mjs && node scripts/import-demo-marketplace.mjs",
+    "test": "node --test tests/api.test.mjs tests/bookings-refactor.test.mjs tests/request-id.test.mjs tests/mailer.test.mjs tests/mailer-db.test.mjs tests/mailer-attachments.test.mjs tests/documents.test.mjs tests/notification-reminders.test.mjs tests/frontend-state-ui.test.mjs tests/registration-ui.test.mjs tests/pickup-ui.test.mjs tests/stock-ui.test.mjs tests/camps-ui.test.mjs tests/frontoffice-data.test.mjs tests/article-text.test.mjs tests/email-confirmation-ui.test.mjs tests/launch-billing.test.mjs",
+    "start:api": "node apps/api/dist/main.js",
+    "start:web": "pnpm --filter @vanly/web start",
+    "start:worker": "node scripts/worker.mjs",
+    "start:camperfolks": "pnpm --filter @vanly/camperfolks start",
+    "test:camperfolks": "node --test tests/camperfolks-http.test.mjs",
+    "start:heyvans": "pnpm --filter @vanly/heyvans start",
+    "test:heyvans-api": "node --test tests/heyvans-auth.test.mjs",
+    "test:heyvans-http": "node --test tests/heyvans-http.test.mjs",
+    "test:mailer": "node --test tests/mailer.test.mjs tests/mailer-db.test.mjs tests/mailer-attachments.test.mjs tests/documents.test.mjs tests/notification-reminders.test.mjs",
+    "test:ui": "node --test tests/frontend-state-ui.test.mjs tests/registration-ui.test.mjs tests/pickup-ui.test.mjs tests/stock-ui.test.mjs tests/camps-ui.test.mjs tests/frontoffice-data.test.mjs tests/article-text.test.mjs tests/email-confirmation-ui.test.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.1146.0",
+    "@aws-sdk/client-sqs": "^3.1146.0",
+    "dotenv": "^17.2.3",
+    "pdfkit": "^0.17.2",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2"
+  }
+}

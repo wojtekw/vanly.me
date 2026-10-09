@@ -1,0 +1,81 @@
+{
+  "observedOn": "2026-09-30",
+  "distributionId": "E1ESNDGM3WTQP4",
+  "distributionDomain": "d3efg33xz921lx.cloudfront.net",
+  "httpChecksPassed": true,
+  "httpsAssetChecks": 21,
+  "expectedAssetChecks": 21,
+  "httpRedirectsPassed": 2,
+  "localManifestSha256": "40220f0ff96881b14e2bce7da2e9045cc9c94fd5585d9f616bf7010eff3e7149",
+  "localManifestFileCount": 10,
+  "localManifestBytes": 1904963,
+  "directS3Status": 403,
+  "directS3PublicReadBlocked": true,
+  "httpResolutionSource": {
+    "httpLibrary": "requests.get with default OS networking and default TLS certificate validation",
+    "customDnsOrResolveOverride": false,
+    "customHttpAdapter": false,
+    "proxyEnvironmentConfigured": false,
+    "hostsFilePublicDomainOverride": false,
+    "hostsFileNote": "Only vanly.me.local, owner.vanly.me.local and admin.vanly.me.local development entries were observed; none for vanly.me or www.vanly.me."
+  },
+  "dnsPropagationCompleteAcrossCheckedResolvers": false,
+  "defaultCurlChecks": [
+    {
+      "url": "https://vanly.me/",
+      "httpCode": 200,
+      "remoteIp": "3.174.230.112",
+      "sslVerifyResult": 0,
+      "dnsOverride": false
+    },
+    {
+      "url": "https://www.vanly.me/",
+      "httpCode": 200,
+      "remoteIp": "3.174.230.91",
+      "sslVerifyResult": 0,
+      "dnsOverride": false
+    }
+  ],
+  "defaultDigResolverObservation": {
+    "resolver": "192.168.188.1",
+    "nameservers": [
+      "ns39.domaincontrol.com",
+      "ns40.domaincontrol.com"
+    ],
+    "apexA": [
+      "3.33.130.190",
+      "15.197.148.33"
+    ],
+    "wwwCname": "vanly.me.",
+    "remainingApexTtlSecondsAtObservation": 2412,
+    "note": "dig DNS to the configured router still reports cached previous records; OS socket resolution and public Cloudflare DNS report CloudFront records."
+  },
+  "rootBrowserObservation": {
+    "browser": "Chrome",
+    "url": "https://vanly.me/",
+    "result": "ERR_SSL_UNRECOGNIZED_NAME_ALERT",
+    "source": "root agent read browser state",
+    "cause": "not definitively established; different DNS caches and in-progress CloudFront deployment are plausible explanations, while requests/curl validate TLS and return the correct page."
+  },
+  "fullLocalReport": ".local/coming-soon/public-web-verification.json",
+  "publicCdnBrowserQa": {
+    "source": "root agent Chrome UI inspection",
+    "url": "https://d3efg33xz921lx.cloudfront.net/",
+    "desktopPassed": true,
+    "mobile390pxPassed": true,
+    "fontLoaded": true,
+    "imagesComplete": true,
+    "consoleErrorsOrWarnings": false,
+    "mobileHorizontalOverflow": false,
+    "screenshots": [
+      ".local/qa/coming-soon-live-desktop.jpg",
+      ".local/qa/coming-soon-live-mobile.jpg"
+    ]
+  },
+  "cloudFrontConsoleFinalStatus": {
+    "source": "root agent AWS Console reload",
+    "completed": true,
+    "lastModifiedUtc": "2026-09-30T14:03:01Z",
+    "screenshot": ".local/qa/aws-coming-soon-deployed.jpg"
+  }
+}

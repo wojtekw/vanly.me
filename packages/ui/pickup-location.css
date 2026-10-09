@@ -1,0 +1,59 @@
+.pickup-section {
+  grid-column: 1 / -1;
+  border-block: 1px solid var(--line);
+  padding-block: 21px;
+}
+.pickup-section h3 {
+  margin-bottom: 8px;
+}
+.pickup-section > p {
+  margin-bottom: 16px;
+}
+.form-field > label {
+  display: block;
+  font-size: 12px;
+  font-weight: 550;
+  margin-bottom: 7px;
+}
+.locality-combobox {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+.locality-popup {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  min-width: min(320px, calc(100vw - 64px));
+  max-width: calc(100vw - 64px);
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 50;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  text-align: left;
+}
+.locality-popup ul {
+  list-style: none;
+  padding: 4px;
+  margin: 0;
+}
+.locality-popup li {
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.locality-popup li.active {
+  background: var(--sage);
+}
+.locality-status {
+  font-size: 12px;
+  padding: 10px 16px 14px;
+  color: var(--muted);
+}

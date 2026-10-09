@@ -1,0 +1,85 @@
+{
+  "observedOn": "2026-09-30",
+  "measurementId": "G-6P7XHCK7L7",
+  "gaAccountId": "10875208",
+  "gaPropertyId": "556850726",
+  "gaStreamId": "15890613646",
+  "liveAnalyticsConfigured": true,
+  "releaseManifestFileCount": 11,
+  "releaseManifestBytes": 1917203,
+  "releaseManifestSha256": "6c6d106f90a6891ed69638a235847b992bdcf4eaf99fd89f04a012f4e73a08da",
+  "publicFileCheck": {
+    "checkedAtUtc": "2026-09-30T14:39:09.759775+00:00",
+    "passed": 9,
+    "checks": 9,
+    "allBodyHashesMatch": true,
+    "measurementIdMatchesOnAllThreeHosts": true,
+    "javaScriptContentTypeObserved": "text/javascript; charset=utf-8",
+    "javaScriptContentTypeExpected": "text/javascript",
+    "javaScriptMimeCorrectionStatus": "Object reuploaded with explicit MIME; corrected bytes and headers verified on all three hosts",
+    "report": ".local/coming-soon/analytics-public-verification.json",
+    "javascriptExecuted": false,
+    "analyticsEventsSent": false
+  },
+  "invalidations": [
+    {
+      "id": "I3U1AASXTMVS9EXGXRYKRQP8QG",
+      "createdAtUtc": "2026-09-30T14:35:23Z",
+      "paths": [
+        "/*"
+      ],
+      "statusAtLastObservation": "Completed",
+      "source": "Root agent verified AWS Console"
+    },
+    {
+      "id": "IB2FN59BNS7N496L3S6HD6Y3OM",
+      "createdAtUtc": "2026-09-30T14:38:58Z",
+      "paths": [
+        "/analytics.js"
+      ],
+      "statusAtLastObservation": "Completed",
+      "completionVerifiedAroundUtc": "2026-09-30 14:40 UTC",
+      "source": "Root agent verified AWS Console"
+    }
+  ],
+  "gaSettings": {
+    "enhancedMeasurementEnabled": false,
+    "emailRedactionEnabled": true,
+    "connectedSiteTags": 0,
+    "additionalSignalsEnabled": false,
+    "userProvidedDataCollectionEnabled": false,
+    "adPersonalizationEnabledRegions": 0,
+    "adPersonalizationTotalRegions": 307,
+    "adPersonalizationEnabled": false,
+    "userDataRetentionMonths": 2,
+    "eventDataRetentionMonths": 2,
+    "retentionResetOnNewActivityEnabled": false
+  },
+  "realtimeEvidence": {
+    "source": "Root agent viewed actual GA4 Realtime UI in Chrome for property 556850726",
+    "activeUsers": 1,
+    "events": {
+      "page_view": 1,
+      "first_visit": 1,
+      "session_start": 1
+    },
+    "pageTitle": "VANLY — start 15 października 2026",
+    "visitorIdentityOrOriginAttributed": false,
+    "productionVisitSimulatedByRoot": false,
+    "screenshot": ".local/qa/vanly-ga4-realtime.jpg",
+    "pageViewScreenshot": ".local/qa/vanly-ga4-page-view.jpg"
+  },
+  "consentTesting": {
+    "localWorkerTestsPassed": "32/32",
+    "productionBrowserConsentExercised": false,
+    "reason": "Chrome custom-domain SSL alert persists; static clone QA does not verify production browser behavior"
+  },
+  "screenshots": [
+    ".local/qa/vanly-analytics-upload.jpg",
+    ".local/qa/vanly-analytics-invalidation.jpg",
+    ".local/qa/vanly-ga4-realtime.jpg",
+    ".local/qa/vanly-ga4-page-view.jpg"
+  ],
+  "checksPerformedByThisAgent": "Read local final verification report and validate stored facts only; no remote changes or analytics events sent",
+  "applicationAnalyticsRunbook": "docs/coming-soon-analytics.md"
+}

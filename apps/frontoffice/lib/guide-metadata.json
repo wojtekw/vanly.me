@@ -1,0 +1,122 @@
+{
+  "first": {
+    "order": 1,
+    "description": "Od wyboru pojazdu do pierwszej nocy: plan spokojnego startu w podróż kamperem.",
+    "alt": "Para planuje pierwszy wyjazd przy otwartych drzwiach kampera nad jeziorem.",
+    "category": "Przed rezerwacją"
+  },
+  "kamper-campervan-przyczepa": {
+    "order": 2,
+    "description": "Porównaj trzy sposoby podróżowania i zobacz, który pasuje do Waszego planu dnia.",
+    "alt": "Campervan, większy kamper i przyczepa kempingowa ustawione obok siebie.",
+    "category": "Przed rezerwacją"
+  },
+  "uklad-kampera": {
+    "order": 3,
+    "description": "Miejsca do jazdy, wymiary łóżek i dostęp do schowków. Sprawdź wnętrze w praktyce.",
+    "alt": "Rysunkowy widok wnętrza kampera ze stolikiem, miejscami do siedzenia i łóżkiem.",
+    "category": "Przed rezerwacją"
+  },
+  "samochod-i-przyczepa": {
+    "order": 4,
+    "description": "Dokumenty auta, parametry przyczepy i uprawnienia kierowcy przed rezerwacją.",
+    "alt": "Samochód z przyczepą kempingową, a na pierwszym planie dokumenty i kluczyki.",
+    "category": "Przed rezerwacją"
+  },
+  "koszt-wyjazdu": {
+    "order": 5,
+    "description": "Wynajem, paliwo, noclegi i kaucja. Ułóż budżet na podstawie prostego przykładu.",
+    "alt": "Notatnik, kalkulator, mapa i kubki przygotowane do policzenia budżetu podróży.",
+    "category": "Przed rezerwacją"
+  },
+  "porownanie-ofert": {
+    "order": 6,
+    "description": "Te same daty, potrzeby i pełna cena. Zobacz, jak zestawić oferty na równych zasadach.",
+    "alt": "Podróżna porównuje materiały przedstawiające wnętrza dwóch pojazdów.",
+    "category": "Przed rezerwacją"
+  },
+  "kaucja-i-ubezpieczenie": {
+    "order": 7,
+    "description": "Kaucja, udział własny i assistance. Pytania, które warto zadać przed podpisaniem umowy.",
+    "alt": "Kluczyk do kampera na dokumentach ochrony i zielonej teczce.",
+    "category": "Przed rezerwacją"
+  },
+  "prawo-jazdy": {
+    "order": 8,
+    "description": "Kategoria B, kod 96 i B+E. Podstawowe zasady oraz trzy przykłady zestawów.",
+    "alt": "Kierowca w zaparkowanym kamperze sprawdza dokument prawa jazdy.",
+    "category": "Przed rezerwacją"
+  },
+  "co-zabrac": {
+    "order": 9,
+    "description": "Sprawdź wyposażenie w cenie, przygotuj własną listę i znajdź miejsce na rzeczy.",
+    "alt": "Torby, ubrania, naczynia i buty przygotowane do spakowania przed wyjazdem.",
+    "category": "Przygotowanie"
+  },
+  "kamperem-z-dziecmi": {
+    "order": 10,
+    "description": "Foteliki, spanie, postoje i kemping. Zaplanuj wyjazd z myślą o całej rodzinie.",
+    "alt": "Rodzina z dziećmi planuje podróż przy stole obok kampera na kempingu.",
+    "category": "Przygotowanie"
+  },
+  "kamperem-z-psem": {
+    "order": 11,
+    "description": "Zgoda na zwierzę, bezpieczny przewóz, dokumenty i codzienny rytm w nowym miejscu.",
+    "alt": "Pies odpoczywa na macie z miską wody obok kampera i swojego opiekuna.",
+    "category": "Przygotowanie"
+  },
+  "handover": {
+    "order": 12,
+    "description": "Oględziny, protokół i instruktaż. Lista spraw do sprawdzenia przed ruszeniem z placu.",
+    "alt": "Pracownik wskazuje ślad na nadwoziu, a osoba odbierająca kampera robi zdjęcie.",
+    "category": "Przygotowanie"
+  },
+  "woda-prad-toaleta": {
+    "order": 13,
+    "description": "Poznaj podstawy obsługi zasobów i pytania do wypożyczalni przed pierwszym postojem.",
+    "alt": "Osoba we wnętrzu kampera sprawdza panel sterowania obok aneksu kuchennego.",
+    "category": "W podróży"
+  },
+  "wybor-kempingu": {
+    "order": 14,
+    "description": "Dojazd, parcela, sanitariaty i cena całego pobytu. Wybierz miejsce na dobry początek.",
+    "alt": "Kameralny kemping z parcelami dla kamperów, sanitariatami i jeziorem w tle.",
+    "category": "W podróży"
+  },
+  "parking-czy-kemping": {
+    "order": 15,
+    "description": "Sprawdź zasady postoju, możliwość nocowania i dostęp do potrzebnej infrastruktury.",
+    "alt": "Kamper zaparkowany na wyznaczonym miejscu przy miasteczku, obok znak parkingu.",
+    "category": "W podróży"
+  },
+  "planowanie-trasy": {
+    "order": 16,
+    "description": "Zostaw czas na postoje, obsługę pojazdu i zmianę planów. Podróżuj w swoim rytmie.",
+    "alt": "Podróżni z mapą przy kamperze na punkcie widokowym wśród zielonych wzgórz.",
+    "category": "W podróży"
+  },
+  "kamperem-za-granice": {
+    "order": 17,
+    "description": "Kraje tranzytowe, dokumenty, ubezpieczenie i opłaty. Przygotuj całą trasę.",
+    "alt": "Dokumenty, mapa i kluczyk na tle nadmorskiej trasy oraz przeprawy promowej.",
+    "category": "W podróży"
+  },
+  "poza-sezonem": {
+    "order": 18,
+    "description": "Ogrzewanie, mokre rzeczy i działający kemping. Przygotuj się na chłodniejszy wyjazd.",
+    "alt": "Jesienny kemping po deszczu, oświetlone wnętrze kampera i osoba przy wejściu.",
+    "category": "W podróży"
+  },
+  "awaria-lub-szkoda": {
+    "order": 19,
+    "description": "Bezpieczeństwo, lokalizacja i właściwy kontakt. Ustal, jak wezwać pomoc w podróży.",
+    "alt": "Podróżna telefonuje z bezpiecznego miejsca postoju, w tle nadjeżdża pomoc drogowa.",
+    "category": "W podróży"
+  },
+  "zwrot-kampera": {
+    "order": 20,
+    "description": "Tankowanie, zbiorniki, wyposażenie i protokół. Rozłóż przygotowanie na spokojne etapy.",
+    "alt": "Przekazanie kluczyków przy zwrocie kampera na placu wypożyczalni.",
+    "category": "Powrót"
+  }
+}

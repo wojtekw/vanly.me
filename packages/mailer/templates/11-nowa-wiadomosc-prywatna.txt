@@ -1,0 +1,21 @@
+Masz nową wiadomość
+
+Cześć {{first_name}},
+
+W rozmowie dotyczącej {{conversation_context_label}} czeka na Ciebie nowa wiadomość.
+
+Przeczytaj ją i odpowiedz bezpiecznie po zalogowaniu do VANLY. Treści prywatnej rozmowy nie umieszczamy w powiadomieniu e-mail.
+
+Odpowiedź na ten e-mail nie zostanie automatycznie dopisana do rozmowy. Użyj przycisku poniżej.
+
+Otwórz rozmowę:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

@@ -1,0 +1,1065 @@
+@font-face {
+  font-family: 'Heyvans Manrope';
+  src: url('/assets/heyvans/Manrope-variable.ttf') format('truetype');
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Heyvans Barlow Condensed';
+  src: url('/assets/heyvans/BarlowCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Every presentation rule belongs to Heyvans; the two existing frontends keep their styles. */
+:root[data-brand='heyvans'] {
+  --ink: #141615;
+  --green: #141615;
+  --green-dark: #30332e;
+  --paper: #f0efe9;
+  --sand: #e5e5dc;
+  --sage: #e8e8de;
+  --muted: #565b54;
+  --line: #b1b2a8;
+  --white: #faf9f4;
+  --concrete: #d3d3ca;
+  --signal: #ff4b24;
+  --radius: 2px;
+  --shadow: none;
+  --font: 'Heyvans Manrope', Arial, sans-serif;
+  scroll-padding-top: 24px;
+}
+:root[data-brand='heyvans'] body {
+  padding-bottom: 0;
+  font-size: 15px;
+}
+:root[data-brand='heyvans'] :is(h1, h2) {
+  font-family: 'Heyvans Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.97;
+  letter-spacing: -0.018em;
+}
+:root[data-brand='heyvans'] h1 {
+  font-size: clamp(44px, 5.4vw, 76px);
+}
+:root[data-brand='heyvans'] h2 {
+  font-size: clamp(36px, 4.4vw, 62px);
+}
+:root[data-brand='heyvans'] h3 {
+  font-weight: 800;
+}
+:root[data-brand='heyvans'] .eyebrow {
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+:root[data-brand='heyvans'] :focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 4px;
+}
+:root[data-brand='heyvans'] .local-ribbon {
+  position: static;
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  justify-content: center;
+  height: 30px;
+  font-size: 10px;
+}
+:root[data-brand='heyvans'] .status-dot {
+  background: var(--signal);
+}
+:root[data-brand='heyvans'] #header {
+  height: 96px;
+  background: var(--paper);
+  border: 0;
+}
+:root[data-brand='heyvans'] .site-header {
+  border-bottom: 1px solid var(--ink);
+  gap: 26px;
+}
+:root[data-brand='heyvans'] .site-header .brand {
+  width: 185px;
+  flex-basis: 185px;
+}
+:root[data-brand='heyvans'] .main-nav {
+  gap: 21px;
+}
+:root[data-brand='heyvans'] .main-nav a {
+  font-size: 11px;
+  font-weight: 700;
+}
+:root[data-brand='heyvans'] .header-actions {
+  gap: 5px;
+}
+:root[data-brand='heyvans'] .header-actions > .btn.primary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 11px 14px;
+  white-space: nowrap;
+}
+:root[data-brand='heyvans'] .header-actions > .btn.primary:hover {
+  background: var(--signal);
+  color: var(--ink);
+}
+:root[data-brand='heyvans']
+  :is(
+    .btn,
+    .panel,
+    .booking-panel,
+    .input,
+    .auth-form,
+    .filter-panel,
+    .article-card,
+    .vehicle-card,
+    .camps-input,
+    .camps-explorer,
+    .camps-regions button,
+    .chip,
+    .segmented,
+    .side-nav a,
+    .booking-card,
+    .notice,
+    .metric,
+    .photo-viewer-trigger,
+    .offer-gallery,
+    .offer-gallery button,
+    .conversation-choice,
+    .chat-bubble,
+    .article-hero,
+    .camps-details
+  ) {
+  border-radius: 2px;
+  box-shadow: none;
+}
+:root[data-brand='heyvans'] .btn {
+  font-size: 12px;
+  font-weight: 800;
+  min-height: 50px;
+  gap: 20px;
+}
+:root[data-brand='heyvans'] .btn.primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+:root[data-brand='heyvans'] .btn.secondary {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] :is(.btn.primary, .btn.secondary):hover {
+  background: var(--signal);
+  color: var(--ink);
+}
+:root[data-brand='heyvans'] .text-link {
+  color: inherit;
+  min-height: 44px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  gap: 20px;
+}
+:root[data-brand='heyvans'] .text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+:root[data-brand='heyvans'] .real-search {
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  padding: 20px;
+  box-shadow: none;
+  grid-template-columns: 1.3fr 1fr 1fr 0.8fr 1.15fr;
+  gap: 0;
+}
+:root[data-brand='heyvans'] .search-field {
+  padding: 0 20px;
+  border-color: var(--line);
+  min-height: 59px;
+}
+:root[data-brand='heyvans'] .search-field:first-child {
+  padding-left: 0;
+}
+:root[data-brand='heyvans'] .search-field:nth-child(4) {
+  border-right: 0;
+}
+:root[data-brand='heyvans'] .search-field:hover {
+  background: transparent;
+}
+:root[data-brand='heyvans'] .search-field > svg {
+  display: none;
+}
+:root[data-brand='heyvans'] .search-field > span {
+  width: 100%;
+}
+:root[data-brand='heyvans'] .search-field strong {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+:root[data-brand='heyvans'] .real-search :is(input, select) {
+  background: transparent;
+  font-size: 14px;
+  min-height: 34px;
+}
+:root[data-brand='heyvans'] .real-search > .btn {
+  min-height: 54px;
+  padding: 15px 18px;
+  margin-left: 0;
+}
+:root[data-brand='heyvans'] .real-search > .btn svg {
+  color: var(--signal);
+}
+:root[data-brand='heyvans'] .real-search > .btn:hover svg {
+  color: var(--ink);
+}
+:root[data-brand='heyvans'] .compact-search {
+  margin-bottom: 36px;
+}
+:root[data-brand='heyvans'] .vehicle-card {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  overflow: visible;
+}
+:root[data-brand='heyvans'] .vehicle-picture {
+  background: var(--concrete);
+  border-radius: 2px;
+}
+:root[data-brand='heyvans'] .vehicle-picture img {
+  filter: none;
+}
+:root[data-brand='heyvans'] .vehicle-picture:after {
+  content: 'HEYVANS / W DROGĘ';
+  color: var(--muted);
+}
+:root[data-brand='heyvans'] .vehicle-card-body {
+  padding: 23px 0 20px;
+}
+:root[data-brand='heyvans'] .vehicle-card-body h3 {
+  font-size: 21px;
+}
+:root[data-brand='heyvans'] .vehicle-card-body .eyebrow {
+  font-size: 9px;
+  color: var(--muted);
+}
+:root[data-brand='heyvans'] .vehicle-facts {
+  font-size: 11px;
+}
+:root[data-brand='heyvans'] .favorite-button {
+  border-radius: 2px;
+  background: var(--paper);
+}
+:root[data-brand='heyvans'] .favorite-button.saved {
+  color: var(--signal);
+}
+:root[data-brand='heyvans'] :is(.card-tag, .pill) {
+  border-radius: 2px;
+}
+:root[data-brand='heyvans'] .card-tag {
+  background: var(--paper);
+  color: var(--ink);
+}
+:root[data-brand='heyvans'] .filter-panel {
+  background: transparent;
+  border: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] :is(.panel, .booking-panel, .booking-card) {
+  background: var(--white);
+  border-color: var(--line);
+}
+:root[data-brand='heyvans'] :is(.chip.active, .segmented .active, .side-nav a.active) {
+  background: var(--ink);
+  color: var(--paper);
+}
+:root[data-brand='heyvans'] .checkbox-line input {
+  accent-color: var(--ink);
+}
+:root[data-brand='heyvans'] .input:focus {
+  border-color: var(--ink);
+}
+:root[data-brand='heyvans'] .content-hero :is(h1, h2) {
+  font-size: clamp(48px, 5.4vw, 76px);
+}
+:root[data-brand='heyvans'] .content-hero > img {
+  border-radius: 2px;
+  mix-blend-mode: normal;
+}
+:root[data-brand='heyvans'] .reading > h1 {
+  font-size: clamp(44px, 4.7vw, 64px);
+}
+:root[data-brand='heyvans'] .reading section h2 {
+  font-size: 36px;
+}
+:root[data-brand='heyvans'] .reading .guide-checklist {
+  border-radius: 0;
+}
+:root[data-brand='heyvans'] .auth-art img {
+  border-radius: 2px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+}
+:root[data-brand='heyvans'] .auth-art h1 {
+  font-size: clamp(55px, 5vw, 76px);
+}
+:root[data-brand='heyvans'] .auth-form h2 {
+  font-size: 40px;
+}
+:root[data-brand='heyvans'] .camps-empty > p {
+  font-family: 'Heyvans Barlow Condensed', Impact, sans-serif;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+:root[data-brand='heyvans'] .camps-map-intro:after {
+  background: linear-gradient(transparent, #f0efe9 68%);
+}
+:root[data-brand='heyvans']
+  :is(.camps-google-results gmp-place-search, .camps-details gmp-place-details) {
+  --gmp-mat-color-primary: #141615;
+  --gmp-mat-color-on-surface: #141615;
+  --gmp-mat-color-secondary-container: #e8e8de;
+}
+:root[data-brand='heyvans'] .site-footer {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 52px 0 26px;
+}
+:root[data-brand='heyvans'] .site-footer .footer-logo {
+  width: 230px;
+  margin-bottom: 22px;
+}
+:root[data-brand='heyvans'] .site-footer .footer-copy {
+  color: var(--muted);
+  font-size: 11px;
+  max-width: 420px;
+}
+:root[data-brand='heyvans'] .footer-tagline {
+  display: block;
+  color: var(--ink);
+  font:
+    700 39px/0.97 'Heyvans Barlow Condensed',
+    Impact,
+    sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+:root[data-brand='heyvans'] .footer-top {
+  border: 0;
+  padding-bottom: 42px;
+}
+:root[data-brand='heyvans'] .footer-links strong {
+  color: var(--ink);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+:root[data-brand='heyvans'] .footer-links a {
+  font-size: 11px;
+}
+:root[data-brand='heyvans'] .site-footer .footer-bottom {
+  color: var(--muted);
+  border-top: 1px solid var(--ink);
+  font-size: 9px;
+  padding-top: 22px;
+}
+
+/* The homepage follows the supplied color-adventure-v3 composition. */
+:root[data-brand='heyvans'] .hey-home figure {
+  margin: 0;
+}
+:root[data-brand='heyvans'] .hey-hero {
+  display: grid;
+  grid-template-columns: 0.85fr 1.25fr;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 0 28px;
+}
+:root[data-brand='heyvans'] .hey-hero .eyebrow {
+  margin-bottom: 20px;
+}
+:root[data-brand='heyvans'] .hey-hero .eyebrow:before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  margin: 0 9px 3px 0;
+  background: var(--signal);
+}
+:root[data-brand='heyvans'] .hey-hero h1 {
+  font-size: clamp(88px, 8.8vw, 132px);
+  line-height: 0.88;
+  margin-bottom: 26px;
+  letter-spacing: -0.022em;
+}
+:root[data-brand='heyvans'] .hey-hero-deck {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-bottom: 13px;
+  line-height: 1.3;
+}
+:root[data-brand='heyvans'] .hey-intro {
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 390px;
+  margin: 0 0 17px;
+}
+:root[data-brand='heyvans'] .hey-hero-picture {
+  min-width: 0;
+}
+:root[data-brand='heyvans'] .hey-hero-picture img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+:root[data-brand='heyvans'] .hey-home figcaption {
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 12px 0 10px;
+}
+:root[data-brand='heyvans'] .hey-hero-picture figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] .hey-hero-picture figcaption span:first-child {
+  font-weight: 800;
+}
+:root[data-brand='heyvans'] .hey-search-area {
+  padding-top: 8px;
+}
+:root[data-brand='heyvans'] .hey-search-hint {
+  margin: 13px 0 0;
+  text-align: right;
+  color: var(--muted);
+  font-size: 10px;
+}
+:root[data-brand='heyvans'] .hey-search-hint a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+:root[data-brand='heyvans'] .hey-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  padding: 29px 0 34px;
+  border-bottom: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] .hey-benefits > div {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+:root[data-brand='heyvans'] .hey-number {
+  font-size: 10px;
+  min-width: 23px;
+  padding-top: 2px;
+  font-weight: 800;
+  color: var(--muted);
+  border-top: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] .hey-benefits strong {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+:root[data-brand='heyvans'] .hey-benefits p > span {
+  display: block;
+  font-size: 10px;
+  max-width: 210px;
+  color: var(--muted);
+}
+:root[data-brand='heyvans'] .hey-section {
+  padding-top: 66px;
+  padding-bottom: 66px;
+}
+:root[data-brand='heyvans'] .hey-home h2 {
+  font-size: clamp(44px, 4.7vw, 70px);
+}
+:root[data-brand='heyvans'] .hey-section-heading {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+:root[data-brand='heyvans'] .hey-section-heading .eyebrow {
+  margin-bottom: 16px;
+}
+:root[data-brand='heyvans'] .hey-section-heading > div > p:last-child:not(.eyebrow) {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 530px;
+}
+:root[data-brand='heyvans'] .hey-section-heading > .text-link {
+  white-space: nowrap;
+}
+:root[data-brand='heyvans'] .hey-types {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+:root[data-brand='heyvans'] .hey-types > a {
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 21px;
+}
+:root[data-brand='heyvans'] .hey-type-image {
+  height: 146px;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: var(--concrete);
+  border-radius: 2px;
+}
+:root[data-brand='heyvans'] .hey-type-image img {
+  width: 100%;
+  max-height: 90px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+:root[data-brand='heyvans'] .hey-types h3 {
+  font-size: 15px;
+  margin: 18px 0 8px;
+  display: flex;
+  justify-content: space-between;
+}
+:root[data-brand='heyvans'] .hey-types p {
+  font-size: 11px;
+  color: var(--muted);
+}
+:root[data-brand='heyvans'] .hey-types a:hover .hey-type-image {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+:root[data-brand='heyvans'] .hey-catalog-heading {
+  margin: 64px 0 29px;
+  padding-top: 30px;
+  border-top: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] .hey-catalog-heading h2 {
+  font-size: 48px;
+}
+:root[data-brand='heyvans'] .hey-catalog-heading .eyebrow {
+  margin-bottom: 15px;
+}
+:root[data-brand='heyvans'] .hey-catalog-heading p:last-child {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 16px;
+}
+:root[data-brand='heyvans'] .sample-note {
+  font-size: 10px;
+  margin-top: 13px;
+  color: var(--muted);
+}
+:root[data-brand='heyvans'] .hey-inspiration {
+  background: var(--ink);
+  color: var(--paper);
+}
+:root[data-brand='heyvans'] .hey-inspiration .eyebrow {
+  color: var(--paper);
+}
+:root[data-brand='heyvans'] .hey-inspiration-layout {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 70px;
+  align-items: center;
+}
+:root[data-brand='heyvans'] .hey-inspiration h2 {
+  font-size: clamp(56px, 6vw, 84px);
+  margin-bottom: 26px;
+}
+:root[data-brand='heyvans'] .hey-inspiration-layout > div > p:not(.eyebrow) {
+  font-size: 14px;
+  max-width: 340px;
+  margin-bottom: 28px;
+  color: #c6c8bf;
+}
+:root[data-brand='heyvans'] .hey-inspiration img {
+  width: 100%;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  object-position: 64% center;
+}
+:root[data-brand='heyvans'] .hey-camps {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 78px;
+  align-items: center;
+}
+:root[data-brand='heyvans'] .hey-camps img {
+  width: 100%;
+  aspect-ratio: 1.35;
+  object-fit: cover;
+}
+:root[data-brand='heyvans'] .hey-camps figcaption {
+  border-bottom: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] .hey-camps h2 {
+  margin-bottom: 25px;
+}
+:root[data-brand='heyvans'] .hey-camps > div > p:not(.eyebrow) {
+  max-width: 350px;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+:root[data-brand='heyvans'] .hey-guides {
+  padding-top: 0;
+}
+:root[data-brand='heyvans'] .hey-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+:root[data-brand='heyvans'] .hey-guide-grid > a {
+  padding: 25px 0 30px;
+  border-block: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] .hey-guide-number {
+  font:
+    700 72px/1 'Heyvans Barlow Condensed',
+    Impact,
+    sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 34px;
+  color: var(--muted);
+}
+:root[data-brand='heyvans'] .hey-guide-number svg {
+  color: var(--ink);
+}
+:root[data-brand='heyvans'] .hey-guide-grid .eyebrow {
+  margin-bottom: 17px;
+  font-size: 9px;
+}
+:root[data-brand='heyvans'] .hey-guide-grid h3 {
+  font-size: 25px;
+  max-width: 280px;
+  min-height: 65px;
+  margin-bottom: 20px;
+}
+:root[data-brand='heyvans'] .hey-guide-grid > a > p:last-child {
+  font-size: 12px;
+  max-width: 280px;
+  color: var(--muted);
+}
+:root[data-brand='heyvans'] .hey-guide-grid a:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+:root[data-brand='heyvans'] .hey-owner {
+  background: var(--concrete);
+  padding: 60px 0;
+  border-block: 1px solid var(--ink);
+}
+:root[data-brand='heyvans'] .hey-owner-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+:root[data-brand='heyvans'] .hey-owner-layout > div {
+  min-width: 0;
+}
+:root[data-brand='heyvans'] .hey-owner-word {
+  font:
+    700 clamp(100px, 10.5vw, 152px) / 0.85 'Heyvans Barlow Condensed',
+    Impact,
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+}
+:root[data-brand='heyvans'] .hey-owner-word span {
+  font-size: 0.85em;
+}
+:root[data-brand='heyvans'] .hey-owner h2 {
+  font-size: 55px;
+  margin-bottom: 25px;
+}
+:root[data-brand='heyvans'] .hey-owner-layout p:not(.eyebrow) {
+  font-size: 13px;
+  max-width: 420px;
+  margin-bottom: 27px;
+}
+
+@media (max-width: 1180px) {
+  :root[data-brand='heyvans'] .site-header {
+    gap: 18px;
+  }
+  :root[data-brand='heyvans'] .site-header .brand {
+    width: 150px;
+    flex-basis: 150px;
+  }
+  :root[data-brand='heyvans'] .main-nav {
+    gap: 15px;
+  }
+  :root[data-brand='heyvans'] .main-nav a {
+    font-size: 10px;
+  }
+  :root[data-brand='heyvans'] .hey-inspiration-layout {
+    gap: 36px;
+  }
+  :root[data-brand='heyvans'] .hey-camps {
+    gap: 36px;
+  }
+}
+@media (max-width: 1100px) {
+  :root[data-brand='heyvans'] .container {
+    width: calc(100% - 64px);
+  }
+  :root[data-brand='heyvans'] #header {
+    height: 86px;
+  }
+  :root[data-brand='heyvans'] .main-nav {
+    display: none;
+  }
+  :root[data-brand='heyvans'] .main-nav.is-open {
+    display: grid;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: var(--paper);
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  :root[data-brand='heyvans'] .main-nav.is-open a {
+    display: block;
+    font-size: 14px;
+    padding: 13px;
+  }
+  :root[data-brand='heyvans'] .mobile-menu {
+    display: inline-flex;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+  }
+  :root[data-brand='heyvans'] .header-actions {
+    margin-left: auto;
+    gap: 10px;
+  }
+  :root[data-brand='heyvans'] .hey-hero {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 24px;
+    padding-top: 30px;
+  }
+  :root[data-brand='heyvans'] .hey-hero h1 {
+    font-size: clamp(76px, 9.4vw, 110px);
+  }
+  :root[data-brand='heyvans'] .hey-hero-deck {
+    font-size: 17px;
+  }
+  :root[data-brand='heyvans'] .hey-intro {
+    font-size: 13px;
+  }
+  :root[data-brand='heyvans'] .hey-hero .eyebrow {
+    font-size: 9px;
+  }
+  :root[data-brand='heyvans'] .real-search {
+    grid-template-columns: 1.3fr 1fr 1fr 0.8fr;
+    row-gap: 19px;
+  }
+  :root[data-brand='heyvans'] .search-field {
+    padding: 0 16px;
+  }
+  :root[data-brand='heyvans'] .real-search > .btn {
+    grid-column: 1/-1;
+  }
+  :root[data-brand='heyvans'] .hey-benefits {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+  :root[data-brand='heyvans'] .hey-types {
+    gap: 12px;
+  }
+  :root[data-brand='heyvans'] .hey-type-image {
+    height: 115px;
+    padding: 15px;
+  }
+  :root[data-brand='heyvans'] .hey-types h3 {
+    font-size: 13px;
+  }
+  :root[data-brand='heyvans'] .hey-guide-grid {
+    gap: 22px;
+  }
+  :root[data-brand='heyvans'] .hey-guide-grid h3 {
+    font-size: 22px;
+  }
+  :root[data-brand='heyvans'] .hey-owner-layout {
+    gap: 40px;
+  }
+  :root[data-brand='heyvans'] .hey-owner h2 {
+    font-size: 44px;
+  }
+}
+@media (max-width: 740px) {
+  :root[data-brand='heyvans'] .container {
+    width: calc(100% - 40px);
+  }
+  :root[data-brand='heyvans'] #header {
+    height: 78px;
+  }
+  :root[data-brand='heyvans'] .site-header {
+    gap: 12px;
+  }
+  :root[data-brand='heyvans'] .site-header .brand {
+    flex-basis: 140px;
+    width: 140px;
+  }
+  :root[data-brand='heyvans'] .header-actions {
+    gap: 5px;
+  }
+  :root[data-brand='heyvans'] .header-actions > .btn {
+    min-height: 44px;
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+  :root[data-brand='heyvans'] .header-actions .icon-btn {
+    height: 44px;
+    width: 36px;
+  }
+  :root[data-brand='heyvans'] .hey-hero {
+    grid-template-columns: 1fr;
+    padding: 29px 0 18px;
+    gap: 25px;
+  }
+  :root[data-brand='heyvans'] .hey-hero h1 {
+    font-size: clamp(76px, 22vw, 138px);
+    margin-bottom: 21px;
+  }
+  :root[data-brand='heyvans'] .hey-hero .eyebrow {
+    margin-bottom: 21px;
+  }
+  :root[data-brand='heyvans'] .hey-hero-deck {
+    font-size: 17px;
+    margin-bottom: 11px;
+  }
+  :root[data-brand='heyvans'] .hey-intro {
+    font-size: 13px;
+    max-width: 460px;
+    margin-bottom: 13px;
+  }
+  :root[data-brand='heyvans'] .hey-hero-picture figcaption {
+    font-size: 8px;
+    padding: 10px 0;
+  }
+  :root[data-brand='heyvans'] .hey-hero-picture figcaption span:last-child {
+    max-width: 133px;
+    text-align: right;
+  }
+  :root[data-brand='heyvans'] .real-search {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 14px;
+    padding: 18px;
+  }
+  :root[data-brand='heyvans'] .real-search .search-field {
+    border-right: 0;
+    padding: 0;
+    min-height: auto;
+  }
+  :root[data-brand='heyvans'] .real-search .search-field:first-child {
+    grid-column: 1/-1;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+  }
+  :root[data-brand='heyvans'] .real-search .search-field:nth-child(4) {
+    grid-column: 1/-1;
+  }
+  :root[data-brand='heyvans'] .real-search :is(input, select) {
+    font-size: 16px;
+    min-height: 37px;
+    width: 100%;
+  }
+  :root[data-brand='heyvans'] .real-search > .btn {
+    padding: 17px;
+  }
+  :root[data-brand='heyvans'] .hey-search-hint {
+    text-align: left;
+    font-size: 9px;
+  }
+  :root[data-brand='heyvans'] .hey-benefits {
+    padding: 26px 0;
+    gap: 25px 16px;
+  }
+  :root[data-brand='heyvans'] .hey-benefits > div {
+    gap: 8px;
+  }
+  :root[data-brand='heyvans'] .hey-benefits strong {
+    font-size: 10px;
+  }
+  :root[data-brand='heyvans'] .hey-benefits p > span {
+    font-size: 9px;
+  }
+  :root[data-brand='heyvans'] .hey-number {
+    font-size: 9px;
+    min-width: 19px;
+  }
+  :root[data-brand='heyvans'] .hey-section {
+    padding: 44px 0;
+  }
+  :root[data-brand='heyvans'] .hey-home h2 {
+    font-size: 44px;
+  }
+  :root[data-brand='heyvans'] .hey-section-heading {
+    display: block;
+    margin-bottom: 26px;
+  }
+  :root[data-brand='heyvans'] .hey-section-heading > .text-link {
+    margin-top: 17px;
+  }
+  :root[data-brand='heyvans'] .hey-types {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+  :root[data-brand='heyvans'] .hey-type-image {
+    height: 116px;
+  }
+  :root[data-brand='heyvans'] .hey-types h3 {
+    font-size: 14px;
+  }
+  :root[data-brand='heyvans'] .hey-types > a:last-child {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+    align-items: center;
+  }
+  :root[data-brand='heyvans'] .hey-types > a:last-child .hey-type-image {
+    grid-row: 1/3;
+  }
+  :root[data-brand='heyvans'] .hey-types > a:last-child h3 {
+    align-self: end;
+    margin: 0 0 10px;
+  }
+  :root[data-brand='heyvans'] .hey-types > a:last-child p {
+    align-self: start;
+  }
+  :root[data-brand='heyvans'] .hey-catalog-heading {
+    margin-top: 40px;
+    padding-top: 27px;
+  }
+  :root[data-brand='heyvans'] .hey-catalog-heading h2 {
+    font-size: 42px;
+  }
+  :root[data-brand='heyvans'] .hey-home .vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+  :root[data-brand='heyvans'] .hey-inspiration-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  :root[data-brand='heyvans'] .hey-inspiration h2 {
+    font-size: 64px;
+  }
+  :root[data-brand='heyvans'] .hey-inspiration-layout > div > p:not(.eyebrow) {
+    font-size: 13px;
+  }
+  :root[data-brand='heyvans'] .hey-inspiration img {
+    aspect-ratio: 1.12;
+  }
+  :root[data-brand='heyvans'] .hey-camps {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  :root[data-brand='heyvans'] .hey-camps img {
+    aspect-ratio: 3/2;
+  }
+  :root[data-brand='heyvans'] .hey-camps h2 {
+    font-size: 48px;
+  }
+  :root[data-brand='heyvans'] .hey-guides {
+    padding-top: 0;
+  }
+  :root[data-brand='heyvans'] .hey-guide-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  :root[data-brand='heyvans'] .hey-guide-grid > a {
+    padding: 24px 0;
+  }
+  :root[data-brand='heyvans'] .hey-guide-number {
+    font-size: 62px;
+    margin-bottom: 23px;
+  }
+  :root[data-brand='heyvans'] .hey-guide-grid h3 {
+    min-height: 0;
+    max-width: none;
+    font-size: 24px;
+  }
+  :root[data-brand='heyvans'] .hey-owner {
+    padding: 43px 0;
+  }
+  :root[data-brand='heyvans'] .hey-owner-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  :root[data-brand='heyvans'] .hey-owner-word {
+    font-size: 106px;
+  }
+  :root[data-brand='heyvans'] .content-hero :is(h1, h2) {
+    font-size: 48px;
+  }
+  :root[data-brand='heyvans'] .auth-art h1 {
+    font-size: 55px;
+  }
+  :root[data-brand='heyvans'] .reading section h2 {
+    font-size: 31px;
+  }
+  :root[data-brand='heyvans'] .footer-links a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 380px) {
+  :root[data-brand='heyvans'] .site-header .brand {
+    flex-basis: 120px;
+    width: 120px;
+  }
+  :root[data-brand='heyvans'] .header-actions {
+    gap: 2px;
+  }
+  :root[data-brand='heyvans'] .header-actions > .btn {
+    padding-inline: 7px;
+  }
+  :root[data-brand='heyvans'] .hey-hero-deck {
+    font-size: 15px;
+  }
+  :root[data-brand='heyvans'] .hey-owner-word {
+    font-size: clamp(72px, 27vw, 102px);
+  }
+  :root[data-brand='heyvans'] .hey-owner-layout .btn {
+    width: 100%;
+    padding-inline: 14px;
+    gap: 12px;
+  }
+  :root[data-brand='heyvans'] .header-actions {
+    gap: 1px;
+  }
+  :root[data-brand='heyvans'] .site-header {
+    gap: 8px;
+  }
+  :root[data-brand='heyvans'] .header-actions .icon-btn {
+    width: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root[data-brand='heyvans'] {
+    scroll-behavior: auto;
+  }
+  :root[data-brand='heyvans'] :is(.btn, .vehicle-card, .vehicle-picture img) {
+    transition: none;
+  }
+}
+@media print {
+  :root[data-brand='heyvans'] .local-ribbon {
+    display: none !important;
+  }
+}

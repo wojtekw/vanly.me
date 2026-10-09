@@ -1,0 +1,31 @@
+Wypożyczalnia anulowała rezerwację
+
+Cześć {{first_name}},
+
+Wypożyczalnia {{rental_company_name}} anulowała rezerwację {{booking_number}} dotyczącą {{vehicle_name}}.
+
+Powód podany przez wypożyczalnię: {{cancellation_reason}}.
+
+Rezerwacja ma status „Anulowana”. Status rozliczenia wpłaty to „Oczekuje na zwrot”. Anulowanie nie oznacza, że zwrot został już wykonany.
+
+Numer: {{booking_number}}
+Termin anulowanego wyjazdu: {{pickup_date}} – {{return_date}}
+Dotychczas zapłacono: {{paid_amount}}
+Status rozliczenia: Oczekuje na zwrot
+Status kaucji — osobno: {{deposit_status_label}}
+
+{{refund_review_information}}
+
+O wykonanym zwrocie poinformujemy osobną wiadomością. Aktualne informacje o rozliczeniu sprawdzisz w szczegółach rezerwacji.
+
+Sprawdź rozliczenie:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

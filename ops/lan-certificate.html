@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vanly — HTTPS w domu</title>
+<style>body{font:18px/1.6 system-ui,sans-serif;max-width:760px;margin:56px auto;padding:0 24px;color:#163e42;background:#f9f8f3}a{color:#126769}h1{line-height:1.15}code{font-size:.9em}li{margin:12px 0}</style>
+<h1>Vanly w Twojej sieci</h1>
+<p>Żeby korzystać z <a href="https://vanly.me.local/">https://vanly.me.local</a>, dodaj na tym urządzeniu zaufanie do lokalnego certyfikatu Vanly. Wystarczy zrobić to raz. Mac z uruchomionym Vanly musi być włączony, a urządzenie musi korzystać z tej samej sieci domowej.</p>
+<p><a href="vanly-root.crt" download>Pobierz certyfikat Vanly</a></p>
+<p>Certyfikat został utworzony na Macu obsługującym Vanly. Przed instalacją porównaj jego odcisk SHA-256 z odciskiem wyświetlonym przez instalator na tamtym Macu. Nie instaluj go, jeśli się różni.</p>
+<ul>
+<li><strong>macOS:</strong> otwórz pobrany certyfikat w Dostępie do pęku kluczy. Dodaj do pęku System i w szczegółach certyfikatu ustaw zaufanie dla SSL. Zatwierdź hasłem administratora.</li>
+<li><strong>Windows:</strong> otwórz certyfikat → Zainstaluj certyfikat → Bieżący użytkownik → umieść w magazynie Zaufane główne urzędy certyfikacji. Instalacja na koncie firmowym może wymagać administratora.</li>
+<li><strong>iPhone / iPad:</strong> otwórz link w Safari. Zainstaluj pobrany profil w Ustawieniach, a następnie w Ogólne → To urządzenie → Ustawienia zaufania certyfikatów włącz pełne zaufanie dla Vanly Local.</li>
+</ul>
+<p>Zaufanie lokalnemu urzędowi certyfikacji jest ustawieniem bezpieczeństwa tego urządzenia. Udostępniany plik zawiera wyłącznie publiczny certyfikat — prywatne klucze pozostają na serwerze.</p>
+<p>Google Maps wymaga też dopuszczenia adresu HTTPS w istniejącym kluczu Google. Do czasu zakończenia tej konfiguracji mapa jest dostępna pod <a href="http://vanly.me.local/kempingi">adresem HTTP</a>.</p>
+<p>Jeśli nazwa <code>vanly.me.local</code> nie działa, sprawdź czy urządzenie znajduje się w głównej sieci, a nie w odizolowanej sieci gościnnej. Starsze systemy mogą potrzebować ręcznego wpisu nazwy w pliku hosts.</p>
+</html>

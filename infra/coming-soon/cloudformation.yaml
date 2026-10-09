@@ -1,0 +1,184 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Vanly coming-soon: private S3, CloudFront OAC, WAF, FREE flat-rate plan. Deploy only in us-east-1.'
+Parameters:
+  CertificateArn:
+    Type: String
+    AllowedPattern: 'arn:aws:acm:us-east-1:[0-9]{12}:certificate/[a-f0-9-]+'
+    Description: Issued ACM certificate for vanly.me and www.vanly.me in us-east-1.
+  EnableDistribution:
+    Type: String
+    Default: 'false'
+    AllowedValues: ['true', 'false']
+    Description: Enable only after FREE plan status is ACTIVE and assets are uploaded.
+  HostedZoneId:
+    Type: String
+    Default: ''
+    AllowedPattern: '(|Z[A-Z0-9]+)'
+    Description: Existing vanly.me Route53 zone; empty leaves DNS with external provider.
+Conditions:
+  Enabled: !Equals [!Ref EnableDistribution, 'true']
+  HasZone: !Not [!Equals [!Ref HostedZoneId, '']]
+Resources:
+  Assets:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BucketName: !Sub 'vanly-coming-soon-${AWS::AccountId}-${AWS::Region}'
+      OwnershipControls:
+        Rules: [{ObjectOwnership: BucketOwnerEnforced}]
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault: {SSEAlgorithm: AES256}
+      VersioningConfiguration: {Status: Enabled}
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpireOldReleases
+            Status: Enabled
+            NoncurrentVersionExpiration: {NoncurrentDays: 30}
+            AbortIncompleteMultipartUpload: {DaysAfterInitiation: 1}
+      Tags:
+        - {Key: Project, Value: vanly}
+        - {Key: Purpose, Value: coming-soon}
+  OriginAccess:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub '${AWS::StackName}-oac'
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+  WebAcl:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      Name: !Sub '${AWS::StackName}-waf'
+      Scope: CLOUDFRONT
+      DefaultAction: {Allow: {}}
+      VisibilityConfig:
+        SampledRequestsEnabled: false
+        CloudWatchMetricsEnabled: false
+        MetricName: vanlyComingSoon
+      Rules:
+        - Name: CommonThreats
+          Priority: 0
+          OverrideAction: {None: {}}
+          Statement:
+            ManagedRuleGroupStatement:
+              VendorName: AWS
+              Name: AWSManagedRulesCommonRuleSet
+          VisibilityConfig:
+            SampledRequestsEnabled: false
+            CloudWatchMetricsEnabled: false
+            MetricName: vanlyCommonThreats
+      Tags:
+        - {Key: Project, Value: vanly}
+        - {Key: Purpose, Value: coming-soon}
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Comment: Vanly coming-soon (isolated from the local portal)
+        Enabled: !If [Enabled, true, false]
+        Aliases: [vanly.me, www.vanly.me]
+        DefaultRootObject: index.html
+        HttpVersion: http2and3
+        IPV6Enabled: true
+        WebACLId: !GetAtt WebAcl.Arn
+        Origins:
+          - Id: Assets
+            DomainName: !GetAtt Assets.RegionalDomainName
+            OriginAccessControlId: !Ref OriginAccess
+            S3OriginConfig: {OriginAccessIdentity: ''}
+        DefaultCacheBehavior:
+          TargetOriginId: Assets
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods: [GET, HEAD]
+          CachedMethods: [GET, HEAD]
+          Compress: true
+          # AWS managed policies; custom policies require a higher flat-rate tier.
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+          ResponseHeadersPolicyId: 67f7725c-6f97-4210-82d7-5512b31e9d03
+        ViewerCertificate:
+          AcmCertificateArn: !Ref CertificateArn
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+      Tags:
+        - {Key: Project, Value: vanly}
+        - {Key: Purpose, Value: coming-soon}
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref Assets
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: CloudFrontReadOnly
+            Effect: Allow
+            Principal: {Service: cloudfront.amazonaws.com}
+            Action: s3:GetObject
+            Resource: !Sub '${Assets.Arn}/*'
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub 'arn:${AWS::Partition}:cloudfront::${AWS::AccountId}:distribution/${Distribution}'
+          - Sid: DenyInsecureTransport
+            Effect: Deny
+            Principal: '*'
+            Action: s3:*
+            Resource: [!GetAtt Assets.Arn, !Sub '${Assets.Arn}/*']
+            Condition:
+              Bool: {aws:SecureTransport: 'false'}
+  FreePlan:
+    Type: AWS::PricingPlanManager::Subscription
+    Properties:
+      PlanFamily: CloudFront
+      PlanTier: FREE
+      UsageLevel: DEFAULT
+      ResourceArns:
+        - !Sub 'arn:${AWS::Partition}:cloudfront::${AWS::AccountId}:distribution/${Distribution}'
+        - !GetAtt WebAcl.Arn
+        - !If [HasZone, !Sub 'arn:${AWS::Partition}:route53:::hostedzone/${HostedZoneId}', !Ref AWS::NoValue]
+  ApexA:
+    Type: AWS::Route53::RecordSet
+    Condition: HasZone
+    Properties:
+      HostedZoneId: !Ref HostedZoneId
+      Name: vanly.me.
+      Type: A
+      AliasTarget: {DNSName: !GetAtt Distribution.DomainName, HostedZoneId: Z2FDTNDATAQYW2, EvaluateTargetHealth: false}
+  ApexAAAA:
+    Type: AWS::Route53::RecordSet
+    Condition: HasZone
+    Properties:
+      HostedZoneId: !Ref HostedZoneId
+      Name: vanly.me.
+      Type: AAAA
+      AliasTarget: {DNSName: !GetAtt Distribution.DomainName, HostedZoneId: Z2FDTNDATAQYW2, EvaluateTargetHealth: false}
+  WwwA:
+    Type: AWS::Route53::RecordSet
+    Condition: HasZone
+    Properties:
+      HostedZoneId: !Ref HostedZoneId
+      Name: www.vanly.me.
+      Type: A
+      AliasTarget: {DNSName: !GetAtt Distribution.DomainName, HostedZoneId: Z2FDTNDATAQYW2, EvaluateTargetHealth: false}
+  WwwAAAA:
+    Type: AWS::Route53::RecordSet
+    Condition: HasZone
+    Properties:
+      HostedZoneId: !Ref HostedZoneId
+      Name: www.vanly.me.
+      Type: AAAA
+      AliasTarget: {DNSName: !GetAtt Distribution.DomainName, HostedZoneId: Z2FDTNDATAQYW2, EvaluateTargetHealth: false}
+Outputs:
+  BucketName: {Value: !Ref Assets}
+  DistributionId: {Value: !Ref Distribution}
+  DistributionDomain: {Value: !GetAtt Distribution.DomainName}
+  SubscriptionArn: {Value: !Ref FreePlan}
+  SubscriptionStatus: {Value: !GetAtt FreePlan.Status}
+  SubscriptionTier: {Value: !GetAtt FreePlan.CurrentPlanTier}
+  WebAclArn: {Value: !GetAtt WebAcl.Arn}

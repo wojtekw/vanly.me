@@ -1,0 +1,3363 @@
+{
+  "generated": "2026-09-23",
+  "fictional": true,
+  "sources": [
+    {
+      "id": "malopolska-2026",
+      "url": "https://www.kamperymalopolska.pl/cennik",
+      "checked": "2026-09-23",
+      "note": "Rapido i96M 900/1000/1100 zł, Rapido M96 800/900/1000 zł, Adria Coral 600 DP 490/590/690 zł; kaucja 4000 zł."
+    },
+    {
+      "id": "autotrip-2026",
+      "url": "https://www.autotrip.com.pl/?pd=cennik",
+      "checked": "2026-09-23",
+      "note": "Kampery Comfort: stawki zależne od sezonu, długości najmu i limitu kilometrów; dla 4–9 dni w Polsce 350–600 zł."
+    },
+    {
+      "id": "campventure-2026",
+      "url": "https://www.campventure.pl/cennik_wynajmu_kamperow/",
+      "checked": "2026-09-23",
+      "note": "Benimar S340 499/699 zł, Chausson Welcome 349/449 zł; kaucje 3500–5000 zł, serwis 350 zł."
+    },
+    {
+      "id": "kolobrzeg-2026",
+      "url": "https://kamperykolobrzeg.pl/kampery-na-wynajem-2/",
+      "checked": "2026-09-23",
+      "note": "Flota VW California/Grand California i Benimar Yrteo, Tessoro, Sport; widoczne stawki 480/550/650 zł dla Yrteo."
+    },
+    {
+      "id": "lodz-2026",
+      "url": "https://kampery.lodz.pl/cennik-m",
+      "checked": "2026-09-23",
+      "note": "Karmann Dexter 560 4x4 390/490/590 zł; Benimar Tessoro 468 450/590/690 zł; Sport 323 do 750 zł."
+    },
+    {
+      "id": "wisla66-2026",
+      "url": "https://www.wisla66.pl/wynajem-kampera-cennik/",
+      "checked": "2026-09-23",
+      "note": "Benimar 399/499/649 zł, kaucja 5000 zł, sprzątanie 350 zł, limity 200–350 km/dobę."
+    },
+    {
+      "id": "chalifornia-2026",
+      "url": "https://chalifornia.pl/kim-jestesmy/",
+      "checked": "2026-09-23",
+      "note": "VW California Beach, Coast, Ocean i Grand California; zwykle 399–669 zł/dobę zależnie od wersji i sezonu."
+    },
+    {
+      "id": "nobokamper-2026",
+      "url": "https://nobokamper.pl/cennik/",
+      "checked": "2026-09-23",
+      "note": "Roller Team Kronos 265/284; w sezonie wysokim 750 zł/dobę, kaucja 5000 zł."
+    }
+  ],
+  "companies": [
+    {
+      "id": "morski-szlak",
+      "name": "Morski Szlak",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "settings": {
+        "minDays": 5,
+        "buffer": 1,
+        "prep": 30000,
+        "open": "09:00",
+        "close": "17:00",
+        "demo": true
+      }
+    },
+    {
+      "id": "zakret-lodz",
+      "name": "Zakręt Łódź",
+      "city": "Łódź",
+      "lat": 51.7592,
+      "lng": 19.456,
+      "settings": {
+        "minDays": 3,
+        "buffer": 1,
+        "prep": 30000,
+        "open": "09:00",
+        "close": "17:00",
+        "demo": true
+      }
+    },
+    {
+      "id": "jurajski-postoj",
+      "name": "Jurajski Postój",
+      "city": "Katowice",
+      "lat": 50.2649,
+      "lng": 19.0238,
+      "settings": {
+        "minDays": 4,
+        "buffer": 1,
+        "prep": 30000,
+        "open": "09:00",
+        "close": "17:00",
+        "demo": true
+      }
+    },
+    {
+      "id": "nad-wisla-vans",
+      "name": "Nad Wisłą Vans",
+      "city": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5984,
+      "settings": {
+        "minDays": 5,
+        "buffer": 1,
+        "prep": 35000,
+        "open": "09:00",
+        "close": "17:00",
+        "demo": true
+      }
+    },
+    {
+      "id": "vani-mazovia",
+      "name": "Vani Mazovia",
+      "city": "Warszawa",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "settings": {
+        "minDays": 4,
+        "buffer": 1,
+        "prep": 22000,
+        "open": "09:00",
+        "close": "17:00",
+        "demo": true
+      }
+    },
+    {
+      "id": "sudecka-droga",
+      "name": "Sudecka Droga",
+      "city": "Jelenia Góra",
+      "lat": 50.9044,
+      "lng": 15.7194,
+      "settings": {
+        "minDays": 5,
+        "buffer": 1,
+        "prep": 35000,
+        "open": "09:00",
+        "close": "17:00",
+        "demo": true
+      }
+    },
+    {
+      "id": "mazurski-horyzont",
+      "name": "Mazurski Horyzont",
+      "city": "Olsztyn",
+      "lat": 53.7784,
+      "lng": 20.4801,
+      "settings": {
+        "minDays": 3,
+        "buffer": 1,
+        "prep": 30000,
+        "open": "09:00",
+        "close": "17:00",
+        "demo": true
+      }
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "grand-california-600",
+      "company_id": "morski-szlak",
+      "name": "Volkswagen Grand California 600",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "seats": 4,
+      "sleeps": 2,
+      "daily": 59900,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Volkswagen Grand California 600 w fikcyjnej flocie Morski Szlak. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 49900,
+        "medium": 59900,
+        "high": 69900
+      },
+      "source": "kolobrzeg-2026"
+    },
+    {
+      "id": "california-t7-ocean",
+      "company_id": "morski-szlak",
+      "name": "Volkswagen California T7 Ocean",
+      "type": "campervan",
+      "asset": "campervan.webp",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 59900,
+      "prep": 30000,
+      "deposit": 400000,
+      "min_days": 5,
+      "auto": true,
+      "pets": true,
+      "instant": false,
+      "km": 300,
+      "features": [
+        "Kuchnia z lodówką",
+        "Podnoszony dach",
+        "Ogrzewanie postojowe",
+        "Gniazda USB",
+        "Stolik turystyczny"
+      ],
+      "description": "Volkswagen California T7 Ocean w fikcyjnej flocie Morski Szlak. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Zwinny na trasie, wygodny na postoju.",
+      "pricing": {
+        "low": 44900,
+        "medium": 59900,
+        "high": 69900
+      },
+      "source": "kolobrzeg-2026"
+    },
+    {
+      "id": "tessoro-463-se",
+      "company_id": "morski-szlak",
+      "name": "Benimar Tessoro 463 SE",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 55000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": false,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Tessoro 463 SE w fikcyjnej flocie Morski Szlak. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 48000,
+        "medium": 55000,
+        "high": 65000
+      },
+      "source": "kolobrzeg-2026"
+    },
+    {
+      "id": "tessoro-481-se",
+      "company_id": "morski-szlak",
+      "name": "Benimar Tessoro 481 SE",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 55000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": false,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Tessoro 481 SE w fikcyjnej flocie Morski Szlak. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 48000,
+        "medium": 55000,
+        "high": 65000
+      },
+      "source": "kolobrzeg-2026"
+    },
+    {
+      "id": "yrteo-861-se",
+      "company_id": "morski-szlak",
+      "name": "Benimar Yrteo 861 SE",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "seats": 4,
+      "sleeps": 3,
+      "daily": 55000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Yrteo 861 SE w fikcyjnej flocie Morski Szlak. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 48000,
+        "medium": 55000,
+        "high": 65000
+      },
+      "source": "kolobrzeg-2026"
+    },
+    {
+      "id": "yrteo-840-se",
+      "company_id": "morski-szlak",
+      "name": "Benimar Yrteo 840 SE",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "seats": 4,
+      "sleeps": 2,
+      "daily": 55000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Yrteo 840 SE w fikcyjnej flocie Morski Szlak. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 48000,
+        "medium": 55000,
+        "high": 65000
+      },
+      "source": "kolobrzeg-2026"
+    },
+    {
+      "id": "sport-324-up",
+      "company_id": "morski-szlak",
+      "name": "Benimar Sport 324 UP",
+      "type": "alcove",
+      "asset": "alcove.webp",
+      "city": "Kołobrzeg",
+      "lat": 54.1761,
+      "lng": 15.5769,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 65000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": false,
+      "pets": true,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Alkowa",
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Duży bagażnik"
+      ],
+      "description": "Benimar Sport 324 UP w fikcyjnej flocie Morski Szlak. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Więcej miejsc dla wspólnej podróży.",
+      "pricing": {
+        "low": 50000,
+        "medium": 65000,
+        "high": 75000
+      },
+      "source": "kolobrzeg-2026"
+    },
+    {
+      "id": "dexter-560-4x4",
+      "company_id": "zakret-lodz",
+      "name": "Karmann Dexter 560 4×4",
+      "type": "offroad",
+      "asset": "offroad.webp",
+      "city": "Łódź",
+      "lat": 51.7592,
+      "lng": 19.456,
+      "seats": 4,
+      "sleeps": 2,
+      "daily": 49000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 3,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 250,
+      "features": ["Napęd 4×4", "Kuchnia z lodówką", "Ogrzewanie", "Panel słoneczny", "Markiza"],
+      "description": "Karmann Dexter 560 4×4 w fikcyjnej flocie Zakręt Łódź. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Dalej od miasta, bliżej własnego rytmu.",
+      "pricing": {
+        "low": 39000,
+        "medium": 49000,
+        "high": 59000
+      },
+      "source": "lodz-2026"
+    },
+    {
+      "id": "tessoro-468",
+      "company_id": "zakret-lodz",
+      "name": "Benimar Tessoro 468",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Łódź",
+      "lat": 51.7592,
+      "lng": 19.456,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 59000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 3,
+      "auto": true,
+      "pets": false,
+      "instant": false,
+      "km": 300,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Tessoro 468 w fikcyjnej flocie Zakręt Łódź. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 45000,
+        "medium": 59000,
+        "high": 69000
+      },
+      "source": "lodz-2026"
+    },
+    {
+      "id": "sport-323",
+      "company_id": "zakret-lodz",
+      "name": "Benimar Sport 323",
+      "type": "alcove",
+      "asset": "alcove.webp",
+      "city": "Łódź",
+      "lat": 51.7592,
+      "lng": 19.456,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 65000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 3,
+      "auto": false,
+      "pets": true,
+      "instant": false,
+      "km": 300,
+      "features": [
+        "Alkowa",
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Duży bagażnik"
+      ],
+      "description": "Benimar Sport 323 w fikcyjnej flocie Zakręt Łódź. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Więcej miejsc dla wspólnej podróży.",
+      "pricing": {
+        "low": 45000,
+        "medium": 65000,
+        "high": 75000
+      },
+      "source": "lodz-2026"
+    },
+    {
+      "id": "sport-363",
+      "company_id": "zakret-lodz",
+      "name": "Benimar Sport 363",
+      "type": "alcove",
+      "asset": "alcove.webp",
+      "city": "Łódź",
+      "lat": 51.7592,
+      "lng": 19.456,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 59000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 3,
+      "auto": false,
+      "pets": true,
+      "instant": false,
+      "km": 300,
+      "features": [
+        "Alkowa",
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Duży bagażnik"
+      ],
+      "description": "Benimar Sport 363 w fikcyjnej flocie Zakręt Łódź. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Więcej miejsc dla wspólnej podróży.",
+      "pricing": {
+        "low": 45000,
+        "medium": 59000,
+        "high": 69000
+      },
+      "source": "lodz-2026"
+    },
+    {
+      "id": "rapido-i96m-amber",
+      "company_id": "jurajski-postoj",
+      "name": "Rapido i96M Amber",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Katowice",
+      "lat": 50.2649,
+      "lng": 19.0238,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 100000,
+      "prep": 30000,
+      "deposit": 400000,
+      "min_days": 4,
+      "auto": true,
+      "pets": false,
+      "instant": false,
+      "km": 250,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Rapido i96M Amber w fikcyjnej flocie Jurajski Postój. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 90000,
+        "medium": 100000,
+        "high": 110000
+      },
+      "source": "malopolska-2026"
+    },
+    {
+      "id": "rapido-i96m-forest",
+      "company_id": "jurajski-postoj",
+      "name": "Rapido i96M Forest",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Katowice",
+      "lat": 50.2649,
+      "lng": 19.0238,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 100000,
+      "prep": 30000,
+      "deposit": 400000,
+      "min_days": 4,
+      "auto": true,
+      "pets": false,
+      "instant": true,
+      "km": 250,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Rapido i96M Forest w fikcyjnej flocie Jurajski Postój. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 90000,
+        "medium": 100000,
+        "high": 110000
+      },
+      "source": "malopolska-2026"
+    },
+    {
+      "id": "rapido-m96",
+      "company_id": "jurajski-postoj",
+      "name": "Rapido M96",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Katowice",
+      "lat": 50.2649,
+      "lng": 19.0238,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 90000,
+      "prep": 30000,
+      "deposit": 400000,
+      "min_days": 4,
+      "auto": true,
+      "pets": false,
+      "instant": true,
+      "km": 250,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Rapido M96 w fikcyjnej flocie Jurajski Postój. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 80000,
+        "medium": 90000,
+        "high": 100000
+      },
+      "source": "malopolska-2026"
+    },
+    {
+      "id": "adria-coral-600dp",
+      "company_id": "jurajski-postoj",
+      "name": "Adria Coral 600 DP",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Katowice",
+      "lat": 50.2649,
+      "lng": 19.0238,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 59000,
+      "prep": 30000,
+      "deposit": 400000,
+      "min_days": 4,
+      "auto": false,
+      "pets": true,
+      "instant": false,
+      "km": 250,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Adria Coral 600 DP w fikcyjnej flocie Jurajski Postój. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 49000,
+        "medium": 59000,
+        "high": 69000
+      },
+      "source": "malopolska-2026"
+    },
+    {
+      "id": "benimar-yrteo-861",
+      "company_id": "nad-wisla-vans",
+      "name": "Benimar Yrteo 861",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5984,
+      "seats": 4,
+      "sleeps": 3,
+      "daily": 49900,
+      "prep": 35000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": true,
+      "instant": false,
+      "km": 350,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Yrteo 861 w fikcyjnej flocie Nad Wisłą Vans. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 39900,
+        "medium": 49900,
+        "high": 64900
+      },
+      "source": "wisla66-2026"
+    },
+    {
+      "id": "benimar-tessoro-463",
+      "company_id": "nad-wisla-vans",
+      "name": "Benimar Tessoro 463",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5984,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 49900,
+      "prep": 35000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": true,
+      "instant": false,
+      "km": 350,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Tessoro 463 w fikcyjnej flocie Nad Wisłą Vans. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 39900,
+        "medium": 49900,
+        "high": 64900
+      },
+      "source": "wisla66-2026"
+    },
+    {
+      "id": "benimar-tessoro-463x",
+      "company_id": "nad-wisla-vans",
+      "name": "Benimar Tessoro 463 X",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5984,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 49900,
+      "prep": 35000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": false,
+      "instant": true,
+      "km": 350,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Tessoro 463 X w fikcyjnej flocie Nad Wisłą Vans. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 39900,
+        "medium": 49900,
+        "high": 64900
+      },
+      "source": "wisla66-2026"
+    },
+    {
+      "id": "benimar-tessoro-468-nw",
+      "company_id": "nad-wisla-vans",
+      "name": "Benimar Tessoro 468",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5984,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 49900,
+      "prep": 35000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": false,
+      "instant": true,
+      "km": 350,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar Tessoro 468 w fikcyjnej flocie Nad Wisłą Vans. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 39900,
+        "medium": 49900,
+        "high": 64900
+      },
+      "source": "wisla66-2026"
+    },
+    {
+      "id": "benimar-sport-324",
+      "company_id": "nad-wisla-vans",
+      "name": "Benimar Sport 324 UP",
+      "type": "alcove",
+      "asset": "alcove.webp",
+      "city": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5984,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 49900,
+      "prep": 35000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": false,
+      "pets": true,
+      "instant": false,
+      "km": 350,
+      "features": [
+        "Alkowa",
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Duży bagażnik"
+      ],
+      "description": "Benimar Sport 324 UP w fikcyjnej flocie Nad Wisłą Vans. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Więcej miejsc dla wspólnej podróży.",
+      "pricing": {
+        "low": 39900,
+        "medium": 49900,
+        "high": 64900
+      },
+      "source": "wisla66-2026"
+    },
+    {
+      "id": "california-beach-t7",
+      "company_id": "vani-mazovia",
+      "name": "Volkswagen California Beach Tour T7",
+      "type": "campervan",
+      "asset": "campervan.webp",
+      "city": "Warszawa",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "seats": 5,
+      "sleeps": 4,
+      "daily": 59900,
+      "prep": 22000,
+      "deposit": 500000,
+      "min_days": 4,
+      "auto": true,
+      "pets": true,
+      "instant": false,
+      "km": 300,
+      "features": [
+        "Kuchnia z lodówką",
+        "Podnoszony dach",
+        "Ogrzewanie postojowe",
+        "Gniazda USB",
+        "Stolik turystyczny"
+      ],
+      "description": "Volkswagen California Beach Tour T7 w fikcyjnej flocie Vani Mazovia. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Zwinny na trasie, wygodny na postoju.",
+      "pricing": {
+        "low": 39900,
+        "medium": 59900,
+        "high": 64900
+      },
+      "source": "chalifornia-2026"
+    },
+    {
+      "id": "california-beach-7",
+      "company_id": "vani-mazovia",
+      "name": "Volkswagen California Beach 7",
+      "type": "campervan",
+      "asset": "campervan.webp",
+      "city": "Warszawa",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "seats": 7,
+      "sleeps": 4,
+      "daily": 59900,
+      "prep": 22000,
+      "deposit": 500000,
+      "min_days": 4,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Kuchnia z lodówką",
+        "Podnoszony dach",
+        "Ogrzewanie postojowe",
+        "Gniazda USB",
+        "Stolik turystyczny"
+      ],
+      "description": "Volkswagen California Beach 7 w fikcyjnej flocie Vani Mazovia. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Zwinny na trasie, wygodny na postoju.",
+      "pricing": {
+        "low": 39900,
+        "medium": 59900,
+        "high": 64900
+      },
+      "source": "chalifornia-2026"
+    },
+    {
+      "id": "grand-california",
+      "company_id": "vani-mazovia",
+      "name": "Volkswagen Grand California",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Warszawa",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "seats": 4,
+      "sleeps": 2,
+      "daily": 64900,
+      "prep": 22000,
+      "deposit": 500000,
+      "min_days": 4,
+      "auto": true,
+      "pets": false,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Volkswagen Grand California w fikcyjnej flocie Vani Mazovia. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 49900,
+        "medium": 64900,
+        "high": 69900
+      },
+      "source": "chalifornia-2026"
+    },
+    {
+      "id": "california-coast",
+      "company_id": "vani-mazovia",
+      "name": "Volkswagen California Coast 6.1",
+      "type": "campervan",
+      "asset": "campervan.webp",
+      "city": "Warszawa",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 54900,
+      "prep": 22000,
+      "deposit": 500000,
+      "min_days": 4,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 300,
+      "features": [
+        "Kuchnia z lodówką",
+        "Podnoszony dach",
+        "Ogrzewanie postojowe",
+        "Gniazda USB",
+        "Stolik turystyczny"
+      ],
+      "description": "Volkswagen California Coast 6.1 w fikcyjnej flocie Vani Mazovia. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Zwinny na trasie, wygodny na postoju.",
+      "pricing": {
+        "low": 44900,
+        "medium": 54900,
+        "high": 64900
+      },
+      "source": "chalifornia-2026"
+    },
+    {
+      "id": "california-ocean-4motion",
+      "company_id": "vani-mazovia",
+      "name": "Volkswagen California Ocean 4Motion",
+      "type": "offroad",
+      "asset": "offroad.webp",
+      "city": "Warszawa",
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 66900,
+      "prep": 22000,
+      "deposit": 500000,
+      "min_days": 4,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 300,
+      "features": ["Napęd 4×4", "Kuchnia z lodówką", "Ogrzewanie", "Panel słoneczny", "Markiza"],
+      "description": "Volkswagen California Ocean 4Motion w fikcyjnej flocie Vani Mazovia. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Dalej od miasta, bliżej własnego rytmu.",
+      "pricing": {
+        "low": 51900,
+        "medium": 66900,
+        "high": 71900
+      },
+      "source": "chalifornia-2026"
+    },
+    {
+      "id": "benimar-s340",
+      "company_id": "sudecka-droga",
+      "name": "Benimar S340",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Jelenia Góra",
+      "lat": 50.9044,
+      "lng": 15.7194,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 49900,
+      "prep": 35000,
+      "deposit": 500000,
+      "min_days": 5,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 250,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Benimar S340 w fikcyjnej flocie Sudecka Droga. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 49900,
+        "medium": 49900,
+        "high": 69900
+      },
+      "source": "campventure-2026"
+    },
+    {
+      "id": "chausson-welcome",
+      "company_id": "sudecka-droga",
+      "name": "Chausson Welcome",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Jelenia Góra",
+      "lat": 50.9044,
+      "lng": 15.7194,
+      "seats": 4,
+      "sleeps": 4,
+      "daily": 34900,
+      "prep": 35000,
+      "deposit": 350000,
+      "min_days": 5,
+      "auto": false,
+      "pets": true,
+      "instant": true,
+      "km": 250,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Chausson Welcome w fikcyjnej flocie Sudecka Droga. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 34900,
+        "medium": 34900,
+        "high": 44900
+      },
+      "source": "campventure-2026"
+    },
+    {
+      "id": "kronos-284m",
+      "company_id": "mazurski-horyzont",
+      "name": "Roller Team Kronos 284 M",
+      "type": "alcove",
+      "asset": "alcove.webp",
+      "city": "Olsztyn",
+      "lat": 53.7784,
+      "lng": 20.4801,
+      "seats": 6,
+      "sleeps": 6,
+      "daily": 59000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 3,
+      "auto": false,
+      "pets": true,
+      "instant": false,
+      "km": 250,
+      "features": [
+        "Alkowa",
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Duży bagażnik"
+      ],
+      "description": "Roller Team Kronos 284 M w fikcyjnej flocie Mazurski Horyzont. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Więcej miejsc dla wspólnej podróży.",
+      "pricing": {
+        "low": 49000,
+        "medium": 59000,
+        "high": 75000
+      },
+      "source": "nobokamper-2026"
+    },
+    {
+      "id": "kronos-265tl",
+      "company_id": "mazurski-horyzont",
+      "name": "Roller Team Kronos 265 TL",
+      "type": "semi",
+      "asset": "semi.webp",
+      "city": "Olsztyn",
+      "lat": 53.7784,
+      "lng": 20.4801,
+      "seats": 5,
+      "sleeps": 5,
+      "daily": 59000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 3,
+      "auto": true,
+      "pets": true,
+      "instant": true,
+      "km": 250,
+      "features": [
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Markiza",
+        "Bagażnik rowerowy"
+      ],
+      "description": "Roller Team Kronos 265 TL w fikcyjnej flocie Mazurski Horyzont. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Wygodna przestrzeń na dłuższą drogę.",
+      "pricing": {
+        "low": 49000,
+        "medium": 59000,
+        "high": 75000
+      },
+      "source": "nobokamper-2026"
+    },
+    {
+      "id": "kronos-284tl",
+      "company_id": "mazurski-horyzont",
+      "name": "Roller Team Kronos 284 TL",
+      "type": "alcove",
+      "asset": "alcove.webp",
+      "city": "Olsztyn",
+      "lat": 53.7784,
+      "lng": 20.4801,
+      "seats": 6,
+      "sleeps": 6,
+      "daily": 59000,
+      "prep": 30000,
+      "deposit": 500000,
+      "min_days": 3,
+      "auto": false,
+      "pets": true,
+      "instant": true,
+      "km": 250,
+      "features": [
+        "Alkowa",
+        "Prysznic i toaleta",
+        "Kuchnia z lodówką",
+        "Ogrzewanie",
+        "Duży bagażnik"
+      ],
+      "description": "Roller Team Kronos 284 TL w fikcyjnej flocie Mazurski Horyzont. Oferta demonstracyjna odwzorowuje typ pojazdu, poziom ceny i warunki spotykane w aktualnych polskich cennikach, ale nie jest ofertą firmy źródłowej.",
+      "tagline": "Więcej miejsc dla wspólnej podróży.",
+      "pricing": {
+        "low": 49000,
+        "medium": 59000,
+        "high": 75000
+      },
+      "source": "nobokamper-2026"
+    }
+  ],
+  "seasons": [
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "grand-california-600",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 44900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 44900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "california-t7-ocean",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 44900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-463-se",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "tessoro-481-se",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-861-se",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 65000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 55000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "yrteo-840-se",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 48000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 50000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 65000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 65000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 50000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 65000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 65000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "morski-szlak",
+      "vehicle_id": "sport-324-up",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 50000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 49000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 59000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 49000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 49000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 59000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 49000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "dexter-560-4x4",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 69000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 69000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "tessoro-468",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 65000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 65000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 65000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 65000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-323",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 69000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 69000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "zakret-lodz",
+      "vehicle_id": "sport-363",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 45000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 90000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 100000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 110000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 100000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 90000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 100000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 110000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 100000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-amber",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 90000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 90000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 100000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 110000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 100000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 90000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 100000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 110000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 100000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-i96m-forest",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 90000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 80000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 90000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 100000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 90000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 80000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 90000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 100000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 90000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "rapido-m96",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 80000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 69000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 69000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "jurajski-postoj",
+      "vehicle_id": "adria-coral-600dp",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-yrteo-861",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-463x",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-tessoro-468-nw",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "nad-wisla-vans",
+      "vehicle_id": "benimar-sport-324",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-t7",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-beach-7",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 39900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 64900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 64900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 64900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 64900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "grand-california",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 44900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 54900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 54900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 44900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 54900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 64900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 54900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-coast",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 44900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 51900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 66900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 71900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 66900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 51900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 66900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 71900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 66900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "vani-mazovia",
+      "vehicle_id": "california-ocean-4motion",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 51900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 69900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 49900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "benimar-s340",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 49900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 34900,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 34900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 44900,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 34900,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 34900,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 34900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 44900,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 34900,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "sudecka-droga",
+      "vehicle_id": "chausson-welcome",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 34900,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284m",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-265tl",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2027/28"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2026-04-01",
+      "end_date": "2026-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2026-06-15",
+      "end_date": "2026-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2026"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2026/27"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2027-04-01",
+      "end_date": "2027-06-15",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2027-06-15",
+      "end_date": "2027-09-01",
+      "rate": 75000,
+      "name": "Sezon wysoki 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2027-09-01",
+      "end_date": "2027-11-01",
+      "rate": 59000,
+      "name": "Sezon średni 2027"
+    },
+    {
+      "company_id": "mazurski-horyzont",
+      "vehicle_id": "kronos-284tl",
+      "start_date": "2027-11-01",
+      "end_date": "2028-04-01",
+      "rate": 49000,
+      "name": "Sezon niski 2027/28"
+    }
+  ]
+}

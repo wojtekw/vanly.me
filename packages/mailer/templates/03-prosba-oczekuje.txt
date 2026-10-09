@@ -1,0 +1,28 @@
+Prośba trafiła do wypożyczalni
+
+Cześć {{first_name}},
+
+Otrzymaliśmy Twoją prośbę o rezerwację {{vehicle_name}}. Wypożyczalnia {{rental_company_name}} musi ją jeszcze zaakceptować.
+
+Rezerwacja ma status „Oczekuje na akceptację”. O decyzji poinformujemy Cię osobną wiadomością.
+
+Numer: {{booking_number}}
+Termin: {{pickup_date}} – {{return_date}}
+Cena wyjazdu: {{total_amount}}
+Zapłacono: {{paid_amount}}
+Status wpłaty: {{payment_status_label}}
+Kaucja — osobno: {{deposit_amount}}
+
+Zapisana wpłata i akceptacja rezerwacji to dwa odrębne kroki. Sprawdź aktualny status w szczegółach.
+
+Sprawdź status prośby:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.

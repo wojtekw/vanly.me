@@ -1,0 +1,19 @@
+{
+  "name": "@vanly/admin",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.12",
+    "typescript": "^5.9.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  }
+}

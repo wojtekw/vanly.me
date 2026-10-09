@@ -1,0 +1,29 @@
+Zwrot został wykonany
+
+Cześć {{first_name}},
+
+Operator płatności potwierdził wykonanie zwrotu {{refund_amount}} dotyczącego rezerwacji {{booking_number}}.
+
+Środki mogą pojawić się na Twoim rachunku później niż data wykonania zwrotu. Termin zależy od banku lub operatora płatności. Ta wiadomość potwierdza wykonanie zwrotu, a nie zaksięgowanie go przez bank.
+
+Numer rezerwacji: {{booking_number}}
+Kwota tego zwrotu: {{refund_amount}}
+Czego dotyczy zwrot: {{refund_scope_label}}
+Data wykonania: {{refund_executed_at}}
+Sposób zwrotu: {{refund_destination_label}}
+Numer rozliczenia: {{refund_reference}}
+Pozostały status rozliczenia: {{remaining_settlement_status_label}}
+
+Ten zwrot obejmuje tylko zakres wskazany powyżej. Rozliczenie kaucji i ewentualnych innych wpłat może mieć osobny status.
+
+Otwórz rozliczenie zwrotu:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
+
+To wiadomość dotycząca Twojego konta, rezerwacji lub kontaktu z VANLY.
