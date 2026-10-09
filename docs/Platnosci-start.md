@@ -5,6 +5,21 @@ Cenę najmu, kaucję, terminy płatności i ewentualne zwroty rozlicza bezpośre
 z wypożyczalnią według jej warunków. Cena najmu pozostaje w wycenie i dokumentach.
 W VANLY stan `external` oznacza rozliczenie poza platformą, a nie opłacony najem.
 
+Każda nowa rezerwacja wymaga decyzji wypożyczalni. Wysłanie przez podróżującego
+zapisuje status **Niepotwierdzona**; dopiero właściciel właściwej firmy może ją
+potwierdzić lub odrzucić. Podróżujący i operator nie mogą jej potwierdzić.
+Niepotwierdzona rezerwacja blokuje termin; anulowanie lub odrzucenie go zwalnia.
+Potwierdzenie tworzy podsumowanie PDF i powiadomienie, nigdy wpłatę w VANLY.
+
+Status rezerwacji w interfejsie i polu API `reservation_status` ma cztery wartości:
+`pending` (Niepotwierdzona), `cancelled` (Anulowana), `rejected` (Odrzucona)
+i `confirmed` (Potwierdzona). Pole `status` zachowuje techniczny cykl blokady
+i protokołów: `held` mapuje się na Niepotwierdzona, `expired` na Anulowana,
+a `in_rental` i `completed` na Potwierdzona. Odbiór i zwrot są etapami najmu,
+nie dodatkowymi statusami rezerwacji. Historyczne potwierdzenia pozostają ważne.
+Migracja `016_owner_confirmation.sql` wyłącza dawne automatyczne potwierdzanie
+na pojazdach; API ignoruje stare `instant=true` także w zachowanych wycenach.
+
 Pierwszy pojazd wypożyczalni jest bezpłatny. Dodanie drugiego i każdego kolejnego
 kosztuje **200 zł jednorazowo** (20000 groszy). Liczą się również szkice i ukryte
 pojazdy. Opłatę tworzy API w tej samej transakcji co pojazd, po zablokowaniu firmy.

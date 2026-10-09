@@ -14,6 +14,7 @@ import {
   Heading,
   Bill,
   Badge,
+  ReservationBadge,
   asset,
   money,
   date,
@@ -70,7 +71,7 @@ function BookingBody({ id, back, mode }: { id: string; back: string; mode: strin
             start: b.start_date,
             end: b.end_date,
             guests: b.guests,
-            status: b.status,
+            status: b.reservation_status || b.status,
             payment_status: b.payment_status,
             total_minor: b.total_minor,
             paid_minor: b.paid_minor,
@@ -116,7 +117,7 @@ function BookingBody({ id, back, mode }: { id: string; back: string; mode: strin
           <>
             <Heading eyebrow={b.reference} title={b.vehicle_name}>
               <div className="inline">
-                <Badge status={b.status} />
+                <ReservationBadge status={b.reservation_status || b.status} />
                 <span>
                   {b.company_name} · {b.city}
                 </span>
@@ -126,7 +127,7 @@ function BookingBody({ id, back, mode }: { id: string; back: string; mode: strin
               <div className="stack">
                 <section className="panel">
                   <div className="spread">
-                    <h2>Wszystko ustalone.</h2>
+                    <h2>Podsumowanie rezerwacji.</h2>
                     <div className="inline no-print">
                       <button
                         className="icon-btn"
@@ -188,21 +189,27 @@ function BookingBody({ id, back, mode }: { id: string; back: string; mode: strin
                       Dokończ rezerwację
                     </Link>
                   )}
-                  {owner && b.status === 'pending' && (
+                  {b.status === 'pending' && (
+                    <Notice>
+                      Rezerwacja jest niepotwierdzona. Wypożyczalnia musi ją potwierdzić lub
+                      odrzucić. Do tego czasu termin pozostaje zarezerwowany.
+                    </Notice>
+                  )}
+                  {owner && user.role === 'owner' && b.status === 'pending' && (
                     <div className="inline">
                       <button
                         className="btn primary"
                         disabled={busy}
                         onClick={() => mutate('/bookings/' + id + '/decision', { accept: true })}
                       >
-                        Akceptuj rezerwację
+                        Potwierdź rezerwację
                       </button>
                       <button
                         className="btn danger"
                         disabled={busy}
                         onClick={() => mutate('/bookings/' + id + '/decision', { accept: false })}
                       >
-                        Odrzuć prośbę
+                        Odrzuć rezerwację
                       </button>
                     </div>
                   )}

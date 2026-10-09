@@ -20,14 +20,14 @@ const timestamp = (value) =>
     timeZone: 'Europe/Warsaw',
   }).format(new Date(value));
 const bookingStatus = {
-  held: 'Blokada terminu',
-  pending: 'Prośba czeka na decyzję firmy',
+  held: 'Niepotwierdzona',
+  pending: 'Niepotwierdzona',
   confirmed: 'Potwierdzona',
-  in_rental: 'Wynajem trwa',
-  completed: 'Wynajem zakończony',
+  in_rental: 'Potwierdzona',
+  completed: 'Potwierdzona',
   cancelled: 'Anulowana',
   rejected: 'Odrzucona',
-  expired: 'Blokada wygasła',
+  expired: 'Anulowana',
 };
 const paymentStatus = {
   unpaid: 'Nieopłacona',

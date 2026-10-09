@@ -8,7 +8,6 @@ import type { User } from '../auth';
 import { tx, audit } from '../db';
 import { notifyBooking } from '../notifications/bookings';
 import { notifyOwnerBookingRequest } from '../notifications/booking-events';
-import { createBookingDocuments } from '../documents/service';
 import { BookingAccessPolicy } from './access-policy';
 import { PaymentRepository } from './payment.repository';
 import { IdempotencyService } from './idempotency.service';
@@ -48,7 +47,7 @@ export class BookingPaymentService {
         if (traveler.scenario === 'failure')
           throw new BadRequestException('Testowa płatność została odrzucona. Nie zapisano wpłaty.');
         const amount = booking.snapshot.dueNowMinor;
-        const status = booking.snapshot.vehicle.instant ? 'confirmed' : 'pending';
+        const status = 'pending';
         await this.repository.record(
           db,
           id,
@@ -59,18 +58,13 @@ export class BookingPaymentService {
         await this.repository.firstPayment(db, booking, traveler, amount, status);
         await audit(db, actor, 'payment.local_test', id, { amount });
         const current = await this.access.require(db, actor, id);
-        const eventKey = `booking.${status === 'confirmed' ? 'confirmed' : 'request_submitted'}:${id}`;
-        const documentRefs =
-          status === 'confirmed'
-            ? await createBookingDocuments(db, id, { kind: 'summary', eventKey })
-            : undefined;
+        const eventKey = `booking.request_submitted:${id}`;
         await notifyBooking(db, current, status, {
           eventKey,
           testPayment: true,
           amountMinor: amount,
-          documentRefs,
         });
-        if (status === 'pending') await notifyOwnerBookingRequest(db, current);
+        await notifyOwnerBookingRequest(db, current);
         return this.access.detail(db, actor, id);
       }),
     );

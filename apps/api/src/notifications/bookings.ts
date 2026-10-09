@@ -18,10 +18,10 @@ export type BookingMailSnapshot = {
 type BookingNoticeKind = 'pending' | 'confirmed' | 'cancelled' | 'rejected' | 'balance' | 'refund';
 
 const captions: Record<BookingNoticeKind, string> = {
-  pending: 'Prośba czeka na akceptację',
+  pending: 'Rezerwacja jest niepotwierdzona',
   confirmed: 'Rezerwacja jest potwierdzona',
   cancelled: 'Rezerwacja została anulowana',
-  rejected: 'Prośba została odrzucona',
+  rejected: 'Rezerwacja została odrzucona',
   balance: 'Zapisano dopłatę testową',
   refund: 'Zapisano zwrot testowy',
 };
@@ -40,7 +40,7 @@ export function notifyBooking(
   const balance = Math.max(0, b.total_minor - b.paid_minor);
   const intro: Record<BookingNoticeKind, string> = {
     pending:
-      'Wypożyczalnia musi jeszcze zaakceptować prośbę. Wyjazd nie jest jeszcze potwierdzony.',
+      'Rezerwacja ma status „Niepotwierdzona”. Wypożyczalnia potwierdzi ją lub odrzuci. Wyjazd nie jest jeszcze potwierdzony.',
     confirmed: 'Sprawdź termin, miejsce odbioru i oddzielne rozliczenia wyjazdu.',
     cancelled: 'Rezerwacja została anulowana. Sprawdź oddzielny status rozliczenia.',
     rejected: 'Wypożyczalnia nie zaakceptowała prośby. Sprawdź oddzielny status rozliczenia.',

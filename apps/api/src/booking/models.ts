@@ -4,6 +4,7 @@ export type BookingDb = Pool | PoolClient;
 export type Timestamp = Date | string;
 export type PriceUnit = 'day' | 'trip';
 export type PaymentPlan = 'deposit' | 'full' | 'direct';
+export type ReservationStatus = 'pending' | 'cancelled' | 'rejected' | 'confirmed';
 export type BookingStatus =
   | 'held'
   | 'pending'
@@ -139,6 +140,7 @@ export interface BookingRow {
   updated_at: Timestamp;
 }
 export interface AccessibleBooking extends BookingRow {
+  reservation_status: ReservationStatus;
   vehicle_name: string;
   asset: string;
   company_name: string;

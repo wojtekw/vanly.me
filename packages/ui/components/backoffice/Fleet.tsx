@@ -166,7 +166,7 @@ export function VehicleForm({
     km: 250,
     auto: false,
     pets: false,
-    instant: true,
+    instant: false,
     description: '',
     tagline: '',
     features: [],
@@ -195,7 +195,8 @@ export function VehicleForm({
         ['street', 'house_number'].forEach((k) => (d[k] = String(f.get(k) || '').trim()));
         ['seats', 'sleeps', 'min_days'].forEach((k) => (d[k] = Number(f.get(k))));
         ['daily', 'prep', 'deposit'].forEach((k) => (d[k] = Math.round(Number(f.get(k)) * 100)));
-        ['auto', 'pets', 'instant'].forEach((k) => (d[k] = f.get(k) === 'on'));
+        ['auto', 'pets'].forEach((k) => (d[k] = f.get(k) === 'on'));
+        d.instant = false;
         d.km = f.get('km') ? Number(f.get('km')) : null;
         d.features = String(f.get('features'))
           .split('\n')
@@ -398,11 +399,7 @@ export function VehicleForm({
         <div>
           <CheckField label="Automatyczna skrzynia" name="auto" defaultChecked={defaults.auto} />
           <CheckField label="Można zabrać psa" name="pets" defaultChecked={defaults.pets} />
-          <CheckField
-            label="Rezerwacja bez akceptacji firmy"
-            name="instant"
-            defaultChecked={defaults.instant}
-          />
+          <p className="small muted">Każdą rezerwację potwierdza wypożyczalnia.</p>
         </div>
       </div>
       {!company.verified && (

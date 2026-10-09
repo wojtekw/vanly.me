@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { q } from '../db';
+import { reservationStatusProjection } from './reservation-status';
 import type {
   BookingDb,
   AccessibleBooking,
@@ -17,7 +18,7 @@ import type {
   DepositStatus,
 } from './models';
 
-const bookingProjection = `b.*,v.name vehicle_name,v.asset,c.name company_name,
+const bookingProjection = `b.*,${reservationStatusProjection},v.name vehicle_name,v.asset,c.name company_name,
   COALESCE(b.snapshot->'vehicle'->>'city',v.city) city,
   COALESCE(b.snapshot->'vehicle'->>'street','') street,
   COALESCE(b.snapshot->'vehicle'->>'house_number','') house_number,
@@ -108,7 +109,7 @@ export class BookingRepository {
       [row.vehicle_id, row.id, row.company_id, row.start_date, row.end_date, row.buffer],
     );
     await this.replaceExtras(db, row.id, row.company_id, quote);
-    return row;
+    return { ...row, reservation_status: 'pending' as const };
   }
   async replaceExtras(db: BookingDb, booking: string, company: string, snapshot: QuoteSnapshot) {
     await db.query('DELETE FROM booking_extras WHERE booking_id=$1', [booking]);

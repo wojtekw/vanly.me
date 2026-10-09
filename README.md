@@ -1,7 +1,8 @@
 # VANLY — portal lokalny
 
 **Zmiana 9.10.2026:** podróżujący rezerwują bez wpłat w VANLY, a najem i kaucję
-rozliczają bezpośrednio z wypożyczalnią. Pierwszy pojazd jest bezpłatny; dodanie
+rozliczają z wypożyczalnią. Każdą rezerwację potwierdza wypożyczalnia; statusy to
+Niepotwierdzona, Anulowana, Odrzucona i Potwierdzona. Pierwszy pojazd jest bezpłatny; dodanie
 drugiego i każdego kolejnego kosztuje 200 zł jednorazowo. Na UAT opłata jest
 testowa. [Zasady i zachowanie API](docs/Platnosci-start.md). Opisy zaliczek i dopłat
 w starszej dokumentacji dotyczą zachowanych rezerwacji testowych.

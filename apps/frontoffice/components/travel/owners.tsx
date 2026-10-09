@@ -20,8 +20,8 @@ export function OwnersLanding() {
           </p>
           <p>
             Pierwszy pojazd dodajesz bezpłatnie. Drugi i każdy kolejny kosztuje 200 zł jednorazowo.
-            Podróżujący rezerwują bez opłat w VANLY i rozliczają najem oraz kaucję bezpośrednio z
-            Tobą.
+            Każdą rezerwację potwierdzasz lub odrzucasz w panelu. Podróżujący rezerwują bez opłat w
+            VANLY i rozliczają najem oraz kaucję bezpośrednio z Tobą.
           </p>
           <h1>
             Twoja flota.

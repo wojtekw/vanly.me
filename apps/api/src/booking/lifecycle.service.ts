@@ -1,4 +1,4 @@
-import { Injectable, ConflictException } from '@nestjs/common';
+import { Injectable, ConflictException, ForbiddenException } from '@nestjs/common';
 import { companyScope } from '../auth';
 import type { User } from '../auth';
 import { tx, audit } from '../db';
@@ -30,6 +30,8 @@ export class BookingLifecycleService {
   }
   decide(actor: User, id: string, accept: boolean) {
     return tx(async (db) => {
+      if (actor.role !== 'owner')
+        throw new ForbiddenException('Rezerwację potwierdza lub odrzuca wypożyczalnia.');
       const booking = await this.access.require(db, actor, id, true);
       companyScope(actor, booking.company_id);
       if (booking.status !== 'pending')

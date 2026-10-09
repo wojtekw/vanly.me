@@ -172,9 +172,21 @@ assert.equal(booking.status, 201, JSON.stringify(booking.data));
 const duplicate = await request(traveler, `/bookings/${id}/submit`, 'POST', payment, paymentKey);
 assert.equal(duplicate.status, 201);
 assert.equal(duplicate.data.paid_minor, booking.data.paid_minor);
-if (booking.data.status === 'pending')
-  booking = await request(owner, `/bookings/${id}/decision`, 'POST', { accept: true });
+assert.equal(booking.data.status, 'pending');
+assert.equal(booking.data.reservation_status, 'pending');
+assert.equal((await request(traveler, `/bookings/${id}/documents`)).data.length, 0);
+assert.equal(
+  (await request(traveler, `/bookings/${id}/decision`, 'POST', { accept: true })).status,
+  403,
+);
+assert.equal(
+  (await request(admin, `/bookings/${id}/decision`, 'POST', { accept: true })).status,
+  403,
+);
+booking = await request(owner, `/bookings/${id}/decision`, 'POST', { accept: true });
+assert.equal(booking.status, 201, JSON.stringify(booking.data));
 assert.equal(booking.data.status, 'confirmed');
+assert.equal(booking.data.reservation_status, 'confirmed');
 const documents = await request(traveler, `/bookings/${id}/documents`);
 assert.equal(documents.status, 200);
 assert.ok(documents.data.length);
@@ -199,7 +211,7 @@ assert.equal(booking.data.payment_status, 'external');
 assert.equal(booking.data.paid_minor, 0);
 assert.equal(booking.data.payments.length, 0);
 checks.push(
-  'quote, hold, reservation without payment, idempotency, confirmation and protected PDF',
+  'quote, hold, unconfirmed reservation without payment, owner-only confirmation, idempotency and protected PDF',
 );
 assert.equal(
   (
@@ -216,9 +228,52 @@ assert.ok(messages.data.length);
 assert.equal((await request(traveler, `/bookings/${id}/balance-test`, 'POST')).status, 403);
 booking = await request(traveler, `/bookings/${id}/cancel`, 'POST');
 assert.equal(booking.status, 201);
+assert.equal(booking.data.reservation_status, 'cancelled');
 assert.equal(booking.data.payment_status, 'external');
 assert.equal((await request(admin, `/bookings/${id}/refund-test`, 'POST')).status, 409);
 checks.push('messages, blocked traveler payments, cancellation without platform refund');
+const repeatQuote = await request(traveler, '/quotes', 'POST', {
+  vehicleId: 'coast',
+  start: quote.start,
+  end: quote.end,
+  guests: 2,
+  extras: {},
+});
+assert.equal(repeatQuote.status, 201, JSON.stringify(repeatQuote.data));
+const rejectedHold = await request(traveler, '/holds', 'POST', { quoteId: repeatQuote.data.id });
+assert.equal(rejectedHold.status, 201, JSON.stringify(rejectedHold.data));
+const rejectedId = rejectedHold.data.id;
+assert.equal(
+  (await request(traveler, `/bookings/${rejectedId}/submit`, 'POST', payment)).data
+    .reservation_status,
+  'pending',
+);
+const rejected = await request(owner, `/bookings/${rejectedId}/decision`, 'POST', {
+  accept: false,
+});
+assert.equal(rejected.status, 201, JSON.stringify(rejected.data));
+assert.equal(rejected.data.reservation_status, 'rejected');
+assert.equal(rejected.data.payments.length, 0);
+assert.equal((await request(traveler, `/bookings/${rejectedId}/documents`)).data.length, 0);
+assert.equal(
+  (await request(owner, `/bookings/${rejectedId}/decision`, 'POST', { accept: true })).status,
+  409,
+);
+assert.equal(
+  (
+    await request(traveler, '/quotes', 'POST', {
+      vehicleId: 'coast',
+      start: quote.start,
+      end: quote.end,
+      guests: 2,
+      extras: {},
+    })
+  ).status,
+  201,
+);
+checks.push(
+  'four reservation statuses, rejection and cancellation release availability, terminal decisions cannot be changed',
+);
 let delivered = false;
 for (let attempt = 0; attempt < 30; attempt++) {
   const mail = await request(traveler, '/mail');

@@ -18,7 +18,7 @@ scoped.searchParams.set('options', '-c search_path=' + schema + ',public');
 const admin = new pg.Pool({ connectionString: url });
 const db = new pg.Pool({ connectionString: scoped.toString() });
 const port = Number(process.env.BILLING_TEST_API_PORT || 4105);
-let server, traveler, other, owner, foreign;
+let server, traveler, other, owner, foreign, operator;
 const day = (n) => new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
 const travelerInput = {
   name: 'Podróżnik Testowy',
@@ -130,17 +130,19 @@ before(async () => {
     ['billing-other@example.test', 'traveler', null],
     ['billing-owner@example.test', 'owner', 'launch-company'],
     ['billing-foreign@example.test', 'owner', 'foreign-company'],
+    ['billing-admin@example.test', 'admin', null],
   ])
     await db.query(
       'INSERT INTO users(email,name,password_hash,role,company_id) VALUES($1,$2,$3,$4,$5)',
       [email, 'Osoba Testowa', hash, role, company],
     );
-  [traveler, other, owner, foreign] = await Promise.all(
+  [traveler, other, owner, foreign, operator] = await Promise.all(
     [
       'billing-traveler@example.test',
       'billing-other@example.test',
       'billing-owner@example.test',
       'billing-foreign@example.test',
+      'billing-admin@example.test',
     ].map((e) => login(e, password)),
   );
 });
@@ -268,17 +270,39 @@ test('traveler submits without payment, repeats safely, receives PDF and no bala
   ]);
   for (const r of results) {
     assert.equal(r.status, 201, JSON.stringify(r.data));
-    assert.equal(r.data.status, 'confirmed');
+    assert.equal(r.data.status, 'pending');
+    assert.equal(r.data.reservation_status, 'pending');
     assert.equal(r.data.payment_status, 'external');
     assert.equal(r.data.paid_minor, 0);
     assert.equal(r.data.payments.length, 0);
   }
   assert.deepEqual(results[0].data, results[1].data);
   assert.equal((await request(traveler, path + '/balance-test', 'POST')).status, 403);
+  assert.equal((await request(traveler, path + '/documents')).data.length, 0);
+  assert.equal(
+    (
+      await request(owner, path + '/handovers', 'POST', {
+        kind: 'pickup',
+        mileage: 12000,
+        fuel: 'Pełny',
+        notes: '',
+        checks: { equipment: true, condition: true, fuel: true },
+      })
+    ).status,
+    409,
+  );
+  assert.equal((await request(traveler, path + '/decision', 'POST', { accept: true })).status, 403);
+  assert.equal((await request(operator, path + '/decision', 'POST', { accept: true })).status, 403);
+  assert.equal((await request(foreign, path + '/decision', 'POST', { accept: true })).status, 403);
+  const acceptedBooking = await request(owner, path + '/decision', 'POST', { accept: true });
+  assert.equal(acceptedBooking.status, 201, JSON.stringify(acceptedBooking.data));
+  assert.equal(acceptedBooking.data.status, 'confirmed');
+  assert.equal(acceptedBooking.data.reservation_status, 'confirmed');
+  assert.equal((await request(owner, path + '/decision', 'POST', { accept: false })).status, 409);
   const docs = await request(traveler, path + '/documents');
   assert.equal(docs.status, 200);
   assert.equal(docs.data.length, 1);
-  const b = results[0].data;
+  const b = acceptedBooking.data;
   const model = bookingDocumentSnapshot(b);
   assert.equal(model.plan, 'direct');
   assert.equal(model.paymentStatus, 'external');
@@ -318,15 +342,24 @@ test('traveler submits without payment, repeats safely, receives PDF and no bala
   assert.equal(accepted.data.snapshot.dueNowMinor, 0);
   const cancelled = await request(traveler, path + '/cancel', 'POST');
   assert.equal(cancelled.status, 201);
+  assert.equal(cancelled.data.reservation_status, 'cancelled');
   assert.equal(cancelled.data.payment_status, 'external');
   assert.equal(cancelled.data.payments.length, 0);
 });
 test('request bookings need owner approval, and expired holds cannot be submitted', async () => {
   assert.equal(
-    (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { instant: false })).status,
+    (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { instant: true })).status,
     200,
   );
+  assert.equal((await request(null, '/vehicles/' + second.id)).data.instant, false);
+  // Even old inventory and already-saved quotes cannot bypass owner approval.
+  await db.query('UPDATE vehicles SET instant=true WHERE id=$1', [second.id]);
   const held = await hold(second.id, 60);
+  assert.equal(held.snapshot.vehicle.instant, false);
+  await db.query(
+    `UPDATE bookings SET snapshot=jsonb_set(snapshot,'{vehicle,instant}','true') WHERE id=$1`,
+    [held.id],
+  );
   const submitted = await request(
     traveler,
     '/bookings/' + held.id + '/submit',
@@ -353,6 +386,10 @@ test('request bookings need owner approval, and expired holds cannot be submitte
     (await request(traveler, '/bookings/' + expired.id + '/submit', 'POST', travelerInput)).status,
     409,
   );
+  assert.equal(
+    (await request(traveler, '/bookings/' + expired.id)).data.reservation_status,
+    'cancelled',
+  );
 });
 test('first vehicle is free for each company independently', async () => {
   const created = await request(foreign, '/owner/vehicles', 'POST', vehicle('Inna firma pierwszy'));
@@ -360,4 +397,75 @@ test('first vehicle is free for each company independently', async () => {
   assert.equal(created.data.listingFee.amount_minor, 0);
   assert.equal(created.data.listingFee.status, 'waived');
   assert.equal((await request(owner, '/owner/billing')).data.nextFeeMinor, 20000);
+});
+
+test('owner rejection and traveler cancellation release dates without payments or confirmation documents', async () => {
+  for (const [offset, operation, actor, terminal] of [
+    [90, 'decision', owner, 'rejected'],
+    [100, 'cancel', traveler, 'cancelled'],
+  ]) {
+    const held = await hold(first.id, offset);
+    const path = '/bookings/' + held.id;
+    assert.equal(
+      (await request(traveler, path + '/submit', 'POST', travelerInput)).data.status,
+      'pending',
+    );
+    const blocked = await request(traveler, '/quotes', 'POST', {
+      vehicleId: first.id,
+      start: day(offset),
+      end: day(offset + 3),
+      guests: 2,
+      extras: {},
+    });
+    assert.equal(blocked.status, 409);
+    const result = await request(
+      actor,
+      path + '/' + operation,
+      'POST',
+      operation === 'decision' ? { accept: false } : undefined,
+    );
+    assert.equal(result.status, 201, JSON.stringify(result.data));
+    assert.equal(result.data.reservation_status, terminal);
+    assert.equal(result.data.payments.length, 0);
+    assert.equal((await request(traveler, path + '/documents')).data.length, 0);
+    assert.equal((await request(owner, path + '/decision', 'POST', { accept: true })).status, 409);
+    assert.equal(
+      (
+        await request(traveler, '/quotes', 'POST', {
+          vehicleId: first.id,
+          start: day(offset),
+          end: day(offset + 3),
+          guests: 2,
+          extras: {},
+        })
+      ).status,
+      201,
+    );
+  }
+});
+
+test('opposing owner decisions commit exactly one outcome and one outcome notification', async () => {
+  const held = await hold(first.id, 120);
+  const path = '/bookings/' + held.id;
+  await request(traveler, path + '/submit', 'POST', travelerInput);
+  const results = await Promise.all(
+    [true, false].map((accept) => request(owner, path + '/decision', 'POST', { accept })),
+  );
+  assert.deepEqual(results.map((result) => result.status).sort(), [201, 409]);
+  const booking = (await request(traveler, path)).data;
+  assert.ok(['confirmed', 'rejected'].includes(booking.reservation_status));
+  assert.equal(booking.payments.length, 0);
+  const outcomes = (
+    await db.query(
+      "SELECT count(*)::int n FROM audit WHERE resource=$1 AND action IN('booking.accepted','booking.rejected')",
+      [held.id],
+    )
+  ).rows[0].n;
+  assert.equal(outcomes, 1);
+  const notifications = (
+    await db.query('SELECT count(*)::int n FROM jobs WHERE event_key=ANY($1::text[])', [
+      ['booking.confirmed:' + held.id, 'booking.rejected:' + held.id],
+    ])
+  ).rows[0].n;
+  assert.equal(notifications, 1);
 });

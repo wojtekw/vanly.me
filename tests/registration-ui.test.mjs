@@ -104,6 +104,10 @@ const componentRequire = (name, importer) => {
       DataState: ({ children }) => React.createElement(React.Fragment, null, children),
       Empty: ({ title, children }) => React.createElement('div', null, title, children),
       Badge: ({ status }) => React.createElement('span', null, status),
+      ReservationBadge: ({ status }) => {
+        const statuses = loadComponent(fileURLToPath(new URL('../packages/ui/lib/reservation-status.ts', import.meta.url)));
+        return React.createElement('span', null, statuses.reservationLabels[statuses.reservationStatus(status)]);
+      },
       Bill: () => null,
       asset: (name) => '/assets/' + name,
       money: (minor) =>
@@ -564,6 +568,8 @@ test('checkout submits contact without payment using a stable reservation reques
     data: { '/bookings/booking-1': exampleBooking() },
   });
   assert.match(document.body.textContent, /bez wpłaty w VANLY/);
+  assert.match(document.body.textContent, /Niepotwierdzona/);
+  assert.doesNotMatch(document.body.textContent, /potwierdzona od razu/);
   assert.equal(document.querySelector('select[name="scenario"]'), null);
   document.querySelector('input[name="accept"]').checked = true;
   document.querySelector('textarea[name="note"]').value = 'Odbiór około 10:00.';
@@ -588,7 +594,7 @@ test('extracted booking owner action preserves decision, request id and refresh'
     data: { '/bookings/booking-1': exampleBooking('pending') },
   });
   const accept = [...document.querySelectorAll('button')].find(
-    (button) => button.textContent === 'Akceptuj rezerwację',
+    (button) => button.textContent === 'Potwierdź rezerwację',
   );
   await act(async () => accept.click());
   assert.deepEqual(state.requests, [
@@ -665,7 +671,7 @@ test('booking decision ignores another click until completion and allows retry a
     data: { '/bookings/booking-1': exampleBooking('pending') },
   });
   const accept = [...document.querySelectorAll('button')].find(
-    (button) => button.textContent === 'Akceptuj rezerwację',
+    (button) => button.textContent === 'Potwierdź rezerwację',
   );
   await act(async () => {
     accept.click();
@@ -778,4 +784,17 @@ test('conversation send prevents duplicates, retains failed draft and retries ag
   await act(async () => state.pending[1].resolve({ ok: true }));
   assert.equal(document.querySelector('textarea').value, '');
   assert.equal(state.reloads, 2);
+});
+
+
+test('pending reservation only exposes confirmation and rejection to the rental company', async () => {
+  for (const [role, mode] of [['traveler', 'traveler'], ['admin', 'admin']]) {
+    await start({ view: 'booking', mode, user: { ...traveler, role }, data: { '/bookings/booking-1': exampleBooking('pending') } });
+    assert.match(document.body.textContent, /Rezerwacja jest niepotwierdzona/);
+    const buttons = [...document.querySelectorAll('button')].map((button) => button.textContent);
+    assert.ok(!buttons.includes('Potwierdź rezerwację'));
+    assert.ok(!buttons.includes('Odrzuć rezerwację'));
+    await act(async () => root.unmount());
+    root = undefined;
+  }
 });

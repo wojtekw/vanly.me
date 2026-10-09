@@ -92,7 +92,9 @@ function Terms() {
         <p>
           Na zatwierdzenie rezerwacji bez wpłaty w VANLY masz 15 minut. Po wygaśnięciu blokady
           trzeba ponownie sprawdzić dostępność. Po zatwierdzeniu termin pozostaje zajęty, a
-          rezerwacja jest potwierdzona lub oczekuje na akceptację wypożyczalni, zależnie od oferty.
+          rezerwacja ma status „Niepotwierdzona” i czeka na decyzję wypożyczalni. Firma może ją
+          potwierdzić lub odrzucić; możesz ją też anulować. Statusy rezerwacji to: Niepotwierdzona,
+          Anulowana, Odrzucona i Potwierdzona.
         </p>
         <p>
           VANLY nie pobiera opłat od podróżujących ani wpłat za najem i kaucję. Cenę najmu, terminy
@@ -355,8 +357,8 @@ function Help() {
           W <Link href="/pojazdy">wyszukiwarce pojazdów</Link> wybierz miejsce odbioru, daty i
           liczbę podróżujących. Otwórz ofertę i sprawdź wyposażenie, zasady oraz podsumowanie ceny.
           Zaloguj się, aby utworzyć rezerwację testową. Na zatwierdzenie rezerwacji bez wpłaty masz
-          15 minut. Po zatwierdzeniu rezerwacja jest potwierdzona lub oczekuje na akceptację
-          wypożyczalni; termin pozostaje zajęty.
+          15 minut. Po wysłaniu rezerwacja ma status „Niepotwierdzona” i czeka na potwierdzenie lub
+          odrzucenie przez wypożyczalnię; termin pozostaje zajęty.
         </p>
       </Section>
       <Section title="Gdzie znajdę swoją rezerwację?">

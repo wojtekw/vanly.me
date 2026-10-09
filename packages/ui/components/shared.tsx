@@ -1,4 +1,5 @@
 'use client';
+import { reservationStatus, reservationLabels } from '../lib/reservation-status';
 import React, {
   createContext,
   useContext,
@@ -85,7 +86,7 @@ export const types = [
   ['offroad', 'Vany 4×4', 'offroad.webp'],
   ['trailer', 'Przyczepy', 'caravan.svg'],
 ];
-export function Badge({ status }: { status: string }) {
+export function Badge({ status, label }: { status: string; label?: string }) {
   return (
     <span
       className={
@@ -106,9 +107,13 @@ export function Badge({ status }: { status: string }) {
             : 'warn')
       }
     >
-      {labels[status] || status}
+      {label || labels[status] || status}
     </span>
   );
+}
+export function ReservationBadge({ status }: { status: string }) {
+  const value = reservationStatus(status);
+  return <Badge status={value} label={reservationLabels[value]} />;
 }
 export function Field({
   label,
@@ -257,7 +262,7 @@ export function Card({ v, query = '' }: { v: Row; query?: string }) {
     <article className="vehicle-card">
       <Link href={'/pojazd/' + v.id + query} className="vehicle-picture">
         <img src={asset(v.asset)} alt={v.name} loading="lazy" />
-        <span className="card-tag">{v.instant ? 'Rezerwacja od razu' : 'Z akceptacją firmy'}</span>
+        <span className="card-tag">Potwierdza wypożyczalnia</span>
       </Link>
       <button
         className={'icon-btn favorite-button ' + (saved ? 'saved' : '')}
@@ -383,7 +388,7 @@ export function BookingCard({ b, prefix = '/konto/rezerwacja/' }: { b: Row; pref
             {date(b.start_date)} — {date(b.end_date)}
           </p>
           <div className="inline">
-            <Badge status={b.status} />
+            <ReservationBadge status={b.reservation_status || b.status} />
             <Badge status={b.payment_status} />
           </div>
         </div>

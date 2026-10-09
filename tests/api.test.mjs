@@ -315,7 +315,8 @@ test('payment retries are idempotent and customer cannot decide acceptance', asy
   ]);
   assert.equal(a.status, 201, JSON.stringify(a));
   assert.equal(b.status, 201);
-  assert.equal(a.data.status, 'confirmed');
+  assert.equal(a.data.status, 'pending');
+  assert.equal((await request(owner, '/bookings/' + mainBooking.id + '/decision', 'POST', { accept: true })).data.status, 'confirmed');
   const result = await db.query('SELECT count(*)::int n FROM payments WHERE booking_id=$1', [
     mainBooking.id,
   ]);
@@ -800,7 +801,8 @@ test('booking pickup address survives fleet edits and an accepted date amendment
   assert.equal(booking.snapshot.vehicle.house_number, original.house_number);
   const payment = await pay(traveler, booking);
   assert.equal(payment.status, 201, JSON.stringify(payment.data));
-  assert.equal(payment.data.status, 'confirmed');
+  assert.equal(payment.data.status, 'pending');
+  assert.equal((await request(owner, '/bookings/' + booking.id + '/decision', 'POST', { accept: true })).data.status, 'confirmed');
   const before = await request(traveler, '/bookings/' + booking.id);
   assert.equal(before.status, 200);
   for (const [field, value] of Object.entries(original)) assert.equal(before.data[field], value);

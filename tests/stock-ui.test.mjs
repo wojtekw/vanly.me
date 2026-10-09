@@ -50,7 +50,8 @@ function compile(relative, overrides = {}) {
   new Function('require', 'module', 'exports', compiled)(require, module, module.exports);
   return module.exports;
 }
-const shared = compile('../packages/ui/components/shared.tsx');
+const reservationStatuses = compile('../packages/ui/lib/reservation-status.ts');
+const shared = compile('../packages/ui/components/shared.tsx', { '../lib/reservation-status': reservationStatuses });
 const { Stock } = compile('../packages/ui/components/Stock.tsx', { './shared': shared });
 const fleet = [
   { id: 'camper-a', name: 'Campervan Bursztyn', type: 'campervan', status: 'published' },

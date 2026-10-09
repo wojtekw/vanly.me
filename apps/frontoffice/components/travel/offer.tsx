@@ -174,9 +174,7 @@ export function Offer({ id }: { id: string }) {
                   <h1>{v.name}</h1>
                   <p className="muted">{v.tagline}</p>
                 </div>
-                <span className="pill good">
-                  {v.instant ? 'Potwierdzenie od razu' : 'Akceptacja wypożyczalni'}
-                </span>
+                <span className="pill good">Potwierdza wypożyczalnia</span>
               </div>
             </div>
             <div className="offer-gallery">

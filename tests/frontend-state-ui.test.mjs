@@ -30,28 +30,38 @@ for (const key of keys)
 const React = require('react');
 const { createRoot } = require('react-dom/client');
 const { act } = React;
-const compiled = ts.transpileModule(
-  fs.readFileSync(new URL('../packages/ui/components/shared.tsx', import.meta.url), 'utf8'),
-  {
+function compile(relative, overrides = {}) {
+  const compiled = ts.transpileModule(fs.readFileSync(new URL(relative, import.meta.url), 'utf8'), {
     compilerOptions: {
       module: ts.ModuleKind.CommonJS,
       jsx: ts.JsxEmit.ReactJSX,
       target: ts.ScriptTarget.ES2020,
       esModuleInterop: true,
     },
-  },
-).outputText;
-const module = { exports: {} };
-new Function('require', 'module', 'exports', compiled)(
-  (name) => {
-    if (name === 'next/link') return () => null;
-    if (name === 'lucide-react') return new Proxy({}, { get: () => () => null });
-    return require(name);
-  },
-  module,
-  module.exports,
-);
-const { Context, useData } = module.exports;
+  }).outputText;
+  const module = { exports: {} };
+  new Function('require', 'module', 'exports', compiled)(
+    (name) => {
+      if (Object.hasOwn(overrides, name)) return overrides[name];
+      if (name === 'next/link')
+        return ({ children, href }) => React.createElement('a', { href }, children);
+      if (name === 'lucide-react') return new Proxy({}, { get: () => () => null });
+      return require(name);
+    },
+    module,
+    module.exports,
+  );
+  return module.exports;
+}
+const statuses = compile('../packages/ui/lib/reservation-status.ts');
+const shared = compile('../packages/ui/components/shared.tsx', {
+  '../lib/reservation-status': statuses,
+});
+const { Context, useData, ReservationBadge } = shared;
+const { Reservations } = compile('../packages/ui/components/backoffice/Reservations.tsx', {
+  '../shared': shared,
+  '../../lib/reservation-status': statuses,
+});
 let root, pending, props, api, output, seen;
 function Probe() {
   output = useData(props.path, props.version || 0);
@@ -162,4 +172,56 @@ test('changing resource path clears old data immediately and reload retries a fa
   assert.equal(text(), 'loading');
   await resolve(2, 'Booking two');
   assert.equal(text(), 'Booking two');
+});
+
+test('reservation status filters show exactly four labels and retain historical handovers in confirmed results', async () => {
+  const rows = [
+    'held',
+    'pending',
+    'cancelled',
+    'expired',
+    'rejected',
+    'confirmed',
+    'in_rental',
+    'completed',
+  ].map((status, id) => ({
+    id: String(id),
+    status,
+    vehicle_name: status,
+    reference: 'TEST-' + id,
+    start_date: '2026-11-01',
+    end_date: '2026-11-05',
+    payment_status: 'external',
+    total_minor: 100000,
+  }));
+  root = createRoot(document.getElementById('test'));
+  await act(async () =>
+    root.render(React.createElement(Reservations, { rows, prefix: '/firma/rezerwacja/' })),
+  );
+  const select = document.querySelector('select[aria-label="Status rezerwacji"]');
+  assert.deepEqual(
+    [...select.options].map((option) => option.textContent),
+    ['Wszystkie statusy', 'Niepotwierdzona', 'Anulowana', 'Odrzucona', 'Potwierdzona'],
+  );
+  for (const [status, expected] of [
+    ['pending', ['held', 'pending']],
+    ['cancelled', ['cancelled', 'expired']],
+    ['rejected', ['rejected']],
+    ['confirmed', ['confirmed', 'in_rental', 'completed']],
+  ]) {
+    await act(async () => {
+      select.value = status;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+    assert.deepEqual(
+      [...document.querySelectorAll('.booking-card h3')].map((heading) => heading.textContent),
+      expected,
+    );
+    assert.deepEqual(
+      [...document.querySelectorAll('.booking-card .pill:first-child')].map(
+        (badge) => badge.textContent,
+      ),
+      expected.map(() => statuses.reservationLabels[status]),
+    );
+  }
 });

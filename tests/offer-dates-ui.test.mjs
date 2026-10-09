@@ -57,7 +57,8 @@ function load(file, overrides = {}) {
   );
   return module.exports;
 }
-const shared = load('packages/ui/components/shared.tsx');
+const reservationStatuses = load('packages/ui/lib/reservation-status.ts');
+const shared = load('packages/ui/components/shared.tsx', { '../lib/reservation-status': reservationStatuses });
 const publicData = load('apps/frontoffice/components/shared.tsx', {
   '../../../packages/ui/components/shared': shared,
 });

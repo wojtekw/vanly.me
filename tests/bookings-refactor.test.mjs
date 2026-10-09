@@ -100,7 +100,7 @@ after(async () => {
   await admin.query(`DROP SCHEMA IF EXISTS ${schema} CASCADE`);
   await admin.end();
 });
-async function confirmed() {
+async function submitted() {
   const quote = await bookings.quote(traveler, input());
   const hold = await bookings.hold(traveler, quote.id, crypto.randomUUID());
   const travelerInput = {
@@ -112,6 +112,10 @@ async function confirmed() {
   };
   return payments.pay(traveler, hold.id, travelerInput, crypto.randomUUID());
 }
+async function confirmed() {
+  const booking = await submitted();
+  return lifecycle.decide(owner, booking.id, true);
+}
 async function rejectOutbox(prefix) {
   await pool.query(`CREATE FUNCTION fail_selected_mail() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN
     IF NEW.event_key LIKE '${prefix}%' THEN RAISE EXCEPTION 'Injected mail failure'; END IF; RETURN NEW; END; $$;
@@ -121,7 +125,7 @@ async function restoreOutbox() {
   await pool.query('DROP TRIGGER reject_outbox ON jobs; DROP FUNCTION fail_selected_mail();');
 }
 
-test('payment retry returns one committed booking, one summary PDF and one traveler event', async () => {
+test('payment retry leaves one pending booking; owner confirmation creates one summary and confirmation event', async () => {
   const quote = await bookings.quote(traveler, input());
   const hold = await bookings.hold(traveler, quote.id, crypto.randomUUID());
   const key = crypto.randomUUID();
@@ -136,9 +140,12 @@ test('payment retry returns one committed booking, one summary PDF and one trave
     payments.pay(traveler, hold.id, data, key),
     payments.pay(traveler, hold.id, data, key),
   ]);
-  assert.equal(first.status, 'confirmed');
+  assert.equal(first.status, 'pending');
   assert.deepEqual(second, JSON.parse(JSON.stringify(first)));
   assert.equal(await count('payments'), 1);
+  assert.equal(await count('booking_documents'), 0);
+  assert.equal(await count('jobs', 'WHERE event_key=$1', ['booking.request_submitted:' + hold.id]), 1);
+  await lifecycle.decide(owner, hold.id, true);
   assert.equal(await count('booking_documents', "WHERE kind='summary'"), 1);
   const job = (
     await pool.query('SELECT * FROM jobs WHERE event_key=$1', ['booking.confirmed:' + hold.id])
@@ -155,8 +162,8 @@ test('payment retry returns one committed booking, one summary PDF and one trave
   assert.equal(first.total_minor, 6 * 52000 + 18000);
 });
 
-test('a hold refuses changed deposit and booking approval terms even when rent is unchanged', async () => {
-  for (const change of ['deposit=500000', 'instant=false']) {
+test('a hold refuses changed deposit even when rent is unchanged', async () => {
+  for (const change of ['deposit=500000']) {
     const quote = await bookings.quote(traveler, input());
     await pool.query(`UPDATE vehicles SET ${change} WHERE id='booking-test-van'`);
     await assert.rejects(bookings.hold(traveler, quote.id, crypto.randomUUID()),
@@ -196,7 +203,7 @@ test('oversized integer prices are rejected at quote time before an unusable boo
 
 test('rejecting a request-mode booking closes its pending amendment and releases availability', async () => {
   await pool.query("UPDATE vehicles SET instant=false WHERE id='booking-test-van'");
-  const booking = await confirmed();
+  const booking = await submitted();
   assert.equal(booking.status, 'pending');
   const amendment = await amendments.request(traveler, booking.id, {
     start: future(32), end: future(39), note: 'Propozycja przed decyzją firmy',

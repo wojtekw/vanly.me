@@ -1,3 +1,4 @@
+import { reservationStatusProjection } from './booking/reservation-status';
 import {
   Controller,
   Get,
@@ -320,7 +321,7 @@ export class AdminController {
   @Get('dashboard') async dashboard(@Req() req: Authed) {
     user(req, ['admin']);
     const bookings = await q(
-      `SELECT b.*,v.name vehicle_name,v.asset,c.name company_name FROM bookings b JOIN vehicles v ON v.id=b.vehicle_id JOIN companies c ON c.id=b.company_id WHERE b.status!='held' AND b.status!='expired' ORDER BY b.created_at DESC LIMIT 150`,
+      `SELECT b.*,${reservationStatusProjection},v.name vehicle_name,v.asset,c.name company_name FROM bookings b JOIN vehicles v ON v.id=b.vehicle_id JOIN companies c ON c.id=b.company_id WHERE b.status!='held' AND b.status!='expired' ORDER BY b.created_at DESC LIMIT 150`,
     );
     const companies = await q(
       `SELECT c.*,(SELECT count(*)::int FROM vehicles v WHERE v.company_id=c.id) vehicle_count,

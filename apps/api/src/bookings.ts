@@ -84,11 +84,7 @@ export class BookingController {
     @Param('id') id: string,
     @Body() body: unknown,
   ) {
-    return this.lifecycle.decide(
-      user(req, ['owner', 'admin']),
-      id,
-      decisionSchema.parse(body).accept,
-    );
+    return this.lifecycle.decide(user(req, ['owner']), id, decisionSchema.parse(body).accept);
   }
   @Post('bookings/:id/refund-test') refund(@Req() req: Authed, @Param('id') id: string) {
     return this.payments.refund(user(req, ['admin']), id, req.headers['idempotency-key']);

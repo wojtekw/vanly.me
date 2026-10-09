@@ -9,7 +9,6 @@ import type { QuoteInput } from './models';
 import type { TravelerInput } from './models';
 import { notifyBooking } from '../notifications/bookings';
 import { notifyOwnerBookingRequest } from '../notifications/booking-events';
-import { createBookingDocuments } from '../documents/service';
 
 @Injectable()
 export class BookingService {
@@ -37,8 +36,7 @@ export class BookingService {
           fresh.totalMinor !== quote.snapshot.totalMinor ||
           fresh.depositMinor !== quote.snapshot.depositMinor ||
           fresh.dueNowMinor !== quote.snapshot.dueNowMinor ||
-          fresh.plan !== quote.snapshot.plan ||
-          fresh.vehicle.instant !== quote.snapshot.vehicle.instant
+          fresh.plan !== quote.snapshot.plan
         )
           throw new ConflictException('Warunki oferty zmieniły się. Sprawdź nową wycenę.');
         const booking = await this.repository.createHold(db, actor.id, quoteId, fresh);
@@ -58,9 +56,10 @@ export class BookingService {
         if (b.user_id !== actor.id) throw new ForbiddenException('To nie jest Twoja rezerwacja.');
         if (b.status !== 'held' || !b.hold_until || new Date(b.hold_until).getTime() <= Date.now())
           throw new ConflictException('Blokada wygasła lub rezerwacja została już zatwierdzona.');
-        const status = b.snapshot.vehicle.instant ? 'confirmed' : 'pending';
+        const status = 'pending';
         const snapshot = {
           ...b.snapshot,
+          vehicle: { ...b.snapshot.vehicle, instant: false },
           settlementMode: 'direct',
           plan: 'direct',
           dueNowMinor: 0,
@@ -78,13 +77,9 @@ export class BookingService {
         ]);
         await audit(db, actor, 'booking.submitted', id, { settlementMode: 'direct' });
         const current = await this.access.require(db, actor, id);
-        const eventKey = `booking.${status === 'confirmed' ? 'confirmed' : 'request_submitted'}:${id}`;
-        const documentRefs =
-          status === 'confirmed'
-            ? await createBookingDocuments(db, id, { kind: 'summary', eventKey })
-            : undefined;
-        await notifyBooking(db, current, status, { eventKey, documentRefs });
-        if (status === 'pending') await notifyOwnerBookingRequest(db, current);
+        const eventKey = `booking.request_submitted:${id}`;
+        await notifyBooking(db, current, status, { eventKey });
+        await notifyOwnerBookingRequest(db, current);
         return this.access.detail(db, actor, id);
       }),
     );

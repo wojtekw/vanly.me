@@ -27,6 +27,7 @@ import {
   LISTING_FEE_MINOR,
 } from './listing-billing';
 import { legacyTravelerPayments } from './booking/payment-mode';
+import { reservationStatusProjection } from './booking/reservation-status';
 import {
   calcQuote,
   quoteSchema,
@@ -47,6 +48,7 @@ export class CatalogController {
       database: 'postgresql',
       payments: process.env.LOCAL_PAYMENTS === 'true' ? 'local_test' : 'disabled',
       travelerPayments: legacyTravelerPayments() ? 'local_test' : 'direct',
+      reservationConfirmation: 'owner',
       listingFeeMinor: LISTING_FEE_MINOR,
       insurance: 'not_connected',
       vignettes: 'not_connected',
@@ -84,8 +86,8 @@ export class CatalogController {
     let where = "v.status='published' AND c.verified";
     where += ` AND v.sleeps>=${arg(d.guests)} AND (v.type='trailer' OR v.seats>=${arg(d.guests)})`;
     if (d.type && d.type !== 'all') where += ` AND v.type=${arg(d.type)}`;
-    for (const k of ['auto', 'pets', 'instant'] as const)
-      if (d[k] === 'true') where += ` AND v.${k}=true`;
+    for (const k of ['auto', 'pets'] as const) if (d[k] === 'true') where += ` AND v.${k}=true`;
+    if (d.instant === 'true') where += ' AND false';
     let distance = 'NULL::float8';
     if (d.location) {
       let loc: { lat: number; lng: number } | undefined = resolveLocality(d.location);
@@ -126,7 +128,7 @@ export class CatalogController {
           ? 'total_minor DESC'
           : 'v.created_at,v.name';
     return q(
-      `SELECT v.*,c.name company_name,c.settings,(${total}) total_minor,${distance} distance_km,(SELECT round(avg(rating),1) FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') rating,(SELECT count(*)::int FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') review_count FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE ${where} ORDER BY ${order} LIMIT 1000`,
+      `SELECT v.*,false AS instant,c.name company_name,c.settings,(${total}) total_minor,${distance} distance_km,(SELECT round(avg(rating),1) FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') rating,(SELECT count(*)::int FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') review_count FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE ${where} ORDER BY ${order} LIMIT 1000`,
       values,
     );
   }
@@ -149,7 +151,7 @@ export class CatalogController {
   }
   @Get('vehicles/:id') async vehicle(@Param('id') id: string, @Query() p: any, @Req() req: Authed) {
     const [v] = await q(
-      `SELECT v.*,c.name company_name,c.settings,c.verified FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.id=$1`,
+      `SELECT v.*,false AS instant,c.name company_name,c.settings,c.verified FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.id=$1`,
       [id],
     );
     if (
@@ -198,7 +200,7 @@ export class CatalogController {
   @Get('favorites') async favorites(@Req() req: Authed) {
     const u = user(req);
     return q(
-      "SELECT v.*,c.name company_name FROM favorites f JOIN vehicles v ON v.id=f.vehicle_id JOIN companies c ON c.id=v.company_id WHERE f.user_id=$1 AND v.status='published' AND c.verified",
+      "SELECT v.*,false AS instant,c.name company_name FROM favorites f JOIN vehicles v ON v.id=f.vehicle_id JOIN companies c ON c.id=v.company_id WHERE f.user_id=$1 AND v.status='published' AND c.verified",
       [u.id],
     );
   }
@@ -297,7 +299,7 @@ const vehicleSchema = z
     min_days: z.number().int().min(1).max(60),
     auto: z.boolean(),
     pets: z.boolean(),
-    instant: z.boolean(),
+    instant: z.boolean().transform(() => false),
     km: z.number().int().positive().max(10000).nullable(),
     description: z.string().min(10).max(5000),
     tagline: z.string().max(150),
@@ -393,7 +395,7 @@ export class OwnerController {
       u.company_id,
     ]);
     const bookings = await q(
-      `SELECT b.*,v.name vehicle_name,v.asset,us.name traveler_name FROM bookings b JOIN vehicles v ON v.id=b.vehicle_id JOIN users us ON us.id=b.user_id WHERE b.company_id=$1 AND b.status!='held' AND b.status!='expired' ORDER BY b.start_date DESC LIMIT 150`,
+      `SELECT b.*,${reservationStatusProjection},v.name vehicle_name,v.asset,us.name traveler_name FROM bookings b JOIN vehicles v ON v.id=b.vehicle_id JOIN users us ON us.id=b.user_id WHERE b.company_id=$1 AND b.status!='held' AND b.status!='expired' ORDER BY b.start_date DESC LIMIT 150`,
       [u.company_id],
     );
     const blocks = await q(

@@ -16,7 +16,6 @@ export function Search() {
     sort: 'recommended',
     auto: false,
     pets: false,
-    instant: false,
     budget: '',
     radius: '50',
   });
@@ -85,7 +84,6 @@ export function Search() {
             {[
               ['auto', 'Automatyczna skrzynia'],
               ['pets', 'Możesz zabrać psa'],
-              ['instant', 'Rezerwacja od razu'],
             ].map(([k, t]) => (
               <CheckField
                 key={k}
@@ -95,11 +93,7 @@ export function Search() {
               />
             ))}
           </div>
-          <div
-            className="filter-section"
-            role="group"
-            aria-labelledby="equipment-filter-label"
-          >
+          <div className="filter-section" role="group" aria-labelledby="equipment-filter-label">
             <h3 id="equipment-filter-label">Wyposażenie w cenie</h3>
             {[
               ['shower', 'Prysznic'],

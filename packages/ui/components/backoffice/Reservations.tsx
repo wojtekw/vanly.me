@@ -1,10 +1,17 @@
 'use client';
 import { useState } from 'react';
 import { Row, Empty, BookingCard } from '../shared';
+import {
+  reservationStatus,
+  reservationStatuses,
+  reservationLabels,
+} from '../../lib/reservation-status';
 
 export function Reservations({ rows, prefix }: { rows: Row[]; prefix: string }) {
   const [status, setStatus] = useState('all');
-  const filtered = rows.filter((b) => status === 'all' || b.status === status);
+  const filtered = rows.filter(
+    (b) => status === 'all' || reservationStatus(b.reservation_status || b.status) === status,
+  );
   return (
     <>
       <div className="section-head">
@@ -16,18 +23,9 @@ export function Reservations({ rows, prefix }: { rows: Row[]; prefix: string }) 
           onChange={(e) => setStatus(e.target.value)}
         >
           <option value="all">Wszystkie statusy</option>
-          {['pending', 'confirmed', 'in_rental', 'completed', 'cancelled', 'rejected'].map((s) => (
+          {reservationStatuses.map((s) => (
             <option key={s} value={s}>
-              {
-                {
-                  pending: 'Do akceptacji',
-                  confirmed: 'Potwierdzone',
-                  in_rental: 'W podróży',
-                  completed: 'Zakończone',
-                  cancelled: 'Anulowane',
-                  rejected: 'Odrzucone',
-                }[s]
-              }
+              {reservationLabels[s]}
             </option>
           ))}
         </select>
@@ -41,7 +39,7 @@ export function Reservations({ rows, prefix }: { rows: Row[]; prefix: string }) 
       ) : (
         <Empty
           title="Brak rezerwacji w tym widoku."
-          text="Nowe rezerwacje pojawią się po zatwierdzeniu przez podróżującego, bez wpłaty w VANLY."
+          text="Nowe rezerwacje pojawią się jako niepotwierdzone i będą czekały na decyzję wypożyczalni, bez wpłaty w VANLY."
         />
       )}
     </>

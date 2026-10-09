@@ -13,6 +13,7 @@ import {
   Heading,
   Bill,
   Badge,
+  ReservationBadge,
   asset,
   money,
   date,
@@ -47,7 +48,7 @@ function CheckoutBody({ id }: { id: string }) {
         {b &&
           (b.status !== 'held' ? (
             <div className="panel section">
-              <Badge status={b.status} />
+              <ReservationBadge status={b.reservation_status || b.status} />
               <h2>Ta rezerwacja ma już nowy status.</h2>
               <Link className="btn primary" href={'/konto/rezerwacja/' + id}>
                 Otwórz szczegóły
@@ -86,7 +87,7 @@ function CheckoutBody({ id }: { id: string }) {
                           paymentKey,
                         );
                         navigate('/konto/rezerwacja/' + id);
-                      }, 'Rezerwacja zapisana bez wpłaty w VANLY.');
+                      }, 'Rezerwacja zapisana jako niepotwierdzona. Czeka na decyzję wypożyczalni.');
                     } finally {
                       submitting.current = false;
                       setBusy(false);
@@ -151,7 +152,8 @@ function CheckoutBody({ id }: { id: string }) {
                     <Notice>
                       Najem i kaucję rozliczasz bezpośrednio z wypożyczalnią. Termin i sposób
                       zapłaty ustalisz z nią według warunków najmu. VANLY nie pobiera opłaty od
-                      podróżujących.
+                      podróżujących. Rezerwacja będzie niepotwierdzona do czasu decyzji
+                      wypożyczalni.
                     </Notice>
                   </div>
                   <CheckField
@@ -186,9 +188,8 @@ function CheckoutBody({ id }: { id: string }) {
                 <p className="small muted">{b.guests} podróżników</p>
                 <Bill q={b.snapshot} />
                 <p className="small muted">
-                  {b.snapshot.vehicle.instant
-                    ? 'Rezerwacja zostanie potwierdzona od razu po zatwierdzeniu.'
-                    : 'Po zatwierdzeniu wypożyczalnia zaakceptuje lub odrzuci prośbę.'}
+                  Po wysłaniu rezerwacja otrzyma status „Niepotwierdzona”. Wypożyczalnia potwierdzi
+                  ją lub odrzuci.
                 </p>
               </aside>
             </div>
