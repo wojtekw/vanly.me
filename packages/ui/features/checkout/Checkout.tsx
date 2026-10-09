@@ -148,24 +148,24 @@ function CheckoutBody({ id }: { id: string }) {
                   <hr className="divider" />
                   <div>
                     <p className="eyebrow">3 / Bezpłatna rezerwacja</p>
-                    <h2>Zarezerwuj bez wpłaty w VANLY.</h2>
+                    <h2>Zarezerwuj bez płatności na tym etapie.</h2>
                     <Notice>
-                      Najem i kaucję rozliczasz bezpośrednio z wypożyczalnią. Termin i sposób
-                      zapłaty ustalisz z nią według warunków najmu. VANLY nie pobiera opłaty od
-                      podróżujących. Rezerwacja będzie niepotwierdzona do czasu decyzji
-                      wypożyczalni.
+                      Po potwierdzeniu rezerwacji przez wypożyczalnię otrzymasz e-mail z
+                      podsumowaniem i instrukcją płatności za wynajem. Do tego czasu rezerwacja
+                      będzie miała status „Niepotwierdzona”. Płatność za wynajem i kaucję rozliczysz
+                      bezpośrednio z wypożyczalnią.
                     </Notice>
                   </div>
                   <CheckField
-                    label="Akceptuję podsumowanie i zasady tej lokalnej rezerwacji testowej."
+                    label="Akceptuję podsumowanie i zasady rezerwacji."
                     name="accept"
                     required
                   />
-                  <Link className="text-link" href="/o-wersji">
-                    Zobacz zasady wersji lokalnej
+                  <Link className="text-link" href="/regulamin">
+                    Zobacz zasady rezerwacji
                   </Link>
                   <button className="btn primary wide" disabled={busy || remain === 0}>
-                    {busy ? 'Zapisujemy rezerwację…' : 'Zarezerwuj bez wpłaty'}
+                    {busy ? 'Zapisujemy rezerwację…' : 'Zarezerwuj'}
                     <ArrowRight size={18} />
                   </button>
                 </form>

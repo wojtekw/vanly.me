@@ -567,7 +567,7 @@ test('checkout submits contact without payment using a stable reservation reques
     user: traveler,
     data: { '/bookings/booking-1': exampleBooking() },
   });
-  assert.match(document.body.textContent, /bez wpłaty w VANLY/);
+  assert.match(document.body.textContent, /bez płatności na tym etapie/);
   assert.match(document.body.textContent, /Niepotwierdzona/);
   assert.doesNotMatch(document.body.textContent, /potwierdzona od razu/);
   assert.equal(document.querySelector('select[name="scenario"]'), null);

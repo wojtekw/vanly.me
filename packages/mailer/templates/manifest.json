@@ -446,6 +446,46 @@
         "support_email",
         "unsubscribe_url"
       ]
+    },
+    {
+      "id": "13-potwierdzenie-i-platnosc",
+      "event": "booking.confirmed_direct",
+      "category": "TWOJA REZERWACJA",
+      "subject": "Potwierdzenie rezerwacji {{booking_number}} — instrukcja płatności",
+      "preheader": "Podsumowanie rezerwacji i instrukcja płatności przekazana przez wypożyczalnię.",
+      "heading": "Rezerwacja jest potwierdzona",
+      "cta": "Otwórz rezerwację",
+      "send_when": "Raz po potwierdzeniu przez właściwą wypożyczalnię, z zapisaną instrukcją płatności i podsumowaniem PDF.",
+      "required_attachments": [
+        "Podsumowanie potwierdzonej rezerwacji (PDF)"
+      ],
+      "required_document_kinds": [
+        "summary"
+      ],
+      "files": {
+        "html": "13-potwierdzenie-i-platnosc.html",
+        "text_plain": "13-potwierdzenie-i-platnosc.txt"
+      },
+      "placeholders": [
+        "action_url",
+        "app_url",
+        "attachment_names",
+        "booking_number",
+        "current_year",
+        "deposit_amount",
+        "payment_instructions",
+        "pickup_date",
+        "pickup_location",
+        "rental_company_name",
+        "return_date",
+        "sender_legal_address",
+        "sender_legal_name",
+        "sender_registration_details",
+        "support_email",
+        "total_amount",
+        "traveler_name",
+        "vehicle_name"
+      ]
     }
   ]
 }

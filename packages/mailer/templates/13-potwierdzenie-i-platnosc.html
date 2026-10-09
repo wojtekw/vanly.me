@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Potwierdzenie rezerwacji {{booking_number}} — instrukcja płatności</title></head>
+<body style="margin:0;padding:0;background:#F6F3EB;font-family:Arial,Helvetica,sans-serif;color:#242B27;">
+<div style="display:none;max-height:0;overflow:hidden;">Rezerwacja została potwierdzona. Sprawdź podsumowanie i instrukcję płatności za wynajem.</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F6F3EB;"><tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;background:#FFFEFA;border:1px solid #DDE5D8;"><tr><td style="padding:24px;background:#F6F3EB;font-size:24px;font-weight:bold;letter-spacing:2px;color:#173D35;">VANLY</td></tr>
+<tr><td style="padding:28px 24px;font-size:16px;line-height:1.6;">
+<p style="font-size:12px;letter-spacing:1px;color:#526158;">TWOJA REZERWACJA</p>
+<h1 style="font-size:26px;line-height:1.25;color:#173D35;">Rezerwacja jest potwierdzona</h1>
+<p>Dzień dobry,</p>
+<p>Wypożyczalnia {{rental_company_name}} potwierdziła rezerwację pojazdu {{vehicle_name}}. Poniżej znajdziesz podsumowanie oraz instrukcję płatności za wynajem.</p>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F6F3EB;border-collapse:collapse;">
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Rezerwacja dla</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{traveler_name}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Numer rezerwacji</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{booking_number}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Pojazd</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{vehicle_name}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Wypożyczalnia</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{rental_company_name}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Termin odbioru</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{pickup_date}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Termin zwrotu</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{return_date}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Miejsce odbioru</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{pickup_location}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Cena najmu</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{total_amount}}</td></tr>
+<tr><td valign="top" width="42%" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;color:#526158;">Kaucja — osobno</td><td valign="top" style="padding:10px 14px;border-bottom:1px solid #DDE5D8;font-size:14px;font-weight:bold;overflow-wrap:anywhere;word-break:break-word;">{{deposit_amount}}</td></tr>
+</table>
+<h2 style="margin:24px 0 14px;font-size:20px;color:#173D35;">Instrukcja płatności za wynajem</h2>
+<p style="overflow-wrap:anywhere;word-break:break-word;">{{payment_instructions}}</p>
+<p style="font-size:14px;color:#526158;">Płatność za wynajem i kaucję rozliczasz bezpośrednio z wypożyczalnią. Kaucja jest rozliczana odrębnie od ceny najmu, zgodnie z warunkami wypożyczalni.</p>
+<p style="font-size:14px;color:#526158;">Podsumowanie rezerwacji dołączamy w załączniku: {{attachment_names}}.</p>
+<table role="presentation" cellspacing="0" cellpadding="0"><tr><td style="background:#173D35;border-radius:8px;"><a href="{{action_url}}" style="display:inline-block;padding:14px 22px;font-size:16px;color:#FFFFFF;text-decoration:none;font-weight:bold;">Otwórz rezerwację</a></td></tr></table>
+<p>Zespół VANLY</p></td></tr>
+<tr><td style="padding:20px 24px;background:#F6F3EB;font-size:12px;line-height:1.6;color:#526158;">Pomoc: {{support_email}}<br>Serwis: {{app_url}}<br>{{sender_legal_name}} · {{sender_legal_address}}<br>{{sender_registration_details}}<br>© {{current_year}} VANLY</td></tr>
+</table></td></tr></table></body></html>

@@ -131,6 +131,9 @@ export class BookingRepository {
       [id],
     );
   }
+  savePaymentInstructions(db: BookingDb, id: string, instructions: string) {
+    return db.query('UPDATE bookings SET payment_instructions=$2 WHERE id=$1', [id, instructions]);
+  }
   async decide(db: BookingDb, id: string, accept: boolean) {
     await db.query(
       `UPDATE bookings SET status=$1,payment_status=CASE WHEN $2 THEN payment_status

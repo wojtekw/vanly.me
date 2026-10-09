@@ -92,7 +92,7 @@ export function renderMail(payload, config, recipient = {}, now = new Date(), re
       const document = attachments.find((item) => item.kind === kind);
       if (variables.booking_number && document.bookingReference !== variables.booking_number)
         throw new MailerError('TEMPLATE_DOCUMENT_BOOKING_MISMATCH');
-      if (templateId === '04-rezerwacja-potwierdzona' && document.bookingStatus !== 'confirmed')
+      if (['04-rezerwacja-potwierdzona', '13-potwierdzenie-i-platnosc'].includes(templateId) && document.bookingStatus !== 'confirmed')
         throw new MailerError('TEMPLATE_DOCUMENT_STATUS_MISMATCH');
       if (templateId === '06-zmiana-dat-z-doplata' && !document.amendmentId)
         throw new MailerError('TEMPLATE_DOCUMENT_AMENDMENT_REQUIRED');

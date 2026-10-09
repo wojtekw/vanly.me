@@ -1,3 +1,4 @@
+import { optionalRentalPaymentInstructions } from './booking/rental-payment';
 import {
   Controller,
   Get,
@@ -135,7 +136,7 @@ export class CatalogController {
           ? 'total_minor DESC'
           : 'v.created_at,v.name';
     return q(
-      `SELECT v.*,false AS instant,c.name company_name,c.settings,(${total}) total_minor,${distance} distance_km,(SELECT round(avg(rating),1) FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') rating,(SELECT count(*)::int FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') review_count FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE ${where} ORDER BY ${order} LIMIT 1000`,
+      `SELECT v.*,false AS instant,c.name company_name,(c.settings-'paymentInstructions') settings,(${total}) total_minor,${distance} distance_km,(SELECT round(avg(rating),1) FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') rating,(SELECT count(*)::int FROM comments r WHERE r.vehicle_id=v.id AND r.type='review' AND r.status='published') review_count FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE ${where} ORDER BY ${order} LIMIT 1000`,
       values,
     );
   }
@@ -158,7 +159,7 @@ export class CatalogController {
   }
   @Get('vehicles/:id') async vehicle(@Param('id') id: string, @Query() p: any, @Req() req: Authed) {
     const [v] = await q(
-      `SELECT v.*,false AS instant,c.name company_name,c.settings,c.verified,${publicListing()} publication_active FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.id=$1`,
+      `SELECT v.*,false AS instant,c.name company_name,(c.settings-'paymentInstructions') settings,c.verified,${publicListing()} publication_active FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.id=$1`,
       [id],
     );
     if (
@@ -695,11 +696,32 @@ export class OwnerController {
       .parse(body);
     return tx(async (db) => {
       await q(
-        'UPDATE companies SET settings=$1 WHERE id=$2',
+        'UPDATE companies SET settings=settings||$1::jsonb WHERE id=$2',
         [JSON.stringify(d), u.company_id],
         db,
       );
       await audit(db, u, 'company.settings', u.company_id!, d);
+      return { ok: true };
+    });
+  }
+  @Patch('payment-instructions') async paymentInstructions(
+    @Req() req: Authed,
+    @Body() body: unknown,
+  ) {
+    const u = user(req, ['owner']);
+    const d = z
+      .object({ paymentInstructions: optionalRentalPaymentInstructions })
+      .strict()
+      .parse(body);
+    return tx(async (db) => {
+      await q(
+        'UPDATE companies SET settings=settings||$1::jsonb WHERE id=$2',
+        [JSON.stringify(d), u.company_id],
+        db,
+      );
+      await audit(db, u, 'company.payment_instructions', u.company_id!, {
+        configured: !!d.paymentInstructions,
+      });
       return { ok: true };
     });
   }

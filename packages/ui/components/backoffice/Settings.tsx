@@ -67,6 +67,41 @@ export function SettingsForm({ d, reload }: { d: Row; reload: () => void }) {
         className="panel stack"
         onSubmit={(e) => {
           e.preventDefault();
+          const f = new FormData(e.currentTarget);
+          act(async () => {
+            await api('/owner/payment-instructions', 'PATCH', {
+              paymentInstructions: f.get('paymentInstructions'),
+            });
+            reload();
+          }, 'Domyślna instrukcja płatności zapisana.');
+        }}
+      >
+        <h2>Instrukcja płatności za wynajem</h2>
+        <p className="small muted">
+          Podaj sposób i termin zapłaty oraz potrzebne dane, np. numer rachunku i tytuł przelewu.
+          Treść zostanie podpowiedziana przy potwierdzaniu rezerwacji. Możesz ją wtedy dostosować do
+          konkretnego najmu.
+        </p>
+        <Field label="Domyślna instrukcja płatności" full>
+          <textarea
+            className="input tall"
+            name="paymentInstructions"
+            defaultValue={d.company.settings.paymentInstructions || ''}
+            minLength={10}
+            maxLength={4000}
+            placeholder="Np. wysokość zaliczki, termin zapłaty, dane odbiorcy i rachunku oraz zasady rozliczenia kaucji."
+          />
+        </Field>
+        <Notice>
+          E-mail zawiera także numer rezerwacji, imię i nazwisko podróżującego, pojazd, termin, cenę
+          najmu i kwotę kaucji. Zmiana instrukcji nie zmienia już wysłanych potwierdzeń.
+        </Notice>
+        <button className="btn primary">Zapisz instrukcję</button>
+      </form>
+      <form
+        className="panel stack"
+        onSubmit={(e) => {
+          e.preventDefault();
           const el = e.currentTarget,
             f = new FormData(el);
           act(async () => {

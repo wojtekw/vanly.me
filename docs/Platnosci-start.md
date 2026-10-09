@@ -72,3 +72,16 @@ Testy: `pnpm test:credits`, integracyjne testy API i rezerwacji, dokumentów,
 powiadomień oraz interfejsu. Testy bazodanowe wymagają własnej bazy `vanly_test`.
 Kod, sekrety, dane i pliki UAT są rozdzielone. Aktualizacja hosta nie odtwarza
 ani nie zastępuje bazy danymi lokalnymi.
+
+Po potwierdzeniu przez wypożyczalnię podróżujący otrzymuje wiadomość z instrukcją
+płatności za wynajem, danymi rezerwacji i PDF. Wypożyczalnia wpisuje domyślną
+instrukcję w ustawieniach albo przygotowuje indywidualną treść przy potwierdzaniu.
+Instrukcja jest wymagana dla nowych potwierdzeń z rozliczeniem bezpośrednim.
+Serwer zapisuje dokładną treść na rezerwacji (`payment_instructions`) w tej samej
+transakcji co potwierdzenie, dokument i zlecenie e-maila. Nie ustala za firmę
+numeru rachunku, wysokości zaliczki ani terminu zapłaty. Domyślna instrukcja
+nie trafia do publicznego katalogu ani wyceny. Zmiana ustawień firmy nie zmienia
+wysłanych wiadomości i instrukcji zapisanych na potwierdzonych rezerwacjach.
+Szablon `13-potwierdzenie-i-platnosc` personalizuje dane z rezerwacji i nie
+sugeruje, że zapłacono lub że wpłaty są rejestrowane na platformie.
+Dostarczenie e-maila korzysta z istniejącego dostawcy; UAT zachowuje skrzynkę testową.

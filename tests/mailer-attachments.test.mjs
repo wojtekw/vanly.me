@@ -45,7 +45,7 @@ test('unsafe filename, checksum, content type, and MIME expanded size fail befor
 
 test('confirmation and accepted amendment templates require the correct actual document kind', () => {
   const manifest = JSON.parse(fs.readFileSync(new URL('../packages/mailer/templates/manifest.json', import.meta.url), 'utf8'));
-  for (const [template, kind] of [['04-rezerwacja-potwierdzona', 'summary'], ['06-zmiana-dat-z-doplata', 'amendment']]) {
+  for (const [template, kind] of [['04-rezerwacja-potwierdzona', 'summary'], ['06-zmiana-dat-z-doplata', 'amendment'], ['13-potwierdzenie-i-platnosc','summary']]) {
     assert.throws(() => renderMail({ template }, config), /ATTACHMENTS_REQUIRED/);
     assert.throws(() => renderMail({ template }, config, {}, new Date(), [attachment(kind === 'summary' ? 'pickup' : 'summary')]), /ATTACHMENTS_REQUIRED/);
     // Once the required attachment is present, missing business variables are rejected next.

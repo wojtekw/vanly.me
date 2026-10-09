@@ -130,6 +130,7 @@ export interface BookingRow {
   status: BookingStatus;
   hold_until: Timestamp | null;
   payment_status: PaymentStatus;
+  payment_instructions: string;
   deposit_status: DepositStatus;
   total_minor: number;
   paid_minor: number;

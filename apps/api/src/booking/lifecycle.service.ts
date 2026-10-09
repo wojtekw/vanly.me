@@ -1,4 +1,10 @@
-import { Injectable, ConflictException, ForbiddenException } from '@nestjs/common';
+import { rentalPaymentInstructions } from './rental-payment';
+import {
+  Injectable,
+  ConflictException,
+  ForbiddenException,
+  BadRequestException,
+} from '@nestjs/common';
 import { companyScope } from '../auth';
 import type { User } from '../auth';
 import { tx, audit } from '../db';
@@ -28,7 +34,7 @@ export class BookingLifecycleService {
       return this.access.detail(db, actor, id);
     });
   }
-  decide(actor: User, id: string, accept: boolean) {
+  decide(actor: User, id: string, accept: boolean, instructions?: string) {
     return tx(async (db) => {
       if (actor.role !== 'owner')
         throw new ForbiddenException('Rezerwację potwierdza lub odrzuca wypożyczalnia.');
@@ -36,6 +42,22 @@ export class BookingLifecycleService {
       companyScope(actor, booking.company_id);
       if (booking.status !== 'pending')
         throw new ConflictException('Rezerwacja nie czeka na decyzję.');
+      if (accept && booking.snapshot.settlementMode === 'direct') {
+        const {
+          rows: [company],
+        } = await db.query(
+          "SELECT settings->>'paymentInstructions' instructions FROM companies WHERE id=$1 FOR SHARE",
+          [booking.company_id],
+        );
+        const parsed = rentalPaymentInstructions.safeParse(
+          instructions ?? company?.instructions ?? '',
+        );
+        if (!parsed.success)
+          throw new BadRequestException(
+            'Uzupełnij instrukcję płatności za wynajem przed potwierdzeniem rezerwacji. Zostanie wysłana podróżującemu w e-mailu.',
+          );
+        await this.repository.savePaymentInstructions(db, id, parsed.data);
+      }
       await this.repository.decide(db, id, accept);
       await audit(db, actor, accept ? 'booking.accepted' : 'booking.rejected', id);
       const current = await this.access.require(db, actor, id);

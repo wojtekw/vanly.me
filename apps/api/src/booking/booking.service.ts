@@ -86,6 +86,16 @@ export class BookingService {
   }
   async detail(actor: User, id: string) {
     await expireHolds();
-    return this.access.detail(pool, actor, id);
+    const booking = await this.access.detail(pool, actor, id);
+    if (actor.role === 'owner' && actor.company_id === booking.company_id) {
+      const {
+        rows: [company],
+      } = await pool.query(
+        "SELECT settings->>'paymentInstructions' instructions FROM companies WHERE id=$1",
+        [actor.company_id],
+      );
+      return { ...booking, paymentInstructionsDefault: company?.instructions || '' };
+    }
+    return booking;
   }
 }

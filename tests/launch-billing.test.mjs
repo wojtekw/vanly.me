@@ -1,3 +1,6 @@
+import { resolveMailDocuments } from '../packages/documents/service.mjs';
+import { renderMail } from '../packages/mailer/renderer.mjs';
+import { loadMailerConfig } from '../packages/mailer/config.mjs';
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
@@ -274,6 +277,94 @@ test('shared wallet buys 50 Credits for 10000 PLN once; failures and tampering n
   assert.equal(billing.publications.find((p) => p.vehicle_id === second.id).valid_until, period);
   assert.equal(billing.ledger.filter((e) => e.kind === 'purchase_test').length, 1);
 });
+const instructions =
+  'Zaliczka: 30% ceny najmu, płatna w ciągu 7 dni od potwierdzenia. Pozostała kwota: przed odbiorem. Dane przelewu: TESTOWY ODBIORCA. W tytule podaj numer rezerwacji. Kaucja: przy odbiorze. <script>treść testowa</script>';
+test('confirmation requires rental instructions; company defaults remain private, scoped and survive other settings changes', async () => {
+  const held = await hold(first.id, 10);
+  await request(traveler, '/bookings/' + held.id + '/submit', 'POST', travelerInput);
+  assert.equal(
+    (await request(owner, '/bookings/' + held.id + '/decision', 'POST', { accept: true })).status,
+    400,
+  );
+  const pending = (await request(traveler, '/bookings/' + held.id)).data;
+  assert.equal(pending.status, 'pending');
+  assert.equal(pending.payment_instructions, '');
+  assert.equal((await request(traveler, '/bookings/' + held.id + '/documents')).data.length, 0);
+  assert.equal(
+    (await request(owner, '/bookings/' + held.id + '/decision', 'POST', { accept: false })).status,
+    201,
+  );
+  assert.equal(
+    (
+      await request(traveler, '/owner/payment-instructions', 'PATCH', {
+        paymentInstructions: instructions,
+      })
+    ).status,
+    403,
+  );
+  assert.equal(
+    (
+      await request(owner, '/owner/payment-instructions', 'PATCH', {
+        paymentInstructions: instructions,
+        companyId: 'foreign-company',
+      })
+    ).status,
+    400,
+  );
+  assert.equal(
+    (
+      await request(owner, '/owner/payment-instructions', 'PATCH', {
+        paymentInstructions: 'krótko',
+      })
+    ).status,
+    400,
+  );
+  assert.equal(
+    (
+      await request(owner, '/owner/payment-instructions', 'PATCH', {
+        paymentInstructions: instructions,
+      })
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await request(foreign, '/owner/payment-instructions', 'PATCH', {
+        paymentInstructions: 'Inna firma: odrębny sposób rozliczenia wynajmu.',
+      })
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await request(owner, '/owner/settings', 'PATCH', {
+        minDays: 2,
+        buffer: 1,
+        prep: 0,
+        open: '09:00',
+        close: '17:00',
+      })
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await request(owner, '/owner/dashboard')).data.company.settings.paymentInstructions,
+    instructions,
+  );
+  const publicVehicle = (await request(null, '/vehicles/' + first.id)).data;
+  assert.ok(!Object.hasOwn(publicVehicle.settings, 'paymentInstructions'));
+  assert.ok(!(await request(null, '/catalog')).data.some((v) => v.settings?.paymentInstructions));
+  const quote = (
+    await request(traveler, '/quotes', 'POST', {
+      vehicleId: first.id,
+      start: day(15),
+      end: day(18),
+      guests: 2,
+      extras: {},
+    })
+  ).data;
+  assert.ok(!Object.hasOwn(quote.companySettings, 'paymentInstructions'));
+});
 test('traveler submits without payment, repeats safely, receives PDF and no balance reminders', async () => {
   const held = await hold(first.id);
   const path = '/bookings/' + held.id;
@@ -334,6 +425,28 @@ test('traveler submits without payment, repeats safely, receives PDF and no bala
     await db.query('SELECT payload FROM jobs WHERE event_key=$1', ['booking.confirmed:' + held.id])
   ).rows;
   assert.equal(events.length, 1);
+  assert.equal(events[0].payload.template, '13-potwierdzenie-i-platnosc');
+  assert.equal(events[0].payload.variables.traveler_name, travelerInput.name);
+  assert.equal(events[0].payload.variables.booking_number, b.reference);
+  assert.equal(events[0].payload.variables.payment_instructions, instructions);
+  assert.equal(b.payment_instructions, instructions);
+  const attachments = await resolveMailDocuments(db, events[0].payload.documentRefs, {
+    recipient_user_id: traveler.user.id,
+  });
+  const rendered = renderMail(
+    events[0].payload,
+    loadMailerConfig({ APP_URL: 'http://localhost:3100' }),
+    { name: 'Inne imię konta' },
+    new Date(),
+    attachments,
+  );
+  assert.match(rendered.subject, /instrukcja płatności/);
+  assert.match(rendered.text, new RegExp(travelerInput.name));
+  assert.match(rendered.text, /Zaliczka: 30%/);
+  assert.match(rendered.html, /&lt;script&gt;/);
+  assert.doesNotMatch(rendered.html, /<script>/);
+  assert.doesNotMatch(rendered.text, /Zapłacono:|Pozostało do zapłaty:|Termin dopłaty:/);
+
   assert.match(JSON.stringify(events), /bezpośrednio z wypożyczalnią/);
   assert.doesNotMatch(JSON.stringify(events), /Termin dopłaty/);
   assert.equal(
@@ -564,4 +677,64 @@ test('expired paid publication fails closed across discovery and new bookings wh
   });
   assert.equal(decided.status, 201, JSON.stringify(decided.data));
   assert.equal(decided.data.payment_status, 'external');
+});
+
+test('per-booking instruction overrides the company default; queue failure rolls back confirmation, instruction and PDF', async () => {
+  const held = await hold(first.id, 220);
+  await request(traveler, '/bookings/' + held.id + '/submit', 'POST', travelerInput);
+  const path = '/bookings/' + held.id;
+  const ownerDetail = (await request(owner, path)).data;
+  assert.equal(ownerDetail.paymentInstructionsDefault, instructions);
+  assert.ok(!Object.hasOwn((await request(traveler, path)).data, 'paymentInstructionsDefault'));
+  const custom =
+    'Instrukcja indywidualna: wynajem opłać w dwóch ratach. Dane przelewu ustalone z wypożyczalnią. Kaucja przy odbiorze.';
+  await db.query(
+    `CREATE FUNCTION reject_direct_confirmation() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN IF NEW.event_key='booking.confirmed:${held.id}' THEN RAISE EXCEPTION 'TEST_CONFIRMATION_MAIL_FAILURE'; END IF; RETURN NEW; END $$`,
+  );
+  await db.query(
+    'CREATE TRIGGER fail_direct_confirmation BEFORE INSERT ON jobs FOR EACH ROW EXECUTE FUNCTION reject_direct_confirmation()',
+  );
+  try {
+    assert.equal(
+      (
+        await request(owner, path + '/decision', 'POST', {
+          accept: true,
+          paymentInstructions: custom,
+        })
+      ).status,
+      500,
+    );
+    const rolledBack = (await request(traveler, path)).data;
+    assert.equal(rolledBack.status, 'pending');
+    assert.equal(rolledBack.payment_instructions, '');
+    assert.equal((await request(traveler, path + '/documents')).data.length, 0);
+  } finally {
+    await db.query('DROP TRIGGER fail_direct_confirmation ON jobs');
+    await db.query('DROP FUNCTION reject_direct_confirmation()');
+  }
+  const result = await request(owner, path + '/decision', 'POST', {
+    accept: true,
+    paymentInstructions: custom,
+  });
+  assert.equal(result.status, 201, JSON.stringify(result.data));
+  assert.equal(result.data.payment_instructions, custom);
+  assert.equal(
+    (await request(owner, '/owner/dashboard')).data.company.settings.paymentInstructions,
+    instructions,
+  );
+  const event = (
+    await db.query('SELECT * FROM jobs WHERE event_key=$1', ['booking.confirmed:' + held.id])
+  ).rows;
+  assert.equal(event.length, 1);
+  assert.equal(event[0].payload.variables.payment_instructions, custom);
+  assert.equal(
+    (
+      await request(owner, path + '/decision', 'POST', {
+        accept: true,
+        paymentInstructions: 'Następna, zmieniona instrukcja płatności.',
+      })
+    ).status,
+    409,
+  );
+  assert.equal((await request(traveler, path)).data.payment_instructions, custom);
 });

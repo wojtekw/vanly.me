@@ -1,3 +1,4 @@
+import { notifyRentalConfirmation } from './rental-confirmation';
 import { NotificationDb } from './queue';
 import { date, money, notifyStatus } from './format';
 
@@ -13,6 +14,11 @@ export type BookingMailSnapshot = {
   paid_minor: number;
   deposit_minor: number;
   payment_status: string;
+  payment_instructions?: string;
+  traveler?: { name?: string };
+  city?: string;
+  street?: string;
+  house_number?: string;
   snapshot: { balanceDue?: string | null; settlementMode?: string };
 };
 type BookingNoticeKind = 'pending' | 'confirmed' | 'cancelled' | 'rejected' | 'balance' | 'refund';
@@ -37,6 +43,8 @@ export function notifyBooking(
     documentRefs?: { documentId: string }[];
   },
 ) {
+  if (kind === 'confirmed' && b.snapshot.settlementMode === 'direct')
+    return notifyRentalConfirmation(db, b, operation.documentRefs);
   const balance = Math.max(0, b.total_minor - b.paid_minor);
   const intro: Record<BookingNoticeKind, string> = {
     pending:
@@ -53,9 +61,7 @@ export function notifyBooking(
     `Termin: ${date(b.start_date)} – ${date(b.end_date)}`,
     `Cena najmu: ${money(b.total_minor)}`,
     ...(b.snapshot.settlementMode === 'direct'
-      ? [
-          'Rezerwacja w VANLY jest bezpłatna. Najem i kaucję rozliczasz bezpośrednio z wypożyczalnią według jej warunków.',
-        ]
+      ? ['Najem i kaucję rozliczasz bezpośrednio z wypożyczalnią według jej warunków.']
       : [`Zapisane wpłaty: ${money(b.paid_minor)}`]),
     ...(b.snapshot.settlementMode !== 'direct' && ['pending', 'confirmed', 'balance'].includes(kind)
       ? [
@@ -83,7 +89,10 @@ export function notifyBooking(
     category: 'TWOJA REZERWACJA',
     intro: intro[kind],
     details,
-    nextStep: 'Aktualny stan rezerwacji, wpłat i kaucji znajdziesz na koncie.',
+    nextStep:
+      kind === 'pending' && b.snapshot.settlementMode === 'direct'
+        ? 'Po potwierdzeniu rezerwacji przez wypożyczalnię otrzymasz e-mail z podsumowaniem i instrukcją płatności za wynajem.'
+        : 'Aktualny stan rezerwacji, wpłat i kaucji znajdziesz na koncie.',
     cta: 'Sprawdź rezerwację',
     path: '/konto/rezerwacja/' + b.id,
     documentRefs: operation.documentRefs,

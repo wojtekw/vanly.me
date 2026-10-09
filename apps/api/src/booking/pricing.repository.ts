@@ -13,7 +13,7 @@ import type {
 export class PricingRepository {
   async vehicle(db: BookingDb, id: string, lock: boolean) {
     const [vehicle] = await q<VehicleForQuote>(
-      `SELECT v.*,false AS instant,c.name company_name,c.settings,c.verified,${publicListing()} publication_active FROM vehicles v JOIN companies c ON c.id=v.company_id
+      `SELECT v.*,false AS instant,c.name company_name,(c.settings-'paymentInstructions') settings,c.verified,${publicListing()} publication_active FROM vehicles v JOIN companies c ON c.id=v.company_id
        WHERE v.id=$1 ${lock ? 'FOR NO KEY UPDATE OF v FOR SHARE OF c' : ''}`,
       [id],
       db,

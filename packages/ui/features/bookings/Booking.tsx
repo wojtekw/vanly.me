@@ -1,4 +1,5 @@
 'use client';
+import { PaymentDecision } from './PaymentDecision';
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { createRequestId } from '../../lib/request-id';
@@ -196,23 +197,30 @@ function BookingBody({ id, back, mode }: { id: string; back: string; mode: strin
                     </Notice>
                   )}
                   {owner && user.role === 'owner' && b.status === 'pending' && (
-                    <div className="inline">
-                      <button
-                        className="btn primary"
-                        disabled={busy}
-                        onClick={() => mutate('/bookings/' + id + '/decision', { accept: true })}
-                      >
-                        Potwierdź rezerwację
-                      </button>
-                      <button
-                        className="btn danger"
-                        disabled={busy}
-                        onClick={() => mutate('/bookings/' + id + '/decision', { accept: false })}
-                      >
-                        Odrzuć rezerwację
-                      </button>
-                    </div>
+                    <PaymentDecision
+                      key={b.id}
+                      booking={b}
+                      busy={busy}
+                      onDecision={(accept, instructions) =>
+                        mutate('/bookings/' + id + '/decision', {
+                          accept,
+                          ...(instructions ? { paymentInstructions: instructions } : {}),
+                        })
+                      }
+                    />
                   )}
+                  {b.snapshot.settlementMode === 'direct' &&
+                    b.payment_instructions &&
+                    ['confirmed', 'in_rental'].includes(b.status) && (
+                      <div className="panel stack">
+                        <h3>Instrukcja płatności za wynajem</h3>
+                        <p style={{ whiteSpace: 'pre-wrap' }}>{b.payment_instructions}</p>
+                        <p className="small muted">
+                          Instrukcja została dołączona do e-maila potwierdzającego rezerwację. Najem
+                          i kaucję rozliczasz bezpośrednio z wypożyczalnią.
+                        </p>
+                      </div>
+                    )}
                   {!owner &&
                     b.snapshot.settlementMode !== 'direct' &&
                     ['pending', 'confirmed', 'in_rental'].includes(b.status) &&

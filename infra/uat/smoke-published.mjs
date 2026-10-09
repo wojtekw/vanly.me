@@ -183,7 +183,11 @@ assert.equal(
   (await request(admin, `/bookings/${id}/decision`, 'POST', { accept: true })).status,
   403,
 );
-booking = await request(owner, `/bookings/${id}/decision`, 'POST', { accept: true });
+booking = await request(owner, `/bookings/${id}/decision`, 'POST', {
+  accept: true,
+  paymentInstructions:
+    'TEST UAT — bez przelewu. W wersji produkcyjnej wypożyczalnia przekaże numer rachunku, kwotę zaliczki i termin zapłaty. Kaucja zgodnie z warunkami najmu.',
+});
 assert.equal(booking.status, 201, JSON.stringify(booking.data));
 assert.equal(booking.data.status, 'confirmed');
 assert.equal(booking.data.reservation_status, 'confirmed');
@@ -226,6 +230,29 @@ const messages = await request(owner, `/messages?vehicle=coast&traveler=${travel
 assert.equal(messages.status, 200);
 assert.ok(messages.data.length);
 assert.equal((await request(traveler, `/bookings/${id}/balance-test`, 'POST')).status, 403);
+let delivered = false;
+for (let attempt = 0; attempt < 30; attempt++) {
+  const mail = await request(traveler, '/mail');
+  assert.equal(mail.status, 200);
+  const confirmation = mail.data.find(
+    (item) =>
+      item.subject.includes('instrukcja płatności') &&
+      item.subject.includes(booking.data.reference),
+  );
+  if (confirmation) {
+    assert.match(confirmation.body, /TEST UAT — bez przelewu/);
+    assert.ok(confirmation.body.includes(booking.data.reference));
+    assert.ok(confirmation.body.includes(traveler.user.name));
+    assert.equal(confirmation.attachments.length, 1);
+    delivered = true;
+    break;
+  }
+  await new Promise((r) => setTimeout(r, 1000));
+}
+assert.ok(delivered, 'Worker did not deliver the payment confirmation into the private test inbox');
+checks.push(
+  'personalized confirmation, rental payment instructions and PDF delivered into private test inbox',
+);
 booking = await request(traveler, `/bookings/${id}/cancel`, 'POST');
 assert.equal(booking.status, 201);
 assert.equal(booking.data.reservation_status, 'cancelled');
@@ -274,18 +301,6 @@ assert.equal(
 checks.push(
   'four reservation statuses, rejection and cancellation release availability, terminal decisions cannot be changed',
 );
-let delivered = false;
-for (let attempt = 0; attempt < 30; attempt++) {
-  const mail = await request(traveler, '/mail');
-  assert.equal(mail.status, 200);
-  if (mail.data.length) {
-    delivered = true;
-    break;
-  }
-  await new Promise((r) => setTimeout(r, 1000));
-}
-assert.ok(delivered, 'Worker did not deliver into private test inbox');
-checks.push('worker and private client test inbox');
 // Dedicated test company checks the first/second/third vehicle boundary on the deployed API.
 const renter = session(
   await request(null, '/auth/register', 'POST', {

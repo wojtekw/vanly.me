@@ -1,3 +1,5 @@
+import { z } from 'zod';
+import { rentalPaymentInstructions } from './booking/rental-payment';
 import { Controller, Get, Post, Param, Body, Req } from '@nestjs/common';
 import { user } from './auth';
 import type { Authed } from './auth';
@@ -84,7 +86,12 @@ export class BookingController {
     @Param('id') id: string,
     @Body() body: unknown,
   ) {
-    return this.lifecycle.decide(user(req, ['owner']), id, decisionSchema.parse(body).accept);
+    const actor = user(req, ['owner']);
+    const input = z
+      .object({ accept: z.boolean(), paymentInstructions: rentalPaymentInstructions.optional() })
+      .strict()
+      .parse(body);
+    return this.lifecycle.decide(actor, id, input.accept, input.paymentInstructions);
   }
   @Post('bookings/:id/refund-test') refund(@Req() req: Authed, @Param('id') id: string) {
     return this.payments.refund(user(req, ['admin']), id, req.headers['idempotency-key']);

@@ -1,0 +1,32 @@
+Rezerwacja {{booking_number}} została potwierdzona
+
+Dzień dobry,
+
+Wypożyczalnia {{rental_company_name}} potwierdziła rezerwację pojazdu {{vehicle_name}}.
+Poniżej znajdziesz podsumowanie oraz instrukcję płatności za wynajem.
+Podsumowanie rezerwacji dołączamy w załączniku: {{attachment_names}}.
+
+Rezerwacja dla: {{traveler_name}}
+Numer rezerwacji: {{booking_number}}
+Pojazd: {{vehicle_name}}
+Wypożyczalnia: {{rental_company_name}}
+Termin: {{pickup_date}} – {{return_date}}
+Odbiór: {{pickup_location}}
+Cena najmu: {{total_amount}}
+Kaucja — osobno: {{deposit_amount}}
+
+Instrukcja płatności za wynajem:
+{{payment_instructions}}
+
+Płatność za wynajem i kaucję rozliczasz bezpośrednio z wypożyczalnią.
+Kaucja jest rozliczana odrębnie od ceny najmu, zgodnie z warunkami wypożyczalni.
+
+Otwórz rezerwację:
+{{action_url}}
+
+Zespół VANLY
+Pomoc: {{support_email}}
+Serwis: {{app_url}}
+{{sender_legal_name}} · {{sender_legal_address}}
+{{sender_registration_details}}
+© {{current_year}} VANLY
