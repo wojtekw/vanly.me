@@ -1,3 +1,4 @@
+import { publicListing } from './publication';
 import { reservationStatusProjection } from './booking/reservation-status';
 import {
   Controller,
@@ -37,7 +38,7 @@ export class CommunityController {
     return tx(async (db) => {
       const [v] = await q(
         `SELECT v.id FROM vehicles v JOIN companies c ON c.id=v.company_id
-        WHERE v.id=$1 AND v.status='published' AND c.verified FOR SHARE OF v,c`,
+        WHERE v.id=$1 AND v.status='published' AND c.verified AND ${publicListing()} FOR SHARE OF v,c`,
         [id],
         db,
       );
@@ -254,7 +255,7 @@ export class CommunityController {
         .parse(body);
     return tx(async (db) => {
       const [v] = await q(
-        `SELECT v.*,c.verified FROM vehicles v JOIN companies c ON c.id=v.company_id
+        `SELECT v.*,c.verified,${publicListing()} publication_active FROM vehicles v JOIN companies c ON c.id=v.company_id
         WHERE v.id=$1 FOR SHARE OF v,c`,
         [d.vehicleId],
         db,
@@ -272,7 +273,7 @@ export class CommunityController {
       );
       if (travelerId !== u.id && !conversation)
         throw new ForbiddenException('Ta rozmowa nie istnieje.');
-      if ((v.status !== 'published' || !v.verified) && !conversation) {
+      if ((v.status !== 'published' || !v.verified || !v.publication_active) && !conversation) {
         const [booking] = await q(
           `SELECT 1 FROM bookings WHERE vehicle_id=$1 AND user_id=$2
           AND status IN('pending','confirmed','in_rental','completed') LIMIT 1`,
@@ -325,8 +326,9 @@ export class AdminController {
     );
     const companies = await q(
       `SELECT c.*,(SELECT count(*)::int FROM vehicles v WHERE v.company_id=c.id) vehicle_count,
-        COALESCE((SELECT jsonb_agg(jsonb_build_object('vehicle_id',f.vehicle_id,'vehicle_name',v.name,'amount_minor',f.amount_minor,'status',f.status,'paid_at',f.paid_at) ORDER BY f.created_at)
-          FROM vehicle_listing_fees f JOIN vehicles v ON v.id=f.vehicle_id WHERE f.company_id=c.id),'[]'::jsonb) listing_fees
+        COALESCE((SELECT balance FROM credit_wallets WHERE company_id=c.id),0) credit_balance,
+        COALESCE((SELECT jsonb_agg(t ORDER BY t.sequence DESC) FROM
+          (SELECT l.*,v.name vehicle_name FROM credit_ledger l LEFT JOIN vehicles v ON v.id=l.vehicle_id WHERE l.company_id=c.id ORDER BY l.sequence DESC LIMIT 100) t),'[]'::jsonb) credit_ledger
         FROM companies c ORDER BY c.name`,
     );
     const comments = await q(

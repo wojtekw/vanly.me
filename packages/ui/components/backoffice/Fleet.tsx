@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { Row, useApp, Field, CheckField, Notice, Badge, asset, money, types } from '../shared';
 import { hasCoordinates, LocalityInput, pickupAddress } from '../PickupLocation';
+import { CreditsWallet, PublicationInfo } from './Credits';
 import { createRequestId } from '../../lib/request-id';
 
 export function Fleet({ d, reload }: { d: Row; reload: () => void }) {
@@ -16,11 +17,7 @@ export function Fleet({ d, reload }: { d: Row; reload: () => void }) {
           Dodaj pojazd
         </Link>
       </div>
-      <Notice>
-        Pierwszy pojazd dodajesz bezpłatnie. Drugi i każdy kolejny kosztuje 200 zł jednorazowo.
-        Edycja i ponowna publikacja rozliczonej oferty są bez dodatkowej opłaty. Na UAT płatność
-        jest testowa.
-      </Notice>
+      <CreditsWallet billing={d.billing} reload={reload} />
       <div className="vehicle-grid">
         {d.vehicles.map((v: Row) => (
           <article className="vehicle-card" key={v.id}>
@@ -35,10 +32,8 @@ export function Fleet({ d, reload }: { d: Row; reload: () => void }) {
               <p className="small muted">
                 {pickupAddress(v)} · {v.sleeps} miejsc do spania
               </p>
-              <ListingFee
-                fee={d.billing?.fees.find((f: Row) => f.vehicle_id === v.id)}
-                enabled={d.billing?.testPaymentsEnabled}
-                reload={reload}
+              <PublicationInfo
+                publication={d.billing?.publications.find((p: Row) => p.vehicle_id === v.id)}
               />
               <div className="spread" style={{ marginTop: 20 }}>
                 <strong>{money(v.daily)} / doba</strong>
@@ -51,83 +46,6 @@ export function Fleet({ d, reload }: { d: Row; reload: () => void }) {
         ))}
       </div>
     </>
-  );
-}
-function ListingFee({
-  fee,
-  enabled,
-  reload,
-}: {
-  fee?: Row;
-  enabled?: boolean;
-  reload: () => void;
-}) {
-  const { api, act } = useApp();
-  const [busy, setBusy] = useState(false);
-  const [scenario, setScenario] = useState('success');
-  const key = useRef<string | null>(null);
-  const submitting = useRef(false);
-  if (!fee) return null;
-  return (
-    <div className="stack" style={{ marginTop: 16 }}>
-      <p className="small">
-        Dodanie do floty: {money(fee.amount_minor)} ·{' '}
-        {fee.status === 'pending'
-          ? 'Oczekuje na rozliczenie'
-          : fee.status === 'paid_test'
-            ? 'Rozliczono testowo'
-            : 'Bez opłaty'}
-      </p>
-      {fee.status === 'pending' && (
-        <>
-          <p className="small muted">
-            Oferta pozostaje szkicem do rozliczenia opłaty. Po płatności możesz ją opublikować.
-          </p>
-          <Field label="Scenariusz płatności testowej">
-            <select
-              className="input"
-              value={scenario}
-              onChange={(e) => {
-                setScenario(e.target.value);
-                key.current = null;
-              }}
-              disabled={busy}
-            >
-              <option value="success">Udana płatność</option>
-              <option value="failure">Odrzucona płatność</option>
-            </select>
-          </Field>
-          <button
-            className="btn primary compact"
-            disabled={busy || !enabled}
-            onClick={async () => {
-              if (submitting.current) return;
-              submitting.current = true;
-              setBusy(true);
-              key.current ??= createRequestId();
-              try {
-                await act(async () => {
-                  await api(
-                    '/owner/vehicles/' + fee.vehicle_id + '/listing-fee/pay-test',
-                    'POST',
-                    { scenario },
-                    key.current,
-                  );
-                  reload();
-                }, 'Opłata rozliczona testowo. Możesz opublikować ofertę.');
-              } finally {
-                submitting.current = false;
-                setBusy(false);
-              }
-            }}
-          >
-            {busy ? 'Zapisujemy…' : `Opłać testowo ${money(fee.amount_minor)}`}
-          </button>
-          <p className="small muted">Symulacja UAT — nie pobieramy prawdziwych pieniędzy.</p>
-          {!enabled && <Notice>Płatności testowe są obecnie wyłączone.</Notice>}
-        </>
-      )}
-    </div>
   );
 }
 export function VehicleForm({
@@ -146,8 +64,12 @@ export function VehicleForm({
   const [photo, setPhoto] = useState<File | null>(null);
   const savedId = useRef(v?.id);
   const createKey = useRef<string | null>(null);
-  const fee = billing?.fees.find((f: Row) => f.vehicle_id === v?.id);
-  const feePending = fee?.status === 'pending';
+  const publication = billing?.publications?.find((p: Row) => p.vehicle_id === v?.id);
+  const needsCredit = v
+    ? !publication?.exempt &&
+      (!publication?.valid_until || new Date(publication.valid_until) <= new Date())
+    : billing?.nextPublicationCredits !== 0;
+  const canPublish = !needsCredit || (billing?.wallet?.balance ?? 0) > 0;
   const submitting = useRef(false);
   const defaults: Row = v || {
     name: '',
@@ -241,15 +163,16 @@ export function VehicleForm({
           Wróć do floty
         </Link>
       </div>
-      {!v && (
+      <Notice>
+        Pierwszy dodany pojazd jest bezpłatny. Każdy kolejny kamper lub przyczepa: 1 Credit za
+        miesiąc (200 zł). Publikacja włącza automatyczne odnowienia z portfela. Ręczne ukrycie
+        oferty zatrzymuje odnowienia i zachowuje opłacony okres.
+      </Notice>
+      <PublicationInfo publication={publication} />
+      {!canPublish && (
         <Notice>
-          Dodanie tego pojazdu: {money(billing?.nextFeeMinor ?? 20000)} jednorazowo. Pierwszy pojazd
-          jest bezpłatny; drugi i każdy kolejny kosztuje 200 zł. Jeśli opłata jest wymagana, zapisz
-          pojazd, a następnie rozlicz ją w widoku floty przed publikacją.
+          Brak Creditsów na nowy miesiąc. Zasil portfel w widoku floty lub zapisz ofertę jako szkic.
         </Notice>
-      )}
-      {feePending && (
-        <Notice>Przed publikacją rozlicz jednorazową opłatę 200 zł w widoku floty.</Notice>
       )}
       <div className="form-grid">
         <Field label="Nazwa pojazdu">
@@ -387,10 +310,7 @@ export function VehicleForm({
         <Field label="Widoczność oferty">
           <select className="input" name="status" defaultValue={defaults.status}>
             <option value="draft">Szkic</option>
-            <option
-              value="published"
-              disabled={!company.verified || feePending || (!v && billing?.nextFeeMinor > 0)}
-            >
+            <option value="published" disabled={!company.verified || !canPublish}>
               Opublikowana
             </option>
             <option value="hidden">Ukryta</option>

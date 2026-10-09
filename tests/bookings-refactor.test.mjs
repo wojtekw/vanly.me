@@ -94,6 +94,8 @@ beforeEach(async () => {
   [traveler, owner, otherOwner] = rows;
   await pool.query(`INSERT INTO vehicles(id,company_id,name,type,asset,city,street,house_number,seats,sleeps,daily,deposit,instant,status)
     VALUES('booking-test-van','booking-test-company','Adria Twin 600','camper','van.svg','Gdańsk','Turystyczna','12',4,4,52000,400000,true,'published')`);
+  await pool.query("INSERT INTO credit_wallets(company_id) VALUES('booking-test-company')");
+  await pool.query("INSERT INTO vehicle_publications(vehicle_id,company_id,exempt,auto_renew) VALUES('booking-test-van','booking-test-company',true,true)");
 });
 after(async () => {
   await pool.end();

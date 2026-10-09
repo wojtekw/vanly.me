@@ -2,9 +2,10 @@
 
 **Zmiana 9.10.2026:** podróżujący rezerwują bez wpłat w VANLY, a najem i kaucję
 rozliczają z wypożyczalnią. Każdą rezerwację potwierdza wypożyczalnia; statusy to
-Niepotwierdzona, Anulowana, Odrzucona i Potwierdzona. Pierwszy pojazd jest bezpłatny; dodanie
-drugiego i każdego kolejnego kosztuje 200 zł jednorazowo. Na UAT opłata jest
-testowa. [Zasady i zachowanie API](docs/Platnosci-start.md). Opisy zaliczek i dopłat
+Niepotwierdzona, Anulowana, Odrzucona i Potwierdzona. Pierwszy pojazd jest bezpłatny; publikacja
+drugiego i każdego kolejnego kosztuje 1 Credit za miesiąc (1 Credit = 200 zł).
+Portfel firmy odnawia publikacje automatycznie; brak Creditsów ukrywa ofertę. Na UAT zakup jest
+testowy. [Zasady i zachowanie API](docs/Platnosci-start.md). Opisy zaliczek i dopłat
 w starszej dokumentacji dotyczą zachowanych rezerwacji testowych.
 
 Kod portalu znajduje się w tym katalogu. Podstawą jest architektura z `output/architecture/architektura-vanly.md` i zatwierdzony projekt `docs/prototype-v3.html`.

@@ -24,8 +24,14 @@ import {
   listingBilling,
   listingIdempotency,
   payListingFee,
-  LISTING_FEE_MINOR,
+  CREDIT_PRICE_MINOR,
+  buyCredits,
+  lockCreditWallet,
+  registerPublication,
+  publishVehicle,
+  stopPublication,
 } from './listing-billing';
+import { publicListing } from './publication';
 import { legacyTravelerPayments } from './booking/payment-mode';
 import { reservationStatusProjection } from './booking/reservation-status';
 import {
@@ -49,7 +55,8 @@ export class CatalogController {
       payments: process.env.LOCAL_PAYMENTS === 'true' ? 'local_test' : 'disabled',
       travelerPayments: legacyTravelerPayments() ? 'local_test' : 'direct',
       reservationConfirmation: 'owner',
-      listingFeeMinor: LISTING_FEE_MINOR,
+      creditPriceMinor: CREDIT_PRICE_MINOR,
+      listingBillingModel: 'credits',
       insurance: 'not_connected',
       vignettes: 'not_connected',
     };
@@ -83,7 +90,7 @@ export class CatalogController {
       values.push(v);
       return '$' + values.length;
     };
-    let where = "v.status='published' AND c.verified";
+    let where = `v.status='published' AND c.verified AND ${publicListing()}`;
     where += ` AND v.sleeps>=${arg(d.guests)} AND (v.type='trailer' OR v.seats>=${arg(d.guests)})`;
     if (d.type && d.type !== 'all') where += ` AND v.type=${arg(d.type)}`;
     for (const k of ['auto', 'pets'] as const) if (d[k] === 'true') where += ` AND v.${k}=true`;
@@ -93,7 +100,7 @@ export class CatalogController {
       let loc: { lat: number; lng: number } | undefined = resolveLocality(d.location);
       if (!loc) {
         const places = await q(
-          `SELECT DISTINCT v.lat,v.lng FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.status='published' AND c.verified AND v.lat IS NOT NULL AND v.lng IS NOT NULL AND translate(lower(v.city),'ąćęłńóśźż','acelnoszz')=$1 LIMIT 2`,
+          `SELECT DISTINCT v.lat,v.lng FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.status='published' AND c.verified AND ${publicListing()} AND v.lat IS NOT NULL AND v.lng IS NOT NULL AND translate(lower(v.city),'ąćęłńóśźż','acelnoszz')=$1 LIMIT 2`,
           [normalizeLocality(d.location)],
         );
         if (places.length === 1) loc = places[0];
@@ -134,7 +141,7 @@ export class CatalogController {
   }
   @Get('locations') async locations() {
     return q(
-      "SELECT DISTINCT v.city,v.lat,v.lng FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.status='published' AND c.verified ORDER BY v.city",
+      `SELECT DISTINCT v.city,v.lat,v.lng FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.status='published' AND c.verified AND ${publicListing()} ORDER BY v.city`,
     );
   }
   @Get('localities') localities(@Query('q') query: unknown) {
@@ -143,7 +150,7 @@ export class CatalogController {
   @Get('seo/inventory') async seoInventory() {
     const [vehicles, articles] = await Promise.all([
       q(
-        "SELECT v.id FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.status='published' AND c.verified ORDER BY v.id",
+        `SELECT v.id FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.status='published' AND c.verified AND ${publicListing()} ORDER BY v.id`,
       ),
       q('SELECT id,updated_at FROM articles WHERE published ORDER BY id'),
     ]);
@@ -151,12 +158,12 @@ export class CatalogController {
   }
   @Get('vehicles/:id') async vehicle(@Param('id') id: string, @Query() p: any, @Req() req: Authed) {
     const [v] = await q(
-      `SELECT v.*,false AS instant,c.name company_name,c.settings,c.verified FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.id=$1`,
+      `SELECT v.*,false AS instant,c.name company_name,c.settings,c.verified,${publicListing()} publication_active FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.id=$1`,
       [id],
     );
     if (
       !v ||
-      ((v.status !== 'published' || !v.verified) &&
+      ((v.status !== 'published' || !v.verified || !v.publication_active) &&
         req.user?.role !== 'admin' &&
         req.user?.company_id !== v.company_id)
     )
@@ -185,7 +192,7 @@ export class CatalogController {
     );
     const similar = await q(
       `SELECT v.id,v.name,v.asset,v.city,v.daily FROM vehicles v JOIN companies c ON c.id=v.company_id
-        WHERE v.id<>$1 AND v.status='published' AND c.verified ORDER BY (v.type=$2) DESC LIMIT 3`,
+        WHERE v.id<>$1 AND v.status='published' AND c.verified AND ${publicListing()} ORDER BY (v.type=$2) DESC LIMIT 3`,
       [id, v.type],
     );
     return { ...v, equipment, comments, similar };
@@ -200,7 +207,7 @@ export class CatalogController {
   @Get('favorites') async favorites(@Req() req: Authed) {
     const u = user(req);
     return q(
-      "SELECT v.*,false AS instant,c.name company_name FROM favorites f JOIN vehicles v ON v.id=f.vehicle_id JOIN companies c ON c.id=v.company_id WHERE f.user_id=$1 AND v.status='published' AND c.verified",
+      `SELECT v.*,false AS instant,c.name company_name FROM favorites f JOIN vehicles v ON v.id=f.vehicle_id JOIN companies c ON c.id=v.company_id WHERE f.user_id=$1 AND v.status='published' AND c.verified AND ${publicListing()}`,
       [u.id],
     );
   }
@@ -209,7 +216,7 @@ export class CatalogController {
     return tx(async (db) => {
       const [vehicle] = await q(
         `SELECT v.id FROM vehicles v JOIN companies c ON c.id=v.company_id
-        WHERE v.id=$1 AND v.status='published' AND c.verified FOR SHARE OF v,c`,
+        WHERE v.id=$1 AND v.status='published' AND c.verified AND ${publicListing()} FOR SHARE OF v,c`,
         [id],
         db,
       );
@@ -431,7 +438,11 @@ export class OwnerController {
     @Param('id') id: string,
     @Body() body: unknown,
   ) {
-    return payListingFee(user(req, ['owner']), id, body, req.headers['idempotency-key']);
+    user(req, ['owner']);
+    return payListingFee();
+  }
+  @Post('credits/buy-test') buyCredits(@Req() req: Authed, @Body() body: unknown) {
+    return buyCredits(user(req, ['owner']), body, req.headers['idempotency-key']);
   }
   @Post('vehicles') async createVehicle(@Req() req: Authed, @Body() body: unknown) {
     const u = user(req, ['owner']),
@@ -452,39 +463,22 @@ export class OwnerController {
         req.headers['idempotency-key'],
         d,
         async () => {
-          const [c] = await q(
-            'SELECT verified FROM companies WHERE id=$1 FOR UPDATE',
-            [u.company_id],
-            db,
-          );
-          if (d.status === 'published' && !c?.verified)
-            throw new ForbiddenException('Firma czeka na weryfikację. Zapisz ofertę jako szkic.');
+          const wallet = await lockCreditWallet(db, u.company_id!);
           const [count] = await q(
             'SELECT count(*)::int n FROM vehicles WHERE company_id=$1',
             [u.company_id],
             db,
           );
-          const amount = count.n === 0 ? 0 : LISTING_FEE_MINOR;
+          const exempt = count.n === 0;
           await q(
             `INSERT INTO vehicles(id,company_id,${Object.keys(d).join(',')}) VALUES($1,$2,${values.map((_, i) => '$' + (i + 3)).join(',')})`,
             [id, u.company_id, ...values],
             db,
           );
-          if (amount > 0) await db.query("UPDATE vehicles SET status='draft' WHERE id=$1", [id]);
-          const [listingFee] = await q(
-            `INSERT INTO vehicle_listing_fees(vehicle_id,company_id,amount_minor,status,reason)
-        VALUES($1,$2,$3,$4,$5) RETURNING *`,
-            [
-              id,
-              u.company_id,
-              amount,
-              amount === 0 ? 'waived' : 'pending',
-              amount === 0 ? 'first_vehicle' : 'additional_vehicle',
-            ],
-            db,
-          );
-          await audit(db, u, 'vehicle.created', id, { listingFeeMinor: amount });
-          return { id, status: amount > 0 ? 'draft' : d.status, listingFee };
+          let publication = await registerPublication(db, wallet, id, exempt);
+          if (d.status === 'published') publication = await publishVehicle(db, wallet, id, u.id);
+          await audit(db, u, 'vehicle.created', id, { publicationExempt: exempt });
+          return { id, status: d.status, publication };
         },
       ),
     );
@@ -499,6 +493,7 @@ export class OwnerController {
     requireCoordinatePair(d);
     if (!Object.keys(d).length) throw new BadRequestException();
     return tx(async (db) => {
+      const wallet = await lockCreditWallet(db, u.company_id!);
       const [v] = await q('SELECT * FROM vehicles WHERE id=$1 FOR UPDATE', [id], db);
       if (!v) throw new NotFoundException();
       companyScope(u, v.company_id);
@@ -509,23 +504,8 @@ export class OwnerController {
         d.lng = null;
       }
       pickupCoordinates.parse({ lat: v.lat, lng: v.lng, ...d });
-      if (d.status === 'published') {
-        const [fee] = await q(
-          'SELECT status FROM vehicle_listing_fees WHERE vehicle_id=$1 AND company_id=$2',
-          [id, u.company_id],
-          db,
-        );
-        if (fee?.status === 'pending')
-          throw new ForbiddenException(
-            'Przed publikacją rozlicz jednorazową opłatę 200 zł za dodanie pojazdu.',
-          );
-        const [c] = await q(
-          'SELECT verified FROM companies WHERE id=$1 FOR SHARE',
-          [u.company_id],
-          db,
-        );
-        if (!c.verified) throw new ForbiddenException('Firma czeka na weryfikację.');
-      }
+      if (d.status === 'published') await publishVehicle(db, wallet, id, u.id);
+      else if (d.status) await stopPublication(db, u.company_id!, id);
       const values = Object.values(d).map((v) => (Array.isArray(v) ? JSON.stringify(v) : v));
       const [updated] = await q(
         `UPDATE vehicles SET ${Object.keys(d)

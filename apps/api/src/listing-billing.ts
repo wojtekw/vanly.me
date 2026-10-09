@@ -1,58 +1,95 @@
-import { BadRequestException, ForbiddenException, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  GoneException,
+  HttpException,
+} from '@nestjs/common';
 import { z } from 'zod';
 import type { User } from './auth';
-import { companyScope } from './auth';
 import { q, tx, audit } from './db';
 import { IdempotencyService } from './booking/idempotency.service';
+import type { PoolClient } from 'pg';
+import { pathToFileURL } from 'node:url';
+import path from 'node:path';
 
-export const LISTING_FEE_MINOR = 20000;
+export const CREDIT_PRICE_MINOR = 20000;
 export const listingIdempotency = new IdempotencyService();
+const credits = new Function('specifier', 'return import(specifier)')(
+  pathToFileURL(path.resolve(__dirname, '../../../packages/credits/service.mjs')).href,
+);
+async function invoke(method: string, ...args: any[]) {
+  const service = await credits;
+  try {
+    return await service[method](...args);
+  } catch (error) {
+    if (error instanceof service.CreditsError)
+      throw new HttpException((error as Error).message, (error as any).status);
+    throw error;
+  }
+}
+export const lockCreditWallet = (db: PoolClient, companyId: string) =>
+  invoke('lockWallet', db, companyId);
+export const registerPublication = (db: PoolClient, wallet: any, id: string, exempt: boolean) =>
+  invoke('registerPublication', db, wallet, id, exempt);
+export const publishVehicle = (db: PoolClient, wallet: any, id: string, userId: string) =>
+  invoke('publishVehicle', db, wallet, id, { userId });
+export const stopPublication = (db: PoolClient, companyId: string, id: string) =>
+  invoke('stopPublication', db, companyId, id);
 export async function listingBilling(companyId: string) {
   const [count] = await q('SELECT count(*)::int n FROM vehicles WHERE company_id=$1', [companyId]);
+  const [wallet] = await q('SELECT balance,updated_at FROM credit_wallets WHERE company_id=$1', [
+    companyId,
+  ]);
   return {
-    nextFeeMinor: count.n === 0 ? 0 : LISTING_FEE_MINOR,
+    model: 'credits',
+    creditPriceMinor: CREDIT_PRICE_MINOR,
     currency: 'PLN',
-    frequency: 'one_time',
+    firstVehicleFree: true,
+    nextPublicationCredits: count.n === 0 ? 0 : 1,
     testPaymentsEnabled: process.env.LOCAL_PAYMENTS === 'true',
-    fees: await q('SELECT * FROM vehicle_listing_fees WHERE company_id=$1 ORDER BY created_at', [
-      companyId,
-    ]),
+    wallet: wallet || { balance: 0 },
+    publications: await q(
+      'SELECT p.*,v.name vehicle_name FROM vehicle_publications p JOIN vehicles v ON v.id=p.vehicle_id WHERE p.company_id=$1 ORDER BY v.name',
+      [companyId],
+    ),
+    ledger: await q(
+      'SELECT l.*,v.name vehicle_name FROM credit_ledger l LEFT JOIN vehicles v ON v.id=l.vehicle_id WHERE l.company_id=$1 ORDER BY l.sequence DESC LIMIT 100',
+      [companyId],
+    ),
   };
 }
-export function payListingFee(actor: User, id: string, body: unknown, key: unknown) {
+export function buyCredits(actor: User, body: unknown, key: unknown) {
   if (process.env.LOCAL_PAYMENTS !== 'true')
     throw new ForbiddenException('Płatności testowe są wyłączone.');
   const input = z
-    .object({ scenario: z.enum(['success', 'failure']).default('success') })
+    .object({
+      credits: z.number().int().min(1).max(100000),
+      scenario: z.enum(['success', 'failure']).default('success'),
+    })
     .strict()
     .parse(body);
   return tx((db) =>
-    listingIdempotency.run(db, actor, 'listing.pay_test', key, { id, ...input }, async () => {
-      // Same lock order as vehicle edits; one successful settlement per vehicle.
-      const [vehicle] = await q('SELECT * FROM vehicles WHERE id=$1 FOR UPDATE', [id], db);
-      if (!vehicle) throw new NotFoundException();
-      companyScope(actor, vehicle.company_id);
-      const [fee] = await q(
-        'SELECT * FROM vehicle_listing_fees WHERE vehicle_id=$1 AND company_id=$2 FOR UPDATE',
-        [id, actor.company_id],
-        db,
-      );
-      if (!fee) throw new NotFoundException('Brak opłaty za ten pojazd.');
-      if (fee.status !== 'pending') return fee;
+    listingIdempotency.run(db, actor, 'credits.buy_test', key, input, async () => {
       if (input.scenario === 'failure')
         throw new BadRequestException(
-          'Testowa płatność została odrzucona. Opłata pozostaje nierozliczona.',
+          'Testowa płatność została odrzucona. Portfel nie został zasilony.',
         );
-      const [paid] = await q(
-        "UPDATE vehicle_listing_fees SET status='paid_test',provider='local_test',paid_at=now() WHERE vehicle_id=$1 RETURNING *",
-        [id],
-        db,
-      );
-      await audit(db, actor, 'listing.payment_test', id, {
-        amountMinor: fee.amount_minor,
-        currency: fee.currency,
+      const wallet = await lockCreditWallet(db, actor.company_id!);
+      const receipt = await invoke('purchaseCredits', db, wallet, input.credits, {
+        userId: actor.id,
+        eventKey: `credits.purchase:${actor.id}:${key}`,
       });
-      return paid;
+      await audit(db, actor, 'credits.purchase_test', receipt.id, {
+        credits: input.credits,
+        amountMinor: receipt.amount_minor,
+        currency: 'PLN',
+      });
+      return receipt;
     }),
+  );
+}
+export function payListingFee() {
+  throw new GoneException(
+    'Rozliczenia pojedynczych opłat zastąpił portfel Creditsów. Zasil portfel wypożyczalni.',
   );
 }

@@ -1,3 +1,4 @@
+import { publicListing } from './publication';
 import {
   Controller,
   Get,
@@ -199,11 +200,12 @@ export class MediaController {
     let publicRead = m.public;
     if (m.public && m.vehicle_id) {
       const [vehicle] = await q(
-        `SELECT v.status,c.verified FROM vehicles v
+        `SELECT v.status,c.verified,${publicListing()} publication_active FROM vehicles v
         JOIN companies c ON c.id=v.company_id WHERE v.id=$1`,
         [m.vehicle_id],
       );
-      publicRead = vehicle?.status === 'published' && vehicle.verified;
+      publicRead =
+        vehicle?.status === 'published' && vehicle.verified && vehicle.publication_active;
       if (!publicRead) {
         const actor = req.user;
         const companyMember =

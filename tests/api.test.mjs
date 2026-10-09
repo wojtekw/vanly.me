@@ -175,6 +175,7 @@ test('anonymous SEO inventory includes all public records and excludes drafts an
       SELECT 'seo-unverified','seo-unverified','Pojazd niezweryfikowanej firmy',type,asset,city,lat,lng,seats,sleeps,daily,deposit,'published'
       FROM vehicles WHERE id='coast'`);
     await db.query(`INSERT INTO articles(id,title,kind,summary,body,asset,published) VALUES('seo-unpublished','Szkic SEO','guide','Niepubliczny szkic','[]','trip.webp',false)`);
+    await grantFixturePublications(Array.from({length:101},(_,i)=>'seo-public-'+(i+1)));
     const response = await request(null, '/seo/inventory');
     assert.equal(response.status, 200);
     const expectedVehicles = (await db.query("SELECT v.id FROM vehicles v JOIN companies c ON c.id=v.company_id WHERE v.status='published' AND c.verified ORDER BY v.id")).rows;
@@ -555,6 +556,7 @@ test('private offers reject first contact and public questions while established
       assert.equal((await request(traveler, '/messages', 'POST', { vehicleId: id, text: 'Pierwszy kontakt' })).status, 404);
       assert.equal((await request(traveler, `/vehicles/${id}/questions`, 'POST', { text: 'Czy ta oferta jest dostępna?' })).status, 404);
     }
+    await grantFixturePublications([ids[3]]);
     const vehicleId = ids[3];
     assert.equal((await request(traveler, '/messages', 'POST', { vehicleId, text: 'Rozmowa z publiczną ofertą' })).status, 201);
     await db.query("UPDATE vehicles SET status='hidden' WHERE id=$1", [vehicleId]);
@@ -628,13 +630,14 @@ const pickupVehicle = (overrides = {}) => ({
   asset: 'campervan.webp', status: 'draft', ...overrides,
 });
 async function createPickupVehicle(overrides = {}) {
+  if (overrides.status === 'published') assert.equal((await request(owner,'/owner/credits/buy-test','POST',{credits:1})).status,201);
   const result = await request(owner, '/owner/vehicles', 'POST', pickupVehicle(overrides));
   assert.equal(result.status, 201, JSON.stringify(result.data));
-  if (overrides.status === 'published' && result.data.listingFee.status === 'pending') {
-    assert.equal((await request(owner, '/owner/vehicles/' + result.data.id + '/listing-fee/pay-test', 'POST', { scenario: 'success' })).status, 201);
-    assert.equal((await request(owner, '/owner/vehicles/' + result.data.id, 'PATCH', { status: 'published' })).status, 200);
-  }
   return result.data.id;
+}
+async function grantFixturePublications(ids) {
+  await db.query(`INSERT INTO vehicle_publications(vehicle_id,company_id,anchor_at,months,valid_until)
+    SELECT id,company_id,now(),1,now()+interval '1 month' FROM vehicles WHERE id=ANY($1::text[]) ON CONFLICT DO NOTHING`,[ids]);
 }
 
 test('vehicle pickup supports free text and optional address without inherited coordinates', async () => {
@@ -757,6 +760,7 @@ test('catalogue equipment filters support legacy and repeated selections with al
       await db.query(`INSERT INTO vehicles(id,company_id,name,type,asset,city,lat,lng,seats,sleeps,daily,deposit,features,status)
         SELECT $1,company_id,$1,type,asset,$2,NULL,NULL,seats,sleeps,daily,deposit,$3::jsonb,'published'
         FROM vehicles WHERE id='coast'`, [prefix + name, city, JSON.stringify(features)]);
+    await grantFixturePublications(fixtures.map(([name])=>prefix+name));
     const cases = [
       ['', ['none', 'shower', 'kitchen', 'heat', 'pair', 'all']],
       ['&feature=shower', ['shower', 'pair', 'all']],
@@ -850,6 +854,7 @@ async function messageVehicle(t, companyOwner = owner) {
       SELECT $1,$2,name,type,asset,city,lat,lng,seats,sleeps,daily,deposit,status FROM vehicles WHERE id='coast'`,
     [id, companyOwner.user.company_id],
   );
+  await grantFixturePublications([id]);
   t.after(async () => {
     await db.query('DELETE FROM messages WHERE vehicle_id=$1', [id]);
     await db.query('DELETE FROM message_conversations WHERE vehicle_id=$1', [id]);

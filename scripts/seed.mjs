@@ -1,3 +1,4 @@
+import { grantDemoPublications } from '../packages/credits/service.mjs';
 import pg from 'pg';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -46,9 +47,10 @@ try {
       'INSERT INTO users(email,name,password_hash,role,company_id) VALUES($1,$2,$3,$4,$5) ON CONFLICT(email) DO NOTHING',
       [a.email, a.name, await hash(a.password), a.role, a.company],
     );
-  for (const v of vehicles)
-    await db.query(
-      `INSERT INTO vehicles(id,company_id,name,type,asset,city,lat,lng,seats,sleeps,daily,prep,deposit,min_days,auto,pets,instant,km,features,description,tagline,status) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,'published') ON CONFLICT(id) DO NOTHING`,
+  const newVehicleIds = [];
+  for (const v of vehicles) {
+    const result = await db.query(
+      `INSERT INTO vehicles(id,company_id,name,type,asset,city,lat,lng,seats,sleeps,daily,prep,deposit,min_days,auto,pets,instant,km,features,description,tagline,status) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,'published') ON CONFLICT(id) DO NOTHING RETURNING id`,
       [
         v.id,
         v.company_id,
@@ -73,20 +75,15 @@ try {
         v.tagline,
       ],
     );
+    newVehicleIds.push(...result.rows.map((row) => row.id));
+  }
+  await grantDemoPublications(db, newVehicleIds);
   for (const c of companies)
     for (const e of seed.equipment) {
       const excludedTypes = e.id === 'bike' ? ['trailer'] : [];
       const inserted = await db.query(
         'INSERT INTO stock_items(company_id,id,name,quantity,price,unit,excluded_types) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING RETURNING id',
-        [
-          c.id,
-          e.id,
-          e.name,
-          e.max,
-          e.price,
-          e.unit,
-          JSON.stringify(excludedTypes),
-        ],
+        [c.id, e.id, e.name, e.max, e.price, e.unit, JSON.stringify(excludedTypes)],
       );
       // Seed compatibility only for new inventory, preserving explicit selections on a rerun.
       if (inserted.rowCount)

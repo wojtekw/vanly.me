@@ -331,7 +331,7 @@ const vehicle = (name) => ({
 const created = [];
 for (const name of ['UAT TEST — pierwszy', 'UAT TEST — drugi', 'UAT TEST — trzeci']) {
   const key = crypto.randomUUID(),
-    body = vehicle(name);
+    body = { ...vehicle(name), status: created.length === 0 ? 'published' : 'draft' };
   const r = await request(renter, '/owner/vehicles', 'POST', body, key);
   assert.equal(r.status, 201, JSON.stringify(r.data));
   created.push(r.data);
@@ -340,33 +340,53 @@ for (const name of ['UAT TEST — pierwszy', 'UAT TEST — drugi', 'UAT TEST —
   assert.equal(again.data.id, r.data.id);
 }
 assert.deepEqual(
-  created.map((v) => v.listingFee.amount_minor),
-  [0, 20000, 20000],
+  created.map((v) => v.publication.exempt),
+  [true, false, false],
 );
 assert.equal(created[0].status, 'published');
 assert.equal(created[1].status, 'draft');
-const feePath = `/owner/vehicles/${created[1].id}/listing-fee/pay-test`;
-assert.equal((await request(owner, feePath, 'POST', { scenario: 'success' })).status, 403);
-assert.equal((await request(renter, feePath, 'POST', { scenario: 'failure' })).status, 400);
 assert.equal(
   (await request(renter, `/owner/vehicles/${created[1].id}`, 'PATCH', { status: 'published' }))
+    .status,
+  409,
+);
+const creditsPath = '/owner/credits/buy-test';
+assert.equal((await request(traveler, creditsPath, 'POST', { credits: 50 })).status, 403);
+assert.equal(
+  (await request(renter, creditsPath, 'POST', { credits: 50, scenario: 'failure' })).status,
+  400,
+);
+assert.equal(
+  (await request(renter, creditsPath, 'POST', { credits: 50, amountMinor: 1 })).status,
+  400,
+);
+const otherBalance = (await request(owner, '/owner/billing')).data.wallet.balance;
+assert.equal(
+  (await request(owner, `/owner/vehicles/${created[1].id}`, 'PATCH', { status: 'published' }))
     .status,
   403,
 );
 const key = crypto.randomUUID();
-const paid = await request(renter, feePath, 'POST', { scenario: 'success' }, key);
-assert.equal(paid.status, 201);
-assert.equal(paid.data.amount_minor, 20000);
-assert.equal(paid.data.status, 'paid_test');
-const replay = await request(renter, feePath, 'POST', { scenario: 'success' }, key);
-assert.equal(replay.status, 201);
-assert.deepEqual(replay.data, paid.data);
-assert.equal(
-  (await request(renter, `/owner/vehicles/${created[1].id}`, 'PATCH', { status: 'published' }))
-    .status,
-  200,
+const paid = await request(renter, creditsPath, 'POST', { credits: 50 }, key);
+assert.equal(paid.status, 201, JSON.stringify(paid.data));
+assert.equal(paid.data.amount_minor, 1000000);
+assert.equal(paid.data.kind, 'purchase_test');
+assert.deepEqual(
+  (await request(renter, creditsPath, 'POST', { credits: 50 }, key)).data,
+  paid.data,
 );
-assert.equal((await request(renter, '/owner/billing')).data.fees.length, 3);
+for (const v of created.slice(1)) {
+  for (let i = 0; i < 2; i++)
+    assert.equal(
+      (await request(renter, `/owner/vehicles/${v.id}`, 'PATCH', { status: 'published' })).status,
+      200,
+    );
+}
+const billing = (await request(renter, '/owner/billing')).data;
+assert.equal(billing.wallet.balance, 48);
+assert.equal(billing.publications.length, 3);
+assert.equal(billing.ledger.filter((e) => e.kind === 'purchase_test').length, 1);
+assert.equal((await request(owner, '/owner/billing')).data.wallet.balance, otherBalance);
 // Keep test history for review, hiding its offers from the public catalogue.
 for (const v of created)
   assert.equal(
@@ -374,7 +394,7 @@ for (const v of created)
     200,
   );
 checks.push(
-  'first vehicle free, second/third 200 PLN, creation/payment retries, failure, company isolation and publication gate',
+  'first vehicle free, 50 Credits at 200 PLN each, shared wallet, retries, failure, company isolation, two paid publications, balance 48',
 );
 const result = {
   ok: true,

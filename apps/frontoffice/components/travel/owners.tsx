@@ -19,7 +19,8 @@ export function OwnersLanding() {
                 : 'Dla wypożyczalni'}
           </p>
           <p>
-            Pierwszy pojazd dodajesz bezpłatnie. Drugi i każdy kolejny kosztuje 200 zł jednorazowo.
+            Pierwszy pojazd dodajesz bezpłatnie. Każdy kolejny kamper lub przyczepa kosztuje 1 Credit za miesiąc. 1 Credit = 200 zł.
+            Zasilasz wspólny portfel, a publikacje odnawiają się automatycznie. Brak Creditsów ukrywa ofertę.
             Każdą rezerwację potwierdzasz lub odrzucasz w panelu. Podróżujący rezerwują bez opłat w
             VANLY i rozliczają najem oraz kaucję bezpośrednio z Tobą.
           </p>

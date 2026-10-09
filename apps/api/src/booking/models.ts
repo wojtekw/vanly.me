@@ -38,6 +38,7 @@ export interface VehicleForQuote {
   company_name: string;
   settings: CompanySettings;
   verified: boolean;
+  publication_active: boolean;
   name: string;
   type: string;
   status: string;

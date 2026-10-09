@@ -117,8 +117,10 @@ function Terms() {
           panelu firmy uzyskasz po zapisaniu danych wypożyczalni. Możesz też dodać firmę do już
           posiadanego konta. Operator weryfikuje firmę przed publikacją ofert; wcześniej możesz
           przygotować pojazdy jako szkice. Pierwszy pojazd dodajesz bezpłatnie. Za drugi i każdy
-          kolejny pobieramy jednorazowo 200 zł. Publikacja wymaga rozliczenia tej opłaty; na UAT
-          płatność jest testowa i nie pobiera pieniędzy.
+          kolejny kamper lub przyczepę rozliczamy z portfela: 1 Credit za miesiąc publikacji.
+          1 Credit kosztuje 200 zł. Odnowienie pobiera Credit automatycznie; brak Creditsów
+          ukrywa ofertę. Zasilenie portfela wznawia wstrzymane oferty. Ręczne ukrycie zatrzymuje
+          odnowienia i zachowuje opłacony okres. Na UAT zakup Creditsów jest testowy i nie pobiera pieniędzy.
         </p>
         <p>
           Wypożyczalnia odpowiada za poprawność opisów pojazdów, cen, dostępności i warunków swojej
@@ -372,7 +374,7 @@ function Help() {
         <p>
           Podróżujący rezerwują bez wpłaty w VANLY. Najem i kaucję rozliczają bezpośrednio z
           wypożyczalnią. Pierwszy pojazd wypożyczalnia dodaje bezpłatnie, drugi i każdy kolejny
-          kosztuje jednorazowo 200 zł. Na UAT opłaty za flotę są testowe.
+          kosztuje 1 Credit za miesiąc publikacji. 1 Credit = 200 zł. Na UAT zakup Creditsów jest testowy.
         </p>
         <p>
           Warunki płatności i ewentualnego zwrotu uzgodnij z wypożyczalnią. VANLY nie rozlicza wpłat

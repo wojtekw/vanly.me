@@ -1,3 +1,4 @@
+import { grantDemoPublications } from '../packages/credits/service.mjs';
 // Populate the existing local VANLY database with an explicitly fictional world.
 // Existing credentials and non-demo records are never replaced.
 import fs from 'node:fs/promises';
@@ -65,6 +66,7 @@ const db=new pg.Client({connectionString:process.env.DATABASE_URL});
 await db.connect();
 let inTransaction=false;
 try {
+  const newCreditVehicleIds=[];
   const backupDir=args.has('--export-only')?null:await backupBeforeChanges();
   await db.query('BEGIN'); inTransaction=true;
   await db.query("SELECT pg_advisory_xact_lock(hashtext('vanly-world-demo-v1'))");
@@ -132,12 +134,14 @@ try {
       const generated=person(12000+i,owner.name).profile;
       await db.query('UPDATE users SET profile=$1 WHERE id=$2',[JSON.stringify({...generated,...owner.profile,name:owner.name,phone:owner.profile.phone||generated.phone,drivers:owner.profile.drivers?.length?owner.profile.drivers:generated.drivers,demo:true,demoVersion:WORLD_DEMO_VERSION}),owner.id]);
     }
+
     const fields=['id','company_id','name','type','asset','city','street','house_number','lat','lng','seats','sleeps','daily','prep','deposit','min_days','auto','pets','instant','km','features','description','tagline','status'];
     for(const v of fixture.vehicles) {
       const previous=beforeVehicles.find(x=>x.id===v.id);
       if(previous && previous.company_id!==v.company_id) throw Error(`Konflikt id pojazdu ${v.id}.`);
       const result=await db.query(`INSERT INTO vehicles(${fields.join(',')}) VALUES(${fields.map((_,i)=>'$'+(i+1)).join(',')}) ON CONFLICT(id) DO NOTHING`,fields.map(k=>k==='features'?JSON.stringify(v[k]):v[k]));
       insertedVehicles+=result.rowCount;
+      if(result.rowCount) newCreditVehicleIds.push(v.id);
     }
     const allCompanies=(await db.query('SELECT * FROM companies WHERE id=ANY($1::text[]) ORDER BY id',[companyIds])).rows;
     const allVehicles=(await db.query('SELECT * FROM vehicles WHERE company_id=ANY($1::text[]) ORDER BY company_id,id',[companyIds])).rows;
@@ -203,6 +207,7 @@ try {
   const previousExport=args.has('--export-only')?await readJson(exportPath,{}):{};
   const summary={users:users.length,travelers:users.filter(u=>u.role==='traveler').length,demoTravelers:users.filter(u=>fixture.travelers.some(a=>a.email===u.email)).length,owners:users.filter(u=>u.role==='owner').length,admins:users.filter(u=>u.role==='admin').length,companies:companies.length,demoCompanies:companies.filter(c=>companyIds.includes(c.id)).length,companiesWithOneVehicle:companies.filter(c=>companyIds.includes(c.id)&&c.vehicleCount===1).length,companiesWith2To9Vehicles:companies.filter(c=>companyIds.includes(c.id)&&c.vehicleCount>=2&&c.vehicleCount<=9).length,companiesWithoutVehicles:companies.filter(c=>c.vehicleCount===0).length,vehicles:vehicles.length,stockItems:stock.length,stockUnits:stock.reduce((n,s)=>n+s.quantity,0),knownPasswords:safeUsers.filter(u=>u.password!==null).length,insertedUsers,insertedCompanies,insertedVehicles};
   const exportData={generatedAt:new Date().toISOString(),version:WORLD_DEMO_VERSION,fictional:true,portalUrl:'https://vanly.me.local',ownerPortalUrl:'https://owner.vanly.me.local',adminPortalUrl:'https://admin.vanly.me.local',users:safeUsers,companies:exportCompanies,vehicles,stock,summary,activityCounts,demoActivityCounts:activity.activityCounts||previousExport.demoActivityCounts||{},sampleScenarios:activity.sampleScenarios?.length?activity.sampleScenarios:previousExport.sampleScenarios||[],backupDir:backupDir||previousExport.backupDir||null};
+  await grantDemoPublications(db,newCreditVehicleIds);
   await db.query('COMMIT'); inTransaction=false;
   await privateWrite(exportPath,exportData);
   console.log(JSON.stringify({ok:true,exportPath,backupDir,summary,activityCounts}));

@@ -24,7 +24,11 @@ export class PricingService {
     if (data.start < today() || count < 1 || count > 60)
       throw new BadRequestException('Wybierz przyszły termin od 1 do 60 dób.');
     const vehicle = await this.repository.vehicle(db, data.vehicleId, lock);
-    if (!vehicle || vehicle.status !== 'published' || !vehicle.verified)
+    if (
+      !vehicle ||
+      (!excludeBooking &&
+        (vehicle.status !== 'published' || !vehicle.verified || !vehicle.publication_active))
+    )
       throw new NotFoundException('Oferta jest niedostępna.');
     const minimum = Math.max(vehicle.min_days, Number(vehicle.settings.minDays || 2));
     if (count < minimum) throw new BadRequestException(`Minimalny najem to ${minimum} doby.`);

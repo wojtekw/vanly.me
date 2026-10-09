@@ -33,21 +33,32 @@ export function OperatorCompanies({
               {c.verified ? 'Zweryfikowana' : 'Czeka na weryfikację'}
             </span>
           </div>
-          {c.listing_fees?.length > 0 && (
-            <div>
-              <h4>Opłaty za dodanie pojazdów</h4>
-              {c.listing_fees.map((f: Row) => (
-                <p className="small" key={f.vehicle_id}>
-                  {f.vehicle_name} · {money(f.amount_minor)} ·{' '}
-                  {f.status === 'pending'
-                    ? 'Oczekuje na rozliczenie'
-                    : f.status === 'paid_test'
-                      ? 'Rozliczono testowo'
-                      : 'Bez opłaty'}
-                </p>
-              ))}
-            </div>
-          )}
+          <div>
+            <h4>Portfel: {c.credit_balance ?? 0} Creditsów</h4>
+            <p className="small muted">
+              Pierwszy pojazd bezpłatny. Pozostałe: 1 Credit za miesiąc; 1 Credit = 200 zł.
+            </p>
+            {c.credit_ledger?.length > 0 && (
+              <details>
+                <summary>Historia Creditsów</summary>
+                {c.credit_ledger.map((entry: Row) => (
+                  <p className="small" key={entry.id}>
+                    {new Date(entry.created_at).toLocaleString('pl-PL')} ·{' '}
+                    {entry.kind === 'purchase_test'
+                      ? 'Zakup testowy'
+                      : entry.kind === 'migration_grant'
+                        ? 'Miesiąc przejściowy'
+                        : entry.kind === 'renewal'
+                          ? 'Odnowienie'
+                          : 'Publikacja'}{' '}
+                    · {entry.vehicle_name || 'Portfel'} · {entry.credits > 0 ? '+' : ''}
+                    {entry.credits} · saldo {entry.balance_after}
+                    {entry.amount_minor > 0 ? ` · ${money(entry.amount_minor)}` : ''}
+                  </p>
+                ))}
+              </details>
+            )}
+          </div>
           <Field label="Uzasadnienie zmiany weryfikacji">
             <input className="input" name="reason" required minLength={5} maxLength={1000} />
           </Field>

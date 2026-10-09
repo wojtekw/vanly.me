@@ -48,7 +48,7 @@ async function login(email, password) {
   assert.equal(r.status, 201, JSON.stringify(r.data));
   return { cookie: r.cookie.split(';')[0], csrf: r.data.csrf, user: r.data.user };
 }
-const vehicle = (name = 'Kamper Testowy') => ({
+const vehicle = (name = 'Kamper Testowy', overrides = {}) => ({
   name,
   type: 'campervan',
   city: 'Gdańsk',
@@ -69,6 +69,7 @@ const vehicle = (name = 'Kamper Testowy') => ({
   features: [],
   asset: 'campervan.webp',
   status: 'published',
+  ...overrides,
 });
 async function hold(vehicleId, offset = 30) {
   const q = await request(traveler, '/quotes', 'POST', {
@@ -157,32 +158,39 @@ after(async () => {
   await admin.end();
 });
 let first, second, third;
-test('concurrent vehicle creation yields one free slot and exactly one 200 PLN charge', async () => {
+test('concurrent draft creation allocates exactly one free vehicle; unfunded publication rolls back', async () => {
   const responses = await Promise.all(
-    ['Pierwszy', 'Drugi'].map((n) => request(owner, '/owner/vehicles', 'POST', vehicle(n))),
+    ['Pierwszy', 'Drugi'].map((n) =>
+      request(owner, '/owner/vehicles', 'POST', vehicle(n, { status: 'draft' })),
+    ),
   );
   for (const r of responses) assert.equal(r.status, 201, JSON.stringify(r.data));
-  const fees = responses
+  [first, second] = responses
     .map((r) => r.data)
-    .sort((a, b) => a.listingFee.amount_minor - b.listingFee.amount_minor);
-  [first, second] = fees;
-  assert.equal(first.listingFee.amount_minor, 0);
-  assert.equal(first.status, 'published');
-  assert.equal(second.listingFee.amount_minor, 20000);
-  assert.equal(second.status, 'draft');
+    .sort((a, b) => Number(b.publication.exempt) - Number(a.publication.exempt));
+  assert.equal(first.publication.exempt, true);
+  assert.equal(second.publication.exempt, false);
+  assert.equal(
+    (await request(owner, '/owner/vehicles/' + first.id, 'PATCH', { status: 'published' })).status,
+    200,
+  );
   assert.equal((await request(null, '/vehicles/' + second.id)).status, 404);
   assert.equal(
     (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { status: 'published' })).status,
-    403,
+    409,
   );
+  const refused = await request(owner, '/owner/vehicles', 'POST', vehicle('Bez Creditsów'));
+  assert.equal(refused.status, 409);
+  assert.equal((await db.query('SELECT count(*)::int n FROM vehicles')).rows[0].n, 2);
   assert.equal((await request(traveler, '/owner/billing')).status, 403);
   const own = await request(foreign, '/owner/billing');
-  assert.equal(own.data.nextFeeMinor, 0);
-  assert.equal(own.data.fees.length, 0);
+  assert.equal(own.data.nextPublicationCredits, 0);
+  assert.equal(own.data.wallet.balance, 0);
+  assert.deepEqual(own.data.ledger, []);
 });
-test('creation retries do not duplicate vehicles or fees and client cannot alter price', async () => {
+test('creation retries do not duplicate vehicles and clients cannot provide billing fields', async () => {
   const key = crypto.randomUUID(),
-    body = vehicle('Trzeci');
+    body = vehicle('Trzeci', { status: 'draft' });
   const results = await Promise.all([
     request(owner, '/owner/vehicles', 'POST', body, key),
     request(owner, '/owner/vehicles', 'POST', body, key),
@@ -190,65 +198,81 @@ test('creation retries do not duplicate vehicles or fees and client cannot alter
   for (const r of results) assert.equal(r.status, 201, JSON.stringify(r.data));
   assert.deepEqual(results[0].data, results[1].data);
   third = results[0].data;
-  assert.equal(third.listingFee.amount_minor, 20000);
+  assert.equal(third.publication.exempt, false);
   assert.equal(
     (await request(owner, '/owner/vehicles', 'POST', { ...vehicle(), amountMinor: 0 })).status,
     400,
   );
   assert.equal((await request(owner, '/owner/vehicles', 'POST', vehicle('Inne'), key)).status, 409);
-  const count = (await db.query('SELECT count(*)::int n FROM vehicle_listing_fees')).rows[0].n;
-  assert.equal(count, 3);
+  assert.equal((await db.query('SELECT count(*)::int n FROM vehicle_publications')).rows[0].n, 3);
 });
-test('failed/foreign/tampered listing payments cannot activate a vehicle; successful retries settle once', async () => {
-  const path = '/owner/vehicles/' + second.id + '/listing-fee/pay-test';
-  assert.equal((await request(foreign, path, 'POST', { scenario: 'success' })).status, 403);
-  assert.equal((await request(traveler, path, 'POST', { scenario: 'success' })).status, 403);
+test('shared wallet buys 50 Credits for 10000 PLN once; failures and tampering never credit it', async () => {
+  const path = '/owner/credits/buy-test';
+  assert.equal((await request(traveler, path, 'POST', { credits: 50 })).status, 403);
+  for (const credits of [0, -1, 1.5, 100001, '50', true])
+    assert.equal((await request(owner, path, 'POST', { credits })).status, 400);
   assert.equal(
-    (await request(owner, path, 'POST', { scenario: 'success', amountMinor: 1 })).status,
+    (
+      await request(owner, path, 'POST', {
+        credits: 50,
+        amountMinor: 1,
+        companyId: 'foreign-company',
+      })
+    ).status,
     400,
   );
-  assert.equal((await request(owner, path, 'POST', { scenario: 'failure' })).status, 400);
   assert.equal(
-    (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { status: 'published' })).status,
-    403,
+    (await request(owner, path, 'POST', { credits: 50, scenario: 'failure' })).status,
+    400,
   );
+  assert.equal((await request(owner, '/owner/billing')).data.wallet.balance, 0);
   const key = crypto.randomUUID();
   const results = await Promise.all([
-    request(owner, path, 'POST', { scenario: 'success' }, key),
-    request(owner, path, 'POST', { scenario: 'success' }, key),
+    request(owner, path, 'POST', { credits: 50 }, key),
+    request(owner, path, 'POST', { credits: 50 }, key),
   ]);
   for (const r of results) {
     assert.equal(r.status, 201, JSON.stringify(r.data));
-    assert.equal(r.data.status, 'paid_test');
-    assert.equal(r.data.amount_minor, 20000);
+    assert.equal(r.data.amount_minor, 1000000);
+    assert.equal(r.data.credits, 50);
   }
   assert.deepEqual(results[0].data, results[1].data);
+  assert.equal((await request(owner, path, 'POST', { credits: 51 }, key)).status, 409);
+  assert.equal((await request(foreign, '/owner/billing')).data.wallet.balance, 0);
   assert.equal(
-    (await request(owner, path, 'POST', { scenario: 'success' })).data.paid_at,
-    results[0].data.paid_at,
+    (await request(foreign, '/owner/vehicles/' + second.id, 'PATCH', { status: 'published' }))
+      .status,
+    403,
   );
   assert.equal(
-    (await db.query("SELECT count(*)::int n FROM audit WHERE action='listing.payment_test'"))
-      .rows[0].n,
-    1,
+    (
+      await request(owner, '/owner/vehicles/' + second.id + '/listing-fee/pay-test', 'POST', {
+        scenario: 'success',
+      })
+    ).status,
+    410,
   );
-  assert.equal(
-    (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { status: 'published' })).status,
-    200,
-  );
-  assert.equal(
-    (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { status: 'hidden' })).status,
-    200,
-  );
-  assert.equal(
-    (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { status: 'published' })).status,
-    200,
-  );
-  assert.equal(
-    (await request(owner, '/owner/billing')).data.fees.filter((f) => f.vehicle_id === second.id)
-      .length,
-    1,
-  );
+  for (const id of [second.id, third.id]) {
+    const r = await request(owner, '/owner/vehicles/' + id, 'PATCH', { status: 'published' });
+    assert.equal(r.status, 200, JSON.stringify(r.data));
+    assert.equal(
+      (await request(owner, '/owner/vehicles/' + id, 'PATCH', { status: 'published' })).status,
+      200,
+    );
+  }
+  assert.equal((await request(owner, '/owner/billing')).data.wallet.balance, 48);
+  const period = (await request(owner, '/owner/billing')).data.publications.find(
+    (p) => p.vehicle_id === second.id,
+  ).valid_until;
+  for (const status of ['hidden', 'published'])
+    assert.equal(
+      (await request(owner, '/owner/vehicles/' + second.id, 'PATCH', { status })).status,
+      200,
+    );
+  const billing = (await request(owner, '/owner/billing')).data;
+  assert.equal(billing.wallet.balance, 48);
+  assert.equal(billing.publications.find((p) => p.vehicle_id === second.id).valid_until, period);
+  assert.equal(billing.ledger.filter((e) => e.kind === 'purchase_test').length, 1);
 });
 test('traveler submits without payment, repeats safely, receives PDF and no balance reminders', async () => {
   const held = await hold(first.id);
@@ -394,9 +418,9 @@ test('request bookings need owner approval, and expired holds cannot be submitte
 test('first vehicle is free for each company independently', async () => {
   const created = await request(foreign, '/owner/vehicles', 'POST', vehicle('Inna firma pierwszy'));
   assert.equal(created.status, 201, JSON.stringify(created.data));
-  assert.equal(created.data.listingFee.amount_minor, 0);
-  assert.equal(created.data.listingFee.status, 'waived');
-  assert.equal((await request(owner, '/owner/billing')).data.nextFeeMinor, 20000);
+  assert.equal(created.data.publication.exempt, true);
+  assert.equal(created.data.publication.months, 0);
+  assert.equal((await request(owner, '/owner/billing')).data.nextPublicationCredits, 1);
 });
 
 test('owner rejection and traveler cancellation release dates without payments or confirmation documents', async () => {
@@ -468,4 +492,76 @@ test('opposing owner decisions commit exactly one outcome and one outcome notifi
     ])
   ).rows[0].n;
   assert.equal(notifications, 1);
+});
+
+test('expired paid publication fails closed across discovery and new bookings while existing bookings remain serviceable', async () => {
+  const created = await request(
+    owner,
+    '/owner/vehicles',
+    'POST',
+    vehicle('Wygasła oferta', { city: 'Tylko Wygaśnięcie' }),
+  );
+  assert.equal(created.status, 201, JSON.stringify(created.data));
+  const id = created.data.id;
+  const quote = await request(traveler, '/quotes', 'POST', {
+    vehicleId: id,
+    start: day(150),
+    end: day(154),
+    guests: 2,
+    extras: {},
+  });
+  assert.equal(quote.status, 201);
+  assert.equal((await request(traveler, '/favorites/' + id, 'POST')).status, 201);
+  await db.query(
+    "UPDATE vehicle_publications SET anchor_at=now()-interval '2 months',months=1,valid_until=now()-interval '1 month' WHERE vehicle_id=$1",
+    [id],
+  );
+  assert.equal((await request(null, '/vehicles/' + id)).status, 404);
+  assert.ok(!(await request(null, '/catalog')).data.some((v) => v.id === id));
+  assert.ok(!(await request(null, '/locations')).data.some((v) => v.city === 'Tylko Wygaśnięcie'));
+  assert.ok(!(await request(null, '/seo/inventory')).data.vehicles.some((v) => v.id === id));
+  assert.ok(!(await request(traveler, '/favorites')).data.some((v) => v.id === id));
+  assert.equal(
+    (
+      await request(traveler, '/quotes', 'POST', {
+        vehicleId: id,
+        start: day(150),
+        end: day(154),
+        guests: 2,
+        extras: {},
+      })
+    ).status,
+    404,
+  );
+  assert.equal((await request(traveler, '/holds', 'POST', { quoteId: quote.data.id })).status, 404);
+  assert.equal(
+    (
+      await request(traveler, '/vehicles/' + id + '/questions', 'POST', {
+        text: 'Czy pojazd jest dostępny?',
+      })
+    ).status,
+    404,
+  );
+  assert.equal(
+    (await request(traveler, '/messages', 'POST', { vehicleId: id, text: 'Nowa rozmowa' })).status,
+    404,
+  );
+  // Credit expiry cannot break an already confirmed rental's amendment workflow.
+  const booking = (
+    await db.query("SELECT id FROM bookings WHERE vehicle_id=$1 AND status='confirmed' LIMIT 1", [
+      second.id,
+    ])
+  ).rows[0];
+  await db.query("UPDATE vehicles SET status='hidden' WHERE id=$1", [second.id]);
+  const amendment = await request(traveler, '/bookings/' + booking.id + '/amendments', 'POST', {
+    start: day(170),
+    end: day(174),
+    note: 'Zmiana po ukryciu oferty',
+  });
+  assert.equal(amendment.status, 201, JSON.stringify(amendment.data));
+  const decided = await request(owner, '/amendments/' + amendment.data.id + '/decision', 'POST', {
+    accept: true,
+  });
+  assert.equal(decided.status, 201, JSON.stringify(decided.data));
+  assert.equal(decided.data.payment_status, 'external');
 });

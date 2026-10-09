@@ -1,3 +1,4 @@
+import { grantDemoPublications } from '../packages/credits/service.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -171,6 +172,7 @@ try {
      ON CONFLICT(email) DO UPDATE SET name=EXCLUDED.name,password_hash=EXCLUDED.password_hash,role=EXCLUDED.role,company_id=EXCLUDED.company_id,profile=EXCLUDED.profile`,
       [a.email, a.name, passwordHash, a.role, a.company, JSON.stringify(a.profile)],
     );
+  await grantDemoPublications(db,ids);
   await db.query('COMMIT');
   console.log(
     `Imported ${fixture.companies.length} companies, ${fixture.vehicles.length} vehicles, ${owners.length} owners and ${travelers.length} travelers. Backup: ${backupPath}`,

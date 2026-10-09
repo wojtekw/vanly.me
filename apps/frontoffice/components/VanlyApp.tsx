@@ -197,7 +197,7 @@ function VanlyAppView({
           <p>
             Najem i kaucję rozliczasz bezpośrednio z wypożyczalnią. VANLY nie pobiera opłat od
             podróżujących. Pierwszy pojazd wypożyczalni jest bezpłatny, drugi i każdy kolejny
-            kosztuje 200 zł jednorazowo. Opłata za flotę na UAT jest symulowana.
+            kosztuje 1 Credit za miesiąc publikacji. 1 Credit = 200 zł. Zakup Creditsów na UAT jest symulowany.
           </p>
           <Link className="text-link" href="/">
             Wróć do {brand.name} <ArrowRight size={18} />

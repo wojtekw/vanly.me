@@ -1,5 +1,6 @@
 import { setTimeout as sleep } from 'node:timers/promises';
 import { MailerService, loadMailerConfig } from '../../packages/mailer/index.mjs';
+import { renewPublications } from '../../packages/credits/service.mjs';
 import { maintainPortal } from './maintenance.mjs';
 import { FeedbackService } from '../../packages/mailer/feedback/service.mjs';
 import { resolveMailDocuments } from '../../packages/documents/service.mjs';
@@ -26,6 +27,7 @@ export async function runWorker(pool, { signal, env = process.env, logger = cons
       try {
         await expireHoldsWithNotifications(pool, { config: notificationConfig });
         await maintainPortal(pool);
+        await renewPublications(pool);
         await reminders.tick();
         await newsletter.tick();
         if (feedback) {

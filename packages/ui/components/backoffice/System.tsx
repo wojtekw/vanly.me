@@ -16,8 +16,8 @@ export function OperatorSystem({
           <div>
             <strong>Płatności</strong>
             <p>
-              Podróżujący rozliczają najem i kaucję z wypożyczalnią. Opłata za drugi i kolejny
-              pojazd wynosi 200 zł jednorazowo; na UAT jest testowa.
+              Podróżujący rozliczają najem i kaucję z wypożyczalnią. Publikacja drugiego i kolejnego
+              pojazdu kosztuje 1 Credit za miesiąc. 1 Credit = 200 zł; zakup na UAT jest testowy.
             </p>
             <Badge status="Tryb testowy" />
           </div>
